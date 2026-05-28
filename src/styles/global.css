@@ -1,0 +1,72 @@
+﻿@import "tailwindcss";
+
+/* =========================================================
+   DESIGN TOKENS — namespace Tailwind v4 (@theme)
+   Genera utility: bg-void, text-cyan, font-mono, ease-standard...
+   ========================================================= */
+@theme {
+  /* Palette */
+  --color-void:     #050507;
+  --color-onyx:     #0A0A0F;
+  --color-graphite: #1A1A22;
+  --color-smoke:    #3A3A42;
+  --color-mist:     #6E7280;
+  --color-pearl:    #F5F5F7;
+  --color-cyan:     #00D4FF;
+  --color-cyan-dim: #0088A8;
+  --color-copper:   #D89968;
+
+  /* Typography — famiglie (self-hosting in STEP 5) */
+  --font-display: "Geist Sans", "Inter", system-ui, sans-serif;
+  --font-sans:    "Inter", "Geist Sans", system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, monospace;
+  --font-serif:   "Source Serif 4", Georgia, serif;
+
+  /* Easing — nomi custom per non sovrascrivere ease-out built-in */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Radius */
+  --radius-card: 3px;
+  --radius-pill: 100px;
+}
+
+/* =========================================================
+   TOKEN SEMANTICI — compat prototipo hero v1
+   Nomi --c-* / --ease* usati via var() nel CSS dell hero.
+   Stessi valori del blocco @theme, secondo binario.
+   ========================================================= */
+:root {
+  --c-void:     #050507;
+  --c-onyx:     #0A0A0F;
+  --c-graphite: #1A1A22;
+  --c-smoke:    #3A3A42;
+  --c-mist:     #6E7280;
+  --c-pearl:    #F5F5F7;
+  --c-cyan:     #00D4FF;
+  --c-cyan-dim: #0088A8;
+  --c-copper:   #D89968;
+  --ease:       cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* border hairline su dark (brief: 1px rgba(255,255,255,0.08)) */
+  --border-hairline: rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================================
+   BASE — sopra il Preflight di Tailwind
+   ========================================================= */
+body {
+  background: var(--c-void);
+  color: var(--c-pearl);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--c-cyan);
+  color: var(--c-void);
+}
