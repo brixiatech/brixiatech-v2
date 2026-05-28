@@ -1,17 +1,35 @@
 ﻿---
+import "@fontsource/geist-sans/500.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/jetbrains-mono/400.css";
+import "@fontsource/jetbrains-mono/500.css";
+import "@fontsource/source-serif-4/400-italic.css";
 import "../styles/global.css";
 ---
 <html lang="it">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Tailwind test</title>
+    <title>Font test</title>
   </head>
   <body>
-    <main class="min-h-screen flex flex-col items-center justify-center gap-6">
-      <h1 class="text-4xl font-bold text-cyan">Tailwind compila</h1>
-      <p class="font-mono text-mist">se questo e monospace e grigio, i token funzionano</p>
-      <span class="rounded-pill bg-cyan px-6 py-2 text-void font-medium">pill cyan</span>
+    <main class="min-h-screen flex flex-col items-center justify-center gap-8 px-6">
+      <h1 class="font-display text-5xl font-medium tracking-[-0.025em] text-pearl">
+        Vetri che pensano.
+      </h1>
+      <p class="font-sans text-lg text-mist max-w-md text-center">
+        Body in Inter, peso 400. Edifici che si adattano alle persone che li abitano.
+      </p>
+      <p class="font-mono text-sm text-cyan">
+        180+ PROGETTI · 7 ANNI WARRANTY · PDLC ON
+      </p>
+      <p class="font-serif italic text-xl text-copper max-w-md text-center">
+        Il vetro e la nuova interfaccia.
+      </p>
+      <span class="rounded-pill bg-cyan px-6 py-2 text-void font-sans font-medium">
+        Configura un progetto
+      </span>
     </main>
   </body>
 </html>
