@@ -1,0 +1,88 @@
+---
+// Nav statico, zero JS. Portato da brixiatech-hero-v1.html.
+// FIX #4: rimosso `mix-blend-mode: difference` (illeggibile/flicker su skyline).
+// Colore fisso pearl + scrim gradiente sottile come backdrop difensivo:
+// resta leggibile anche quando scorrono sotto sezioni più chiare (post-hero).
+---
+
+<nav class="nav">
+  <div class="nav__logo">BRIXIATECH</div>
+  <ul class="nav__menu">
+    <li><a href="#tecnologie">Tecnologie</a></li>
+    <li><a href="#b-logic">B-LOGIC</a></li>
+    <li><a href="#realizzazioni">Realizzazioni</a></li>
+    <li><a href="#insights">Insights</a></li>
+  </ul>
+  <a href="#preventivo" class="nav__cta">Preventivo</a>
+</nav>
+
+<style>
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 24px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    /* FIX #4: niente mix-blend-mode. Scrim difensivo per leggibilità. */
+    background: linear-gradient(
+      180deg,
+      rgba(5, 5, 7, 0.55) 0%,
+      rgba(5, 5, 7, 0) 100%
+    );
+  }
+
+  .nav__logo {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--c-pearl);
+  }
+
+  .nav__menu {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav__menu a {
+    font-size: 13px;
+    color: var(--c-pearl);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 200ms var(--ease);
+  }
+
+  .nav__menu a:hover {
+    opacity: 1;
+  }
+
+  .nav__cta {
+    font-size: 13px;
+    color: var(--c-pearl);
+    text-decoration: none;
+    border: 1px solid rgba(245, 245, 247, 0.3);
+    padding: 8px 16px;
+    border-radius: var(--radius-pill);
+    transition: all 200ms var(--ease);
+  }
+
+  .nav__cta:hover {
+    border-color: var(--c-pearl);
+    background: rgba(245, 245, 247, 0.06);
+  }
+
+  @media (max-width: 900px) {
+    .nav {
+      padding: 20px 24px;
+    }
+    .nav__menu {
+      display: none;
+    }
+  }
+</style>

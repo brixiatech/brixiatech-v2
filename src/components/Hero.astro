@@ -1,0 +1,288 @@
+---
+// Hero. Portato da brixiatech-hero-v1.html.
+// Quasi tutto statico; unico JS = parallax leggero di .scene (vedi <script>).
+// Possiede la <section.hero> (contesto di posizionamento) + scena + content
+// editoriale. Le isole interattive (GlassDemo, Ticker) entrano via <slot />:
+// restano figlie di .hero così i loro `position:absolute` risolvono qui.
+//
+// FIX #1: parallax con rAF throttle, off su touch/schermo stretto/reduced-motion.
+// FIX #2: blocco prefers-reduced-motion in fondo (azzera entrance + twinkle).
+// FIX #6: skyline è uno STUB placeholder — vedi TODO sopra .scene__skyline.
+---
+
+<section class="hero">
+  <!-- Scena background: cielo + skyline -->
+  <div class="scene">
+    {/* TODO: sostituire skyline stub con illustrazione vettoriale custom o
+        video loop 4K Milano notte. I colori gialli/ambra qui dentro sono
+        EFFIMERI (placeholder), NON brand — non tokenizzare. */}
+    <div class="scene__skyline"></div>
+  </div>
+
+  <!-- Contenuto editoriale -->
+  <div class="content">
+    <div class="eyebrow">ADAPTIVE ARCHITECTURE</div>
+    <h1 class="headline">
+      <span class="headline__line"><span>Vetri che pensano.</span></span>
+      <span class="headline__line"><span>Edifici che si adattano.</span></span>
+    </h1>
+    <p class="subtitle">
+      Building intelligence applicata al primo strato dell'architettura — il
+      vetro. PDLC switchable, hardware embedded, piattaforma cloud predittiva.
+      <em>Un solo stack, dalla pellicola al dashboard.</em>
+    </p>
+    <div class="cta-row">
+      <a href="#preventivo" class="cta">
+        Configura un progetto
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M3 7H11M11 7L7 3M11 7L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </a>
+      <a href="#b-logic" class="cta-secondary">
+        Scopri B-LOGIC
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M3 7H11M11 7L7 3M11 7L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Isole interattive (GlassDemo, Ticker) iniettate da index.astro -->
+  <slot />
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  /* =========================================================
+     SCENA — skyline notturno stilizzato (STUB placeholder)
+     ========================================================= */
+  .scene {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 40%, rgba(30, 60, 110, 0.4) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 20% 60%, rgba(15, 35, 65, 0.5) 0%, transparent 60%),
+      linear-gradient(180deg, #0a1428 0%, #050507 70%);
+  }
+
+  /* Skyline SVG layer — stub: polygon hardcoded, luci gialle non-brand */
+  .scene__skyline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 55%;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 600' preserveAspectRatio='none'><g fill='%23050507'><polygon points='0,600 0,420 80,420 80,380 160,380 160,440 240,440 240,300 320,300 320,360 380,360 380,200 480,200 480,260 540,260 540,340 620,340 620,180 720,180 720,240 800,240 800,150 900,150 900,210 980,210 980,280 1060,280 1060,170 1160,170 1160,220 1240,220 1240,320 1320,320 1320,240 1420,240 1420,300 1500,300 1500,200 1600,200 1600,260 1680,260 1680,360 1760,360 1760,300 1840,300 1840,400 1920,400 1920,600'/></g><g fill='%23ffeb88' opacity='0.7'><rect x='100' y='400' width='3' height='3'/><rect x='110' y='400' width='3' height='3'/><rect x='100' y='410' width='3' height='3'/><rect x='130' y='400' width='3' height='3'/><rect x='190' y='400' width='3' height='3'/><rect x='180' y='420' width='3' height='3'/><rect x='280' y='320' width='3' height='3'/><rect x='290' y='320' width='3' height='3'/><rect x='280' y='340' width='3' height='3'/><rect x='400' y='220' width='3' height='3'/><rect x='420' y='220' width='3' height='3'/><rect x='410' y='240' width='3' height='3'/><rect x='400' y='260' width='3' height='3'/><rect x='430' y='260' width='3' height='3'/><rect x='500' y='280' width='3' height='3'/><rect x='560' y='360' width='3' height='3'/><rect x='580' y='360' width='3' height='3'/><rect x='640' y='200' width='3' height='3'/><rect x='660' y='200' width='3' height='3'/><rect x='650' y='220' width='3' height='3'/><rect x='640' y='240' width='3' height='3'/><rect x='740' y='260' width='3' height='3'/><rect x='760' y='260' width='3' height='3'/><rect x='820' y='170' width='3' height='3'/><rect x='830' y='170' width='3' height='3'/><rect x='820' y='190' width='3' height='3'/><rect x='920' y='230' width='3' height='3'/><rect x='940' y='230' width='3' height='3'/><rect x='1000' y='300' width='3' height='3'/><rect x='1080' y='190' width='3' height='3'/><rect x='1100' y='190' width='3' height='3'/><rect x='1090' y='210' width='3' height='3'/><rect x='1180' y='240' width='3' height='3'/><rect x='1200' y='240' width='3' height='3'/><rect x='1260' y='340' width='3' height='3'/><rect x='1280' y='340' width='3' height='3'/><rect x='1340' y='260' width='3' height='3'/><rect x='1360' y='260' width='3' height='3'/><rect x='1440' y='320' width='3' height='3'/><rect x='1460' y='320' width='3' height='3'/><rect x='1520' y='220' width='3' height='3'/><rect x='1540' y='220' width='3' height='3'/><rect x='1620' y='280' width='3' height='3'/><rect x='1640' y='280' width='3' height='3'/><rect x='1700' y='380' width='3' height='3'/><rect x='1720' y='380' width='3' height='3'/><rect x='1780' y='320' width='3' height='3'/><rect x='1800' y='320' width='3' height='3'/><rect x='1860' y='420' width='3' height='3'/></g></svg>");
+    background-size: cover;
+    background-position: center bottom;
+  }
+
+  /* Stelle/luci pulsanti via pseudo-element (placeholder, colori effimeri) */
+  .scene::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 15% 25%, #ffd060 0%, transparent 50%),
+      radial-gradient(1px 1px at 75% 18%, #ffe699 0%, transparent 50%),
+      radial-gradient(1px 1px at 45% 35%, #ffeb88 0%, transparent 50%),
+      radial-gradient(2px 2px at 88% 28%, #ffcd44 0%, transparent 50%),
+      radial-gradient(1px 1px at 25% 45%, #fff5cc 0%, transparent 50%);
+    opacity: 0.8;
+    animation: twinkle 8s ease-in-out infinite alternate;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  /* =========================================================
+     CONTENT — eyebrow + headline + subtitle + CTA
+     ========================================================= */
+  .content {
+    position: relative;
+    z-index: 10;
+    padding: 0 8%;
+    max-width: 50%;
+    pointer-events: none;
+  }
+
+  .content > * { pointer-events: auto; }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--c-cyan);
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeInUp 800ms var(--ease-out) 200ms forwards;
+  }
+
+  .eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 1px;
+    background: var(--c-cyan);
+    vertical-align: middle;
+    margin-right: 16px;
+  }
+
+  .headline {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5.5vw, 76px);
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1;
+    margin-bottom: 28px;
+  }
+
+  .headline__line {
+    display: block;
+    overflow: hidden;
+  }
+
+  .headline__line span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: lineUp 1000ms var(--ease-out) forwards;
+  }
+
+  .headline__line:nth-child(1) span { animation-delay: 400ms; }
+  .headline__line:nth-child(2) span { animation-delay: 600ms; color: var(--c-mist); }
+
+  @keyframes lineUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .subtitle {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--c-mist);
+    max-width: 440px;
+    margin-bottom: 48px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 800ms var(--ease-out) 1000ms forwards;
+  }
+
+  .subtitle em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--c-copper);
+    font-weight: 400;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 800ms var(--ease-out) 1200ms forwards;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 28px;
+    background: var(--c-cyan);
+    color: var(--c-void);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: var(--radius-pill);
+    transition: all 300ms var(--ease);
+  }
+
+  .cta:hover {
+    background: var(--c-pearl);
+    transform: translateY(-2px);
+  }
+
+  .cta-secondary {
+    color: var(--c-pearl);
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 0;
+    transition: gap 300ms var(--ease);
+  }
+
+  .cta-secondary:hover { gap: 14px; }
+
+  .cta-secondary svg { transition: transform 300ms var(--ease); }
+  .cta-secondary:hover svg { transform: translateX(4px); }
+
+  /* =========================================================
+     RESPONSIVE
+     ========================================================= */
+  @media (max-width: 900px) {
+    .content { max-width: 100%; padding: 0 24px; }
+  }
+
+  /* =========================================================
+     FIX #2 — prefers-reduced-motion
+     Azzera entrance animations (mostra tutto subito) + ferma twinkle.
+     Parallax/auto-cycle vivono nelle isole JS: guard dedicato lì.
+     ========================================================= */
+  @media (prefers-reduced-motion: reduce) {
+    .eyebrow,
+    .headline__line span,
+    .subtitle,
+    .cta-row {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+    .scene::after { animation: none; }
+  }
+</style>
+
+<script>
+  // FIX #1 — parallax leggero di .scene, throttlato a 1 write/frame via rAF.
+  // Off su reduced-motion, pointer coarse (touch) e schermi stretti.
+  const scene = document.querySelector<HTMLElement>(".scene");
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
+
+  if (scene && !prefersReduced && !coarsePointer && window.innerWidth > 900) {
+    let ticking = false;
+    let mx = 0;
+    let my = 0;
+
+    const apply = () => {
+      const x = (mx / window.innerWidth - 0.5) * 20;
+      const y = (my / window.innerHeight - 0.5) * 10;
+      scene.style.transform = `translate(${-x}px, ${-y}px) scale(1.05)`;
+      ticking = false;
+    };
+
+    window.addEventListener("mousemove", (e) => {
+      mx = e.clientX;
+      my = e.clientY;
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(apply);
+      }
+    });
+  }
+</script>

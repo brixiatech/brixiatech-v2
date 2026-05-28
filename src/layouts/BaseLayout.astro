@@ -1,0 +1,51 @@
+---
+// Font self-hosted via Fontsource — migrati qui dalla sonda index.astro.
+import "@fontsource/geist-sans/500.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/jetbrains-mono/400.css";
+import "@fontsource/jetbrains-mono/500.css";
+import "@fontsource/source-serif-4/400-italic.css";
+import "../styles/global.css";
+
+// URL hashato del woff2 LCP-critical (headline hero in Geist 500).
+// Vite dedupe: stesso asset referenziato da 500.css → il preload combacia.
+import geist500 from "@fontsource/geist-sans/files/geist-sans-latin-500-normal.woff2?url";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "BrixiaTech — Vetri che pensano. Edifici che si adattano.",
+  description =
+    "Adaptive architecture: vetri PDLC switchable, hardware embedded e piattaforma cloud predittiva. Un solo stack, dalla pellicola al dashboard. Dal 2017 — focus Milano, Brescia, Bergamo.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#050507" />
+
+    <!-- Preload font LCP-critical: headline hero in Geist 500 -->
+    <link rel="preload" href={geist500} as="font" type="font/woff2" crossorigin />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:site_name" content="BrixiaTech" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

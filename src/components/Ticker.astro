@@ -1,0 +1,127 @@
+---
+// Ticker hero. Portato da brixiatech-hero-v1.html.
+// FIX #5: RIMOSSA la simulazione Math.random — niente numeri che salgono da
+//         soli. Contenuti statici reali (§4 brief). Conseguenza: ZERO JS,
+//         il componente è puramente statico (nessuno <script>).
+// FIX #2: blocco prefers-reduced-motion (stop entrance + pulse).
+// Estetica mantenuta dal prototipo: mono JetBrains, dot cyan pulsante,
+// separatori verticali sottili.
+---
+
+<div class="ticker">
+  <div class="ticker__group">
+    <div class="ticker__item">
+      <span class="ticker__dot"></span>
+      <span class="ticker__value">PDLC SWITCHABLE</span>
+    </div>
+    <div class="ticker__sep"></div>
+    <div class="ticker__item">
+      <span class="ticker__label">GARANZIA</span>
+      <span class="ticker__value">FINO A 7 ANNI</span>
+    </div>
+    <div class="ticker__sep"></div>
+    <div class="ticker__item">
+      <span class="ticker__label">DAL</span>
+      <span class="ticker__value">2017</span>
+    </div>
+    <div class="ticker__sep"></div>
+    <div class="ticker__item">
+      <span class="ticker__value">MILANO · BRESCIA · BERGAMO</span>
+    </div>
+    <div class="ticker__sep"></div>
+    <div class="ticker__item">
+      <span class="ticker__value">PANERAI · ENI · MONDADORI · OTAM</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .ticker {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    border-top: 1px solid rgba(245, 245, 247, 0.08);
+    background: rgba(5, 5, 7, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 20px 48px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    opacity: 0;
+    animation: fadeInUp 1000ms var(--ease-out) 1600ms forwards;
+  }
+
+  .ticker__group {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .ticker__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ticker__label {
+    color: var(--c-mist);
+    letter-spacing: 0.1em;
+    font-size: 10px;
+  }
+
+  .ticker__value {
+    color: var(--c-pearl);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+
+  .ticker__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--c-cyan);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .ticker__sep {
+    width: 1px;
+    height: 12px;
+    background: rgba(245, 245, 247, 0.15);
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+  }
+
+  @keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 900px) {
+    .ticker {
+      padding: 16px 24px;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .ticker__group {
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+  }
+
+  /* FIX #2 — reduced-motion: mostra subito + ferma il dot */
+  @media (prefers-reduced-motion: reduce) {
+    .ticker {
+      animation: none;
+      opacity: 1;
+    }
+    .ticker__dot { animation: none; }
+  }
+</style>
