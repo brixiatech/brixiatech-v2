@@ -3,17 +3,37 @@
 // FIX #4: rimosso `mix-blend-mode: difference` (illeggibile/flicker su skyline).
 // Colore fisso pearl + scrim gradiente sottile come backdrop difensivo:
 // resta leggibile anche quando scorrono sotto sezioni più chiare (post-hero).
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// URL delle due lingue secondo la config di routing (non hardcodare '/' e '/en/')
+const itUrl = getRelativeLocaleUrl('it', '');
+const enUrl = getRelativeLocaleUrl('en', '');
 ---
 
 <nav class="nav">
   <div class="nav__logo">BRIXIATECH</div>
   <ul class="nav__menu">
-    <li><a href="#tecnologie">Tecnologie</a></li>
+    <li><a href="#tecnologie">{t('nav.tech')}</a></li>
     <li><a href="#b-logic">B-LOGIC</a></li>
-    <li><a href="#realizzazioni">Realizzazioni</a></li>
-    <li><a href="#insights">Insights</a></li>
+    <li><a href="#realizzazioni">{t('nav.work')}</a></li>
+    <li><a href="#insights">{t('nav.insights')}</a></li>
   </ul>
-  <a href="#preventivo" class="nav__cta">Preventivo</a>
+  <div class="nav__actions">
+    <a href="#preventivo" class="nav__cta">{t('nav.quote')}</a>
+
+    <div class="nav__lang" aria-label={t('lang.switch')}>
+      <a href={itUrl} class="nav__lang-link" aria-current={lang === 'it' ? 'true' : undefined}>IT</a>
+      <span class="nav__lang-sep" aria-hidden="true">|</span>
+      <a href={enUrl} class="nav__lang-link" aria-current={lang === 'en' ? 'true' : undefined}>EN</a>
+    </div>
+
+    <!-- TODO i18n: switcher path-aware quando il sito avrà più pagine.
+         Oggi (hero single-page) IT→/ e EN→/en/ è corretto. -->
+  </div>
 </nav>
 
 <style>
@@ -75,6 +95,50 @@
   .nav__cta:hover {
     border-color: var(--c-pearl);
     background: rgba(245, 245, 247, 0.06);
+  }
+
+  /* Language switcher — fuori da .nav__menu così resta visibile sotto 900px */
+  .nav__lang {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .nav__lang-link {
+    font-size: 13px;
+    color: var(--c-pearl);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 200ms var(--ease);
+  }
+
+  .nav__lang-link:hover {
+    opacity: 1;
+  }
+
+  .nav__lang-link[aria-current="true"] {
+    opacity: 1;
+    font-weight: 500;
+  }
+
+  /* Focus coerente: la nav non ha stile :focus-visible esistente → outline cyan
+     come GlassDemo (unico precedente interattivo nel progetto). */
+  .nav__lang-link:focus-visible {
+    outline: 2px solid var(--c-cyan);
+    outline-offset: 3px;
+  }
+
+  .nav__lang-sep {
+    color: var(--c-pearl);
+    opacity: 0.3;
+  }
+
+  /* Raggruppa CTA + switcher a destra: .nav torna a 3 figli (logo, menu, actions),
+     così lo space-between non isola più la CTA al centro. */
+  .nav__actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
   }
 
   @media (max-width: 900px) {
