@@ -12,20 +12,24 @@ import "../styles/global.css";
 // Vite dedupe: stesso asset referenziato da 500.css → il preload combacia.
 import geist500 from "@fontsource/geist-sans/files/geist-sans-latin-500-normal.woff2?url";
 
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 interface Props {
   title?: string;
   description?: string;
 }
 
 const {
-  title = "BrixiaTech — Vetri che pensano. Edifici che si adattano.",
-  description =
-    "Adaptive architecture: vetri PDLC switchable, hardware embedded e piattaforma cloud predittiva. Un solo stack, dalla pellicola al dashboard. Dal 2017 — focus Milano, Brescia, Bergamo.",
+  title = t("meta.title"),
+  description = t("meta.description"),
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="it">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -35,12 +39,20 @@ const {
     <meta name="description" content={description} />
     <meta name="theme-color" content="#050507" />
 
+    <!-- Canonical + hreflang (path relativi).
+         TODO STEP 8 — con `site` definito, passare canonical e hreflang a
+         URL assoluti via new URL(path, Astro.site).href -->
+    <link rel="canonical" href={Astro.url.pathname} />
+    <link rel="alternate" hreflang="it" href="/" />
+    <link rel="alternate" hreflang="en" href="/en/" />
+    <link rel="alternate" hreflang="x-default" href="/" />
+
     <!-- Preload font LCP-critical: headline hero in Geist 500 -->
     <link rel="preload" href={geist500} as="font" type="font/woff2" crossorigin />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="it_IT" />
+    <meta property="og:locale" content={t("meta.ogLocale")} />
     <meta property="og:site_name" content="BrixiaTech" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
