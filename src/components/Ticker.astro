@@ -6,6 +6,10 @@
 // FIX #2: blocco prefers-reduced-motion (stop entrance + pulse).
 // Estetica mantenuta dal prototipo: mono JetBrains, dot cyan pulsante,
 // separatori verticali sottili.
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="ticker">
@@ -16,17 +20,17 @@
     </div>
     <div class="ticker__sep"></div>
     <div class="ticker__item">
-      <span class="ticker__label">GARANZIA</span>
-      <span class="ticker__value">FINO A 7 ANNI</span>
+      <span class="ticker__label">{t('ticker.warranty')}</span>
+      <span class="ticker__value">{t('ticker.warrantyValue')}</span>
     </div>
     <div class="ticker__sep"></div>
     <div class="ticker__item">
-      <span class="ticker__label">DAL</span>
+      <span class="ticker__label">{t('ticker.since')}</span>
       <span class="ticker__value">2017</span>
     </div>
     <div class="ticker__sep"></div>
     <div class="ticker__item">
-      <span class="ticker__value">MILANO · BRESCIA · BERGAMO</span>
+      <span class="ticker__value">{t('ticker.cities')}</span>
     </div>
     <div class="ticker__sep"></div>
     <div class="ticker__item">

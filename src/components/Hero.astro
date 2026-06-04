@@ -1,4 +1,8 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 // Hero. Portato da brixiatech-hero-v1.html.
 // Quasi tutto statico; unico JS = parallax leggero di .scene (vedi <script>).
 // Possiede la <section.hero> (contesto di posizionamento) + scena + content
@@ -21,25 +25,24 @@
 
   <!-- Contenuto editoriale -->
   <div class="content">
-    <div class="eyebrow">ADAPTIVE ARCHITECTURE</div>
+    <div class="eyebrow">{t('hero.eyebrow')}</div>
     <h1 class="headline">
-      <span class="headline__line"><span>Vetri che pensano.</span></span>
-      <span class="headline__line"><span>Edifici che si adattano.</span></span>
+      <span class="headline__line"><span>{t('hero.headline1')}</span></span>
+      <span class="headline__line"><span>{t('hero.headline2')}</span></span>
     </h1>
     <p class="subtitle">
-      Building intelligence applicata al primo strato dell'architettura — il
-      vetro. PDLC switchable, hardware embedded, piattaforma cloud predittiva.
-      <em>Un solo stack, dalla pellicola al dashboard.</em>
+      {t('hero.subtitle')}
+      <em>{t('hero.subtitleEmphasis')}</em>
     </p>
     <div class="cta-row">
       <a href="#preventivo" class="cta">
-        Configura un progetto
+        {t('hero.ctaPrimary')}
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
           <path d="M3 7H11M11 7L7 3M11 7L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
         </svg>
       </a>
       <a href="#b-logic" class="cta-secondary">
-        Scopri B-LOGIC
+        {t('hero.ctaSecondary')}
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
           <path d="M3 7H11M11 7L7 3M11 7L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
         </svg>

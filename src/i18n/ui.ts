@@ -33,6 +33,7 @@ export const ui = {
     'ticker.warranty': 'GARANZIA',
     'ticker.warrantyValue': 'FINO A 7 ANNI',
     'ticker.since': 'DAL',
+    'ticker.cities': 'MILANO · BRESCIA · BERGAMO',
 
     // --- GlassDemo ---
     'glass.ariaLabel': 'Attiva/disattiva il vetro PDLC',
@@ -69,6 +70,7 @@ export const ui = {
     'ticker.warranty': 'WARRANTY',
     'ticker.warrantyValue': 'UP TO 7 YEARS',
     'ticker.since': 'SINCE',
+    'ticker.cities': 'MILAN · BRESCIA · BERGAMO',
 
     // --- GlassDemo ---
     'glass.ariaLabel': 'Toggle PDLC glass',

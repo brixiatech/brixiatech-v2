@@ -7,6 +7,10 @@
 //         residui, così non confligge col toggle manuale.
 // FIX #2: sotto prefers-reduced-motion l'auto-cycle NON parte e il count-up
 //         salta al valore finale (il click manuale resta disponibile).
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="glass-stage">
@@ -15,7 +19,7 @@
     id="glass"
     type="button"
     data-state="off"
-    aria-label="Attiva/disattiva il vetro PDLC"
+    aria-label={t('glass.ariaLabel')}
     aria-pressed="false"
   >
     <div class="glass-reflection"></div>
@@ -31,7 +35,7 @@
 
 <!-- Hint interazione -->
 <div class="toggle-hint">
-  <span>CLICK GLASS TO ACTIVATE</span>
+  <span>{t('glass.hint')}</span>
 </div>
 
 <style>
