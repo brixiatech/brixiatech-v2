@@ -51,6 +51,7 @@
 
   /* border hairline su dark (brief: 1px rgba(255,255,255,0.08)) */
   --border-hairline: rgba(255, 255, 255, 0.08);
+  --container-max: 1280px;
 }
 
 /* =========================================================

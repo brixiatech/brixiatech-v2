@@ -1,0 +1,109 @@
+---
+// ClientsStrip — riga loghi clienti, sotto la Hero (primo blocco normal-flow).
+// 6 loghi (Fascia 1) su riga unica, container largo standard (--container-max).
+// ZERO JS. Token --c-*. Reduced-motion + responsive.
+// Immagini via astro:assets <Image>: width/height automatici (anti-CLS) + lazy.
+
+import { Image } from "astro:assets";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+import bugatti from "../assets/clients/bugatti.webp";
+import eni from "../assets/clients/eni.webp";
+import panerai from "../assets/clients/panerai.webp";
+import italdesign from "../assets/clients/italdesign.webp";
+import mondadori from "../assets/clients/mondadori.webp";
+import otam from "../assets/clients/otam.webp";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const clients = [
+  { src: mondadori, name: "Mondadori" },
+  { src: bugatti, name: "Bugatti" },
+  { src: eni, name: "ENI" },
+  { src: otam, name: "OTAM" },
+  { src: panerai, name: "Panerai" },
+  { src: italdesign, name: "Italdesign" },
+];
+---
+
+<section class="clients" aria-labelledby="clients-eyebrow">
+  <p class="clients__eyebrow" id="clients-eyebrow">{t('clients.eyebrow')}</p>
+  <ul class="clients__grid">
+    {clients.map((c) => (
+      <li class="clients__cell">
+        <Image src={c.src} alt={c.name} class="clients__logo" loading="lazy" />
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .clients {
+    padding: 80px 48px;
+    border-top: 1px solid var(--border-hairline);
+  }
+
+  .clients__eyebrow {
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--c-mist);
+    margin: 0 0 48px;
+  }
+
+  .clients__grid {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 40px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .clients__cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .clients__logo {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    opacity: 0.7;
+    transition: opacity 300ms var(--ease);
+  }
+
+  .clients__cell:hover .clients__logo,
+  .clients__cell:focus-within .clients__logo {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .clients__logo {
+      transition: none;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .clients {
+      padding: 56px 24px;
+    }
+    .clients__grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px 24px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .clients__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

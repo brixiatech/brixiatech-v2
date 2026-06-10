@@ -35,6 +35,9 @@ export const ui = {
     'ticker.since': 'DAL',
     'ticker.cities': 'MILANO · BRESCIA · BERGAMO',
 
+    // --- Clients ---
+    'clients.eyebrow': 'HANNO SCELTO BRIXIATECH',
+
     // --- GlassDemo ---
     'glass.ariaLabel': 'Attiva/disattiva il vetro PDLC',
     'glass.transmittance': 'TRANSMITTANCE',
@@ -71,6 +74,9 @@ export const ui = {
     'ticker.warrantyValue': 'UP TO 7 YEARS',
     'ticker.since': 'SINCE',
     'ticker.cities': 'MILAN · BRESCIA · BERGAMO',
+
+    // --- Clients ---
+    'clients.eyebrow': 'TRUSTED BY',
 
     // --- GlassDemo ---
     'glass.ariaLabel': 'Toggle PDLC glass',
