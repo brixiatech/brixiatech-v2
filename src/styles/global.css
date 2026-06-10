@@ -53,6 +53,11 @@
   /* border hairline su dark (brief: 1px rgba(255,255,255,0.08)) */
   --border-hairline: rgba(255, 255, 255, 0.08);
   --container-max: 1280px;
+
+  /* spacing di sezione (desktop; il responsive resta nei componenti) */
+  --space-section-y: 96px;
+  --space-section-y-lg: 120px;
+  --space-section-x: 48px;
 }
 
 /* =========================================================
