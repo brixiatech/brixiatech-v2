@@ -54,6 +54,25 @@ export const ui = {
       "Tende, veneziane, pellicole adesive permanenti, vetri sabbiati: soluzioni statiche per un'esigenza che statica non è. Una superficie vetrata switchable fa entrambe le cose — trasparente o opaca — e si comanda elettricamente.",
     'problem.bridge': 'Come fa un vetro a cambiare stato, e quali tecnologie esistono, lo vediamo qui sotto.',
 
+    // --- How ---
+    'how.eyebrow': 'COME FUNZIONA',
+    'how.title': 'Cristalli liquidi e un impulso elettrico. Nessuna parte in movimento.',
+    'how.lead':
+      "Dietro un vetro che diventa opaco a comando non c'è un meccanismo, ma un materiale che reagisce all'elettricità — nel caso più diffuso, il PDLC. Capire come funziona aiuta a valutare dove conviene e cosa aspettarsi.",
+    'how.mechanism.title': 'Come fa il vetro a diventare opaco e poi di nuovo trasparente?',
+    'how.mechanism.body':
+      "Tra due lastre, o dentro una pellicola, c'è uno strato di cristalli liquidi. Senza alimentazione i cristalli sono disordinati e diffondono la luce: il vetro appare opaco, bianco-lattiginoso. Con un impulso elettrico si allineano e lasciano passare la luce: il vetro diventa trasparente. È un cambiamento di stato del materiale, non un oscuramento meccanico — niente tende, lamelle o parti in movimento. Il passaggio tra i due stati è immediato.",
+    'how.power.title': 'Serve alimentazione per tenerlo trasparente?',
+    'how.power.body':
+      'Nella tecnologia più diffusa sì: il vetro resta trasparente finché è alimentato e torna opaco quando la tensione viene a mancare. Ha un lato pratico — senza alimentazione lo stato di riposo è la privacy. Esistono anche tecnologie a logica inversa, trasparenti da spente: le confrontiamo tra i prodotti.',
+    'how.control.title': 'Come si comanda?',
+    'how.control.body':
+      "Con un segnale elettrico, e qui c'è ampia scelta: interruttore a parete, telecomando, app, oppure in automatico tramite sensori e domotica — in base a luce, presenza o orari. È il livello dove la superficie vetrata smette di essere un componente passivo e diventa governabile.",
+    'how.form.title': "Pellicola o vetro: che differenza c'è?",
+    'how.form.body':
+      "La stessa tecnologia esiste in due forme: una pellicola adesiva applicata su un vetro esistente, e un vetro con il film già integrato tra le lastre in produzione. La pellicola interviene su ciò che c'è già; il vetro stratificato è la via per nuove forniture.",
+    'how.bridge': 'Quale tecnologia conviene per un certo progetto dipende da prestazioni, estetica e budget: le mettiamo a confronto qui sotto.',
+
     // --- Apps ---
     'apps.eyebrow': 'APPLICAZIONI',
     'apps.title':
@@ -128,6 +147,25 @@ export const ui = {
     'problem.static.body':
       "Blinds, permanent adhesive film, sandblasted glass — static answers to a need that isn't static. One switchable surface does both, clear or opaque, controlled electrically.",
     'problem.bridge': 'How the glass changes state, and which technology fits which project, is just below.',
+
+    // --- How ---
+    'how.eyebrow': 'HOW IT WORKS',
+    'how.title': 'Liquid crystals and an electric signal. No moving parts.',
+    'how.lead':
+      "Behind glass that turns opaque on command there's no mechanism — just a material that responds to current, most commonly PDLC. Understanding it helps you judge where it fits and what to expect.",
+    'how.mechanism.title': 'How does the glass switch from opaque to clear?',
+    'how.mechanism.body':
+      "Between two panes — or inside an adhesive film — sits a layer of liquid crystals. With no power the crystals are disordered and scatter light, so the glass looks opaque and milky. An electric signal aligns them and lets light through, turning the glass clear. It's a change of state in the material, not a mechanical blind — no curtains, slats or moving parts. The switch is instant.",
+    'how.power.title': 'Does it need power to stay clear?',
+    'how.power.body':
+      'In the most common technology, yes: the glass stays clear while powered and returns to opaque when the current is off. That has a practical upside — privacy is the default resting state if power is lost. Reverse-logic technologies, clear when off, also exist; we compare them under products.',
+    'how.control.title': 'How is it controlled?',
+    'how.control.body':
+      'By an electrical signal, with plenty of options: wall switch, remote, app, or automatically through sensors and building automation — driven by light, occupancy or schedules. This is where the glazing stops being a passive component and becomes something you govern.',
+    'how.form.title': "Film or glass — what's the difference?",
+    'how.form.body':
+      "The same technology comes in two forms: an adhesive film applied to existing glass, and glass with the film laminated between the panes in production. Film retrofits what's already there; laminated glass is the route for new supply.",
+    'how.bridge': 'Which technology suits a given project depends on performance, look and budget — we compare them just below.',
 
     // --- Apps ---
     'apps.eyebrow': 'APPLICATIONS',
