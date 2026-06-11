@@ -1,0 +1,139 @@
+---
+// ProblemSection.astro — sezione #3 homepage, problema riconoscibile.
+// 3 inquadrature per TIPO di problema (privacy / solar / static), no card, layout editoriale.
+// ZERO JS. Token --c-*. Reduced-motion + responsive coerenti con Applications.
+// Nessuna icona (sezione text-forward, cuore SEO). i18n via problem.* keys.
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const cases = [
+  {
+    titleKey: 'problem.privacy.title',
+    bodyKey: 'problem.privacy.body',
+  },
+  {
+    titleKey: 'problem.solar.title',
+    bodyKey: 'problem.solar.body',
+  },
+  {
+    titleKey: 'problem.static.title',
+    bodyKey: 'problem.static.body',
+  },
+] as const;
+---
+
+<section class="problem" aria-labelledby="problem-eyebrow">
+  <p class="problem__eyebrow" id="problem-eyebrow">{t('problem.eyebrow')}</p>
+  <h2 class="problem__title">{t('problem.title')}</h2>
+  <p class="problem__lead">{t('problem.lead')}</p>
+
+  <div class="problem__grid">
+    {cases.map((c) => (
+      <article class="problem__item">
+        <h3 class="problem__item-title">{t(c.titleKey)}</h3>
+        <p class="problem__item-body">{t(c.bodyKey)}</p>
+      </article>
+    ))}
+  </div>
+
+  <p class="problem__bridge">{t('problem.bridge')}</p>
+</section>
+
+<style>
+  .problem {
+    padding: var(--space-section-y) var(--space-section-x);
+  }
+
+  .problem__eyebrow {
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--c-mist-bright);
+    margin: 0 0 24px;
+  }
+
+  .problem__title {
+    font-family: var(--font-display);
+    color: var(--c-pearl);
+    text-align: center;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.2;
+    max-width: 800px;
+    margin: 0 auto 24px;
+    font-weight: 500;
+  }
+
+  .problem__lead {
+    color: var(--c-mist);
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 64px;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  .problem__grid {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px 40px;
+  }
+
+  .problem__item {
+    text-align: left;
+    border-top: 1px solid var(--border-hairline);
+    padding-top: 24px;
+  }
+
+  .problem__item-title {
+    font-family: var(--font-display);
+    color: var(--c-pearl);
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin: 0 0 12px;
+    line-height: 1.3;
+  }
+
+  .problem__item-body {
+    color: var(--c-mist);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .problem__bridge {
+    color: var(--c-mist);
+    text-align: center;
+    max-width: 680px;
+    margin: 64px auto 0;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  /* Nessuna transition/animazione in questo componente → nulla da neutralizzare.
+     Blocco mantenuto per coerenza con Applications (reduced-motion ready). */
+  @media (prefers-reduced-motion: reduce) {
+    /* no-op */
+  }
+
+  @media (max-width: 900px) {
+    .problem {
+      padding: 56px 24px;
+    }
+    .problem__lead {
+      margin-bottom: 48px;
+    }
+    .problem__grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .problem__bridge {
+      margin-top: 48px;
+    }
+  }
+</style>

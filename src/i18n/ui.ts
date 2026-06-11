@@ -38,6 +38,22 @@ export const ui = {
     // --- Clients ---
     'clients.eyebrow': 'HANNO SCELTO BRIXIATECH',
 
+    // --- Problem ---
+    'problem.eyebrow': 'PRIVACY E LUCE',
+    'problem.title': 'Vetri che diventano opachi a comando. E tornano trasparenti quando vuoi.',
+    'problem.lead':
+      "Una parete vetrata che non protegge dagli sguardi. Il sole che acceca e surriscalda un ufficio per mezza giornata. Tende che ingialliscono, raccolgono polvere e non bastano mai. Problemi diversi, una radice comune: il vetro è fisso, l'ambiente cambia. La risposta non è coprire il vetro, è renderlo regolabile. Esistono superfici vetrate che passano da trasparenti a opache, o si oscurano per schermare luce e calore, con un comando elettrico — a interruttore, da telecomando, da app o in automatico.",
+    'problem.privacy.title': 'Privacy a comando',
+    'problem.privacy.body':
+      "Un open space senza separazioni, un ambulatorio, un'abitazione a piano strada: spazi che a volte servono aperti alla vista, a volte protetti. Un vetro che diventa opaco in un istante copre entrambi i momenti, senza rinunciare alla luce naturale quando non serve schermarsi.",
+    'problem.solar.title': 'Sole, luce e calore',
+    'problem.solar.body':
+      "Vetrate esposte a sud, lucernari, verande: dove il sole entra troppo, oggi si rimedia con tende o pellicole fisse che tolgono luce tutto l'anno. Un vetro che si scherma solo quando il sole lo richiede mantiene la vista e modula abbagliamento e calore.",
+    'problem.static.title': "L'alternativa a tende e vetri smerigliati",
+    'problem.static.body':
+      "Tende, veneziane, pellicole adesive permanenti, vetri sabbiati: soluzioni statiche per un'esigenza che statica non è. Una superficie vetrata switchable fa entrambe le cose — trasparente o opaca — e si comanda elettricamente.",
+    'problem.bridge': 'Come fa un vetro a cambiare stato, e quali tecnologie esistono, lo vediamo qui sotto.',
+
     // --- Apps ---
     'apps.eyebrow': 'APPLICAZIONI',
     'apps.title':
@@ -96,6 +112,22 @@ export const ui = {
 
     // --- Clients ---
     'clients.eyebrow': 'TRUSTED BY',
+
+    // --- Problem ---
+    'problem.eyebrow': 'THE PROBLEM',
+    'problem.title': 'One glazing surface. Clear, private or tinted — on command.',
+    'problem.lead':
+      "A glass façade that offers no privacy. Solar gain that overheats a south-facing office for half the day. Blinds that age, gather dust and never quite work. Different problems, one root cause: the glass is fixed, the building isn't. Electrochromic and switchable glass — smart film included — turn a static pane into a surface you control electrically: by switch, remote, app or automatically.",
+    'problem.privacy.title': 'Privacy on demand',
+    'problem.privacy.body':
+      "Open-plan floors, clinics, street-level homes — spaces that need to be open to view at times, screened at others. Glass that turns opaque in an instant covers both, without giving up daylight when privacy isn't needed.",
+    'problem.solar.title': 'Solar and glare control',
+    'problem.solar.body':
+      'South-facing glazing, skylights, atriums where too much sun gets in — today the fix is blinds or fixed film that cut light all year round. Glass that tints only when the sun calls for it keeps the view and modulates glare and heat.',
+    'problem.static.title': 'The alternative to blinds and frosted glass',
+    'problem.static.body':
+      "Blinds, permanent adhesive film, sandblasted glass — static answers to a need that isn't static. One switchable surface does both, clear or opaque, controlled electrically.",
+    'problem.bridge': 'How the glass changes state, and which technology fits which project, is just below.',
 
     // --- Apps ---
     'apps.eyebrow': 'APPLICATIONS',
