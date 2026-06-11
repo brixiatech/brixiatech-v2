@@ -73,6 +73,34 @@ export const ui = {
       "La stessa tecnologia esiste in due forme: una pellicola adesiva applicata su un vetro esistente, e un vetro con il film già integrato tra le lastre in produzione. La pellicola interviene su ciò che c'è già; il vetro stratificato è la via per nuove forniture.",
     'how.bridge': 'Quale tecnologia conviene per un certo progetto dipende da prestazioni, estetica e budget: le mettiamo a confronto qui sotto.',
 
+    // --- Tech ---
+    'tech.eyebrow': 'TECNOLOGIE',
+    'tech.title': 'Sei tecnologie switchable. Quella giusta dipende dal progetto.',
+    'tech.lead':
+      "Non esiste un'unica tecnologia per i vetri intelligenti, ma una famiglia di soluzioni con principi diversi. Alcune servono la privacy, altre governano luce e calore. Scegliamo — e forniamo — quella giusta per ogni progetto, dalla pellicola al vetro stratificato.",
+    'tech.family1.label': 'Privacy a comando',
+    'tech.pdlc.title': 'PDLC',
+    'tech.pdlc.body':
+      'Lo standard più diffuso dello switchable: opaco a riposo, trasparente quando alimentato. La scelta per privacy istantanea e pareti divisorie, disponibile come pellicola o come vetro.',
+    'tech.pnlc.title': 'PNLC (reverse)',
+    'tech.pnlc.body':
+      'La logica inversa del PDLC: trasparente da spento, opaco sotto alimentazione. Pensato per chi resta trasparente la maggior parte del tempo e per i contesti fail-safe, dove in un blackout il vetro deve tornare visibile — vie di fuga, mezzi di soccorso.',
+    'tech.family2.label': 'Controllo di luce e calore',
+    'tech.spd.title': 'SPD',
+    'tech.spd.body':
+      "Oscuramento variabile e continuo, regolabile come un reostato in pochi secondi, da una tinta scura profonda alla trasparenza. Eccelle nel controllo dell'abbagliamento mantenendo la vista verso l'esterno.",
+    'tech.ec.title': 'Elettrocromico',
+    'tech.ec.body':
+      'Viraggio graduale a bassissimo voltaggio tramite reazione elettrochimica: il vetro si colora e si schiarisce, e mantiene lo stato senza consumare energia. La scelta per il controllo termico e solare passivo di facciate ed edifici ad alta efficienza.',
+    'tech.dlc.title': 'DLC',
+    'tech.dlc.body':
+      'Cristalli liquidi dicroici che assorbono la luce invece di diffonderla: il vetro vira a una tinta fumé anziché diventare lattiginoso. Riduce abbagliamento e calore solare, con rese estetiche in più colorazioni.',
+    'tech.clc.title': 'CLC',
+    'tech.clc.body':
+      "Cristalli liquidi colesterici a riflessione selettiva, bistabili: mantengono lo stato senza alimentazione continua, consumando solo allo switch. Agiscono come scudo termico dinamico, riflettendo l'energia solare invece di assorbirla.",
+    'tech.channel':
+      'Tutte queste tecnologie sono disponibili anche come sola pellicola da stratificare, fornite a vetrai e serramentisti che le integrano nei propri manufatti.',
+
     // --- Apps ---
     'apps.eyebrow': 'APPLICAZIONI',
     'apps.title':
@@ -166,6 +194,34 @@ export const ui = {
     'how.form.body':
       "The same technology comes in two forms: an adhesive film applied to existing glass, and glass with the film laminated between the panes in production. Film retrofits what's already there; laminated glass is the route for new supply.",
     'how.bridge': 'Which technology suits a given project depends on performance, look and budget — we compare them just below.',
+
+    // --- Tech ---
+    'tech.eyebrow': 'TECHNOLOGIES',
+    'tech.title': 'Six switchable technologies. The right one depends on the project.',
+    'tech.lead':
+      "There isn't one smart-glass technology but a family of solutions built on different principles. Some deliver privacy, others manage light and solar heat. We select — and supply — the right one for each project, from film to laminated glass.",
+    'tech.family1.label': 'Privacy on demand',
+    'tech.pdlc.title': 'PDLC',
+    'tech.pdlc.body':
+      'The most common switchable standard: opaque at rest, clear when powered. The go-to for instant privacy and partition walls, available as film or glass.',
+    'tech.pnlc.title': 'PNLC (reverse)',
+    'tech.pnlc.body':
+      "PDLC's reverse logic: clear when off, opaque when powered. Built for surfaces that stay clear most of the time, and for fail-safe contexts where a power loss must leave the glass transparent — escape routes, vehicles.",
+    'tech.family2.label': 'Light and heat control',
+    'tech.spd.title': 'SPD',
+    'tech.spd.body':
+      'Variable, continuous dimming you adjust like a dial in seconds — from deep tint to clear. Excels at glare control while keeping the view outward.',
+    'tech.ec.title': 'Electrochromic',
+    'tech.ec.body':
+      'Electrochromic glass shifts its tint through a low-voltage electrochemical reaction, then holds that state with virtually no power. The choice for passive solar and thermal control on façades, curtain walls and high-efficiency buildings.',
+    'tech.dlc.title': 'DLC',
+    'tech.dlc.body':
+      'Dichroic liquid crystals that absorb light rather than scatter it: the glass tints to a smoked finish instead of turning milky. Cuts glare and solar heat, with finishes in several tones.',
+    'tech.clc.title': 'CLC',
+    'tech.clc.body':
+      'Cholesteric liquid crystals with selective reflection, bistable: they hold their state without continuous power, drawing energy only when switching. A dynamic thermal shield that reflects solar energy rather than absorbing it.',
+    'tech.channel':
+      "All of these are also available as film for lamination, supplied to glaziers and window fabricators who build them into their own units.",
 
     // --- Apps ---
     'apps.eyebrow': 'APPLICATIONS',
