@@ -120,6 +120,25 @@ export const ui = {
     'apps.hospitality.body':
       "Suite d'albergo, ville e attici dove il vetro che si oscura con un comando — o automaticamente, integrato nella domotica — diventa parte dell'esperienza. Dalla camera che si vela per la notte alla vetrata che oscura la vista sulla piscina.",
 
+    // --- FAQ (#10) ---
+    'faq.eyebrow': 'DOMANDE FREQUENTI',
+    'faq.title': 'Le domande che ci fanno più spesso.',
+    'faq.lead': 'Vetri e pellicole switchable: costi, controllo, durata e installazione, spiegati in breve.',
+    'faq.q1': 'Quanto costa un vetro o una pellicola che si oscura?',
+    'faq.a1': "Non lavoriamo a listino: ogni fornitura è un progetto a sé. Il costo dipende dalla tecnologia scelta, dalle dimensioni e dalla geometria delle superfici, dagli accessori e dall'eventuale automazione. Per questo preferiamo studiare il caso reale: scrivici una mail o un messaggio con qualche dettaglio e ti prepariamo un preventivo su misura.",
+    'faq.q2': 'In quali zone installate?',
+    'faq.a2': "Operiamo in tutto il centro-nord Italia, con base in provincia di Brescia. Le nostre aree principali sono Milano, Brescia e Bergamo, ma seguiamo progetti sull'intero territorio. Per sedi fuori area valutiamo caso per caso in fase di sopralluogo.",
+    'faq.q3': 'Quanto dura e che garanzia offre lo smart glass?',
+    'faq.a3': 'Offriamo una garanzia fino a 7 anni sui prodotti switchable. Installiamo vetri e pellicole intelligenti dal 2017 e selezioniamo materiali pensati per durare nel tempo in contesti professionali. La durata effettiva dipende da esposizione, uso e tecnologia.',
+    'faq.q4': 'Si può controllare da telecomando, app o impianto domotico?',
+    'faq.a4': 'Sì. Le superfici si comandano con interruttore, telecomando, app e integrazione domotica tramite la nostra piattaforma B-LOGIC. Puoi gestire un singolo vetro o coordinare intere vetrate e scenari su più ambienti.',
+    'faq.q5': 'Il vetro resta trasparente se manca la corrente?',
+    'faq.a5': "Dipende dalla tecnologia. Nella versione più diffusa (PDLC standard) il vetro torna opaco in assenza di alimentazione; nella versione “reverse” torna invece trasparente. Quest'ultima si sceglie dove la trasparenza serve per sicurezza, come vie di fuga e ambienti che devono restare leggibili in caso di blackout.",
+    'faq.q6': 'Smart glass, smart film, PDLC e switchable sono la stessa cosa?',
+    'faq.a6': "Sono termini che ruotano intorno alla stessa idea: una superficie che passa da trasparente a opaca con un comando elettrico. “Smart glass” è il vetro intelligente già pronto; “smart film” o pellicola è lo strato da applicare su un vetro esistente; “PDLC” e “switchable” indicano la tecnologia che rende possibile il passaggio. Scegliamo l'una o l'altra in base al progetto.",
+    'faq.q7': 'Si applica sui vetri esistenti o serve cambiare il serramento?',
+    'faq.a7': 'Entrambe le strade sono possibili. La pellicola switchable si applica sul vetro già installato, senza sostituire il serramento; in alternativa forniamo vetrocamera intelligente completa per nuove installazioni o ristrutturazioni. La scelta dipende dallo stato del vetro esistente e dal risultato estetico desiderato.',
+
     // --- GlassDemo ---
     'glass.ariaLabel': 'Attiva/disattiva il vetro PDLC',
     'glass.transmittance': 'TRANSMITTANCE',
@@ -241,6 +260,25 @@ export const ui = {
     'apps.hospitality.title': 'Hospitality & high-end residences',
     'apps.hospitality.body':
       "Hotel suites, villas and penthouses where glass that dims on command — or automatically, tied into the building's automation — becomes part of the experience. From a bedroom that veils for the night to a glazed wall that screens the view over the pool.",
+
+    // --- FAQ (#10) ---
+    'faq.eyebrow': 'FAQ',
+    'faq.title': 'The questions we hear most.',
+    'faq.lead': 'Switchable glass and film: cost, control, lifespan and installation, explained briefly.',
+    'faq.q1': 'How much does switchable glass or film cost?',
+    'faq.a1': "We don't work from a price list: every supply is its own project. Cost depends on the technology, the size and geometry of the surfaces, the accessories and any automation. That's why we prefer to study the actual case — send us an email or a message with a few details and we'll prepare a tailored quote.",
+    'faq.q2': 'Which areas do you cover?',
+    'faq.a2': 'We operate across northern Italy, based near Brescia, and follow cross-border projects in reachable European markets. Any location outside our core area is assessed individually at the survey stage.',
+    'faq.q3': 'How long does it last, and what warranty do you offer?',
+    'faq.a3': "We offer a warranty of up to 7 years on switchable products. We've been installing smart glass and film since 2017 and select materials built to last in professional settings. Actual lifespan depends on exposure, use and technology.",
+    'faq.q4': 'Can it be controlled by remote, app or building automation?',
+    'faq.a4': 'Yes. Surfaces can be operated by switch, remote, app and building-automation integration through our B-LOGIC platform. You can control a single pane or coordinate entire glazed areas and scenes across multiple rooms.',
+    'faq.q5': 'Does the glass stay clear if the power fails?',
+    'faq.a5': 'It depends on the technology. In the most common version (standard PDLC) the glass turns opaque without power; in the “reverse” version it stays clear instead. The latter is chosen where transparency is required for safety, such as escape routes and spaces that must stay legible during a blackout.',
+    'faq.q6': 'Are smart glass, smart film, switchable and electrochromic the same thing?',
+    'faq.a6': 'They orbit the same idea: a surface that switches between clear and opaque — or light and dark — on electrical command. “Smart glass” is the finished intelligent pane; “smart film” is the layer applied to existing glass; “switchable”, “PDLC” and “electrochromic” name the technologies that make it possible, each suited to different needs.',
+    'faq.q7': 'Can it be applied to existing glass, or do I need to replace the window?',
+    'faq.a7': 'Both routes are possible. Switchable film is applied to the existing glass without replacing the frame; alternatively we supply complete smart insulated glazing for new installations or renovations. The choice depends on the condition of the existing glass and the desired aesthetic result.',
 
     // --- GlassDemo ---
     'glass.ariaLabel': 'Toggle PDLC glass',

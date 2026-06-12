@@ -1,0 +1,121 @@
+---
+// FAQ.astro — Sezione #10 Domande frequenti (powerhouse AEO)
+// Struttura: eyebrow → title → lead → stack a 1 colonna di 7 coppie Q/A, tutte visibili
+// ZERO JS + token --c-*; emette schema FAQPage (JSON-LD) localizzato dalle stesse chiavi i18n
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const faqs = [
+  { qKey: "faq.q1", aKey: "faq.a1" },
+  { qKey: "faq.q2", aKey: "faq.a2" },
+  { qKey: "faq.q3", aKey: "faq.a3" },
+  { qKey: "faq.q4", aKey: "faq.a4" },
+  { qKey: "faq.q5", aKey: "faq.a5" },
+  { qKey: "faq.q6", aKey: "faq.a6" },
+  { qKey: "faq.q7", aKey: "faq.a7" },
+] as const;
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: t(f.qKey),
+    acceptedAnswer: { "@type": "Answer", text: t(f.aKey) },
+  })),
+};
+---
+
+<section class="faq" aria-labelledby="faq-eyebrow">
+  <div class="faq__inner">
+    <p class="faq__eyebrow" id="faq-eyebrow">{t("faq.eyebrow")}</p>
+    <h2 class="faq__title">{t("faq.title")}</h2>
+    <p class="faq__lead">{t("faq.lead")}</p>
+
+    <div class="faq__list">
+      {faqs.map((f) => (
+        <div class="faq__item">
+          <h3 class="faq__q">{t(f.qKey)}</h3>
+          <p class="faq__a">{t(f.aKey)}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} is:inline />
+</section>
+
+<style>
+  .faq {
+    padding: var(--space-section-y) var(--space-section-x);
+    background: var(--c-void);
+  }
+  .faq__inner { max-width: var(--container-max); margin: 0 auto; }
+  .faq__eyebrow {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--c-mist-bright);
+    text-align: center;
+  }
+  .faq__title {
+    margin: 16px 0 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.2;
+    font-weight: 500;
+    color: var(--c-pearl);
+    text-align: center;
+  }
+  .faq__lead {
+    margin: 16px auto 0;
+    max-width: 680px;
+    color: var(--c-mist);
+    text-align: center;
+    line-height: 1.6;
+  }
+  .faq__list {
+    margin: 64px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .faq__item {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 48px;
+    align-items: start;
+    border-top: 1px solid var(--border-hairline);
+    padding-top: 24px;
+  }
+  .faq__q {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--c-pearl);
+    line-height: 1.4;
+  }
+  .faq__a {
+    margin: 0;
+    color: var(--c-mist);
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  /* nessuna animazione in questa sezione → no-op (coerenza con le altre sezioni) */
+  @media (prefers-reduced-motion: reduce) { /* no-op */ }
+
+  @media (max-width: 900px) {
+    .faq { padding: var(--space-section-y) 24px; }
+    .faq__list { margin-top: 48px; }
+    .faq__item { grid-template-columns: 1fr; gap: 12px; }
+  }
+  @media (max-width: 560px) {
+    .faq { padding: 56px 24px; }
+    .faq__q { font-size: 1rem; }
+  }
+</style>
