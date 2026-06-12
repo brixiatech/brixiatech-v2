@@ -1,0 +1,121 @@
+---
+// BLogic.astro — Sezione #8 B-LOGIC (il livello intelligente)
+// Struttura: eyebrow → title → lead → griglia 2×2 di 4 blocchi di valore (indice mono 01–04) → ponte
+// ZERO JS + token --c-*; nessuna cifra (vincolo narrativo), profondità rinviata a pagina dedicata futura
+// icone: nessuna; copy localizzato via chiavi i18n blogic.* (IT/EN simmetriche)
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const features = [
+  { titleKey: "blogic.i1.title", bodyKey: "blogic.i1.body" },
+  { titleKey: "blogic.i2.title", bodyKey: "blogic.i2.body" },
+  { titleKey: "blogic.i3.title", bodyKey: "blogic.i3.body" },
+  { titleKey: "blogic.i4.title", bodyKey: "blogic.i4.body" },
+] as const;
+---
+
+<section class="blogic" aria-labelledby="blogic-eyebrow">
+  <div class="blogic__inner">
+    <p class="blogic__eyebrow" id="blogic-eyebrow">{t("blogic.eyebrow")}</p>
+    <h2 class="blogic__title">{t("blogic.title")}</h2>
+    <p class="blogic__lead">{t("blogic.lead")}</p>
+
+    <div class="blogic__grid">
+      {features.map((f, i) => (
+        <div class="blogic__item">
+          <span class="blogic__index">{String(i + 1).padStart(2, "0")}</span>
+          <h3 class="blogic__item-title">{t(f.titleKey)}</h3>
+          <p class="blogic__item-body">{t(f.bodyKey)}</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="blogic__bridge">{t("blogic.bridge")}</p>
+  </div>
+</section>
+
+<style>
+  .blogic {
+    padding: var(--space-section-y) var(--space-section-x);
+    background: var(--c-void);
+  }
+  .blogic__inner { max-width: var(--container-max); margin: 0 auto; }
+  .blogic__eyebrow {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--c-mist-bright);
+    text-align: center;
+  }
+  .blogic__title {
+    margin: 16px 0 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.2;
+    font-weight: 500;
+    color: var(--c-pearl);
+    text-align: center;
+  }
+  .blogic__lead {
+    margin: 16px auto 0;
+    max-width: 680px;
+    color: var(--c-mist);
+    text-align: center;
+    line-height: 1.6;
+  }
+  .blogic__grid {
+    margin: 64px 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 48px;
+    row-gap: 48px;
+    align-items: start;
+  }
+  .blogic__item {
+    border-top: 1px solid var(--border-hairline);
+    padding-top: 24px;
+  }
+  .blogic__index {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--c-cyan);
+    margin-bottom: 12px;
+  }
+  .blogic__item-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--c-pearl);
+    line-height: 1.4;
+  }
+  .blogic__item-body {
+    margin: 12px 0 0;
+    color: var(--c-mist);
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+  .blogic__bridge {
+    margin: 56px auto 0;
+    max-width: 680px;
+    text-align: center;
+    color: var(--c-mist);
+    line-height: 1.6;
+  }
+
+  /* nessuna animazione in questa sezione → no-op (coerenza con le altre sezioni) */
+  @media (prefers-reduced-motion: reduce) { /* no-op */ }
+
+  @media (max-width: 900px) {
+    .blogic { padding: var(--space-section-y) 24px; }
+    .blogic__grid { grid-template-columns: 1fr; row-gap: 40px; margin-top: 48px; }
+  }
+  @media (max-width: 560px) {
+    .blogic { padding: 56px 24px; }
+  }
+</style>

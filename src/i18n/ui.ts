@@ -120,6 +120,20 @@ export const ui = {
     'apps.hospitality.body':
       "Suite d'albergo, ville e attici dove il vetro che si oscura con un comando — o automaticamente, integrato nella domotica — diventa parte dell'esperienza. Dalla camera che si vela per la notte alla vetrata che oscura la vista sulla piscina.",
 
+    // --- B-LOGIC ---
+    'blogic.eyebrow': 'B-LOGIC',
+    'blogic.title': 'Il vetro cambia stato. B-LOGIC decide quando.',
+    'blogic.lead': 'B-LOGIC è la piattaforma che trasforma i vetri switchable da superfici a comando in superfici che si regolano da sole e dialogano con l’edificio.',
+    'blogic.i1.title': 'Si regola da solo',
+    'blogic.i1.body': 'L’opacità segue la luce e il sole nell’arco della giornata, senza toccare un interruttore. Quando qualcuno interviene a mano, B-LOGIC tiene conto di quella scelta.',
+    'blogic.i2.title': 'Dialoga con l’edificio',
+    'blogic.i2.body': 'Si integra con i sistemi di gestione dell’edificio (BMS) e coordina intere facciate come un’unica superficie, non come vetri isolati.',
+    'blogic.i3.title': 'Efficienza che si misura',
+    'blogic.i3.body': 'Ogni nodo registra come il vetro lavora nel tempo. Il risparmio non resta una promessa: è un dato verificabile, utile per certificazioni energetiche e report ESG.',
+    'blogic.i4.title': 'Nato per la scala',
+    'blogic.i4.body': 'Un solo livello di controllo governa molti vetri, su più edifici, con aggiornamenti distribuiti da remoto. Piattaforma italiana, sviluppata internamente.',
+    'blogic.bridge': 'È il livello che porta i vetri switchable dentro la logica dell’edificio. Per vederlo in funzione, parliamone.',
+
     // --- FAQ (#10) ---
     'faq.eyebrow': 'DOMANDE FREQUENTI',
     'faq.title': 'Le domande che ci fanno più spesso.',
@@ -260,6 +274,20 @@ export const ui = {
     'apps.hospitality.title': 'Hospitality & high-end residences',
     'apps.hospitality.body':
       "Hotel suites, villas and penthouses where glass that dims on command — or automatically, tied into the building's automation — becomes part of the experience. From a bedroom that veils for the night to a glazed wall that screens the view over the pool.",
+
+    // --- B-LOGIC ---
+    'blogic.eyebrow': 'B-LOGIC',
+    'blogic.title': 'The glass changes state. B-LOGIC decides when.',
+    'blogic.lead': 'B-LOGIC is the platform that turns switchable glazing from surfaces you operate into surfaces that regulate themselves and talk to the building.',
+    'blogic.i1.title': 'It regulates itself',
+    'blogic.i1.body': 'Opacity follows daylight and sun through the day, with no switch to touch. When someone overrides it by hand, B-LOGIC takes that choice into account.',
+    'blogic.i2.title': 'It talks to the building',
+    'blogic.i2.body': 'It integrates with building management systems (BMS) and coordinates entire façades as a single surface, not as isolated panes.',
+    'blogic.i3.title': 'Efficiency you can measure',
+    'blogic.i3.body': 'Every node records how the glass performs over time. The saving stays verifiable rather than promised — useful for energy certifications and ESG reporting.',
+    'blogic.i4.title': 'Built to scale',
+    'blogic.i4.body': 'A single control layer governs many panes, across multiple buildings, with updates pushed remotely. An Italian platform, developed in-house.',
+    'blogic.bridge': 'It is the layer that brings switchable glazing into the logic of the building. To see it running, let’s talk.',
 
     // --- FAQ (#10) ---
     'faq.eyebrow': 'FAQ',
