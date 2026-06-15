@@ -134,6 +134,19 @@ export const ui = {
     'blogic.i4.body': 'Un solo livello di controllo governa molti vetri, su più edifici, con aggiornamenti distribuiti da remoto. Piattaforma italiana, sviluppata internamente.',
     'blogic.bridge': 'È il livello che porta i vetri switchable dentro la logica dell’edificio. Per vederlo in funzione, parliamone.',
 
+    // --- Affidabilità (#9) ---
+    'trust.eyebrow': 'PERCHÉ BRIXIATECH',
+    'trust.title': 'Dal 2019 progettiamo, forniamo e installiamo smart glass.',
+    'trust.lead': 'Non rivendiamo soltanto pellicole switchable: selezioniamo i materiali, li forniamo a vetrai e serramentisti e li installiamo. Una sola filiera, dal vetro al cantiere, nel centro-nord Italia.',
+    'trust.i1.title': 'Filiera completa',
+    'trust.i1.body': 'Fornitura, posa e canale wholesale di pellicole switchable, vetri smart ed elettrocromici. Un solo interlocutore, dal materiale all’installazione.',
+    'trust.i2.title': 'Materiali certificati',
+    'trust.i2.body': 'Installiamo film e vetri di grado ottico, con protezione UV fino al 99% e certificazioni internazionali sui materiali impiegati.',
+    'trust.i3.title': 'Garanzia e assistenza',
+    'trust.i3.body': 'Garanzia fino a 7 anni e assistenza post-vendita diretta. Un riferimento stabile nel tempo, non un fornitore occasionale.',
+    'trust.i4.title': 'Sul territorio',
+    'trust.i4.body': 'Operativi soprattutto su Milano, Brescia e Bergamo e in tutto il nord Italia. Seguiamo progetti anche nel resto d’Italia, in Svizzera e in Europa, in base al progetto.',
+
     // --- FAQ (#10) ---
     'faq.eyebrow': 'DOMANDE FREQUENTI',
     'faq.title': 'Le domande che ci fanno più spesso.',
@@ -288,6 +301,19 @@ export const ui = {
     'blogic.i4.title': 'Built to scale',
     'blogic.i4.body': 'A single control layer governs many panes, across multiple buildings, with updates pushed remotely. An Italian platform, developed in-house.',
     'blogic.bridge': 'It is the layer that brings switchable glazing into the logic of the building. To see it running, let’s talk.',
+
+    // --- Trust (#9) ---
+    'trust.eyebrow': 'WHY BRIXIATECH',
+    'trust.title': 'Designing, supplying and installing smart glass since 2019.',
+    'trust.lead': 'We don’t just resell switchable film: we select the materials, supply the trade, and install. One supply chain, from glass to site, across northern Italy — with projects open to Switzerland and Europe.',
+    'trust.i1.title': 'End-to-end supply chain',
+    'trust.i1.body': 'Supply, installation and a wholesale channel for switchable film, smart glass and electrochromic glazing. One partner, from material to fitting.',
+    'trust.i2.title': 'Certified materials',
+    'trust.i2.body': 'We install optical-grade film and glass, with up to 99% UV blocking and international certifications on the materials we use.',
+    'trust.i3.title': 'Warranty and support',
+    'trust.i3.body': 'Up to 7 years’ warranty and direct after-sales support. A stable reference over time, not a one-off supplier.',
+    'trust.i4.title': 'Where we work',
+    'trust.i4.body': 'Working mainly across northern Italy — Milan, Brescia, Bergamo — with projects elsewhere in Italy, Switzerland and Europe, depending on scope.',
 
     // --- FAQ (#10) ---
     'faq.eyebrow': 'FAQ',

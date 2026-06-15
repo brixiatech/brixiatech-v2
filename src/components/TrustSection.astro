@@ -1,0 +1,111 @@
+---
+// TrustSection.astro — Sezione #9 Affidabilità (perché scegliere BrixiaTech)
+// Struttura: eyebrow → title → lead → griglia 2×2 di 4 blocchi di valore (indice mono 01–04)
+// ZERO JS + token --c-*; leva = filiera completa; nessuna cifra salvo "fino a 7 anni" e "UV fino al 99%"
+// icone: nessuna; copy localizzato via chiavi i18n trust.* (IT/EN simmetriche)
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const features = [
+  { titleKey: "trust.i1.title", bodyKey: "trust.i1.body" },
+  { titleKey: "trust.i2.title", bodyKey: "trust.i2.body" },
+  { titleKey: "trust.i3.title", bodyKey: "trust.i3.body" },
+  { titleKey: "trust.i4.title", bodyKey: "trust.i4.body" },
+] as const;
+---
+
+<section class="trust" aria-labelledby="trust-eyebrow">
+  <div class="trust__inner">
+    <p class="trust__eyebrow" id="trust-eyebrow">{t("trust.eyebrow")}</p>
+    <h2 class="trust__title">{t("trust.title")}</h2>
+    <p class="trust__lead">{t("trust.lead")}</p>
+
+    <div class="trust__grid">
+      {features.map((f, i) => (
+        <div class="trust__item">
+          <span class="trust__index">{String(i + 1).padStart(2, "0")}</span>
+          <h3 class="trust__item-title">{t(f.titleKey)}</h3>
+          <p class="trust__item-body">{t(f.bodyKey)}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .trust {
+    padding: var(--space-section-y) var(--space-section-x);
+  }
+  .trust__inner { max-width: var(--container-max); margin: 0 auto; }
+  .trust__eyebrow {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--c-mist-bright);
+    text-align: center;
+  }
+  .trust__title {
+    margin: 16px 0 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.2;
+    font-weight: 500;
+    color: var(--c-pearl);
+    text-align: center;
+  }
+  .trust__lead {
+    margin: 16px auto 0;
+    max-width: 680px;
+    color: var(--c-mist);
+    text-align: center;
+    line-height: 1.6;
+  }
+  .trust__grid {
+    margin: 64px 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 48px;
+    row-gap: 48px;
+    align-items: start;
+  }
+  .trust__item {
+    border-top: 1px solid var(--border-hairline);
+    padding-top: 24px;
+  }
+  .trust__index {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--c-cyan);
+    margin-bottom: 12px;
+  }
+  .trust__item-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--c-pearl);
+    line-height: 1.4;
+  }
+  .trust__item-body {
+    margin: 12px 0 0;
+    color: var(--c-mist);
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  /* nessuna animazione in questa sezione → no-op (coerenza con le altre sezioni) */
+  @media (prefers-reduced-motion: reduce) { /* no-op */ }
+
+  @media (max-width: 900px) {
+    .trust { padding: var(--space-section-y) 24px; }
+    .trust__grid { grid-template-columns: 1fr; row-gap: 40px; margin-top: 48px; }
+  }
+  @media (max-width: 560px) {
+    .trust { padding: 56px 24px; }
+  }
+</style>
