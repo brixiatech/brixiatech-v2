@@ -149,7 +149,7 @@ export const ui = {
 
     // --- FAQ (#10) ---
     'faq.eyebrow': 'DOMANDE FREQUENTI',
-    'faq.title': 'Le domande che ci fanno più spesso.',
+    'faq.title': 'Tutto quello che serve sapere, prima di chiedere un preventivo.',
     'faq.lead': 'Vetri e pellicole switchable: costi, controllo, durata e installazione, spiegati in breve.',
     'faq.q1': 'Quanto costa un vetro o una pellicola che si oscura?',
     'faq.a1': "Non lavoriamo a listino: ogni fornitura è un progetto a sé. Il costo dipende dalla tecnologia scelta, dalle dimensioni e dalla geometria delle superfici, dagli accessori e dall'eventuale automazione. Per questo preferiamo studiare il caso reale: scrivici una mail o un messaggio con qualche dettaglio e ti prepariamo un preventivo su misura.",
@@ -317,7 +317,7 @@ export const ui = {
 
     // --- FAQ (#10) ---
     'faq.eyebrow': 'FAQ',
-    'faq.title': 'The questions we hear most.',
+    'faq.title': 'What to know before requesting a quote.',
     'faq.lead': 'Switchable glass and film: cost, control, lifespan and installation, explained briefly.',
     'faq.q1': 'How much does switchable glass or film cost?',
     'faq.a1': "We don't work from a price list: every supply is its own project. Cost depends on the technology, the size and geometry of the surfaces, the accessories and any automation. That's why we prefer to study the actual case — send us an email or a message with a few details and we'll prepare a tailored quote.",
