@@ -166,6 +166,17 @@ export const ui = {
     'faq.q7': 'Si applica sui vetri esistenti o serve cambiare il serramento?',
     'faq.a7': 'Entrambe le strade sono possibili. La pellicola switchable si applica sul vetro già installato, senza sostituire il serramento; in alternativa forniamo vetrocamera intelligente completa per nuove installazioni o ristrutturazioni. La scelta dipende dallo stato del vetro esistente e dal risultato estetico desiderato.',
 
+    // --- Contatti (#11) ---
+    'contact.eyebrow': 'PARLIAMO DEL TUO PROGETTO',
+    'contact.title': 'Richiedi un preventivo su misura.',
+    'contact.lead': 'Ogni intervento parte dal progetto: superfici, tecnologia, integrazione. Raccontaci cosa ti serve e ti rispondiamo con una proposta dedicata.',
+    'contact.c1.title': 'Progetti e preventivi',
+    'contact.c1.body': 'Per uffici, architettura, hospitality e residenziale di pregio. Scrivici o chiamaci, valutiamo insieme la soluzione.',
+    'contact.c2.title': 'Partner e wholesale',
+    'contact.c2.body': 'Sei un serramentista, un vetraio o un posatore? Forniamo pellicole e vetro switchable, con supporto tecnico per integrare le PDLC nel tuo catalogo.',
+    'contact.c3.title': 'WhatsApp diretto',
+    'contact.c3.body': 'Per un primo contatto rapido, scrivici su WhatsApp.',
+
     // --- GlassDemo ---
     'glass.ariaLabel': 'Attiva/disattiva il vetro PDLC',
     'glass.transmittance': 'TRANSMITTANCE',
@@ -333,6 +344,17 @@ export const ui = {
     'faq.a6': 'They orbit the same idea: a surface that switches between clear and opaque — or light and dark — on electrical command. “Smart glass” is the finished intelligent pane; “smart film” is the layer applied to existing glass; “switchable”, “PDLC” and “electrochromic” name the technologies that make it possible, each suited to different needs.',
     'faq.q7': 'Can it be applied to existing glass, or do I need to replace the window?',
     'faq.a7': 'Both routes are possible. Switchable film is applied to the existing glass without replacing the frame; alternatively we supply complete smart insulated glazing for new installations or renovations. The choice depends on the condition of the existing glass and the desired aesthetic result.',
+
+    // --- Contact (#11) ---
+    'contact.eyebrow': "LET'S TALK ABOUT YOUR PROJECT",
+    'contact.title': 'Request a tailored quote.',
+    'contact.lead': "Every project starts from the brief: surfaces, technology, integration. Tell us what you need and we'll come back with a dedicated proposal.",
+    'contact.c1.title': 'Projects and quotes',
+    'contact.c1.body': 'For offices, architecture, hospitality and high-end residential. Write or call us to assess the right solution.',
+    'contact.c2.title': 'Partners and wholesale',
+    'contact.c2.body': 'Glazier, window specialist or installer? We supply switchable film and glass, with technical support to add PDLC to your catalogue.',
+    'contact.c3.title': 'Direct WhatsApp',
+    'contact.c3.body': 'For a quick first contact, message us on WhatsApp.',
 
     // --- GlassDemo ---
     'glass.ariaLabel': 'Toggle PDLC glass',

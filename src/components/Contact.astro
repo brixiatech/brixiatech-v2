@@ -1,0 +1,156 @@
+---
+// Contact.astro — Sezione #11 Contatti e preventivo (destinazione delle CTA)
+// Struttura: eyebrow → title → lead → griglia 3 canali (indice mono 01–03), link mailto/tel/wa.me
+// ZERO JS + token --c-*; canali diretti, nessun form, nessun listino; link puri (no backend)
+// icone: nessuna; copy localizzato via chiavi i18n contact.* (IT/EN simmetriche); link literal non localizzati
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const channels = [
+  {
+    titleKey: "contact.c1.title",
+    bodyKey: "contact.c1.body",
+    links: [
+      { label: "info@brixiatech.com", href: "mailto:info@brixiatech.com" },
+      { label: "+39 030 700 2496", href: "tel:+390307002496" },
+    ],
+  },
+  {
+    titleKey: "contact.c2.title",
+    bodyKey: "contact.c2.body",
+    links: [
+      { label: "partner@brixiatech.com", href: "mailto:partner@brixiatech.com" },
+    ],
+  },
+  {
+    titleKey: "contact.c3.title",
+    bodyKey: "contact.c3.body",
+    links: [
+      { label: "+39 350 530 5358", href: "https://wa.me/393505305358" },
+    ],
+  },
+] as const;
+---
+<section class="contact" aria-labelledby="contact-eyebrow">
+  <div class="contact__inner">
+    <p class="contact__eyebrow" id="contact-eyebrow">{t("contact.eyebrow")}</p>
+    <h2 class="contact__title">{t("contact.title")}</h2>
+    <p class="contact__lead">{t("contact.lead")}</p>
+    <div class="contact__grid">
+      {channels.map((c, i) => (
+        <div class="contact__item">
+          <span class="contact__index">{String(i + 1).padStart(2, "0")}</span>
+          <h3 class="contact__item-title">{t(c.titleKey)}</h3>
+          <p class="contact__item-body">{t(c.bodyKey)}</p>
+          <div class="contact__links">
+            {c.links.map((link) => {
+              const external = link.href.startsWith("http");
+              return (
+                <a
+                  class="contact__link"
+                  href={link.href}
+                  target={external ? "_blank" : undefined}
+                  rel={external ? "noopener" : undefined}
+                >{link.label}</a>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+<style>
+  .contact {
+    padding: var(--space-section-y) var(--space-section-x);
+  }
+  .contact__inner { max-width: var(--container-max); margin: 0 auto; }
+  .contact__eyebrow {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--c-mist-bright);
+    text-align: center;
+  }
+  .contact__title {
+    margin: 16px 0 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.2;
+    font-weight: 500;
+    color: var(--c-pearl);
+    text-align: center;
+  }
+  .contact__lead {
+    margin: 16px auto 0;
+    max-width: 680px;
+    color: var(--c-mist);
+    text-align: center;
+    line-height: 1.6;
+  }
+  .contact__grid {
+    margin: 64px 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 48px;
+    row-gap: 48px;
+  }
+  .contact__item {
+    border-top: 1px solid var(--border-hairline);
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  .contact__index {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--c-cyan);
+    margin-bottom: 12px;
+  }
+  .contact__item-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--c-pearl);
+    line-height: 1.4;
+  }
+  .contact__item-body {
+    margin: 12px 0 0;
+    color: var(--c-mist);
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+  .contact__links {
+    margin-top: auto;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .contact__link {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--c-cyan);
+    text-decoration: none;
+    transition: color 200ms var(--ease);
+  }
+  .contact__link:hover { color: var(--c-pearl); }
+  .contact__link:focus-visible {
+    outline: 1px solid var(--c-cyan);
+    outline-offset: 3px;
+  }
+  /* nessuna animazione di movimento → no-op (coerenza con le altre sezioni) */
+  @media (prefers-reduced-motion: reduce) { /* no-op */ }
+  @media (max-width: 900px) {
+    .contact { padding: var(--space-section-y) 24px; }
+    .contact__grid { grid-template-columns: 1fr; row-gap: 40px; margin-top: 48px; }
+  }
+  @media (max-width: 560px) {
+    .contact { padding: 56px 24px; }
+  }
+</style>
