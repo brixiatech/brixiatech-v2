@@ -177,6 +177,15 @@ export const ui = {
     'contact.c3.title': 'WhatsApp diretto',
     'contact.c3.body': 'Per un primo contatto rapido, scrivici su WhatsApp.',
 
+    // --- Footer (#12) ---
+    'footer.blurb': 'Vetri che pensano. Edifici che si adattano.',
+    'footer.sub': 'Marchio di SAL-FER Srl',
+    'footer.contactHeading': 'Contatti',
+    'footer.areasHeading': 'Sede e aree',
+    'footer.areas': 'Milano · Brescia · Bergamo e nord Italia. Progetti in tutta Italia, Svizzera ed Europa.',
+    'footer.vatLabel': 'P.IVA',
+    'footer.rights': 'Tutti i diritti riservati',
+
     // --- GlassDemo ---
     'glass.ariaLabel': 'Attiva/disattiva il vetro PDLC',
     'glass.transmittance': 'TRANSMITTANCE',
@@ -355,6 +364,15 @@ export const ui = {
     'contact.c2.body': 'Glazier, window specialist or installer? We supply switchable film and glass, with technical support to add PDLC to your catalogue.',
     'contact.c3.title': 'Direct WhatsApp',
     'contact.c3.body': 'For a quick first contact, message us on WhatsApp.',
+
+    // --- Footer (#12) ---
+    'footer.blurb': 'Glass that thinks. Buildings that adapt.',
+    'footer.sub': 'A brand of SAL-FER Srl',
+    'footer.contactHeading': 'Contact',
+    'footer.areasHeading': 'Office & areas',
+    'footer.areas': 'Milan · Brescia · Bergamo and northern Italy. Projects across Italy, Switzerland and Europe.',
+    'footer.vatLabel': 'VAT',
+    'footer.rights': 'All rights reserved',
 
     // --- GlassDemo ---
     'glass.ariaLabel': 'Toggle PDLC glass',

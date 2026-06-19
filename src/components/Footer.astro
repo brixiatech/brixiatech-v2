@@ -1,0 +1,179 @@
+---
+// Footer.astro — Sezione #12 Footer (chiusura istituzionale: NAP legale, aree, schema)
+// Struttura: top (brand + contatti compatti + sede/aree) → barra legale; <footer> semantico
+// ZERO JS lato client (anno copyright calcolato a build) + token --c-*; LocalBusiness JSON-LD da fonte unica NAP
+// icone: nessuna; copy localizzato via chiavi i18n footer.* (IT/EN simmetriche); recapiti/NAP literal non localizzati
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Fonte unica dei dati NAP (non localizzati): usata sia nel markup sia nello schema.
+const NAP = {
+  legalName: "SAL-FER Srl",
+  streetAddress: "Via Fratelli Calvi 19",
+  postalCode: "25036",
+  locality: "Palazzolo sull’Oglio",
+  region: "BS",
+  country: "IT",
+  phone: "+390307002496",
+  phoneDisplay: "+39 030 700 2496",
+  whatsapp: "393505305358",
+  whatsappDisplay: "+39 350 530 5358",
+  emailInfo: "info@brixiatech.com",
+  emailPartner: "partner@brixiatech.com",
+  vat: "03726890985",
+} as const;
+
+const year = new Date().getFullYear();
+
+// LocalBusiness — alimentato da NAP (fonte unica). @id stabile e identico IT/EN → una sola entità.
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://brixiatech.com/#localbusiness",
+  name: "BrixiaTech",
+  legalName: NAP.legalName,
+  url: "https://brixiatech.com",
+  telephone: NAP.phone,
+  email: NAP.emailInfo,
+  vatID: NAP.vat,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: NAP.streetAddress,
+    postalCode: NAP.postalCode,
+    addressLocality: NAP.locality,
+    addressRegion: NAP.region,
+    addressCountry: NAP.country,
+  },
+  areaServed: ["Milano", "Brescia", "Bergamo"],
+};
+---
+<footer class="footer" aria-labelledby="footer-brand">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__col footer__brand">
+        <p class="footer__name" id="footer-brand">BrixiaTech</p>
+        <p class="footer__blurb">{t("footer.blurb")}</p>
+        <p class="footer__sub">{t("footer.sub")}</p>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__heading">{t("footer.contactHeading")}</p>
+        <div class="footer__links">
+          <a class="footer__link" href={`tel:${NAP.phone}`}>{NAP.phoneDisplay}</a>
+          <a class="footer__link" href={`https://wa.me/${NAP.whatsapp}`} target="_blank" rel="noopener">WhatsApp {NAP.whatsappDisplay}</a>
+          <a class="footer__link" href={`mailto:${NAP.emailInfo}`}>{NAP.emailInfo}</a>
+          <a class="footer__link" href={`mailto:${NAP.emailPartner}`}>{NAP.emailPartner}</a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__heading">{t("footer.areasHeading")}</p>
+        <address class="footer__address">
+          {NAP.streetAddress}<br />
+          {NAP.postalCode} {NAP.locality} ({NAP.region})
+        </address>
+        <p class="footer__areas">{t("footer.areas")}</p>
+      </div>
+    </div>
+
+    <div class="footer__legal">
+      <p class="footer__legal-text">© {year} {NAP.legalName} · {t("footer.vatLabel")} {NAP.vat} · {t("footer.rights")}</p>
+    </div>
+  </div>
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)}></script>
+</footer>
+<style>
+  .footer {
+    border-top: 1px solid var(--border-hairline);
+    padding: var(--space-section-y) var(--space-section-x) 48px;
+  }
+  .footer__inner { max-width: var(--container-max); margin: 0 auto; }
+  .footer__top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.2fr;
+    column-gap: 48px;
+    row-gap: 40px;
+  }
+  .footer__col { display: flex; flex-direction: column; }
+  .footer__name {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--c-pearl);
+    letter-spacing: 0.01em;
+  }
+  .footer__blurb {
+    margin: 12px 0 0;
+    max-width: 320px;
+    color: var(--c-mist);
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+  .footer__sub {
+    margin: 12px 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    color: var(--c-mist-bright);
+  }
+  .footer__heading {
+    margin: 0 0 16px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--c-mist-bright);
+  }
+  .footer__links { display: flex; flex-direction: column; gap: 10px; }
+  .footer__link {
+    width: fit-content;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--c-cyan);
+    text-decoration: none;
+    transition: color 200ms var(--ease);
+  }
+  .footer__link:hover { color: var(--c-pearl); }
+  .footer__link:focus-visible {
+    outline: 1px solid var(--c-cyan);
+    outline-offset: 3px;
+  }
+  .footer__address {
+    font-style: normal;
+    color: var(--c-mist);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+  .footer__areas {
+    margin: 16px 0 0;
+    color: var(--c-mist);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .footer__legal {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-hairline);
+  }
+  .footer__legal-text {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    color: var(--c-mist);
+  }
+  /* nessuna animazione di movimento → no-op (coerenza con le altre sezioni) */
+  @media (prefers-reduced-motion: reduce) { /* no-op */ }
+  @media (max-width: 900px) {
+    .footer { padding: var(--space-section-y) 24px 40px; }
+    .footer__top { grid-template-columns: 1fr 1fr; }
+    .footer__brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 560px) {
+    .footer { padding: 56px 24px 32px; }
+    .footer__top { grid-template-columns: 1fr; row-gap: 32px; }
+  }
+</style>
