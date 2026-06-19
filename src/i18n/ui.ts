@@ -10,7 +10,7 @@ export const ui = {
     // --- Meta / SEO ---
     'meta.title': 'BrixiaTech — Vetri che pensano. Edifici che si adattano.',
     'meta.description':
-      'Adaptive architecture: vetri PDLC switchable, hardware embedded e piattaforma cloud predittiva. Un solo stack, dalla pellicola al dashboard. Dal 2017 — focus Milano, Brescia, Bergamo.',
+      'Adaptive architecture: vetri PDLC switchable, hardware embedded e piattaforma cloud predittiva. Un solo stack, dalla pellicola al dashboard. Dal 2019 — focus Milano, Brescia, Bergamo.',
     'meta.ogLocale': 'it_IT',
 
     // --- Nav ---
@@ -156,7 +156,7 @@ export const ui = {
     'faq.q2': 'In quali zone installate?',
     'faq.a2': "Operiamo in tutto il centro-nord Italia, con base in provincia di Brescia. Le nostre aree principali sono Milano, Brescia e Bergamo, ma seguiamo progetti sull'intero territorio. Per sedi fuori area valutiamo caso per caso in fase di sopralluogo.",
     'faq.q3': 'Quanto dura e che garanzia offre lo smart glass?',
-    'faq.a3': 'Offriamo una garanzia fino a 7 anni sui prodotti switchable. Installiamo vetri e pellicole intelligenti dal 2017 e selezioniamo materiali pensati per durare nel tempo in contesti professionali. La durata effettiva dipende da esposizione, uso e tecnologia.',
+    'faq.a3': 'Offriamo una garanzia fino a 7 anni sui prodotti switchable. Installiamo vetri e pellicole intelligenti dal 2019 e selezioniamo materiali pensati per durare nel tempo in contesti professionali. La durata effettiva dipende da esposizione, uso e tecnologia.',
     'faq.q4': 'Si può controllare da telecomando, app o impianto domotico?',
     'faq.a4': 'Sì. Le superfici si comandano con interruttore, telecomando, app e integrazione domotica tramite la nostra piattaforma B-LOGIC. Puoi gestire un singolo vetro o coordinare intere vetrate e scenari su più ambienti.',
     'faq.q5': 'Il vetro resta trasparente se manca la corrente?',
@@ -189,7 +189,7 @@ export const ui = {
     // --- Meta / SEO ---
     'meta.title': 'BrixiaTech — Glass that thinks. Buildings that adapt.',
     'meta.description':
-      'Adaptive architecture: PDLC switchable glass, embedded hardware and a predictive cloud platform. One stack, from film to dashboard. Since 2017 — focused on Milan, Brescia, Bergamo.',
+      'Adaptive architecture: PDLC switchable glass, embedded hardware and a predictive cloud platform. One stack, from film to dashboard. Since 2019 — focused on Milan, Brescia, Bergamo.',
     'meta.ogLocale': 'en_US',
 
     // --- Nav ---
@@ -335,7 +335,7 @@ export const ui = {
     'faq.q2': 'Which areas do you cover?',
     'faq.a2': 'We operate across northern Italy, based near Brescia, and follow cross-border projects in reachable European markets. Any location outside our core area is assessed individually at the survey stage.',
     'faq.q3': 'How long does it last, and what warranty do you offer?',
-    'faq.a3': "We offer a warranty of up to 7 years on switchable products. We've been installing smart glass and film since 2017 and select materials built to last in professional settings. Actual lifespan depends on exposure, use and technology.",
+    'faq.a3': "We offer a warranty of up to 7 years on switchable products. We've been installing smart glass and film since 2019 and select materials built to last in professional settings. Actual lifespan depends on exposure, use and technology.",
     'faq.q4': 'Can it be controlled by remote, app or building automation?',
     'faq.a4': 'Yes. Surfaces can be operated by switch, remote, app and building-automation integration through our B-LOGIC platform. You can control a single pane or coordinate entire glazed areas and scenes across multiple rooms.',
     'faq.q5': 'Does the glass stay clear if the power fails?',
