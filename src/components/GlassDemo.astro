@@ -47,7 +47,7 @@ const t = useTranslations(lang);
       <div class="glass-scene" aria-hidden="true">
         <span class="glass-sun"></span>
         <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
-          <g fill="#1A2747" opacity="0.92">
+          <g fill="#13213B">
             <rect x="0" y="180" width="40" height="120"></rect>
             <rect x="42" y="150" width="35" height="150"></rect>
             <rect x="80" y="200" width="50" height="100"></rect>
@@ -59,20 +59,12 @@ const t = useTranslations(lang);
             <rect x="334" y="180" width="40" height="120"></rect>
             <rect x="376" y="155" width="24" height="145"></rect>
           </g>
-          <g fill="#4DA8FF" opacity="0.55">
-            <rect x="6" y="200" width="4" height="6"></rect>
-            <rect x="50" y="170" width="4" height="6"></rect>
-            <rect x="90" y="220" width="4" height="6"></rect>
-            <rect x="140" y="140" width="4" height="6"></rect>
-            <rect x="175" y="180" width="4" height="6"></rect>
-            <rect x="222" y="120" width="4" height="6"></rect>
-            <rect x="262" y="200" width="4" height="6"></rect>
-            <rect x="304" y="160" width="4" height="6"></rect>
-            <rect x="344" y="200" width="4" height="6"></rect>
-            <rect x="382" y="175" width="4" height="6"></rect>
-          </g>
         </svg>
       </div>
+
+      <!-- Velature per leggibilità HUD su cielo chiaro (stato CLEAR) -->
+      <div class="glass-scrim glass-scrim--t" aria-hidden="true"></div>
+      <div class="glass-scrim glass-scrim--b" aria-hidden="true"></div>
 
       <div class="glass-pane" id="glass-pane" aria-hidden="true"></div>
 
@@ -144,7 +136,7 @@ const t = useTranslations(lang);
     outline-offset: 3px;
   }
 
-  /* Scena interna: skyline + sole (la "vista" che il vetro oscura) */
+  /* Scena interna: cielo diurno + sole + skyline in controluce (la "vista" che il vetro regola) */
   .glass-scene {
     position: absolute;
     inset: 0;
@@ -152,25 +144,31 @@ const t = useTranslations(lang);
     align-items: flex-end;
     justify-content: center;
     overflow: hidden;
+    background: linear-gradient(180deg, #4A86C4 0%, #7FAFDD 42%, #C8DEEF 100%);
   }
 
-  .glass-scene svg { width: 100%; height: 62%; }
+  .glass-scene svg { width: 100%; height: 58%; position: relative; }
 
   .glass-sun {
     position: absolute;
-    top: 16%;
-    right: 18%;
-    width: 60px;
-    height: 60px;
+    top: 14%;
+    right: 17%;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
-    background: radial-gradient(circle, #FFE9B3 0%, #FBBF77 45%, transparent 72%);
+    background: radial-gradient(circle, #FFF6DD 0%, #FFE08A 42%, rgba(255, 210, 120, 0.25) 70%, transparent 78%);
   }
+
+  /* Velature: garantiscono contrasto all'HUD quando il vetro è trasparente (cielo pieno) */
+  .glass-scrim { position: absolute; left: 0; right: 0; pointer-events: none; }
+  .glass-scrim--t { top: 0; height: 34%; background: linear-gradient(180deg, rgba(5, 11, 26, 0.55), transparent); }
+  .glass-scrim--b { bottom: 0; height: 30%; background: linear-gradient(0deg, rgba(5, 11, 26, 0.5), transparent); }
 
   /* Layer PDLC — frosting. Default OFF (privacy) per evitare flash pre-JS. */
   .glass-pane {
     position: absolute;
     inset: 0;
-    background: rgba(225, 232, 245, 0.8);
+    background: rgba(232, 238, 248, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     transition: background 800ms linear, backdrop-filter 800ms linear, -webkit-backdrop-filter 800ms linear;
@@ -185,7 +183,8 @@ const t = useTranslations(lang);
     font-size: 9.5px;
     letter-spacing: 0.14em;
     line-height: 1;
-    color: var(--c-mist);
+    color: var(--c-pearl);
+    text-shadow: 0 1px 6px rgba(5, 11, 26, 0.7);
     white-space: nowrap;
   }
   .glass-lab--tl { top: 16px; left: 16px; }
@@ -203,15 +202,16 @@ const t = useTranslations(lang);
     font-weight: 500;
     line-height: 1;
     color: var(--c-pearl);
+    text-shadow: 0 2px 14px rgba(5, 11, 26, 0.55);
   }
-  .glass-big small { font-size: 0.32em; color: var(--c-accent); margin-left: 3px; }
+  .glass-big small { font-size: 0.32em; color: var(--c-pearl); margin-left: 3px; }
 
   .glass-corner {
     position: absolute;
     width: 14px;
     height: 14px;
-    border: 2px solid var(--c-accent);
-    opacity: 0.55;
+    border: 2px solid var(--c-pearl);
+    opacity: 0.7;
   }
   .glass-corner--tl { top: 9px; left: 9px; border-right: none; border-bottom: none; }
   .glass-corner--tr { top: 9px; right: 9px; border-left: none; border-bottom: none; }
@@ -315,9 +315,9 @@ const t = useTranslations(lang);
     let raf = 0;
 
     function setFrost(v: number) {
-      const alpha = ((1 - v / 100) * 0.82).toFixed(3);
+      const alpha = ((1 - v / 100) * 0.85).toFixed(3);
       const blur = ((1 - v / 100) * 16).toFixed(1);
-      pane!.style.background = "rgba(225, 232, 245, " + alpha + ")";
+      pane!.style.background = "rgba(232, 238, 248, " + alpha + ")";
       pane!.style.backdropFilter = "blur(" + blur + "px)";
       pane!.style.webkitBackdropFilter = "blur(" + blur + "px)";
     }
