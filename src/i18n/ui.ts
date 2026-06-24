@@ -153,7 +153,7 @@ export const ui = {
     'faq.lead': 'Vetri e pellicole switchable: costi, controllo, durata e installazione, spiegati in breve.',
     'faq.q1': 'Quanto costa un vetro o una pellicola che si oscura?',
     'faq.a1': "Non lavoriamo a listino: ogni fornitura è un progetto a sé. Il costo dipende dalla tecnologia scelta, dalle dimensioni e dalla geometria delle superfici, dagli accessori e dall'eventuale automazione. Per questo preferiamo studiare il caso reale: scrivici una mail o un messaggio con qualche dettaglio e ti prepariamo un preventivo su misura.",
-    'faq.q2': 'In quali zone installate?',
+    'faq.q2': 'In quali zone installate vetri e pellicole oscuranti?',
     'faq.a2': "Operiamo in tutto il centro-nord Italia, con base in provincia di Brescia. Le nostre aree principali sono Milano, Brescia e Bergamo, ma seguiamo progetti sull'intero territorio. Per sedi fuori area valutiamo caso per caso in fase di sopralluogo.",
     'faq.q3': 'Quanto dura e che garanzia offre lo smart glass?',
     'faq.a3': 'Offriamo una garanzia fino a 7 anni sui prodotti switchable. Installiamo vetri e pellicole intelligenti dal 2019 e selezioniamo materiali pensati per durare nel tempo in contesti professionali. La durata effettiva dipende da esposizione, uso e tecnologia.',
