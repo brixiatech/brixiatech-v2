@@ -5,15 +5,15 @@
    Genera utility: bg-void, text-cyan, font-mono, ease-standard...
    ========================================================= */
 @theme {
-  /* Palette */
-  --color-void:     #050507;
-  --color-onyx:     #0A0A0F;
-  --color-graphite: #1A1A22;
-  --color-smoke:    #3A3A42;
-  --color-mist:     #6E7280;
-  --color-pearl:    #F5F5F7;
-  --color-cyan:     #00D4FF;
-  --color-cyan-dim: #0088A8;
+  /* Palette — abisso (allineamento blogic). Rame mantenuto come firma brand. */
+  --color-void:     #050B1A;
+  --color-onyx:     #0A1226;
+  --color-graphite: #0E1830;
+  --color-smoke:    #243460;
+  --color-mist:     #8892AA;
+  --color-pearl:    #E8F1FF;
+  --color-cyan:     #4DA8FF;
+  --color-cyan-dim: #2D6FB8;
   --color-copper:   #D89968;
 
   /* Typography — famiglie (self-hosting in STEP 5) */
@@ -37,16 +37,22 @@
    Stessi valori del blocco @theme, secondo binario.
    ========================================================= */
 :root {
-  --c-void:     #050507;
-  --c-onyx:     #0A0A0F;
-  --c-graphite: #1A1A22;
-  --c-smoke:    #3A3A42;
-  --c-mist:     #6E7280;
-  --c-mist-bright: #8A8E99;
-  --c-pearl:    #F5F5F7;
-  --c-cyan:     #00D4FF;
-  --c-cyan-dim: #0088A8;
-  --c-copper:   #D89968;
+  --c-void:     #050B1A;
+  --c-onyx:     #0A1226;
+  --c-graphite: #0E1830;
+  --c-smoke:    #243460;
+  --c-mist:     #8892AA;
+  --c-mist-bright: #A6B0C8;
+  --c-pearl:    #E8F1FF;
+  --c-cyan:     #4DA8FF;     /* era #00D4FF — nome storico, ora blu abisso (compat) */
+  --c-cyan-dim: #2D6FB8;
+  --c-copper:   #D89968;     /* invariato — firma materiale/architettura */
+  /* alias semantici forward-looking (migrazione graduale dei componenti) */
+  --c-accent:        #4DA8FF;
+  --c-accent-bright: #6FBFFF;
+  --c-accent-glow:   rgba(77, 168, 255, 0.35);
+  --c-violet:        #A78BFA;
+  --c-success:       #5EEAD4;
   --ease:       cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
 
