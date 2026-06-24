@@ -30,6 +30,7 @@ const features = [
         </div>
       ))}
     </div>
+    <p class="trust__bridge">{t("trust.bridge")}</p>
   </div>
 </section>
 
@@ -38,6 +39,13 @@ const features = [
     padding: var(--space-section-y) var(--space-section-x);
   }
   .trust__inner { max-width: var(--container-max); margin: 0 auto; }
+  .trust__bridge {
+    margin: 56px auto 0;
+    max-width: 680px;
+    text-align: center;
+    color: var(--c-mist);
+    line-height: 1.6;
+  }
   .trust__eyebrow {
     margin: 0;
     font-family: var(--font-mono);
