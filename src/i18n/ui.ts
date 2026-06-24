@@ -20,7 +20,7 @@ export const ui = {
     'nav.quote': 'Preventivo',
 
     // --- Hero ---
-    'hero.eyebrow': 'ADAPTIVE ARCHITECTURE',
+    'hero.eyebrow': 'VETRO INTELLIGENTE A CONTROLLO ELETTRICO',
     'hero.headline1': 'Vetri che pensano.',
     'hero.headline2': 'Edifici che si adattano.',
     'hero.subtitle':
@@ -28,6 +28,15 @@ export const ui = {
     'hero.subtitleEmphasis': 'Un solo stack, dalla pellicola al dashboard.',
     'hero.ctaPrimary': 'Configura un progetto',
     'hero.ctaSecondary': 'Scopri B-LOGIC',
+    'hero.hudLabel': 'MODALITÀ',
+    'hero.hudState0': 'TRASPARENTE',
+    'hero.hudState1': 'APPANNAMENTO',
+    'hero.hudState2': 'SEMI-OPACO',
+    'hero.hudState3': 'OPACO',
+    'hero.hudTickStart': 'VISTA',
+    'hero.hudTickEnd': 'PRIVACY',
+    'hero.imgAltTransparent': 'Lounge con parete vetrata trasparente, skyline visibile',
+    'hero.imgAltOpaque': 'Stessa parete vetrata commutata in vetro opaco, privacy totale',
 
     // --- Ticker ---
     'ticker.warranty': 'GARANZIA',
@@ -209,7 +218,7 @@ export const ui = {
     'nav.quote': 'Get a quote',
 
     // --- Hero ---
-    'hero.eyebrow': 'ADAPTIVE ARCHITECTURE',
+    'hero.eyebrow': 'SWITCHABLE SMART GLASS',
     'hero.headline1': 'Glass that thinks.',
     'hero.headline2': 'Buildings that adapt.',
     'hero.subtitle':
@@ -217,6 +226,15 @@ export const ui = {
     'hero.subtitleEmphasis': 'One stack, from film to dashboard.',
     'hero.ctaPrimary': 'Configure a project',
     'hero.ctaSecondary': 'Discover B-LOGIC',
+    'hero.hudLabel': 'MODE',
+    'hero.hudState0': 'TRANSPARENT',
+    'hero.hudState1': 'FROSTING',
+    'hero.hudState2': 'SEMI-OPAQUE',
+    'hero.hudState3': 'OPAQUE',
+    'hero.hudTickStart': 'VIEW',
+    'hero.hudTickEnd': 'PRIVACY',
+    'hero.imgAltTransparent': 'Lounge with transparent glass wall, skyline visible',
+    'hero.imgAltOpaque': 'Same glass wall switched to opaque, full privacy',
 
     // --- Ticker ---
     'ticker.warranty': 'WARRANTY',
