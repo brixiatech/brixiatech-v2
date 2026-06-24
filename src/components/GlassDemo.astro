@@ -1,12 +1,14 @@
 ---
-// Isola interattiva PDLC. Portata da brixiatech-hero-v1.html.
-// JS via <script> nativo Astro (modulo bundlato, defer) — niente framework
-// island: scelta più leggera per un toggle. È figlia di .hero (slot in Hero).
+// Isola interattiva PDLC — guscio "strumento" (cornice + scena + HUD + stato).
+// Allineamento blogic, token abisso brixiatech. È figlia di .hero (slot in Hero).
+// JS via <script> nativo Astro (modulo bundlato, defer) — niente framework island.
 //
-// FIX #3: auto-cycle CANCELLABILE — il primo click utente azzera i timer
-//         residui, così non confligge col toggle manuale.
-// FIX #2: sotto prefers-reduced-motion l'auto-cycle NON parte e il count-up
+// FIX #3: auto-cycle CANCELLABILE — il primo input utente azzera l'interval,
+//         così non confligge col toggle manuale.
+// FIX #2: sotto prefers-reduced-motion l'auto-cycle NON parte; il count-up
 //         salta al valore finale (il click manuale resta disponibile).
+// NB: etichette HUD (SMART GLASS, TRANSMITTANCE, SUN…) sono unità/codici tecnici,
+//     identiche IT/EN → hardcoded. L'aria-label descrittivo è i18n (glass.ariaLabel).
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
@@ -14,28 +16,82 @@ const t = useTranslations(lang);
 ---
 
 <div class="glass-stage">
-  <button
-    class="glass"
-    id="glass"
-    type="button"
-    data-state="off"
-    aria-label={t('glass.ariaLabel')}
-    aria-pressed="false"
-  >
-    <div class="glass-reflection"></div>
-    <div class="glass-indicator">
-      <span class="glass-indicator__dot"></span>
-      <span id="state-label">PDLC · OFF · PRIVACY</span>
+  <div class="glass-demo">
+    <!-- Stato laterale (a sinistra del pannello: non tocca il bordo destro del viewport) -->
+    <div class="glass-status" aria-hidden="true">
+      <div class="glass-status__row">
+        <span class="glass-status__dot"></span>
+        <span class="glass-status__label">SUN</span>
+        <span class="glass-status__val">HIGH</span>
+      </div>
+      <div class="glass-status__row">
+        <span class="glass-status__dot"></span>
+        <span class="glass-status__label">TRANS</span>
+        <span class="glass-status__val" id="glass-trans2">2%</span>
+      </div>
+      <div class="glass-status__row">
+        <span class="glass-status__dot"></span>
+        <span class="glass-status__label">MODE</span>
+        <span class="glass-status__val" id="glass-mode2">OFF</span>
+      </div>
     </div>
-    <div class="glass-readout">
-      TRANSMITTANCE<span class="glass-readout__value" id="transmittance">2%</span>
-    </div>
-  </button>
-</div>
 
-<!-- Hint interazione -->
-<div class="toggle-hint">
-  <span>{t('glass.hint')}</span>
+    <!-- Pannello cliccabile -->
+    <button
+      class="glass-frame"
+      id="glass"
+      type="button"
+      aria-label={t('glass.ariaLabel')}
+      aria-pressed="false"
+    >
+      <div class="glass-scene" aria-hidden="true">
+        <span class="glass-sun"></span>
+        <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
+          <g fill="#1A2747" opacity="0.92">
+            <rect x="0" y="180" width="40" height="120"></rect>
+            <rect x="42" y="150" width="35" height="150"></rect>
+            <rect x="80" y="200" width="50" height="100"></rect>
+            <rect x="132" y="120" width="30" height="180"></rect>
+            <rect x="165" y="160" width="45" height="140"></rect>
+            <rect x="212" y="100" width="38" height="200"></rect>
+            <rect x="252" y="170" width="42" height="130"></rect>
+            <rect x="296" y="140" width="36" height="160"></rect>
+            <rect x="334" y="180" width="40" height="120"></rect>
+            <rect x="376" y="155" width="24" height="145"></rect>
+          </g>
+          <g fill="#4DA8FF" opacity="0.55">
+            <rect x="6" y="200" width="4" height="6"></rect>
+            <rect x="50" y="170" width="4" height="6"></rect>
+            <rect x="90" y="220" width="4" height="6"></rect>
+            <rect x="140" y="140" width="4" height="6"></rect>
+            <rect x="175" y="180" width="4" height="6"></rect>
+            <rect x="222" y="120" width="4" height="6"></rect>
+            <rect x="262" y="200" width="4" height="6"></rect>
+            <rect x="304" y="160" width="4" height="6"></rect>
+            <rect x="344" y="200" width="4" height="6"></rect>
+            <rect x="382" y="175" width="4" height="6"></rect>
+          </g>
+        </svg>
+      </div>
+
+      <div class="glass-pane" id="glass-pane" aria-hidden="true"></div>
+
+      <div class="glass-hud" aria-hidden="true">
+        <span class="glass-lab glass-lab--tl">SMART GLASS</span>
+        <span class="glass-lab glass-lab--tr">PDLC</span>
+        <span class="glass-big"><span id="glass-trans">2</span><small>%</small></span>
+        <span class="glass-lab glass-lab--bl" id="glass-state">OFF · PRIVACY</span>
+        <span class="glass-lab glass-lab--br">TRANSMITTANCE</span>
+        <span class="glass-corner glass-corner--tl"></span>
+        <span class="glass-corner glass-corner--tr"></span>
+        <span class="glass-corner glass-corner--bl"></span>
+        <span class="glass-corner glass-corner--br"></span>
+      </div>
+    </button>
+  </div>
+
+  <!-- Hint interazione -->
+  <div class="toggle-hint"><span>{t('glass.hint')}</span></div>
 </div>
 
 <style>
@@ -46,12 +102,21 @@ const t = useTranslations(lang);
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 8% 0 0;
+    padding: 0 6% 0 0;
     pointer-events: none;
   }
 
-  .glass {
-    /* reset stili button di default */
+  .glass-demo {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    pointer-events: none;
+  }
+
+  /* =========================================================
+     PANNELLO — cornice "strumento"
+     ========================================================= */
+  .glass-frame {
     appearance: none;
     -webkit-appearance: none;
     margin: 0;
@@ -60,88 +125,132 @@ const t = useTranslations(lang);
     color: inherit;
     text-align: inherit;
 
-    width: 42%;
-    height: 78%;
-    max-width: 560px;
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 2px;
+    width: min(36vw, 420px);
+    aspect-ratio: 4 / 5;
+    max-height: 74vh;
+    border: 2px solid var(--c-smoke);
+    border-radius: 16px;
     overflow: hidden;
-    transition: all 1200ms var(--ease);
-    pointer-events: auto;
+    background: var(--c-onyx);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), inset 0 0 80px rgba(77, 168, 255, 0.06);
     cursor: pointer;
+    pointer-events: auto;
+    transition: border-color 600ms var(--ease);
   }
 
-  .glass:focus-visible {
-    outline: 2px solid var(--c-cyan);
+  .glass-frame:focus-visible {
+    outline: 2px solid var(--c-accent);
     outline-offset: 3px;
   }
 
-  /* Frame del vetro (cornice sottile, stile architettonico) */
-  .glass::before {
-    content: '';
+  /* Scena interna: skyline + sole (la "vista" che il vetro oscura) */
+  .glass-scene {
     position: absolute;
     inset: 0;
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    pointer-events: none;
-    z-index: 3;
-  }
-
-  /* PDLC OFF — vetro opaco/privacy */
-  .glass[data-state="off"] {
-    background: rgba(245, 245, 247, 0.88);
-    backdrop-filter: blur(30px) saturate(0.4);
-    -webkit-backdrop-filter: blur(30px) saturate(0.4);
-  }
-
-  /* PDLC ON — vetro trasparente */
-  .glass[data-state="on"] {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(0px) saturate(1);
-    -webkit-backdrop-filter: blur(0px) saturate(1);
-    border-color: rgba(0, 212, 255, 0.15);
-  }
-
-  .glass-reflection {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 100%;
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.06) 0%,
-      transparent 30%,
-      transparent 70%,
-      rgba(255, 255, 255, 0.02) 100%
-    );
-    pointer-events: none;
-    z-index: 2;
-  }
-
-  .glass-indicator {
-    position: absolute;
-    top: 16px;
-    right: 16px;
     display: flex;
-    align-items: center;
-    gap: 8px;
-    z-index: 4;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    color: var(--c-cyan);
-    transition: color 600ms var(--ease);
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
   }
 
-  .glass[data-state="off"] .glass-indicator {
-    color: var(--c-mist);
-  }
+  .glass-scene svg { width: 100%; height: 62%; }
 
-  .glass-indicator__dot {
-    width: 6px;
-    height: 6px;
+  .glass-sun {
+    position: absolute;
+    top: 16%;
+    right: 18%;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    background: currentColor;
+    background: radial-gradient(circle, #FFE9B3 0%, #FBBF77 45%, transparent 72%);
+  }
+
+  /* Layer PDLC — frosting. Default OFF (privacy) per evitare flash pre-JS. */
+  .glass-pane {
+    position: absolute;
+    inset: 0;
+    background: rgba(225, 232, 245, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: background 800ms linear, backdrop-filter 800ms linear, -webkit-backdrop-filter 800ms linear;
+  }
+
+  /* HUD overlay */
+  .glass-hud { position: absolute; inset: 0; pointer-events: none; }
+
+  .glass-lab {
+    position: absolute;
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
+    line-height: 1;
+    color: var(--c-mist);
+    white-space: nowrap;
+  }
+  .glass-lab--tl { top: 16px; left: 16px; }
+  .glass-lab--tr { top: 16px; right: 16px; color: var(--c-success); }
+  .glass-lab--bl { bottom: 16px; left: 16px; }
+  .glass-lab--br { bottom: 16px; right: 16px; }
+
+  .glass-big {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-mono);
+    font-size: clamp(44px, 6vw, 72px);
+    font-weight: 500;
+    line-height: 1;
+    color: var(--c-pearl);
+  }
+  .glass-big small { font-size: 0.32em; color: var(--c-accent); margin-left: 3px; }
+
+  .glass-corner {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--c-accent);
+    opacity: 0.55;
+  }
+  .glass-corner--tl { top: 9px; left: 9px; border-right: none; border-bottom: none; }
+  .glass-corner--tr { top: 9px; right: 9px; border-left: none; border-bottom: none; }
+  .glass-corner--bl { bottom: 9px; left: 9px; border-right: none; border-top: none; }
+  .glass-corner--br { bottom: 9px; right: 9px; border-left: none; border-top: none; }
+
+  /* =========================================================
+     STATO LATERALE
+     ========================================================= */
+  .glass-status {
+    pointer-events: none;
+    background: rgba(5, 11, 26, 0.9);
+    border: 1px solid var(--c-smoke);
+    border-radius: 12px;
+    padding: 13px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  }
+  .glass-status__row { display: flex; align-items: center; gap: 9px; }
+  .glass-status__dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--c-success);
+    box-shadow: 0 0 8px var(--c-success);
     animation: pulse 2s ease-in-out infinite;
+  }
+  .glass-status__label {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: 0.1em;
+    color: var(--c-mist);
+    min-width: 34px;
+  }
+  .glass-status__val {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--c-pearl);
+    font-weight: 500;
   }
 
   @keyframes pulse {
@@ -149,51 +258,33 @@ const t = useTranslations(lang);
     50% { opacity: 0.4; transform: scale(0.8); }
   }
 
-  .glass-readout {
-    position: absolute;
-    bottom: 16px;
-    left: 16px;
-    z-index: 4;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--c-mist);
-    letter-spacing: 0.08em;
-  }
-
-  .glass-readout__value {
-    color: var(--c-pearl);
-    margin-left: 8px;
-  }
-
   /* Hint interazione */
   .toggle-hint {
     position: absolute;
-    top: 50%;
-    right: 8%;
-    transform: translate(0, -50%) translateX(-100%);
+    bottom: 8%;
+    right: 6%;
     z-index: 15;
     font-family: var(--font-mono);
     font-size: 10px;
     color: var(--c-mist);
     letter-spacing: 0.12em;
     opacity: 0;
-    animation: fadeInUp 800ms var(--ease-out) 2000ms forwards;
+    transform: translateY(8px);
+    animation: hintIn 800ms var(--ease-out) 2000ms forwards;
   }
-
   .toggle-hint span {
     display: block;
     padding: 6px 12px;
-    border: 1px solid rgba(245, 245, 247, 0.15);
+    border: 1px solid var(--border-hairline);
     border-radius: 4px;
-    background: rgba(5, 5, 7, 0.6);
+    background: rgba(5, 11, 26, 0.6);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
   }
 
-  @keyframes fadeInUp {
-    to { opacity: 1; transform: translate(0, -50%) translateX(0); }
-  }
+  @keyframes hintIn { to { opacity: 1; transform: translateY(0); } }
 
+  @media (max-width: 1100px) { .glass-status { display: none; } }
   @media (max-width: 900px) {
     .glass-stage { display: none; }
     .toggle-hint { display: none; }
@@ -201,71 +292,87 @@ const t = useTranslations(lang);
 
   /* FIX #2 — reduced-motion: ferma pulse + mostra subito l'hint */
   @media (prefers-reduced-motion: reduce) {
-    .glass-indicator__dot { animation: none; }
-    .toggle-hint {
-      animation: none;
-      opacity: 1;
-      transform: translate(0, -50%) translateX(0);
-    }
+    .glass-status__dot { animation: none; }
+    .toggle-hint { animation: none; opacity: 1; transform: none; }
   }
 </style>
 
 <script>
   const glass = document.getElementById("glass");
-  const stateLabel = document.getElementById("state-label");
-  const transmittance = document.getElementById("transmittance");
+  const big = document.getElementById("glass-trans");
+  const trans2 = document.getElementById("glass-trans2");
+  const stateLabel = document.getElementById("glass-state");
+  const mode2 = document.getElementById("glass-mode2");
+  const pane = document.getElementById("glass-pane");
 
-  if (glass && stateLabel && transmittance) {
+  if (glass && big && trans2 && stateLabel && mode2 && pane) {
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
-    function animateTransmittance(from: number, to: number) {
-      // Reduced-motion: niente count-up, salta al valore finale.
+    let on = false;
+    let timer: number | null = null;
+    let raf = 0;
+
+    function setFrost(v: number) {
+      const alpha = ((1 - v / 100) * 0.82).toFixed(3);
+      const blur = ((1 - v / 100) * 16).toFixed(1);
+      pane!.style.background = "rgba(225, 232, 245, " + alpha + ")";
+      pane!.style.backdropFilter = "blur(" + blur + "px)";
+      pane!.style.webkitBackdropFilter = "blur(" + blur + "px)";
+    }
+
+    function animate(from: number, to: number) {
       if (prefersReduced) {
-        transmittance!.textContent = to + "%";
+        const r = Math.round(to);
+        big!.textContent = String(r);
+        trans2!.textContent = r + "%";
+        setFrost(to);
         return;
       }
-      const duration = 1100;
+      const duration = 1000;
       const start = performance.now();
+      cancelAnimationFrame(raf);
       function step(now: number) {
-        const t = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - t, 3); // ease-out cubic
-        transmittance!.textContent = Math.round(from + (to - from) * eased) + "%";
-        if (t < 1) requestAnimationFrame(step);
+        const k = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - k, 3);
+        const v = from + (to - from) * eased;
+        const r = Math.round(v);
+        big!.textContent = String(r);
+        trans2!.textContent = r + "%";
+        setFrost(v);
+        if (k < 1) raf = requestAnimationFrame(step);
       }
-      requestAnimationFrame(step);
+      raf = requestAnimationFrame(step);
     }
 
-    function toggleGlass() {
-      const next = glass!.dataset.state === "off" ? "on" : "off";
-      glass!.dataset.state = next;
-      glass!.setAttribute("aria-pressed", String(next === "on"));
-      if (next === "on") {
-        animateTransmittance(2, 87);
-        stateLabel!.textContent = "PDLC · ON · CLEAR";
+    function toState(next: boolean) {
+      on = next;
+      glass!.setAttribute("aria-pressed", String(on));
+      if (on) {
+        animate(2, 87);
+        stateLabel!.textContent = "ON · CLEAR";
+        mode2!.textContent = "ON";
       } else {
-        animateTransmittance(87, 2);
-        stateLabel!.textContent = "PDLC · OFF · PRIVACY";
+        animate(87, 2);
+        stateLabel!.textContent = "OFF · PRIVACY";
+        mode2!.textContent = "OFF";
       }
     }
 
-    // FIX #3 — auto-cycle interrompibile al primo input utente.
-    let autoTimers: number[] = [];
-    const clearAutoCycle = () => {
-      autoTimers.forEach(clearTimeout);
-      autoTimers = [];
-    };
+    function user() {
+      if (timer !== null) {
+        clearInterval(timer);
+        timer = null;
+      }
+      toState(!on);
+    }
 
-    glass.addEventListener("click", () => {
-      clearAutoCycle();
-      toggleGlass();
-    });
+    glass.addEventListener("click", user);
 
-    // Auto-cycle solo se l'utente non chiede reduced-motion.
+    // Auto-cycle continuo finché l'utente non tocca il pannello.
     if (!prefersReduced) {
-      autoTimers.push(window.setTimeout(toggleGlass, 3500));
-      autoTimers.push(window.setTimeout(toggleGlass, 7000));
+      timer = window.setInterval(() => toState(!on), 3400);
     }
   }
 </script>
