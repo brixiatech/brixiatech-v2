@@ -3,252 +3,337 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-// Hero. Portato da brixiatech-hero-v1.html.
-// Quasi tutto statico; unico JS = parallax leggero di .scene (vedi <script>).
-// Possiede la <section.hero> (contesto di posizionamento) + scena + content
-// editoriale. Le isole interattive (GlassDemo, Ticker) entrano via <slot />:
-// restano figlie di .hero così i loro `position:absolute` risolvono qui.
+// Hero scroll-driven. Sostituisce la Hero GlassDemo (parcheggiata su
+// branch hero/glassdemo-v1).
 //
-// FIX #1: parallax con rAF throttle, off su touch/schermo stretto/reduced-motion.
-// FIX #2: blocco prefers-reduced-motion in fondo (azzera entrance).
-// FIX #6: skyline-stub RIMOSSO — la scena diurna ora vive nel pannello GlassDemo;
-//         lo sfondo dell'hero è cielo abisso pulito (atmosfera vera in Step C).
+// MECCANICA: .scene-track alto 400vh dà la "corsa". .scene-stage è sticky
+// (resta fisso 100vh mentre si scrolla dentro la track). Le 4 immagini di
+// stato (trasparente -> appannamento -> semi-opaco -> opaco) sono sovrapposte;
+// lo scroll pilota le loro opacità => il vetro commuta per gradi.
+//
+// REVEAL: il testo editoriale (eyebrow + headline) mantiene il reveal d'ingresso
+// dell'Hero precedente (lineUp/fadeInUp), che finisce PRIMA che parta lo scroll.
+//
+// SLOT: il Ticker resta figlio dello stage (in fondo). L'HUD è alzato sopra
+// l'altezza del Ticker per non sovrapporsi (vedi .hud bottom).
+//
+// JS: driver scroll rAF-throttled. Guardia prefers-reduced-motion: mostra
+// lo stato finale (opaco) senza animazione.
 ---
 
 <section class="hero">
-  <!-- Scena background: cielo abisso (skyline-stub rimosso; il pannello porta la scena) -->
-  <div class="scene"></div>
+  <div class="scene-track" data-hero-track
+       data-states={JSON.stringify([t('hero.hudState0'), t('hero.hudState1'), t('hero.hudState2'), t('hero.hudState3')])}>
+    <div class="scene-stage">
 
-  <!-- Contenuto editoriale -->
-  <div class="content">
-    <div class="eyebrow">{t('hero.eyebrow')}</div>
-    <h1 class="headline">
-      <span class="headline__line"><span>{t('hero.headline1')}</span></span>
-      <span class="headline__line"><span>{t('hero.headline2')}</span></span>
-    </h1>
-    <p class="subtitle">
-      {t('hero.subtitle')}
-      <em>{t('hero.subtitleEmphasis')}</em>
-    </p>
-    <div class="cta-row">
-      <a href="#preventivo" class="cta">
-        {t('hero.ctaPrimary')}
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-          <path d="M3 7H11M11 7L7 3M11 7L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
-      </a>
-      <a href="#b-logic" class="cta-secondary">
-        {t('hero.ctaSecondary')}
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-          <path d="M3 7H11M11 7L7 3M11 7L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
-      </a>
+      <!-- 4 stati del vetro, sovrapposti. state-0 (trasparente) sempre visibile sotto. -->
+      <div class="frames">
+        <picture>
+          <source srcset="/hero/hero-state-0.webp" type="image/webp" />
+          <img class="frame" data-layer="0" src="/hero/hero-state-0.jpg"
+               alt={t('hero.imgAltTransparent')} fetchpriority="high" decoding="async" />
+        </picture>
+        <picture>
+          <source srcset="/hero/hero-state-1.webp" type="image/webp" />
+          <img class="frame" data-layer="1" src="/hero/hero-state-1.jpg"
+               alt="" aria-hidden="true" decoding="async" />
+        </picture>
+        <picture>
+          <source srcset="/hero/hero-state-2.webp" type="image/webp" />
+          <img class="frame" data-layer="2" src="/hero/hero-state-2.jpg"
+               alt="" aria-hidden="true" decoding="async" />
+        </picture>
+        <picture>
+          <source srcset="/hero/hero-state-3.webp" type="image/webp" />
+          <img class="frame" data-layer="3" src="/hero/hero-state-3.jpg"
+               alt={t('hero.imgAltOpaque')} decoding="async" />
+        </picture>
+      </div>
+
+      <div class="vignette" aria-hidden="true"></div>
+
+      <!-- Contenuto editoriale: eyebrow + headline (reveal al load) -->
+      <div class="content">
+        <div class="eyebrow">{t('hero.eyebrow')}</div>
+        <h1 class="headline">
+          <span class="headline__line"><span>{t('hero.headline1')}</span></span>
+          <span class="headline__line"><span>{t('hero.headline2')}</span></span>
+        </h1>
+      </div>
+
+      <!-- HUD stato vetro (pilotato dallo scroll) -->
+      <div class="hud" data-hero-hud>
+        <div class="hud__row">
+          <span class="hud__label">{t('hero.hudLabel')}</span>
+          <span class="hud__state" data-hud-state>{t('hero.hudState0')}</span>
+        </div>
+        <div class="hud__bar"><div class="hud__fill" data-hud-fill></div></div>
+        <div class="hud__ticks">
+          <span data-hud-tick="start">{t('hero.hudTickStart')}</span>
+          <span data-hud-tick="end">{t('hero.hudTickEnd')}</span>
+        </div>
+      </div>
+
+      <!-- Isole interattive (Ticker) iniettate da index.astro -->
+      <slot />
+
     </div>
   </div>
-
-  <!-- Isole interattive (GlassDemo, Ticker) iniettate da index.astro -->
-  <slot />
 </section>
 
 <style>
   .hero {
     position: relative;
-    min-height: 100vh;
+  }
+
+  /* La track dà la corsa allo scroll: 4 schermate. */
+  .scene-track {
+    position: relative;
+    height: 400vh;
+  }
+
+  /* Lo stage resta fisso mentre si scrolla dentro la track. */
+  .scene-stage {
+    position: sticky;
+    top: 0;
+    height: 100vh;
     overflow: hidden;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
   }
 
-  /* =========================================================
-     SCENA — cielo abisso (sfondo pulito; lo skyline vive nel pannello)
-     ========================================================= */
-  .scene {
+  /* ===== Frames ===== */
+  .frames { position: absolute; inset: 0; z-index: 1; }
+
+  .frame {
     position: absolute;
     inset: 0;
-    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: opacity;
+  }
+  .frame[data-layer="0"] { opacity: 1; }
+  .frame[data-layer="1"],
+  .frame[data-layer="2"],
+  .frame[data-layer="3"] { opacity: 0; }
+
+  /* Velo per leggibilità testo/HUD; non oscura la scena. */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
     background:
-      radial-gradient(ellipse 80% 60% at 70% 40%, rgba(45, 111, 184, 0.22) 0%, transparent 70%),
-      radial-gradient(ellipse 60% 40% at 20% 60%, rgba(20, 40, 80, 0.45) 0%, transparent 60%),
-      linear-gradient(180deg, #0A1226 0%, #050B1A 70%);
+      radial-gradient(120% 80% at 28% 42%, transparent 38%, rgba(5, 5, 7, 0.55) 100%),
+      linear-gradient(180deg, rgba(5, 5, 7, 0.35) 0%, transparent 22%, transparent 64%, rgba(5, 5, 7, 0.6) 100%);
   }
 
-  /* =========================================================
-     CONTENT — eyebrow + headline + subtitle + CTA
-     ========================================================= */
+  /* ===== Contenuto editoriale ===== */
   .content {
     position: relative;
     z-index: 10;
-    padding: 0 8%;
-    max-width: 50%;
+    padding: 0 clamp(24px, 5vw, 64px);
+    max-width: 56%;
+    margin-bottom: 210px;
     pointer-events: none;
   }
-
   .content > * { pointer-events: auto; }
 
   .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
     font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.22em;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
     color: var(--c-cyan);
+    background: rgba(5, 5, 7, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(56, 214, 198, 0.30);
+    border-radius: 999px;
+    padding: 8px 16px;
     margin-bottom: 32px;
     opacity: 0;
     animation: fadeInUp 800ms var(--ease-out) 200ms forwards;
   }
-
   .eyebrow::before {
     content: '';
     display: inline-block;
-    width: 32px;
-    height: 1px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
     background: var(--c-cyan);
-    vertical-align: middle;
-    margin-right: 16px;
+    box-shadow: 0 0 10px 1px var(--c-cyan);
+    flex: 0 0 auto;
   }
 
   .headline {
     font-family: var(--font-display);
-    font-size: clamp(40px, 5.5vw, 76px);
+    font-size: clamp(32px, 5vw, 60px);
     font-weight: 600;
     letter-spacing: -0.025em;
     line-height: 1;
-    margin-bottom: 28px;
   }
-
   .headline__line {
     display: block;
     overflow: hidden;
   }
-
   .headline__line span {
     display: inline-block;
     opacity: 0;
     transform: translateY(100%);
     animation: lineUp 1000ms var(--ease-out) forwards;
   }
-
   .headline__line:nth-child(1) span { animation-delay: 400ms; }
-  .headline__line:nth-child(2) span { animation-delay: 600ms; color: var(--c-mist); }
+  .headline__line:nth-child(2) span { animation-delay: 600ms; color: var(--c-copper); }
 
-  @keyframes lineUp {
-    to { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes lineUp { to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-  @keyframes fadeInUp {
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .subtitle {
-    font-size: 17px;
-    line-height: 1.65;
-    color: var(--c-mist);
-    max-width: 440px;
-    margin-bottom: 48px;
+  /* ===== HUD stato vetro =====
+     bottom alto abbastanza da stare SOPRA il Ticker (che è bottom:0, ~62px
+     desktop). Lascio margine generoso. */
+  .hud {
+    position: absolute;
+    left: clamp(24px, 5vw, 64px);
+    bottom: 104px;
+    z-index: 15;
+    width: min(360px, 80vw);
+    border: 1px solid rgba(245, 245, 247, 0.10);
+    background: rgba(5, 5, 7, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 16px 18px;
     opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 800ms var(--ease-out) 1000ms forwards;
+    animation: fadeInUp 800ms var(--ease-out) 1100ms forwards;
   }
-
-  .subtitle em {
-    font-family: var(--font-serif);
-    font-style: italic;
-    color: var(--c-copper);
-    font-weight: 400;
-  }
-
-  .cta-row {
+  .hud__row {
     display: flex;
-    gap: 16px;
-    align-items: center;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 800ms var(--ease-out) 1200ms forwards;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--c-mist);
   }
-
-  .cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 28px;
-    background: var(--c-cyan);
-    color: var(--c-void);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: var(--radius-pill);
-    transition: all 300ms var(--ease);
-  }
-
-  .cta:hover {
-    background: var(--c-pearl);
-    transform: translateY(-2px);
-  }
-
-  .cta-secondary {
+  .hud__state {
     color: var(--c-pearl);
-    font-size: 14px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 16px 0;
-    transition: gap 300ms var(--ease);
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    transition: color 250ms var(--ease);
   }
+  .hud__bar {
+    margin-top: 12px;
+    height: 4px;
+    border-radius: 4px;
+    background: rgba(245, 245, 247, 0.08);
+    overflow: hidden;
+  }
+  .hud__fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--c-cyan), var(--c-copper));
+  }
+  .hud__ticks {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
+    color: var(--c-mist);
+  }
+  .hud__ticks span { transition: color 200ms var(--ease); }
 
-  .cta-secondary:hover { gap: 14px; }
-
-  .cta-secondary svg { transition: transform 300ms var(--ease); }
-  .cta-secondary:hover svg { transform: translateX(4px); }
-
-  /* =========================================================
-     RESPONSIVE
-     ========================================================= */
+  /* ===== Responsive ===== */
   @media (max-width: 900px) {
-    .content { max-width: 100%; padding: 0 24px; }
+    .content { max-width: 100%; padding: 0 24px; margin-bottom: 230px; }
+    .hud { left: 24px; right: 24px; width: auto; bottom: 132px; }
   }
 
-  /* =========================================================
-     FIX #2 — prefers-reduced-motion
-     Azzera entrance animations (mostra tutto subito).
-     Parallax/auto-cycle vivono nelle isole JS: guard dedicato lì.
-     ========================================================= */
+  /* ===== prefers-reduced-motion =====
+     Niente reveal, niente scroll-anim: track collassa, mostra stato opaco. */
   @media (prefers-reduced-motion: reduce) {
-    .eyebrow,
-    .headline__line span,
-    .subtitle,
-    .cta-row {
+    .scene-track { height: 100vh; }
+    .frame[data-layer="3"] { opacity: 1; }
+    .eyebrow, .headline__line span, .hud {
       animation: none;
       opacity: 1;
       transform: none;
     }
+    .hud__fill { width: 100%; }
   }
 </style>
 
 <script>
-  // FIX #1 — parallax leggero di .scene, throttlato a 1 write/frame via rAF.
-  // Off su reduced-motion, pointer coarse (touch) e schermi stretti.
-  const scene = document.querySelector<HTMLElement>(".scene");
+  // Driver scroll-driven, rAF-throttled. Off su reduced-motion (CSS già mostra
+  // stato finale).
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
+  const track = document.querySelector<HTMLElement>("[data-hero-track]");
 
-  if (scene && !prefersReduced && !coarsePointer && window.innerWidth > 900) {
+  if (track && !prefersReduced) {
+    const layers = [1, 2, 3].map(
+      (n) => track.querySelector<HTMLElement>(`.frame[data-layer="${n}"]`)
+    );
+    const fill = track.querySelector<HTMLElement>("[data-hud-fill]");
+    const stateEl = track.querySelector<HTMLElement>("[data-hud-state]");
+    const tickStart = track.querySelector<HTMLElement>('[data-hud-tick="start"]');
+    const tickEnd = track.querySelector<HTMLElement>('[data-hud-tick="end"]');
+
+    // Etichette stato dal data-states JSON (i18n, serializzato nel frontmatter).
+    let LABELS: string[] = [];
+    try {
+      LABELS = JSON.parse(track.dataset.states ?? "[]");
+    } catch {
+      LABELS = [];
+    }
+
+    const smoothstep = (t: number) => t * t * (3 - 2 * t);
+    const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
+
     let ticking = false;
-    let mx = 0;
-    let my = 0;
 
-    const apply = () => {
-      const x = (mx / window.innerWidth - 0.5) * 20;
-      const y = (my / window.innerHeight - 0.5) * 10;
-      scene.style.transform = `translate(${-x}px, ${-y}px) scale(1.05)`;
+    const update = () => {
+      const rect = track.getBoundingClientRect();
+      const total = rect.height - window.innerHeight;
+      const p = total > 0 ? clamp01(-rect.top / total) : 0;
+
+      const seg = p * 3;
+      if (layers[0]) layers[0].style.opacity = String(clamp01(seg));
+      if (layers[1]) layers[1].style.opacity = String(clamp01(seg - 1));
+      if (layers[2]) layers[2].style.opacity = String(smoothstep(clamp01(seg - 2)));
+
+      if (fill) fill.style.width = (p * 100).toFixed(1) + "%";
+
+      let idx = 0;
+      if (p >= 0.85) idx = 3;
+      else if (p >= 0.55) idx = 2;
+      else if (p >= 0.2) idx = 1;
+
+      if (stateEl && LABELS[idx]) stateEl.textContent = LABELS[idx];
+      if (stateEl) stateEl.style.color = idx === 3 ? "var(--c-copper)" : "var(--c-pearl)";
+      if (tickStart) tickStart.style.color = idx === 0 ? "var(--c-cyan)" : "var(--c-mist)";
+      if (tickEnd) tickEnd.style.color = idx === 3 ? "var(--c-copper)" : "var(--c-mist)";
+
       ticking = false;
     };
 
-    window.addEventListener("mousemove", (e) => {
-      mx = e.clientX;
-      my = e.clientY;
+    const onScroll = () => {
       if (!ticking) {
         ticking = true;
-        requestAnimationFrame(apply);
+        requestAnimationFrame(update);
       }
-    });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    update();
   }
 </script>
