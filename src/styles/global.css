@@ -17,8 +17,8 @@
   --color-copper:   #D89968;
 
   /* Typography — famiglie (self-hosting in STEP 5) */
-  --font-display: "Geist Sans", "Inter", system-ui, sans-serif;
-  --font-sans:    "Inter", "Geist Sans", system-ui, sans-serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-sans:    "Space Grotesk", system-ui, sans-serif;
   --font-mono:    "JetBrains Mono", ui-monospace, monospace;
   --font-serif:   "Source Serif 4", Georgia, serif;
 

@@ -1,16 +1,17 @@
 ---
 // Font self-hosted via Fontsource — migrati qui dalla sonda index.astro.
-import "@fontsource/geist-sans/500.css";
-import "@fontsource/inter/400.css";
-import "@fontsource/inter/500.css";
+import "@fontsource/space-grotesk/400.css";
+import "@fontsource/space-grotesk/500.css";
+import "@fontsource/space-grotesk/600.css";
+import "@fontsource/space-grotesk/700.css";
 import "@fontsource/jetbrains-mono/400.css";
 import "@fontsource/jetbrains-mono/500.css";
 import "@fontsource/source-serif-4/400-italic.css";
 import "../styles/global.css";
 
-// URL hashato del woff2 LCP-critical (headline hero in Geist 500).
+// URL hashato del woff2 LCP-critical (headline hero in Space Grotesk 500).
 // Vite dedupe: stesso asset referenziato da 500.css → il preload combacia.
-import geist500 from "@fontsource/geist-sans/files/geist-sans-latin-500-normal.woff2?url";
+import sg500 from "@fontsource/space-grotesk/files/space-grotesk-latin-500-normal.woff2?url";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
@@ -47,8 +48,8 @@ const {
     <link rel="alternate" hreflang="en" href="/en/" />
     <link rel="alternate" hreflang="x-default" href="/" />
 
-    <!-- Preload font LCP-critical: headline hero in Geist 500 -->
-    <link rel="preload" href={geist500} as="font" type="font/woff2" crossorigin />
+    <!-- Preload font LCP-critical: headline hero in Space Grotesk 500 -->
+    <link rel="preload" href={sg500} as="font" type="font/woff2" crossorigin />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
