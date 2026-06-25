@@ -203,6 +203,26 @@ export const ui = {
 
     // --- Language switcher ---
     'lang.switch': 'Cambia lingua',
+
+    // --- Prodotto: Blackout Hyper Glass ---
+    'prod.bhg.meta.title': 'Blackout Hyper Glass — PDLC switchable per il controllo solare | BrixiaTech',
+    'prod.bhg.meta.description': 'Blackout Hyper Glass: il vetro switchable più scuro della gamma BrixiaTech. Un PDLC a cristalli liquidi colorati che assorbe luce e calore — controllo solare dinamico, in pellicola adesiva o vetro laminato.',
+    'prod.bhg.eyebrow': 'PDLC · CONTROLLO SOLARE AD ALTE PRESTAZIONI',
+    'prod.bhg.name': 'Blackout Hyper Glass',
+    'prod.bhg.tagline': 'Il vetro switchable più scuro della nostra gamma. Nato per schermare il sole, non solo per la privacy.',
+    'prod.bhg.what.title': 'Un PDLC che si scurisce invece di farsi lattiginoso.',
+    'prod.bhg.what.body': 'La maggior parte dei vetri switchable, da spenta, diventa bianco-opaca. Blackout Hyper Glass no: a riposo vira a una tinta scura e profonda che assorbe la luce invece di diffonderla. È un cristallo liquido colorato — la variante pensata per chi cerca schermatura solare, non solo riservatezza. Acceso torna trasparente come un normale PDLC; spento è la superficie più scura che forniamo.',
+    'prod.bhg.edge.title': 'Assorbe luce e calore. È qui che fa la differenza.',
+    'prod.bhg.edge.body': 'Un vetro che diffonde la luce taglia la vista ma lascia passare gran parte dell’energia. Uno che la assorbe lavora sul calore e sull’abbagliamento. Blackout Hyper Glass appartiene alla seconda famiglia: davanti a una vetrata esposta al sole riduce l’irraggiamento e il riverbero molto più di un PDLC tradizionale, mantenendo la possibilità di tornare trasparente a comando. Una nota onesta: con il sole pieno alle spalle la tinta non è nero assoluto — vira a un bruno intenso. Non è una schermatura meccanica da oscuramento totale, è un controllo solare dinamico, ed è in quello che eccelle.',
+    'prod.bhg.how.title': 'Stessa logica del PDLC. Nessuna parte in movimento.',
+    'prod.bhg.how.body': 'Sotto resta un vetro switchable: uno strato di cristalli liquidi che cambia stato con un impulso elettrico. Spento, i cristalli colorati assorbono la luce; acceso, si allineano e lasciano passare la vista. Si comanda da interruttore, telecomando, app o in automatico — come ogni nostra superficie switchable.',
+    'prod.bhg.how.link': 'Come funziona lo switchable',
+    'prod.bhg.scale.title': 'Indipendente per natura. Connesso quando serve.',
+    'prod.bhg.scale.body': 'Comandare Blackout Hyper Glass richiede un solo gesto — un interruttore a parete, un telecomando, un’app — ed è disponibile in due forme: pellicola adesiva switchable, applicata in retrofit su un vetro esistente, oppure vetro laminato con il film già integrato tra le lastre per nuove forniture. Dove le superfici si moltiplicano, intere facciate o ambienti che devono seguire il sole senza un intervento manuale, si può integrare B-LOGIC, la piattaforma di controllo che abbiamo sviluppato. È il prodotto con cui mostriamo il controllo solare dinamico nella nostra simulazione. Un’estensione possibile, mai un prerequisito.',
+    'prod.bhg.scale.link': 'Scopri B-LOGIC',
+    'prod.bhg.cta.title': 'Valutiamo il tuo progetto.',
+    'prod.bhg.cta.body': 'Esposizione, superfici, integrazione: ogni intervento è diverso. Raccontaci cosa ti serve e prepariamo una proposta dedicata.',
+    'prod.bhg.cta.button': 'Richiedi un preventivo',
   },
   en: {
     // --- Meta / SEO ---
@@ -401,5 +421,25 @@ export const ui = {
 
     // --- Language switcher ---
     'lang.switch': 'Switch language',
+
+    // --- Product: Blackout Hyper Glass ---
+    'prod.bhg.meta.title': 'Blackout Hyper Glass — switchable PDLC for solar control | BrixiaTech',
+    'prod.bhg.meta.description': 'Blackout Hyper Glass: the darkest switchable glass in the BrixiaTech range. A dyed liquid-crystal PDLC that absorbs light and heat — dynamic solar control, as adhesive film or laminated glass.',
+    'prod.bhg.eyebrow': 'PDLC · HIGH-PERFORMANCE SOLAR CONTROL',
+    'prod.bhg.name': 'Blackout Hyper Glass',
+    'prod.bhg.tagline': 'The darkest switchable glass in our range. Built to screen the sun, not just for privacy.',
+    'prod.bhg.what.title': 'A PDLC that darkens instead of turning milky.',
+    'prod.bhg.what.body': 'Most switchable glass turns opaque white when off. Blackout Hyper Glass does not: at rest it shifts to a deep, dark tint that absorbs light rather than scattering it. It is a dyed liquid crystal — the variant built for solar shading, not privacy alone. Powered on it returns clear like any PDLC; powered off it is the darkest surface we supply.',
+    'prod.bhg.edge.title': 'It absorbs light and heat. That is where it earns its place.',
+    'prod.bhg.edge.body': 'Glass that scatters light cuts the view but lets most of the energy through. Glass that absorbs it works on heat and glare. Blackout Hyper Glass belongs to the second family: on sun-exposed glazing it reduces solar gain and reflection far more than a conventional PDLC, while keeping the option to switch clear on command. An honest note: in full direct sun the tint is not absolute black — it shifts to a deep brown. It is not a mechanical full-blackout shade; it is dynamic solar control, and that is what it does best.',
+    'prod.bhg.how.title': 'Same logic as PDLC. No moving parts.',
+    'prod.bhg.how.body': 'Underneath it is still switchable glass: a layer of liquid crystals that changes state with an electric signal. Off, the dyed crystals absorb light; on, they align and let the view through. Controlled by switch, remote, app or automatically — like every switchable surface we supply.',
+    'prod.bhg.how.link': 'How switchable glass works',
+    'prod.bhg.scale.title': 'Independent by design. Connected when it counts.',
+    'prod.bhg.scale.body': 'Operating Blackout Hyper Glass takes a single gesture — a wall switch, a remote, an app — and it comes in two forms: switchable adhesive film, retrofitted onto existing glass, or laminated glass with the film already set between the panes for new supply. Where surfaces multiply, across whole façades or rooms meant to follow the sun without a hand on the switch, B-LOGIC can be integrated — the control platform we developed. It is the product we use to show dynamic solar control in our simulation. A possible extension, never a prerequisite.',
+    'prod.bhg.scale.link': 'Discover B-LOGIC',
+    'prod.bhg.cta.title': 'Let’s assess your project.',
+    'prod.bhg.cta.body': 'Exposure, surfaces, integration: every job is different. Tell us what you need and we’ll prepare a dedicated proposal.',
+    'prod.bhg.cta.button': 'Request a quote',
   },
 } as const;

@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Nav from "../../../components/Nav.astro";
+import BlackoutHyperGlass from "../../../components/BlackoutHyperGlass.astro";
+import Footer from "../../../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<BaseLayout title={t("prod.bhg.meta.title")} description={t("prod.bhg.meta.description")}>
+  <Nav />
+  <BlackoutHyperGlass />
+  <Footer />
+</BaseLayout>
