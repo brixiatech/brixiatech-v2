@@ -21,11 +21,15 @@ const t = useTranslations(lang);
 interface Props {
   title?: string;
   description?: string;
+  hrefIt?: string;
+  hrefEn?: string;
 }
 
 const {
   title = t("meta.title"),
   description = t("meta.description"),
+  hrefIt = "/",
+  hrefEn = "/en/",
 } = Astro.props;
 ---
 
@@ -44,9 +48,9 @@ const {
          TODO STEP 8 — con `site` definito, passare canonical e hreflang a
          URL assoluti via new URL(path, Astro.site).href -->
     <link rel="canonical" href={Astro.url.pathname} />
-    <link rel="alternate" hreflang="it" href="/" />
-    <link rel="alternate" hreflang="en" href="/en/" />
-    <link rel="alternate" hreflang="x-default" href="/" />
+    <link rel="alternate" hreflang="it" href={hrefIt} />
+    <link rel="alternate" hreflang="en" href={hrefEn} />
+    <link rel="alternate" hreflang="x-default" href={hrefIt} />
 
     <!-- Preload font LCP-critical: headline hero in Space Grotesk 500 -->
     <link rel="preload" href={sg500} as="font" type="font/woff2" crossorigin />
