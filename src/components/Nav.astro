@@ -12,18 +12,22 @@ const t = useTranslations(lang);
 // URL delle due lingue secondo la config di routing (non hardcodare '/' e '/en/')
 const itUrl = getRelativeLocaleUrl('it', '');
 const enUrl = getRelativeLocaleUrl('en', '');
+
+// Voci nav path-aware: da qualsiasi pagina riportano alla home + ancora,
+// nella lingua corrente. Ancore = id reali degli eyebrow di sezione.
+const base = lang === 'en' ? '/en/' : '/';
 ---
 
 <nav class="nav">
   <div class="nav__logo">BRIXIATECH</div>
   <ul class="nav__menu">
-    <li><a href="#tecnologie">{t('nav.tech')}</a></li>
-    <li><a href="#b-logic">B-LOGIC</a></li>
-    <li><a href="#realizzazioni">{t('nav.work')}</a></li>
-    <li><a href="#insights">{t('nav.insights')}</a></li>
+    <li><a href={`${base}#tech-eyebrow`}>{t('nav.tech')}</a></li>
+    <li><a href={`${base}#blogic-eyebrow`}>B-LOGIC</a></li>
+    <li><a href={`${base}#realizzazioni-eyebrow`}>{t('nav.work')}</a></li>
+    <li><a href={`${base}#insights`}>{t('nav.insights')}</a></li>
   </ul>
   <div class="nav__actions">
-    <a href="#preventivo" class="nav__cta">{t('nav.quote')}</a>
+    <a href={`${base}#contact-eyebrow`} class="nav__cta">{t('nav.quote')}</a>
 
     <div class="nav__lang" aria-label={t('lang.switch')}>
       <a href={itUrl} class="nav__lang-link" aria-current={lang === 'it' ? 'true' : undefined}>IT</a>
