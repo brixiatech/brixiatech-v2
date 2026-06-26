@@ -1,0 +1,285 @@
+---
+// TecnologieIndex.astro — pagina-indice /tecnologie (pillar). Panoramica delle
+// sei tecnologie switchable, angolata sulla SCELTA (non sul meccanismo, che vive
+// nella sezione Technologies della home). Hero centrato compatto.
+// Meccanismo href-opzionale: una voce con `href` diventa cliccabile e mostra la
+// CTA; senza `href` resta card informativa. Oggi solo DLC → Blackout Hyper Glass.
+// Per abilitare una tecnologia in futuro: aggiungere href + ctaKey alla sua voce.
+// ZERO JS. Token --c-*. Riusa il pattern di Technologies.astro (.tech → .tecindex).
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Link cross-page lang-aware (stesso pattern di Nav e pagine-prodotto).
+const base = lang === "en" ? "/en/" : "/";
+const bhgHref =
+  lang === "en"
+    ? "/en/technologies/blackout-hyper-glass"
+    : "/tecnologie/blackout-hyper-glass";
+
+type Tech = {
+  titleKey: string;
+  bodyKey: string;
+  href?: string;
+  ctaKey?: string;
+};
+
+const family1: Tech[] = [
+  { titleKey: "tech.pdlc.title", bodyKey: "techindex.pdlc.body" },
+  { titleKey: "tech.pnlc.title", bodyKey: "techindex.pnlc.body" },
+];
+
+const family2: Tech[] = [
+  { titleKey: "tech.spd.title", bodyKey: "techindex.spd.body" },
+  { titleKey: "tech.ec.title", bodyKey: "techindex.ec.body" },
+  {
+    titleKey: "tech.dlc.title",
+    bodyKey: "techindex.dlc.body",
+    href: bhgHref,
+    ctaKey: "techindex.dlc.cta",
+  },
+  { titleKey: "tech.clc.title", bodyKey: "techindex.clc.body" },
+];
+---
+
+<section class="tecindex" aria-labelledby="tecindex-eyebrow">
+  <p class="tecindex__eyebrow" id="tecindex-eyebrow">{t("techindex.eyebrow")}</p>
+  <h1 class="tecindex__title">{t("techindex.title")}</h1>
+  <p class="tecindex__lead">{t("techindex.lead")}</p>
+
+  <h2 class="tecindex__family">{t("techindex.family1.label")}</h2>
+  <div class="tecindex__grid tecindex__grid--2">
+    {family1.map((item) => (
+      <article class="tecindex__item">
+        <h3 class="tecindex__name">{t(item.titleKey)}</h3>
+        <p class="tecindex__desc">{t(item.bodyKey)}</p>
+        {item.href && item.ctaKey && (
+          <a class="tecindex__cta" href={item.href}>
+            {t(item.ctaKey)}<span class="tecindex__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        )}
+      </article>
+    ))}
+  </div>
+
+  <h2 class="tecindex__family tecindex__family--2">{t("techindex.family2.label")}</h2>
+  <div class="tecindex__grid tecindex__grid--4">
+    {family2.map((item) => (
+      <article class="tecindex__item">
+        <h3 class="tecindex__name">{t(item.titleKey)}</h3>
+        <p class="tecindex__desc">{t(item.bodyKey)}</p>
+        {item.href && item.ctaKey && (
+          <a class="tecindex__cta" href={item.href}>
+            {t(item.ctaKey)}<span class="tecindex__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        )}
+      </article>
+    ))}
+  </div>
+
+  <p class="tecindex__channel">{t("techindex.channel")}</p>
+
+  <div class="tecindex__foot">
+    <a class="tecindex__foot-cta" href={`${base}#contact-eyebrow`}>
+      {t("techindex.cta")}
+    </a>
+  </div>
+</section>
+
+<style>
+  /* Hero compatto: padding-top pieno, padding-bottom ridotto così le card
+     entrano presto in viewport (la pagina è uno smistamento, non un manifesto). */
+  .tecindex {
+    padding: var(--space-section-y) var(--space-section-x);
+  }
+
+  .tecindex__eyebrow {
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--c-mist-bright);
+    margin: 0 0 24px;
+  }
+
+  .tecindex__title {
+    font-family: var(--font-display);
+    color: var(--c-pearl);
+    text-align: center;
+    font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+    line-height: 1.2;
+    max-width: 820px;
+    margin: 0 auto 24px;
+    font-weight: 500;
+  }
+
+  .tecindex__lead {
+    color: var(--c-mist);
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 72px;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  .tecindex__family {
+    font-family: var(--font-display);
+    color: var(--c-mist-bright);
+    text-align: center;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    max-width: var(--container-max);
+    margin: 0 auto 32px;
+  }
+
+  .tecindex__family--2 {
+    margin-top: 72px;
+  }
+
+  .tecindex__grid {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    display: grid;
+    gap: 48px 40px;
+  }
+
+  .tecindex__grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tecindex__grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Card: hairline superiore come Technologies home. La CTA, quando presente,
+     spinge in basso con margin-top:auto così le card di una riga restano
+     allineate anche con corpi di lunghezza diversa. */
+  .tecindex__item {
+    text-align: left;
+    border-top: 1px solid var(--border-hairline);
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tecindex__name {
+    font-family: var(--font-display);
+    color: var(--c-pearl);
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin: 0 0 12px;
+    line-height: 1.3;
+  }
+
+  .tecindex__desc {
+    color: var(--c-mist);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* CTA inline: unico elemento interattivo della pagina → unico punto di colore
+     cyan. Allineata in basso nella card. */
+  .tecindex__cta {
+    margin-top: 20px;
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    color: var(--c-cyan);
+    text-decoration: none;
+    transition: gap 200ms var(--ease), color 200ms var(--ease);
+  }
+
+  .tecindex__cta:hover {
+    color: var(--c-cyan);
+    gap: 14px;
+  }
+
+  .tecindex__cta:focus-visible {
+    outline: 2px solid var(--c-cyan);
+    outline-offset: 3px;
+  }
+
+  .tecindex__arrow {
+    transition: transform 200ms var(--ease);
+  }
+
+  .tecindex__channel {
+    color: var(--c-mist-bright);
+    text-align: center;
+    max-width: 720px;
+    margin: 72px auto 0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    font-style: italic;
+  }
+
+  .tecindex__foot {
+    text-align: center;
+    margin-top: 48px;
+  }
+
+  /* CTA finale outline cyan, coerente con la CTA chiusura di Blackout Hyper Glass. */
+  .tecindex__foot-cta {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    color: var(--c-cyan);
+    text-decoration: none;
+    border: 1px solid var(--c-cyan);
+    padding: 14px 28px;
+    border-radius: var(--radius-pill);
+    transition: background 200ms var(--ease);
+  }
+
+  .tecindex__foot-cta:hover {
+    background: rgba(0, 209, 255, 0.08);
+  }
+
+  .tecindex__foot-cta:focus-visible {
+    outline: 2px solid var(--c-cyan);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tecindex__cta,
+    .tecindex__arrow {
+      transition: none;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .tecindex {
+      padding: 56px 24px;
+    }
+    .tecindex__lead {
+      margin-bottom: 56px;
+    }
+    .tecindex__grid {
+      gap: 40px;
+    }
+    .tecindex__grid--4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .tecindex__family--2 {
+      margin-top: 56px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .tecindex__grid--2,
+    .tecindex__grid--4 {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+</style>

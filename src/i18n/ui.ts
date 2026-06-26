@@ -109,6 +109,29 @@ export const ui = {
       "Cristalli liquidi colesterici a riflessione selettiva, bistabili: mantengono lo stato senza alimentazione continua, consumando solo allo switch. Agiscono come scudo termico dinamico, riflettendo l'energia solare invece di assorbirla.",
     'tech.channel':
       'Tutte queste tecnologie sono disponibili anche come sola pellicola da stratificare, fornite a vetrai e serramentisti che le integrano nei propri manufatti.',
+    // --- Tecnologie (pagina indice) ---
+    'techindex.eyebrow': 'TECNOLOGIE',
+    'techindex.title': 'Sei tecnologie. Ognuna risolve un problema diverso.',
+    'techindex.lead':
+      "Vetro intelligente non è una sola cosa. Privacy a comando, controllo dell’abbagliamento, schermatura solare passiva: esigenze diverse, principi fisici diversi. Questa pagina mette in fila le sei tecnologie che forniamo e a cosa serve ciascuna — per arrivare alla scelta giusta, non alla più pubblicizzata.",
+    'techindex.family1.label': 'Privacy a comando',
+    'techindex.pdlc.body':
+      'Privacy istantanea, acceso/spento. Opaco quando non alimentato, trasparente quando lo è. Lo standard più maturo: la scelta quando serve nascondere o rivelare uno spazio in un istante.',
+    'techindex.pnlc.body':
+      "La logica inversa. Trasparente di default, opaco solo quando serve. Per chi resta trasparente la maggior parte del tempo e per i contesti dove, mancando corrente, il vetro deve restare visibile.",
+    'techindex.family2.label': 'Controllo di luce e calore',
+    'techindex.spd.body':
+      "Oscuramento regolabile in continuo, come un dimmer. Dalla tinta profonda alla trasparenza in pochi secondi, mantenendo la vista. Per governare l’abbagliamento senza chiudere la visuale.",
+    'techindex.ec.body':
+      'Viraggio graduale a bassissimo consumo: il vetro si colora, si schiarisce e mantiene lo stato senza energia. Per il controllo solare e termico passivo di facciate ed edifici ad alta efficienza.',
+    'techindex.dlc.body':
+      'Assorbe la luce invece di diffonderla: vira a una tinta fumé anziché farsi lattiginoso. Controllo solare ad alte prestazioni, con rese estetiche in più colorazioni. È la tecnologia di Blackout Hyper Glass.',
+    'techindex.dlc.cta': 'Scopri Blackout Hyper Glass',
+    'techindex.clc.body':
+      "Riflette l’energia solare invece di assorbirla. Bistabile: mantiene lo stato senza alimentazione continua, consuma solo allo switch. Uno scudo termico dinamico per il contenimento del calore.",
+    'techindex.channel':
+      'Ogni tecnologia è disponibile come vetro finito o come sola pellicola da stratificare, fornita a vetrai e serramentisti. La scelta tra le sei dipende dal progetto: ne parliamo prima di proporre una soluzione.',
+    'techindex.cta': 'Parliamo del tuo progetto',
 
     // --- Apps ---
     'apps.eyebrow': 'APPLICAZIONI',
@@ -327,6 +350,29 @@ export const ui = {
       'Cholesteric liquid crystals with selective reflection, bistable: they hold their state without continuous power, drawing energy only when switching. A dynamic thermal shield that reflects solar energy rather than absorbing it.',
     'tech.channel':
       "All of these are also available as film for lamination, supplied to glaziers and window fabricators who build them into their own units.",
+    // --- Technologies (index page) ---
+    'techindex.eyebrow': 'TECHNOLOGIES',
+    'techindex.title': 'Six technologies. Each solves a different problem.',
+    'techindex.lead':
+      "Smart glass isn’t one thing. Privacy on demand, glare control, passive solar shielding: different needs, different physics. This page lays out the six technologies we supply and what each is for — so the choice is the right one, not the most marketed.",
+    'techindex.family1.label': 'Privacy on demand',
+    'techindex.pdlc.body':
+      'Instant privacy, on or off. Opaque unpowered, clear when powered. The most mature standard: the choice when a space needs to hide or reveal in an instant.',
+    'techindex.pnlc.body':
+      "The inverse logic. Clear by default, opaque only when needed. For surfaces that stay clear most of the time, and for contexts where a power loss must leave the glass visible.",
+    'techindex.family2.label': 'Light and heat control',
+    'techindex.spd.body':
+      'Continuously adjustable dimming, like a dial. From deep tint to clear in seconds, view intact. For managing glare without closing off the outside.',
+    'techindex.ec.body':
+      'Gradual shift at very low power: the glass tints, clears and holds its state with no energy draw. For passive solar and thermal control on façades and high-efficiency buildings.',
+    'techindex.dlc.body':
+      'Absorbs light rather than scattering it: tints to a smoked finish instead of turning milky. High-performance solar control, with finishes in several tones. The technology behind Blackout Hyper Glass.',
+    'techindex.dlc.cta': 'Explore Blackout Hyper Glass',
+    'techindex.clc.body':
+      "Reflects solar energy rather than absorbing it. Bistable: holds its state without continuous power, drawing energy only when switching. A dynamic thermal shield for heat containment.",
+    'techindex.channel':
+      "Every technology is available as finished glass or as film for lamination, supplied to glaziers and fabricators. Which of the six fits depends on the project: we discuss it before proposing anything.",
+    'techindex.cta': "Let’s talk about your project",
 
     // --- Apps ---
     'apps.eyebrow': 'APPLICATIONS',

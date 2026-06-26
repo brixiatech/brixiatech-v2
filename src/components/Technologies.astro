@@ -14,12 +14,19 @@ const family1 = [
   { titleKey: 'tech.pnlc.title', bodyKey: 'tech.pnlc.body' },
 ] as const;
 
-const family2 = [
+const bhgHref =
+  lang === "en"
+    ? "/en/technologies/blackout-hyper-glass"
+    : "/tecnologie/blackout-hyper-glass";
+
+type Tech = { titleKey: string; bodyKey: string; href?: string; ctaKey?: string };
+
+const family2: Tech[] = [
   { titleKey: 'tech.spd.title', bodyKey: 'tech.spd.body' },
   { titleKey: 'tech.ec.title', bodyKey: 'tech.ec.body' },
-  { titleKey: 'tech.dlc.title', bodyKey: 'tech.dlc.body' },
+  { titleKey: 'tech.dlc.title', bodyKey: 'tech.dlc.body', href: bhgHref, ctaKey: 'techindex.dlc.cta' },
   { titleKey: 'tech.clc.title', bodyKey: 'tech.clc.body' },
-] as const;
+];
 ---
 
 <section class="tech" aria-labelledby="tech-eyebrow">
@@ -43,6 +50,11 @@ const family2 = [
       <article class="tech__item">
         <h4 class="tech__name">{t(item.titleKey)}</h4>
         <p class="tech__desc">{t(item.bodyKey)}</p>
+        {item.href && item.ctaKey && (
+          <a class="tech__cta" href={item.href}>
+            {t(item.ctaKey)}<span class="tech__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        )}
       </article>
     ))}
   </div>
@@ -135,6 +147,39 @@ const family2 = [
     font-size: 0.92rem;
     line-height: 1.6;
     margin: 0;
+  }
+
+  .tech__cta {
+    margin-top: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    color: var(--c-cyan);
+    text-decoration: none;
+    transition: gap 200ms var(--ease), color 200ms var(--ease);
+  }
+
+  .tech__cta:hover {
+    gap: 14px;
+  }
+
+  .tech__cta:focus-visible {
+    outline: 2px solid var(--c-cyan);
+    outline-offset: 3px;
+  }
+
+  .tech__arrow {
+    transition: transform 200ms var(--ease);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tech__cta,
+    .tech__arrow {
+      transition: none;
+    }
   }
 
   .tech__channel {
