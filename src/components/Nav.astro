@@ -4,14 +4,18 @@
 // Colore fisso pearl + scrim gradiente sottile come backdrop difensivo:
 // resta leggibile anche quando scorrono sotto sezioni più chiare (post-hero).
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import { getRelativeLocaleUrl } from "astro:i18n";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-// URL delle due lingue secondo la config di routing (non hardcodare '/' e '/en/')
-const itUrl = getRelativeLocaleUrl('it', '');
-const enUrl = getRelativeLocaleUrl('en', '');
+// Coppia IT/EN della pagina corrente, inoltrata dal BaseLayout (stessa fonte
+// degli hreflang). Lo switcher punta alla versione nell'altra lingua DELLA
+// PAGINA CORRENTE, non alla home.
+interface Props {
+  hrefIt?: string;
+  hrefEn?: string;
+}
+const { hrefIt = "/", hrefEn = "/en/" } = Astro.props;
 
 // Voci nav path-aware: da qualsiasi pagina riportano alla home + ancora,
 // nella lingua corrente. Ancore = id reali degli eyebrow di sezione.
@@ -30,13 +34,10 @@ const base = lang === 'en' ? '/en/' : '/';
     <a href={`${base}#contact-eyebrow`} class="nav__cta">{t('nav.quote')}</a>
 
     <div class="nav__lang" aria-label={t('lang.switch')}>
-      <a href={itUrl} class="nav__lang-link" aria-current={lang === 'it' ? 'true' : undefined}>IT</a>
+      <a href={hrefIt} class="nav__lang-link" aria-current={lang === 'it' ? 'true' : undefined}>IT</a>
       <span class="nav__lang-sep" aria-hidden="true">|</span>
-      <a href={enUrl} class="nav__lang-link" aria-current={lang === 'en' ? 'true' : undefined}>EN</a>
+      <a href={hrefEn} class="nav__lang-link" aria-current={lang === 'en' ? 'true' : undefined}>EN</a>
     </div>
-
-    <!-- TODO i18n: switcher path-aware quando il sito avrà più pagine.
-         Oggi (hero single-page) IT→/ e EN→/en/ è corretto. -->
   </div>
 </nav>
 

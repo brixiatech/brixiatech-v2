@@ -14,6 +14,7 @@ import "../styles/global.css";
 import sg500 from "@fontsource/space-grotesk/files/space-grotesk-latin-500-normal.woff2?url";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import Nav from "../components/Nav.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -64,6 +65,7 @@ const {
   </head>
   <body>
     <div class="grain" aria-hidden="true"></div>
+    <Nav hrefIt={hrefIt} hrefEn={hrefEn} />
     <slot />
   </body>
 </html>

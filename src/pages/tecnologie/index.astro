@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Nav from "../../components/Nav.astro";
 import TecnologieIndex from "../../components/TecnologieIndex.astro";
 import Footer from "../../components/Footer.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
@@ -8,7 +7,6 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 <BaseLayout title={t("techindex.title")} description={t("techindex.lead")} hrefIt="/tecnologie" hrefEn="/en/technologies">
-  <Nav />
   <TecnologieIndex />
   <Footer />
 </BaseLayout>
