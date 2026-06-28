@@ -19,6 +19,11 @@ const bhgHref =
     ? "/en/technologies/blackout-hyper-glass"
     : "/tecnologie/blackout-hyper-glass";
 
+const pdlcHref =
+  lang === "en"
+    ? "/en/technologies/smart-film-pdlc"
+    : "/tecnologie/smart-film-pdlc";
+
 type Tech = {
   titleKey: string;
   bodyKey: string;
@@ -27,7 +32,12 @@ type Tech = {
 };
 
 const family1: Tech[] = [
-  { titleKey: "tech.pdlc.title", bodyKey: "techindex.pdlc.body" },
+  {
+    titleKey: "tech.pdlc.title",
+    bodyKey: "techindex.pdlc.body",
+    href: pdlcHref,
+    ctaKey: "techindex.pdlc.cta",
+  },
   { titleKey: "tech.pnlc.title", bodyKey: "techindex.pnlc.body" },
 ];
 

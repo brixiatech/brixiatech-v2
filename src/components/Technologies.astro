@@ -9,17 +9,22 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const family1 = [
-  { titleKey: 'tech.pdlc.title', bodyKey: 'tech.pdlc.body' },
-  { titleKey: 'tech.pnlc.title', bodyKey: 'tech.pnlc.body' },
-] as const;
-
 const bhgHref =
   lang === "en"
     ? "/en/technologies/blackout-hyper-glass"
     : "/tecnologie/blackout-hyper-glass";
 
+const pdlcHref =
+  lang === "en"
+    ? "/en/technologies/smart-film-pdlc"
+    : "/tecnologie/smart-film-pdlc";
+
 type Tech = { titleKey: string; bodyKey: string; href?: string; ctaKey?: string };
+
+const family1: Tech[] = [
+  { titleKey: 'tech.pdlc.title', bodyKey: 'tech.pdlc.body', href: pdlcHref, ctaKey: 'techindex.pdlc.cta' },
+  { titleKey: 'tech.pnlc.title', bodyKey: 'tech.pnlc.body' },
+];
 
 const family2: Tech[] = [
   { titleKey: 'tech.spd.title', bodyKey: 'tech.spd.body' },
@@ -40,6 +45,11 @@ const family2: Tech[] = [
       <article class="tech__item">
         <h4 class="tech__name">{t(item.titleKey)}</h4>
         <p class="tech__desc">{t(item.bodyKey)}</p>
+        {item.href && item.ctaKey && (
+          <a class="tech__cta" href={item.href}>
+            {t(item.ctaKey)}<span class="tech__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        )}
       </article>
     ))}
   </div>

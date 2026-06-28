@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SmartFilmPdlc from "../../../components/SmartFilmPdlc.astro";
+import Footer from "../../../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<BaseLayout title={t("prod.pdlc.meta.title")} description={t("prod.pdlc.meta.description")} hrefIt="/tecnologie/smart-film-pdlc" hrefEn="/en/technologies/smart-film-pdlc">
+  <SmartFilmPdlc />
+  <Footer />
+</BaseLayout>

@@ -117,6 +117,7 @@ export const ui = {
     'techindex.family1.label': 'Privacy a comando',
     'techindex.pdlc.body':
       'Privacy istantanea, acceso/spento. Opaco quando non alimentato, trasparente quando lo è. Lo standard più maturo: la scelta quando serve nascondere o rivelare uno spazio in un istante.',
+    'techindex.pdlc.cta': 'Scopri Smart Film PDLC',
     'techindex.pnlc.body':
       "La logica inversa. Trasparente di default, opaco solo quando serve. Per chi resta trasparente la maggior parte del tempo e per i contesti dove, mancando corrente, il vetro deve restare visibile.",
     'techindex.family2.label': 'Controllo di luce e calore',
@@ -246,6 +247,31 @@ export const ui = {
     'prod.bhg.cta.title': 'Valutiamo il tuo progetto.',
     'prod.bhg.cta.body': 'Esposizione, superfici, integrazione: ogni intervento è diverso. Raccontaci cosa ti serve e prepariamo una proposta dedicata.',
     'prod.bhg.cta.button': 'Richiedi un preventivo',
+
+    // --- Prodotto: Smart Film PDLC ---
+    'prod.pdlc.meta.title': 'Smart film PDLC: il vetro che si oscura a comando | BrixiaTech',
+    'prod.pdlc.meta.description': 'Smart film PDLC, la tecnologia switchable più diffusa: il vetro passa da trasparente a opaco a comando. Privacy e controllo della luce, in pellicola adesiva o vetro laminato.',
+    'prod.pdlc.eyebrow': 'SMART FILM PDLC · PRIVACY A COMANDO',
+    'prod.pdlc.name': 'Smart film PDLC: trasparente o opaco, a comando',
+    'prod.pdlc.tagline': 'La tecnologia switchable più diffusa. Un impulso elettrico e il vetro passa da limpido a privato — niente tende, nessuna parte in movimento.',
+    'prod.pdlc.what.title': 'Privacy quando serve, luce sempre.',
+    'prod.pdlc.what.body': 'Lo smart film PDLC è una pellicola a cristalli liquidi che si applica a un vetro esistente o si integra in un vetro laminato. Alimentato, il vetro è limpido e trasparente; a riposo diventa opaco e scherma la vista. È privacy a comando: una sola superficie fa il lavoro del vetro e della tenda, lascia entrare la luce e protegge la riservatezza. È la forma di vetro switchable che la maggior parte delle persone immagina quando pensa a un vetro che si oscura.',
+    'prod.pdlc.what.link': 'Per schermare il sole e il calore esiste una variante scura della stessa famiglia: Blackout Hyper Glass',
+    'prod.pdlc.how.title': 'Un impulso elettrico. Nessuna parte in movimento.',
+    'prod.pdlc.how.body': 'Tra due strati conduttivi corre un sottile film di cristalli liquidi. Senza tensione i cristalli restano disordinati e diffondono la luce: il vetro appare opaco. Con la tensione si allineano e il vetro torna trasparente. Il passaggio è istantaneo e si comanda da interruttore, telecomando, app o in automatico — come ogni nostra superficie switchable.',
+    'prod.pdlc.how.link': 'Come funziona lo switchable',
+    'prod.pdlc.tiers.title': 'Due versioni, una sola tecnologia.',
+    'prod.pdlc.premium.label': 'Premium',
+    'prod.pdlc.premium.body': 'La nostra versione più raffinata. Punto di bianco più neutro per la resa più limpida e cristallina, materiali selezionati ai massimi livelli e rifinitura in Italia da laboratorio specializzato. Garanzia 7 anni.',
+    'prod.pdlc.essential.label': 'Essential',
+    'prod.pdlc.essential.body': 'La stessa tecnologia switchable, con materiali di qualità e una resa che non scende a compromessi. La scelta diretta per portare il PDLC nel progetto. Garanzia 2 anni, estendibile fino a 5.',
+    'prod.pdlc.tiers.note': 'Entrambe disponibili come pellicola adesiva, applicata su un vetro esistente, o come vetro laminato per nuove forniture. Entrambe progettate per durare nel tempo.',
+    'prod.pdlc.scale.title': 'Indipendente per natura. Connesso quando serve.',
+    'prod.pdlc.scale.body': 'Una singola superficie si comanda con un gesto — interruttore, telecomando, app. Dove le superfici si moltiplicano, su interi ambienti o facciate che devono seguire la luce senza intervento manuale, si può integrare B-LOGIC, la piattaforma di controllo che coordina più superfici attraverso una logica unificata.',
+    'prod.pdlc.scale.link': 'Scopri B-LOGIC',
+    'prod.pdlc.cta.title': 'Parliamo del tuo progetto.',
+    'prod.pdlc.cta.body': 'Privacy, luce, superfici, integrazione: ogni intervento ha le sue variabili. Raccontaci cosa ti serve e prepariamo una proposta su misura.',
+    'prod.pdlc.cta.button': 'Richiedi un preventivo',
   },
   en: {
     // --- Meta / SEO ---
@@ -358,6 +384,7 @@ export const ui = {
     'techindex.family1.label': 'Privacy on demand',
     'techindex.pdlc.body':
       'Instant privacy, on or off. Opaque unpowered, clear when powered. The most mature standard: the choice when a space needs to hide or reveal in an instant.',
+    'techindex.pdlc.cta': 'Discover Smart Film PDLC',
     'techindex.pnlc.body':
       "The inverse logic. Clear by default, opaque only when needed. For surfaces that stay clear most of the time, and for contexts where a power loss must leave the glass visible.",
     'techindex.family2.label': 'Light and heat control',
@@ -487,5 +514,30 @@ export const ui = {
     'prod.bhg.cta.title': 'Let’s assess your project.',
     'prod.bhg.cta.body': 'Exposure, surfaces, integration: every job is different. Tell us what you need and we’ll prepare a dedicated proposal.',
     'prod.bhg.cta.button': 'Request a quote',
+
+    // --- Product: Smart Film PDLC ---
+    'prod.pdlc.meta.title': 'PDLC smart film: glass that switches from clear to private | BrixiaTech',
+    'prod.pdlc.meta.description': 'PDLC smart film, the most widely used switchable technology: glass turns from clear to opaque on demand. Privacy and light control, as adhesive film or laminated glass.',
+    'prod.pdlc.eyebrow': 'PDLC SMART FILM · PRIVACY ON DEMAND',
+    'prod.pdlc.name': 'PDLC smart film: clear or opaque, on demand',
+    'prod.pdlc.tagline': 'The most widely used switchable technology. One electrical signal and the glass turns from clear to private — no blinds, no moving parts.',
+    'prod.pdlc.what.title': 'Privacy when you need it, light all the time.',
+    'prod.pdlc.what.body': 'PDLC smart film is a liquid-crystal film applied to existing glass or set inside laminated glass. Powered on, the glass is clear and transparent; at rest it turns opaque and screens the view. This is privacy on demand: a single surface does the work of both glass and blind, lets daylight in and keeps the space private. It is the form of switchable glass most people picture when they imagine glass that turns dark.',
+    'prod.pdlc.what.link': 'For screening sun and heat there is a darker variant in the same family: Blackout Hyper Glass',
+    'prod.pdlc.how.title': 'One electrical signal. No moving parts.',
+    'prod.pdlc.how.body': 'A thin liquid-crystal film runs between two conductive layers. With no voltage the crystals stay disordered and scatter light, so the glass looks opaque. Apply voltage and they align, and the glass turns clear. The switch is instant and can be controlled by switch, remote, app or automatically — like every switchable surface we supply.',
+    'prod.pdlc.how.link': 'How switchable glass works',
+    'prod.pdlc.tiers.title': 'Two versions, one technology.',
+    'prod.pdlc.premium.label': 'Premium',
+    'prod.pdlc.premium.body': 'Our most refined version. A more neutral white point for the clearest, most crystalline result, top-grade materials and finishing in Italy by a specialist workshop. Seven-year warranty.',
+    'prod.pdlc.essential.label': 'Essential',
+    'prod.pdlc.essential.body': 'The same switchable technology, with quality materials and a result that makes no compromise on how it performs. The direct way to bring PDLC into the project. Two-year warranty, extendable up to five.',
+    'prod.pdlc.tiers.note': 'Both available as adhesive film, applied to existing glass, or as laminated glass for new supply. Both built to last.',
+    'prod.pdlc.scale.title': 'Independent by design. Connected when it counts.',
+    'prod.pdlc.scale.body': 'A single surface is controlled with one gesture — switch, remote, app. Where surfaces multiply, across whole rooms or façades meant to follow the light without a hand on the switch, B-LOGIC can be integrated — the control platform that coordinates multiple surfaces through unified logic.',
+    'prod.pdlc.scale.link': 'Discover B-LOGIC',
+    'prod.pdlc.cta.title': 'Let’s talk about your project.',
+    'prod.pdlc.cta.body': 'Privacy, light, surfaces, integration: every job has its own variables. Tell us what you need and we’ll prepare a tailored proposal.',
+    'prod.pdlc.cta.button': 'Request a quote',
   },
 } as const;
