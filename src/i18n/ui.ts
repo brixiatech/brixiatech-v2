@@ -120,6 +120,7 @@ export const ui = {
     'techindex.pdlc.cta': 'Scopri Smart Film PDLC',
     'techindex.pnlc.body':
       "La logica inversa. Trasparente di default, opaco solo quando serve. Per chi resta trasparente la maggior parte del tempo e per i contesti dove, mancando corrente, il vetro deve restare visibile.",
+    'techindex.pnlc.cta': 'Scopri Smart Film PNLC',
     'techindex.family2.label': 'Controllo di luce e calore',
     'techindex.spd.body':
       "Oscuramento regolabile in continuo, come un dimmer. Dalla tinta profonda alla trasparenza in pochi secondi, mantenendo la vista. Per governare l’abbagliamento senza chiudere la visuale.",
@@ -272,6 +273,27 @@ export const ui = {
     'prod.pdlc.cta.title': 'Parliamo del tuo progetto.',
     'prod.pdlc.cta.body': 'Privacy, luce, superfici, integrazione: ogni intervento ha le sue variabili. Raccontaci cosa ti serve e prepariamo una proposta su misura.',
     'prod.pdlc.cta.button': 'Richiedi un preventivo',
+
+    // --- Prodotto: Smart Film PNLC ---
+    'prod.pnlc.meta.title': 'Smart Film PNLC — vetro switchable reverse, trasparente da spento | BrixiaTech',
+    'prod.pnlc.meta.description': 'Smart Film PNLC: il vetro switchable a logica inversa. Trasparente senza alimentazione, opaco a comando — ideale dove la trasparenza è lo stato abituale e nei contesti fail-safe. In pellicola adesiva o vetro laminato.',
+    'prod.pnlc.eyebrow': 'SMART FILM PNLC · LOGICA INVERSA',
+    'prod.pnlc.name': 'Smart Film PNLC: trasparente da spento, opaco a comando',
+    'prod.pnlc.tagline': 'La logica inversa del vetro switchable. Senza alimentazione resta limpido; un impulso elettrico e diventa opaco — il contrario del PDLC tradizionale.',
+    'prod.pnlc.what.title': 'Trasparente quando è spento. Opaco solo quando lo accendi.',
+    'prod.pnlc.what.body': 'Lo Smart Film PNLC è una pellicola a cristalli liquidi con la logica ribaltata rispetto al PDLC comune. A riposo, senza alimentazione, il vetro è limpido e trasparente; sotto tensione diventa opaco e scherma la vista. È pensato per le superfici che restano trasparenti la maggior parte del tempo e si oscurano solo quando serve: alimenti il vetro per la privacy, non per la trasparenza.',
+    'prod.pnlc.what.link': 'Se invece la privacy è lo stato che ti serve più spesso, esiste la logica diretta: Smart Film PDLC',
+    'prod.pnlc.edge.title': 'Manca l’alimentazione, il vetro resta trasparente. È qui che conta.',
+    'prod.pnlc.edge.body': 'C’è un contesto in cui la logica inversa non è una preferenza ma un requisito: la sicurezza. Un vetro che senza tensione resta trasparente non blocca mai una via di fuga, non oscura un ambiente durante un blackout, non isola chi sta dentro un mezzo di soccorso. Dove un’interruzione di alimentazione deve lasciare la superficie visibile — uscite di emergenza, veicoli, ambienti normati — la PNLC è la scelta naturale, perché il suo stato di riposo coincide con lo stato sicuro. Una nota onesta: l’altra faccia di questa logica è che l’oscuramento richiede alimentazione costante. Per superfici che devono restare opache a lungo è meno efficiente di un PDLC tradizionale; la PNLC dà il meglio dove la trasparenza è lo stato abituale e l’oscuramento è occasionale.',
+    'prod.pnlc.how.title': 'Stessa logica switchable. Nessuna parte in movimento.',
+    'prod.pnlc.how.body': 'Sotto resta un vetro switchable: un sottile film di cristalli liquidi tra due strati conduttivi. La differenza è nella formulazione, che inverte la risposta alla tensione — senza alimentazione i cristalli lasciano passare la vista, sotto tensione diffondono la luce e il vetro si fa opaco. Si comanda da interruttore, telecomando, app o in automatico — come ogni nostra superficie switchable.',
+    'prod.pnlc.how.link': 'Come funziona lo switchable',
+    'prod.pnlc.scale.title': 'Indipendente per natura. Connesso quando serve.',
+    'prod.pnlc.scale.body': 'Una singola superficie si comanda con un gesto — interruttore, telecomando, app — ed è disponibile in due forme: pellicola adesiva switchable, applicata in retrofit su un vetro esistente, oppure vetro laminato con il film già integrato per nuove forniture, entrambe coperte da garanzia di 2 anni. Dove le superfici si moltiplicano, su interi ambienti o facciate che devono rispondere insieme senza intervento manuale, si può integrare B-LOGIC, la piattaforma di controllo che coordina più superfici attraverso una logica unificata.',
+    'prod.pnlc.scale.link': 'Scopri B-LOGIC',
+    'prod.pnlc.cta.title': 'Parliamo del tuo progetto.',
+    'prod.pnlc.cta.body': 'Destinazione d’uso, requisiti di sicurezza, superfici, integrazione: ogni intervento è diverso. Raccontaci cosa ti serve e prepariamo una proposta dedicata.',
+    'prod.pnlc.cta.button': 'Richiedi un preventivo',
   },
   en: {
     // --- Meta / SEO ---
@@ -387,6 +409,7 @@ export const ui = {
     'techindex.pdlc.cta': 'Discover Smart Film PDLC',
     'techindex.pnlc.body':
       "The inverse logic. Clear by default, opaque only when needed. For surfaces that stay clear most of the time, and for contexts where a power loss must leave the glass visible.",
+    'techindex.pnlc.cta': 'Discover Smart Film PNLC',
     'techindex.family2.label': 'Light and heat control',
     'techindex.spd.body':
       'Continuously adjustable dimming, like a dial. From deep tint to clear in seconds, view intact. For managing glare without closing off the outside.',
@@ -539,5 +562,26 @@ export const ui = {
     'prod.pdlc.cta.title': 'Let’s talk about your project.',
     'prod.pdlc.cta.body': 'Privacy, light, surfaces, integration: every job has its own variables. Tell us what you need and we’ll prepare a tailored proposal.',
     'prod.pdlc.cta.button': 'Request a quote',
+
+    // --- Product: Smart Film PNLC ---
+    'prod.pnlc.meta.title': 'Smart Film PNLC — reverse switchable glass, clear when off | BrixiaTech',
+    'prod.pnlc.meta.description': 'Smart Film PNLC: switchable glass with inverted logic. Clear without power, opaque on command — built for surfaces that stay clear most of the time and for fail-safe contexts. As adhesive film or laminated glass.',
+    'prod.pnlc.eyebrow': 'SMART FILM PNLC · REVERSE LOGIC',
+    'prod.pnlc.name': 'Smart Film PNLC: clear when off, opaque on command',
+    'prod.pnlc.tagline': 'Switchable glass with the logic reversed. With no power it stays clear; one electrical pulse and it turns opaque — the opposite of standard PDLC.',
+    'prod.pnlc.what.title': 'Clear when it’s off. Opaque only when you switch it on.',
+    'prod.pnlc.what.body': 'Smart Film PNLC is a liquid-crystal film with the logic of standard PDLC reversed. At rest, with no power, the glass is clear and transparent; under voltage it turns opaque and blocks the view. It’s built for surfaces that stay clear most of the time and darken only when needed: you power the glass for privacy, not for transparency.',
+    'prod.pnlc.what.link': 'If privacy is the state you need more often, there’s the direct logic: Smart Film PDLC',
+    'prod.pnlc.edge.title': 'Lose power and the glass stays clear. That’s where it counts.',
+    'prod.pnlc.edge.body': 'There’s one setting where reverse logic isn’t a preference but a requirement: safety. Glass that stays clear without voltage never blocks an escape route, never darkens a room during a blackout, never isolates the people inside an emergency vehicle. Wherever a power loss has to leave the surface visible — emergency exits, vehicles, regulated environments — PNLC is the natural choice, because its resting state is the safe state. One honest note: the flip side of this logic is that staying opaque draws power continuously. For surfaces that need to stay dark for long stretches it’s less efficient than standard PDLC; PNLC is at its best where clear is the usual state and opacity is occasional.',
+    'prod.pnlc.how.title': 'The same switchable logic. No moving parts.',
+    'prod.pnlc.how.body': 'Underneath it’s still switchable glass: a thin liquid-crystal film between two conductive layers. The difference is in the formulation, which inverts the response to voltage — with no power the crystals let the view through, under voltage they scatter light and the glass turns opaque. It’s controlled by switch, remote, app or automatically — like every switchable surface we make.',
+    'prod.pnlc.how.link': 'How switchable glass works',
+    'prod.pnlc.scale.title': 'Independent by nature. Connected when it matters.',
+    'prod.pnlc.scale.body': 'A single surface is controlled with one gesture — switch, remote, app — and comes in two forms: switchable adhesive film, retrofitted onto existing glass, or laminated glass with the film already integrated for new builds, both covered by a 2-year warranty. Where surfaces multiply, across whole rooms or façades that need to respond together without manual input, you can integrate B-LOGIC, the control platform that coordinates multiple surfaces through unified logic.',
+    'prod.pnlc.scale.link': 'Discover B-LOGIC',
+    'prod.pnlc.cta.title': 'Let’s talk about your project.',
+    'prod.pnlc.cta.body': 'Intended use, safety requirements, surfaces, integration: every project is different. Tell us what you need and we’ll prepare a dedicated proposal.',
+    'prod.pnlc.cta.button': 'Request a quote',
   },
 } as const;

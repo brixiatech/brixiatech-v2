@@ -24,6 +24,11 @@ const pdlcHref =
     ? "/en/technologies/smart-film-pdlc"
     : "/tecnologie/smart-film-pdlc";
 
+const pnlcHref =
+  lang === "en"
+    ? "/en/technologies/smart-film-pnlc"
+    : "/tecnologie/smart-film-pnlc";
+
 type Tech = {
   titleKey: string;
   bodyKey: string;
@@ -38,7 +43,7 @@ const family1: Tech[] = [
     href: pdlcHref,
     ctaKey: "techindex.pdlc.cta",
   },
-  { titleKey: "tech.pnlc.title", bodyKey: "techindex.pnlc.body" },
+  { titleKey: "tech.pnlc.title", bodyKey: "techindex.pnlc.body", href: pnlcHref, ctaKey: "techindex.pnlc.cta" },
 ];
 
 const family2: Tech[] = [
