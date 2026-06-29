@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import InsightTeche from "../../components/InsightTeche.astro";
+import Footer from "../../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<BaseLayout title={t("insights.teche.meta.title")} description={t("insights.teche.meta.description")} hrefIt="/insights/coprire-vetri-teche-espositori-vetrine" hrefEn="/en/insights/covering-protecting-display-cases">
+  <InsightTeche />
+  <Footer />
+</BaseLayout>

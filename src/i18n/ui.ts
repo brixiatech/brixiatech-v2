@@ -138,6 +138,56 @@ export const ui = {
       'Ogni tecnologia è disponibile come vetro finito o come sola pellicola da stratificare, fornita a vetrai e serramentisti. La scelta tra le sei dipende dal progetto: ne parliamo prima di proporre una soluzione.',
     'techindex.cta': 'Parliamo del tuo progetto',
 
+    // --- Insights ---
+    'insights.eyebrow': 'INSIGHTS',
+    'insights.title': 'Come scegliere e usare il vetro switchable',
+    'insights.lead':
+      'Guide pratiche, caso per caso: coprire una teca, oscurare una vetrina, rendere privato un ambiente. Ogni approfondimento parte dalla situazione concreta e arriva alla tecnologia giusta.',
+    'insights.cta': 'Parliamo del tuo progetto',
+
+    'insights.teche.card.title': 'Teche, espositori e vetrine espositive',
+    'insights.teche.card.summary':
+      'Il vetro che mostra il pezzo nella luce migliore e lo protegge — o lo sottrae allo sguardo — a comando. Per musei, gioiellerie e retail premium, senza tende né pannelli a rovinare l’allestimento.',
+    'insights.teche.card.cta': 'Leggi l’articolo',
+
+    'insights.teche.meta.title': 'Coprire teche, espositori e vetrine espositive — vetro switchable | BrixiaTech',
+    'insights.teche.meta.description': 'Il vetro switchable che copre e protegge teche, espositori e vetrine: trasparente quando il pezzo va visto, opaco a comando, con blocco UV contro lo scolorimento. Per musei, gioiellerie e retail premium.',
+
+    'insights.teche.eyebrow': 'INSIGHTS · TECHE ED ESPOSITORI',
+    'insights.teche.h1': 'Coprire e proteggere teche, espositori e vetrine espositive',
+    'insights.teche.lead':
+      'Esporre dietro vetro significa gestire due esigenze opposte: mostrare il pezzo nella luce migliore e, quando serve, sottrarlo allo sguardo. Una teca da museo tra due allestimenti, un espositore di gioielleria a negozio chiuso, una vetrina interna prima di un lancio: in tutti questi casi il vetro fisso non basta, e tende o pannelli rovinano la linea dell’allestimento.',
+
+    'insights.teche.show.title': 'Il vetro che mostra o nasconde a comando',
+    'insights.teche.show.body':
+      'Il vetro switchable passa da trasparente a opaco con un comando. La teca resta limpida quando il pezzo va visto, diventa una superficie satinata quando va protetto o riservato — senza meccanismi a vista, senza nulla da montare e smontare. È la stessa superficie che cambia funzione su decisione, non un accessorio aggiunto sopra il vetro.',
+
+    'insights.teche.where.title': 'Dove ha senso',
+    'insights.teche.where.body':
+      'Nel museo, su teche e vetrine espositive: si controlla l’esposizione di un pezzo allestimento per allestimento. Nel retail premium e nella gioielleria, su espositori e vetrine interne: si svela un prodotto al momento giusto e lo si cela fuori orario. In entrambi i contesti il vetro lavora come parte dell’allestimento, non contro di esso.',
+
+    'insights.teche.protect.title': 'Proteggere ciò che si espone',
+    'insights.teche.protect.body':
+      'La luce che valorizza un pezzo è anche la luce che lo fa sbiadire nel tempo. I film switchable di BrixiaTech bloccano i raggi ultravioletti, la componente che scolorisce tessuti, stampe, pigmenti e materiali sensibili. Per teche museali e merce esposta è una protezione che agisce in continuo, indipendente dallo stato — trasparente o opaco che sia il vetro.',
+
+    'insights.teche.dark.title': 'Quando serve il buio, non la privacy',
+    'insights.teche.dark.body':
+      'In stato opaco PDLC e PNLC restituiscono un vetro smerigliato e luminoso: nascondono lo sguardo, non spengono la teca. Se l’esigenza è l’oscuramento reale — la vetrina che diventa scura, il pezzo nel buio completo — la tecnologia è il DLC, ossia Blackout Hyper Glass. Scegliere bene dipende da cosa deve fare la teca, non da quale prodotto è “il migliore”.',
+    'insights.teche.dark.pdlc': 'Scopri Smart Film PDLC',
+    'insights.teche.dark.pnlc': 'Scopri Smart Film PNLC',
+    'insights.teche.dark.blackout': 'Scopri Blackout Hyper Glass',
+
+    'insights.teche.orchestrate.title': 'Orchestrare più vetri',
+    'insights.teche.orchestrate.body':
+      'Quando le teche sono molte, il controllo può essere gestito in modalità manuale, oppure centralizzato con il nostro sistema B-LOGIC: in ambito espositivo diventa uno strumento di facility management, che programma accensione e spegnimento per orari di apertura e allestimenti e coordina più teche insieme.',
+    'insights.teche.orchestrate.blogic': 'Scopri B-LOGIC',
+
+    'insights.teche.cta.title': 'Parliamo del tuo progetto.',
+    'insights.teche.cta.body':
+      'Ogni allestimento ha vincoli propri: dimensioni delle teche, esposizione, esigenze di conservazione. Raccontaci il progetto e definiamo insieme la soluzione di vetro switchable adatta.',
+    'insights.teche.cta.button': 'Richiedi un preventivo',
+    'insights.teche.cta.explore': 'Esplora le tecnologie',
+
     // --- Apps ---
     'apps.eyebrow': 'APPLICAZIONI',
     'apps.title':
@@ -468,6 +518,56 @@ export const ui = {
     'techindex.channel':
       "Every technology is available as finished glass or as film for lamination, supplied to glaziers and fabricators. Which of the six fits depends on the project: we discuss it before proposing anything.",
     'techindex.cta': "Let’s talk about your project",
+
+    // --- Insights ---
+    'insights.eyebrow': 'INSIGHTS',
+    'insights.title': 'Choosing and using switchable glass',
+    'insights.lead':
+      'Practical guides by use case: covering a display case, blacking out a shopfront, making a room private. Each piece starts from the real situation and arrives at the right technology.',
+    'insights.cta': 'Let’s talk about your project',
+
+    'insights.teche.card.title': 'Display cases, showcases and museum vitrines',
+    'insights.teche.card.summary':
+      'Glass that shows a piece in its best light and protects it — or takes it out of sight — on command. For museums, jewellers and premium retail, with no curtains or panels to spoil the display.',
+    'insights.teche.card.cta': 'Read the article',
+
+    'insights.teche.meta.title': 'Covering and protecting display cases and showcases — switchable glass | BrixiaTech',
+    'insights.teche.meta.description': 'Switchable glass that covers and protects display cases, showcases and vitrines: transparent when the piece should be seen, opaque on command, with UV blocking against fading. For museums, jewellers and premium retail.',
+
+    'insights.teche.eyebrow': 'INSIGHTS · DISPLAY CASES & SHOWCASES',
+    'insights.teche.h1': 'Covering and protecting display cases, showcases and museum vitrines',
+    'insights.teche.lead':
+      'Displaying behind glass means balancing two opposing needs: showing a piece in its best light and, when required, taking it out of sight. A museum case between two installations, a jewellery display after hours, an internal vitrine ahead of a launch — fixed glass cannot do both, and curtains or panels break the line of the display.',
+
+    'insights.teche.show.title': 'Glass that reveals or conceals on command',
+    'insights.teche.show.body':
+      'Switchable glass turns from clear to opaque at the touch of a control. The case stays transparent when the piece should be seen and becomes a frosted surface when it needs to be protected or kept private — with no visible mechanism and nothing to fit or remove. It is the same surface changing role on demand, not an accessory laid over the glass.',
+
+    'insights.teche.where.title': 'Where it makes sense',
+    'insights.teche.where.body':
+      'In museums, on display cases and exhibition vitrines, exposure can be managed installation by installation. In premium retail and jewellery, on displays and internal vitrines, a product is revealed at the right moment and concealed outside opening hours. In both settings the glass works as part of the display, not against it.',
+
+    'insights.teche.protect.title': 'Protecting what you display',
+    'insights.teche.protect.body':
+      'The light that shows a piece at its best is also the light that fades it over time. BrixiaTech switchable films block ultraviolet light, the component that fades textiles, prints, pigments and sensitive materials. For museum cases and displayed goods this protection works continuously, regardless of state — whether the glass is clear or opaque.',
+
+    'insights.teche.dark.title': 'When you need darkness, not privacy',
+    'insights.teche.dark.body':
+      'In their opaque state, PDLC and PNLC return a frosted, luminous glass: they screen the view, they do not black out the case. When the need is true darkness — the display going dark, the piece in full shade — the technology is DLC, namely Blackout Hyper Glass. The right choice depends on what the case has to do, not on which product is “best”.',
+    'insights.teche.dark.pdlc': 'Discover Smart Film PDLC',
+    'insights.teche.dark.pnlc': 'Discover Smart Film PNLC',
+    'insights.teche.dark.blackout': 'Explore Blackout Hyper Glass',
+
+    'insights.teche.orchestrate.title': 'Orchestrating multiple panes',
+    'insights.teche.orchestrate.body':
+      'Where cases are numerous, control can be handled manually or centralised through our B-LOGIC system: in an exhibition context it becomes a facility-management tool, scheduling on and off by opening hours and installations and coordinating multiple cases together.',
+    'insights.teche.orchestrate.blogic': 'Discover B-LOGIC',
+
+    'insights.teche.cta.title': 'Let’s talk about your project.',
+    'insights.teche.cta.body':
+      'Every installation has its own constraints: case dimensions, exposure, conservation needs. Tell us about the project and we’ll define the right switchable-glass solution together.',
+    'insights.teche.cta.button': 'Request a quote',
+    'insights.teche.cta.explore': 'Explore the technologies',
 
     // --- Apps ---
     'apps.eyebrow': 'APPLICATIONS',
