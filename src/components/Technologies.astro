@@ -24,6 +24,11 @@ const pnlcHref =
     ? "/en/technologies/smart-film-pnlc"
     : "/tecnologie/smart-film-pnlc";
 
+const spdHref =
+  lang === "en"
+    ? "/en/technologies/spd-smart-glass"
+    : "/tecnologie/spd-smart-glass";
+
 type Tech = { titleKey: string; bodyKey: string; href?: string; ctaKey?: string };
 
 const family1: Tech[] = [
@@ -32,7 +37,7 @@ const family1: Tech[] = [
 ];
 
 const family2: Tech[] = [
-  { titleKey: 'tech.spd.title', bodyKey: 'tech.spd.body' },
+  { titleKey: 'tech.spd.title', bodyKey: 'tech.spd.body', href: spdHref, ctaKey: 'techindex.spd.cta' },
   { titleKey: 'tech.ec.title', bodyKey: 'tech.ec.body' },
   { titleKey: 'tech.dlc.title', bodyKey: 'tech.dlc.body', href: bhgHref, ctaKey: 'techindex.dlc.cta' },
   { titleKey: 'tech.clc.title', bodyKey: 'tech.clc.body' },

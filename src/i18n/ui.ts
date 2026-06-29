@@ -97,7 +97,7 @@ export const ui = {
     'tech.family2.label': 'Controllo di luce e calore',
     'tech.spd.title': 'SPD',
     'tech.spd.body':
-      "Oscuramento variabile e continuo, regolabile come un reostato in pochi secondi, da una tinta scura profonda alla trasparenza. Eccelle nel controllo dell'abbagliamento mantenendo la vista verso l'esterno.",
+      "Oscuramento variabile e continuo, regolabile come un dimmer in pochi secondi, da una tinta scura profonda alla trasparenza. Eccelle nel controllo dell'abbagliamento mantenendo la vista verso l'esterno.",
     'tech.ec.title': 'Elettrocromico',
     'tech.ec.body':
       'Viraggio graduale a bassissimo voltaggio tramite reazione elettrochimica: il vetro si colora e si schiarisce, e mantiene lo stato senza consumare energia. La scelta per il controllo termico e solare passivo di facciate ed edifici ad alta efficienza.',
@@ -124,6 +124,7 @@ export const ui = {
     'techindex.family2.label': 'Controllo di luce e calore',
     'techindex.spd.body':
       "Oscuramento regolabile in continuo, come un dimmer. Dalla tinta profonda alla trasparenza in pochi secondi, mantenendo la vista. Per governare l’abbagliamento senza chiudere la visuale.",
+    'techindex.spd.cta': 'Scopri Smart Glass SPD',
     'techindex.ec.body':
       'Viraggio graduale a bassissimo consumo: il vetro si colora, si schiarisce e mantiene lo stato senza energia. Per il controllo solare e termico passivo di facciate ed edifici ad alta efficienza.',
     'techindex.dlc.body':
@@ -294,6 +295,26 @@ export const ui = {
     'prod.pnlc.cta.title': 'Parliamo del tuo progetto.',
     'prod.pnlc.cta.body': 'Destinazione d’uso, requisiti di sicurezza, superfici, integrazione: ogni intervento è diverso. Raccontaci cosa ti serve e prepariamo una proposta dedicata.',
     'prod.pnlc.cta.button': 'Richiedi un preventivo',
+
+    // --- Prodotto: Smart Glass SPD ---
+    'prod.spd.meta.title': 'Smart Glass SPD — vetro a oscuramento variabile e continuo | BrixiaTech',
+    'prod.spd.meta.description': 'Smart Glass SPD: il vetro a oscuramento variabile e continuo, regolabile come un dimmer dalla tinta scura alla trasparenza in pochi secondi. Controlla l’abbagliamento mantenendo la vista verso l’esterno.',
+    'prod.spd.eyebrow': 'SMART GLASS SPD · DIMMING CONTINUO',
+    'prod.spd.name': 'Smart Glass SPD: oscuramento variabile, dalla tinta scura alla trasparenza',
+    'prod.spd.tagline': 'Il vetro che si regola in continuo, come un dimmer: sposti la tinta dal chiaro allo scuro in pochi secondi e scegli qualsiasi gradazione intermedia — senza mai chiudere la vista verso l’esterno.',
+    'prod.spd.what.title': 'Non acceso o spento. Qualsiasi gradazione, a piacere.',
+    'prod.spd.what.body': 'Lo Smart Glass SPD non commuta tra due stati: modula. La sua tinta scorre in continuo dal trasparente allo scuro profondo, e si ferma dove vuoi — un velo leggero contro il sole di mezzogiorno, una schermatura intensa nelle ore di abbagliamento, la piena trasparenza quando la luce cala. Il controllo è immediato, in pochi secondi, e a ogni gradazione si continua a vedere attraverso il vetro: regoli la luce e il calore senza mai rinunciare alla vista verso l’esterno.',
+    'prod.spd.what.link': 'Se invece ti serve oscurare del tutto la vista, per la privacy, esiste la logica a stati: Smart Film PDLC',
+    'prod.spd.edge.title': 'Un dimmer per la luce naturale. Nessun altro vetro lo fa.',
+    'prod.spd.edge.body': 'Tutte le altre tecnologie della nostra gamma commutano tra stati definiti: trasparente o opaco, chiaro o schermato. Lo Smart Glass SPD è l’unico che si comporta come un dimmer — la gradazione è continua, e la imposti al valore esatto che serve in quel momento. È ciò che lo rende la scelta naturale dove la luce va governata con precisione e in tempo reale: vetrate esposte che cambiano abbagliamento nell’arco della giornata, lucernari, facciate e ambienti dove il comfort visivo conta quanto la vista. Una nota onesta: anche al massimo dell’oscuramento lo Smart Glass SPD resta una tinta scura attraverso cui si vede — è progettato per gestire luce e calore, non per la privacy. Dove serve chiudere completamente la visuale, la scelta giusta è un’altra tecnologia.',
+    'prod.spd.how.title': 'Microparticelle che si orientano. Luce che passa, a comando.',
+    'prod.spd.how.body': 'Dentro il vetro, un sottile film racchiude microscopiche particelle sospese tra due strati conduttivi. Senza alimentazione le particelle sono disposte in modo casuale e bloccano gran parte della luce: il vetro appare scuro. Quando riceve tensione, le particelle si allineano e lasciano passare la luce; e poiché il loro orientamento segue l’intensità dell’alimentazione, regolando la tensione si ottiene qualsiasi tinta intermedia, in continuo. Si comanda da interruttore, telecomando, app o in automatico — come ogni nostra superficie a controllo elettrico.',
+    'prod.spd.scale.title': 'Una superficie, o un intero edificio.',
+    'prod.spd.scale.body': 'Una singola vetrata si comanda con un gesto — interruttore, telecomando, app — ed è disponibile in due forme: pellicola adesiva, applicata in retrofit su un vetro esistente, oppure vetro laminato di sicurezza con il film SPD già integrato tra le lastre per nuove forniture, entrambe coperte da garanzia di 2 anni. Dove le superfici si moltiplicano, su intere facciate o ambienti che devono rispondere insieme all’andamento della luce senza intervento manuale, si può integrare B-LOGIC, la piattaforma di controllo che coordina più superfici attraverso una logica unificata.',
+    'prod.spd.scale.link': 'Scopri B-LOGIC',
+    'prod.spd.cta.title': 'Parliamo del tuo progetto.',
+    'prod.spd.cta.body': 'Esposizione, superfici, livello di controllo della luce, integrazione: ogni intervento è diverso. Raccontaci cosa ti serve e prepariamo una proposta dedicata.',
+    'prod.spd.cta.button': 'Richiedi un preventivo',
   },
   en: {
     // --- Meta / SEO ---
@@ -413,6 +434,7 @@ export const ui = {
     'techindex.family2.label': 'Light and heat control',
     'techindex.spd.body':
       'Continuously adjustable dimming, like a dial. From deep tint to clear in seconds, view intact. For managing glare without closing off the outside.',
+    'techindex.spd.cta': 'Discover Smart Glass SPD',
     'techindex.ec.body':
       'Gradual shift at very low power: the glass tints, clears and holds its state with no energy draw. For passive solar and thermal control on façades and high-efficiency buildings.',
     'techindex.dlc.body':
@@ -583,5 +605,25 @@ export const ui = {
     'prod.pnlc.cta.title': 'Let’s talk about your project.',
     'prod.pnlc.cta.body': 'Intended use, safety requirements, surfaces, integration: every project is different. Tell us what you need and we’ll prepare a dedicated proposal.',
     'prod.pnlc.cta.button': 'Request a quote',
+
+    // --- Product: Smart Glass SPD ---
+    'prod.spd.meta.title': 'Smart Glass SPD — variable, continuous dimming glass | BrixiaTech',
+    'prod.spd.meta.description': 'Smart Glass SPD: glass that dims continuously, adjusted like a dial from deep tint to clear in seconds. Controls glare while keeping the view outward.',
+    'prod.spd.eyebrow': 'SMART GLASS SPD · CONTINUOUS DIMMING',
+    'prod.spd.name': 'Smart Glass SPD: variable dimming, from deep tint to clear',
+    'prod.spd.tagline': 'Glass you adjust continuously, like a dial: move the tint from clear to dark in seconds and set any level in between — without ever closing off the view outward.',
+    'prod.spd.what.title': 'Not on or off. Any level you choose.',
+    'prod.spd.what.body': 'Smart Glass SPD doesn’t switch between two states — it modulates. Its tint runs continuously from clear to deep dark and stops wherever you want it: a light veil against the midday sun, heavy shading through peak glare, full clarity when the light fades. Control is immediate, within seconds, and at every level the glass stays see-through: you manage light and heat without ever giving up the view outward.',
+    'prod.spd.what.link': 'If instead you need to block the view entirely, for privacy, there’s the state-based logic: Smart Film PDLC',
+    'prod.spd.edge.title': 'A dimmer for daylight. No other glass does this.',
+    'prod.spd.edge.body': 'Every other technology in our range switches between defined states: clear or opaque, bright or shaded. Smart Glass SPD is the only one that behaves like a dimmer — the level is continuous, and you set it to the exact value the moment calls for. That makes it the natural choice wherever light has to be governed precisely and in real time: exposed glazing whose glare shifts through the day, skylights, façades and spaces where visual comfort matters as much as the view. An honest note: even at full tint, Smart Glass SPD remains a dark shade you can still see through — it’s built to manage light and heat, not for privacy. Where the view needs to be closed off completely, another technology is the right choice.',
+    'prod.spd.how.title': 'Microparticles that align. Light that passes, on command.',
+    'prod.spd.how.body': 'Inside the glass, a thin film holds microscopic suspended particles between two conductive layers. With no power, the particles sit at random and block most of the light: the glass appears dark. Under voltage they align and let light through; and because their orientation follows the strength of the power supplied, adjusting the voltage produces any intermediate tint, continuously. It’s controlled from a switch, remote, app or automatically — like every electrically controlled surface we make.',
+    'prod.spd.scale.title': 'One surface, or a whole building.',
+    'prod.spd.scale.body': 'A single pane is controlled with a gesture — switch, remote, app — and comes in two forms: an adhesive film, applied as a retrofit to existing glass, or laminated safety glass with the SPD film built in between the panes for new supply, both covered by a 2-year warranty. Where surfaces multiply, across whole façades or spaces that need to respond to the light together without manual intervention, B-LOGIC can be integrated — the control platform that coordinates multiple surfaces through unified logic.',
+    'prod.spd.scale.link': 'Discover B-LOGIC',
+    'prod.spd.cta.title': 'Let’s talk about your project.',
+    'prod.spd.cta.body': 'Exposure, surfaces, the level of light control you need, integration: every project is different. Tell us what you need and we’ll prepare a dedicated proposal.',
+    'prod.spd.cta.button': 'Request a quote',
   },
 } as const;
