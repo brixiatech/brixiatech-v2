@@ -125,6 +125,7 @@ export const ui = {
     'techindex.spd.body':
       "Oscuramento regolabile in continuo, come un dimmer. Dalla tinta profonda alla trasparenza in pochi secondi, mantenendo la vista. Per governare l’abbagliamento senza chiudere la visuale.",
     'techindex.spd.cta': 'Scopri Smart Glass SPD',
+    'techindex.ec.cta': 'Scopri Smart Glass EC',
     'techindex.ec.body':
       'Viraggio graduale a bassissimo consumo: il vetro si colora, si schiarisce e mantiene lo stato senza energia. Per il controllo solare e termico passivo di facciate ed edifici ad alta efficienza.',
     'techindex.dlc.body':
@@ -315,6 +316,25 @@ export const ui = {
     'prod.spd.cta.title': 'Parliamo del tuo progetto.',
     'prod.spd.cta.body': 'Esposizione, superfici, livello di controllo della luce, integrazione: ogni intervento è diverso. Raccontaci cosa ti serve e prepariamo una proposta dedicata.',
     'prod.spd.cta.button': 'Richiedi un preventivo',
+    // --- Prodotto: Smart Glass EC ---
+    'prod.ec.meta.title': 'Smart Glass EC — vetro elettrocromico a controllo solare passivo | BrixiaTech',
+    'prod.ec.meta.description': 'Smart Glass EC: il vetro elettrocromico che vira la tinta a comando e mantiene lo stato senza consumare energia. Controllo solare e termico passivo per facciate ed edifici ad alta efficienza.',
+    'prod.ec.eyebrow': 'SMART GLASS EC · CONTROLLO SOLARE PASSIVO',
+    'prod.ec.name': 'Smart Glass EC: vira a comando e mantiene lo stato senza energia',
+    'prod.ec.tagline': 'Vira la propria tinta a comando, dal chiaro al colorato, e mantiene lo stato senza consumare energia. Il controllo solare e termico per le facciate e gli edifici ad alta efficienza.',
+    'prod.ec.what.title': 'Controllo solare, non oscuramento.',
+    'prod.ec.what.body': 'L’elettrocromico nasce per gestire l’energia del sole, non per nascondere ciò che sta dietro al vetro. Anche alla tinta più intensa la lastra resta trasparente: si continua a vedere attraverso, mentre luce diretta e calore vengono attenuati. È la differenza tra schermare l’irraggiamento e creare privacy.',
+    'prod.ec.what.link': 'Se invece ti serve regolare l’abbagliamento in modo rapido e continuo, la scelta è il dimming: Smart Glass SPD',
+    'prod.ec.edge.title': 'Lo stato resta, l’energia no.',
+    'prod.ec.edge.body': 'La caratteristica che distingue l’elettrocromico da ogni altro vetro della gamma è la bistabilità: l’alimentazione serve a cambiare tinta, non a mantenerla. Raggiunta la gradazione voluta, il vetro la conserva da solo, senza consumo continuo. Su una facciata di centinaia di metri quadri significa governare l’irraggiamento per l’intera giornata con un dispendio di energia trascurabile — il motivo per cui l’elettrocromico è la scelta degli edifici progettati attorno all’efficienza.',
+    'prod.ec.how.title': 'Come vira il vetro.',
+    'prod.ec.how.body': 'Una tensione bassissima innesca una reazione elettrochimica negli strati del vetro: gli ioni migrano e la lastra si colora in modo graduale e uniforme; invertendo la polarità si schiarisce. La transizione è progressiva e avviene nell’arco di alcuni minuti, non è istantanea. È un cambiamento di stato pensato per seguire l’andamento del sole nella giornata, non per commutare a ripetizione.',
+    'prod.ec.scale.title': 'Una superficie, o un intero edificio.',
+    'prod.ec.scale.body': 'Lo Smart Glass EC è una fornitura su misura, in due forme: vetro laminato di sicurezza, con lo strato elettrocromico integrato tra le lastre, oppure vetrocamera isolante per l’involucro dell’edificio. Garanzia di 2 anni. Su grandi superfici — intere facciate che devono rispondere insieme all’andamento del sole — si può integrare B-LOGIC, la piattaforma di controllo che coordina più superfici attraverso una logica unificata.',
+    'prod.ec.scale.link': 'Scopri B-LOGIC',
+    'prod.ec.cta.title': 'Parliamo del tuo progetto.',
+    'prod.ec.cta.body': 'Ogni facciata ha vincoli propri: esposizione, dimensioni, stratigrafia del vetro. Raccontaci il progetto e definiamo insieme la configurazione elettrocromica adatta.',
+    'prod.ec.cta.button': 'Richiedi un preventivo',
   },
   en: {
     // --- Meta / SEO ---
@@ -435,6 +455,7 @@ export const ui = {
     'techindex.spd.body':
       'Continuously adjustable dimming, like a dial. From deep tint to clear in seconds, view intact. For managing glare without closing off the outside.',
     'techindex.spd.cta': 'Discover Smart Glass SPD',
+    'techindex.ec.cta': 'Discover Smart Glass EC',
     'techindex.ec.body':
       'Gradual shift at very low power: the glass tints, clears and holds its state with no energy draw. For passive solar and thermal control on façades and high-efficiency buildings.',
     'techindex.dlc.body':
@@ -625,5 +646,24 @@ export const ui = {
     'prod.spd.cta.title': 'Let’s talk about your project.',
     'prod.spd.cta.body': 'Exposure, surfaces, the level of light control you need, integration: every project is different. Tell us what you need and we’ll prepare a dedicated proposal.',
     'prod.spd.cta.button': 'Request a quote',
+    // --- Product: Smart Glass EC ---
+    'prod.ec.meta.title': 'Smart Glass EC — electrochromic glass for passive solar control | BrixiaTech',
+    'prod.ec.meta.description': 'Smart Glass EC: electrochromic glass that shifts its tint on command and holds the state with virtually no power. Passive solar and thermal control for façades and high-efficiency buildings.',
+    'prod.ec.eyebrow': 'SMART GLASS EC · PASSIVE SOLAR CONTROL',
+    'prod.ec.name': 'Smart Glass EC: shifts on command and holds the state without power',
+    'prod.ec.tagline': 'Shifts its tint on command, from clear to coloured, and holds that state with virtually no power. Solar and thermal control for façades and high-efficiency buildings.',
+    'prod.ec.what.title': 'Solar control, not blackout.',
+    'prod.ec.what.body': 'Electrochromic glass is built to manage the sun’s energy, not to hide what sits behind the glass. Even at its deepest tint the pane stays see-through: you keep the view while direct light and heat are cut back. It is the difference between shielding radiation and creating privacy.',
+    'prod.ec.what.link': 'If instead you need fast, continuous glare control, the answer is dimming: Smart Glass SPD',
+    'prod.ec.edge.title': 'The state stays, the power doesn’t.',
+    'prod.ec.edge.body': 'What sets electrochromic apart from every other glass in the range is bistability: power changes the tint, it doesn’t hold it. Once the chosen gradation is reached, the glass keeps it on its own, with no continuous draw. On a façade of hundreds of square metres that means governing solar gain all day for a negligible amount of energy — the reason electrochromic is the choice for buildings designed around efficiency.',
+    'prod.ec.how.title': 'How the glass tints.',
+    'prod.ec.how.body': 'A very low voltage drives an electrochemical reaction through the layers of the glass: ions migrate and the pane colours gradually and evenly; reverse the polarity and it clears again. The transition is progressive, running over a few minutes rather than switching instantly. It is a change of state meant to track the sun across the day, not to toggle on and off.',
+    'prod.ec.scale.title': 'One surface, or a whole building.',
+    'prod.ec.scale.body': 'Smart Glass EC is a made-to-measure supply in two forms: laminated safety glass, with the electrochromic layer set between the panes, or an insulating glass unit for the building envelope. Two-year warranty. Across large spans — whole façades that need to respond to the sun together — B-LOGIC can be integrated, the control platform that coordinates multiple surfaces through unified logic.',
+    'prod.ec.scale.link': 'Discover B-LOGIC',
+    'prod.ec.cta.title': 'Let’s talk about your project.',
+    'prod.ec.cta.body': 'Every façade has its own constraints: orientation, scale, glass build-up. Tell us about the project and we’ll define the right electrochromic configuration together.',
+    'prod.ec.cta.button': 'Request a quote',
   },
 } as const;

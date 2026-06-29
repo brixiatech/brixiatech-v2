@@ -34,6 +34,11 @@ const spdHref =
     ? "/en/technologies/spd-smart-glass"
     : "/tecnologie/spd-smart-glass";
 
+const ecHref =
+  lang === "en"
+    ? "/en/technologies/ec-smart-glass"
+    : "/tecnologie/ec-smart-glass";
+
 type Tech = {
   titleKey: string;
   bodyKey: string;
@@ -53,7 +58,7 @@ const family1: Tech[] = [
 
 const family2: Tech[] = [
   { titleKey: "tech.spd.title", bodyKey: "techindex.spd.body", href: spdHref, ctaKey: "techindex.spd.cta" },
-  { titleKey: "tech.ec.title", bodyKey: "techindex.ec.body" },
+  { titleKey: "tech.ec.title", bodyKey: "techindex.ec.body", href: ecHref, ctaKey: "techindex.ec.cta" },
   {
     titleKey: "tech.dlc.title",
     bodyKey: "techindex.dlc.body",
