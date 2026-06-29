@@ -23,7 +23,7 @@ const base = lang === 'en' ? '/en/' : '/';
 ---
 
 <nav class="nav">
-  <div class="nav__logo">BRIXIATECH</div>
+  <a class="nav__logo" href={base} aria-label={t('nav.home')}>BRIXIATECH</a>
   <ul class="nav__menu">
     <li><a href={`${base}#tech-eyebrow`}>{t('nav.tech')}</a></li>
     <li><a href={`${base}#blogic-eyebrow`}>B-LOGIC</a></li>
@@ -65,6 +65,17 @@ const base = lang === 'en' ? '/en/' : '/';
     font-weight: 500;
     letter-spacing: 0.08em;
     color: var(--c-pearl);
+    text-decoration: none;
+    transition: opacity 200ms var(--ease);
+  }
+
+  .nav__logo:hover {
+    opacity: 0.7;
+  }
+
+  .nav__logo:focus-visible {
+    outline: 2px solid var(--c-cyan);
+    outline-offset: 3px;
   }
 
   .nav__menu {

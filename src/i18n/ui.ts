@@ -18,6 +18,7 @@ export const ui = {
     'nav.work': 'Realizzazioni',
     'nav.insights': 'Insights',
     'nav.quote': 'Preventivo',
+    'nav.home': 'BrixiaTech, torna alla home',
 
     // --- Hero ---
     'hero.eyebrow': 'VETRO INTELLIGENTE A CONTROLLO ELETTRICO',
@@ -348,6 +349,7 @@ export const ui = {
     'nav.work': 'Projects',
     'nav.insights': 'Insights',
     'nav.quote': 'Get a quote',
+    'nav.home': 'BrixiaTech, back to home',
 
     // --- Hero ---
     'hero.eyebrow': 'SWITCHABLE SMART GLASS',
