@@ -1,6 +1,6 @@
 ---
 // TecnologieIndex.astro — pagina-indice /tecnologie (pillar). Panoramica delle
-// sei tecnologie switchable, angolata sulla SCELTA (non sul meccanismo, che vive
+// cinque tecnologie switchable, angolata sulla SCELTA (non sul meccanismo, che vive
 // nella sezione Technologies della home). Hero centrato compatto.
 // Meccanismo href-opzionale: una voce con `href` diventa cliccabile e mostra la
 // CTA; senza `href` resta card informativa. Oggi solo DLC → Blackout Hyper Glass.
@@ -65,7 +65,6 @@ const family2: Tech[] = [
     href: bhgHref,
     ctaKey: "techindex.dlc.cta",
   },
-  { titleKey: "tech.clc.title", bodyKey: "techindex.clc.body" },
 ];
 ---
 
@@ -90,7 +89,7 @@ const family2: Tech[] = [
   </div>
 
   <h2 class="tecindex__family tecindex__family--2">{t("techindex.family2.label")}</h2>
-  <div class="tecindex__grid tecindex__grid--4">
+  <div class="tecindex__grid tecindex__grid--3">
     {family2.map((item) => (
       <article class="tecindex__item">
         <h3 class="tecindex__name">{t(item.titleKey)}</h3>
@@ -178,6 +177,11 @@ const family2: Tech[] = [
 
   .tecindex__grid--4 {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* 3 colonne: family2 senza CLC (rimossa fino a nuovo ordine). --4 tenuta per il ritorno. */
+  .tecindex__grid--3 {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   /* Card: hairline superiore come Technologies home. La CTA, quando presente,
@@ -292,7 +296,8 @@ const family2: Tech[] = [
     .tecindex__grid {
       gap: 40px;
     }
-    .tecindex__grid--4 {
+    .tecindex__grid--4,
+    .tecindex__grid--3 {
       grid-template-columns: repeat(2, 1fr);
     }
     .tecindex__family--2 {
@@ -302,6 +307,7 @@ const family2: Tech[] = [
 
   @media (max-width: 560px) {
     .tecindex__grid--2,
+    .tecindex__grid--3,
     .tecindex__grid--4 {
       grid-template-columns: 1fr;
       gap: 32px;

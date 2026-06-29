@@ -1,6 +1,6 @@
 ---
 // Technologies.astro — sezione #5 homepage, portfolio tecnologie switchable.
-// 6 tecnologie in 2 famiglie (privacy: pdlc/pnlc · luce-calore: spd/ec/dlc/clc), no card.
+// 5 tecnologie in 2 famiglie (privacy: pdlc/pnlc · luce-calore: spd/ec/dlc), no card.
 // ZERO JS. Token --c-*. Reduced-motion + responsive coerenti con ProblemSection.
 // Nessuna icona. i18n via tech.* keys. Gerarchia: h2 titolo / h3 famiglia / h4 tecnologia.
 
@@ -45,7 +45,6 @@ const family2: Tech[] = [
   { titleKey: 'tech.spd.title', bodyKey: 'tech.spd.body', href: spdHref, ctaKey: 'techindex.spd.cta' },
   { titleKey: 'tech.ec.title', bodyKey: 'tech.ec.body', href: ecHref, ctaKey: 'techindex.ec.cta' },
   { titleKey: 'tech.dlc.title', bodyKey: 'tech.dlc.body', href: bhgHref, ctaKey: 'techindex.dlc.cta' },
-  { titleKey: 'tech.clc.title', bodyKey: 'tech.clc.body' },
 ];
 ---
 
@@ -70,7 +69,7 @@ const family2: Tech[] = [
   </div>
 
   <h3 class="tech__family tech__family--2">{t('tech.family2.label')}</h3>
-  <div class="tech__grid tech__grid--4">
+  <div class="tech__grid tech__grid--3">
     {family2.map((item) => (
       <article class="tech__item">
         <h4 class="tech__name">{t(item.titleKey)}</h4>
@@ -150,6 +149,11 @@ const family2: Tech[] = [
 
   .tech__grid--4 {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* 3 colonne: family2 senza CLC (rimossa fino a nuovo ordine). --4 tenuta per il ritorno. */
+  .tech__grid--3 {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .tech__item {
@@ -237,7 +241,8 @@ const family2: Tech[] = [
     .tech__grid {
       gap: 40px;
     }
-    .tech__grid--4 {
+    .tech__grid--4,
+    .tech__grid--3 {
       grid-template-columns: repeat(2, 1fr);
     }
     .tech__family--2 {
@@ -247,6 +252,7 @@ const family2: Tech[] = [
 
   @media (max-width: 560px) {
     .tech__grid--2,
+    .tech__grid--3,
     .tech__grid--4 {
       grid-template-columns: 1fr;
       gap: 32px;
