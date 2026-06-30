@@ -85,7 +85,7 @@ export const ui = {
 
     // --- Tech ---
     'tech.eyebrow': 'TECNOLOGIE',
-    'tech.title': 'Sei tecnologie switchable. Quella giusta dipende dal progetto.',
+    'tech.title': 'Cinque tecnologie switchable. Quella giusta dipende dal progetto.',
     'tech.lead':
       "Non esiste un'unica tecnologia per i vetri intelligenti, ma una famiglia di soluzioni con principi diversi. Alcune servono la privacy, altre governano luce e calore. Scegliamo — e forniamo — quella giusta per ogni progetto, dalla pellicola al vetro stratificato.",
     'tech.family1.label': 'Privacy a comando',
@@ -112,9 +112,9 @@ export const ui = {
       'Tutte queste tecnologie sono disponibili anche come sola pellicola da stratificare, fornite a vetrai e serramentisti che le integrano nei propri manufatti.',
     // --- Tecnologie (pagina indice) ---
     'techindex.eyebrow': 'TECNOLOGIE',
-    'techindex.title': 'Sei tecnologie. Ognuna risolve un problema diverso.',
+    'techindex.title': 'Cinque tecnologie. Ognuna risolve un problema diverso.',
     'techindex.lead':
-      "Vetro intelligente non è una sola cosa. Privacy a comando, controllo dell’abbagliamento, schermatura solare passiva: esigenze diverse, principi fisici diversi. Questa pagina mette in fila le sei tecnologie che forniamo e a cosa serve ciascuna — per arrivare alla scelta giusta, non alla più pubblicizzata.",
+      "Vetro intelligente non è una sola cosa. Privacy a comando, controllo dell’abbagliamento, schermatura solare passiva: esigenze diverse, principi fisici diversi. Questa pagina mette in fila le cinque tecnologie che forniamo e a cosa serve ciascuna — per arrivare alla scelta giusta, non alla più pubblicizzata.",
     'techindex.family1.label': 'Privacy a comando',
     'techindex.pdlc.body':
       'Privacy istantanea, acceso/spento. Opaco quando non alimentato, trasparente quando lo è. Lo standard più maturo: la scelta quando serve nascondere o rivelare uno spazio in un istante.',
@@ -282,7 +282,7 @@ export const ui = {
     'blogic.i2.body': 'Si integra con i sistemi di gestione dell’edificio (BMS) e coordina intere facciate come un’unica superficie, non come vetri isolati.',
     'blogic.i3.title': 'Efficienza che si misura',
     'blogic.i3.body': 'Ogni nodo registra come il vetro lavora nel tempo. Il risparmio non resta una promessa: è un dato verificabile, utile per certificazioni energetiche e report ESG.',
-    'blogic.i4.title': 'Nato per la scala',
+    'blogic.i4.title': 'Nato per scalare',
     'blogic.i4.body': 'Un solo livello di controllo governa molti vetri, su più edifici, con aggiornamenti distribuiti da remoto. Piattaforma italiana, sviluppata internamente.',
     'blogic.bridge': 'È il livello che porta i vetri switchable dentro la logica dell’edificio. Per vederlo in funzione, parliamone.',
 
@@ -531,7 +531,7 @@ export const ui = {
 
     // --- Tech ---
     'tech.eyebrow': 'TECHNOLOGIES',
-    'tech.title': 'Six switchable technologies. The right one depends on the project.',
+    'tech.title': 'Five switchable technologies. The right one depends on the project.',
     'tech.lead':
       "There isn't one smart-glass technology but a family of solutions built on different principles. Some deliver privacy, others manage light and solar heat. We select — and supply — the right one for each project, from film to laminated glass.",
     'tech.family1.label': 'Privacy on demand',
@@ -558,9 +558,9 @@ export const ui = {
       "All of these are also available as film for lamination, supplied to glaziers and window fabricators who build them into their own units.",
     // --- Technologies (index page) ---
     'techindex.eyebrow': 'TECHNOLOGIES',
-    'techindex.title': 'Six technologies. Each solves a different problem.',
+    'techindex.title': 'Five technologies. Each solves a different problem.',
     'techindex.lead':
-      "Smart glass isn’t one thing. Privacy on demand, glare control, passive solar shielding: different needs, different physics. This page lays out the six technologies we supply and what each is for — so the choice is the right one, not the most marketed.",
+      "Smart glass isn’t one thing. Privacy on demand, glare control, passive solar shielding: different needs, different physics. This page lays out the five technologies we supply and what each is for — so the choice is the right one, not the most marketed.",
     'techindex.family1.label': 'Privacy on demand',
     'techindex.pdlc.body':
       'Instant privacy, on or off. Opaque unpowered, clear when powered. The most mature standard: the choice when a space needs to hide or reveal in an instant.',
