@@ -1,0 +1,56 @@
+# === BrixiaTech — redirect 301 da WordPress ===
+# Sintassi Cloudflare Pages: /origine /destinazione 301 (status esplicito, default sarebbe 302)
+# Tutte regole statiche. Origini con trailing slash come indicizzate in GSC.
+
+# --- Target diretto: articoli Insights / pagine prodotto esistenti ---
+/come-coprire-i-vetri-di-una-vetrinetta/ /insights/coprire-vetri-teche-espositori-vetrine 301
+/pellicole-che-si-oscurano-con-telecomando/ /insights/oscurare-vetri-con-telecomando 301
+/come-rendere-i-vetri-privacy-soluzioni-efficaci/ /insights/vetri-privacy-su-comando 301
+/spd-smart-glass-vetri-oscuranti-elettrici/ /tecnologie/spd-smart-glass 301
+/vetri-che-si-oscurano-hyper-glass-true-black/ /tecnologie/blackout-hyper-glass 301
+/la-rivoluzione-degli-smart-glass-come-i-cristalli-dyed-liquid-crystals-dlc-trasformeranno-i-nostri-spazi/ /tecnologie/blackout-hyper-glass 301
+/en/electrochromic-glass-the-future-of-smart-windows/ /en/technologies/ec-smart-glass 301
+/en/hyper-glass-true-black-clc-smart-glass/ /en/technologies/blackout-hyper-glass 301
+
+# --- Consolidamento sul grappolo PRIVACY ---
+/cosa-sono-le-pellicole-privacy-e-come-funzionano/ /insights/vetri-privacy-su-comando 301
+/pellicole-per-vetri-per-non-vedere-dentro/ /insights/vetri-privacy-su-comando 301
+/pellicole-per-la-privacy/ /insights/vetri-privacy-su-comando 301
+/svelato-il-segreto-delleleganza-e-della-privacy-pellicole-oscuranti-per-vetri/ /insights/vetri-privacy-su-comando 301
+
+# --- Consolidamento sul grappolo TELECOMANDO ---
+/i-vetri-che-si-oscurano-con-telecomando-rivoluzionano-linterior-design/ /insights/oscurare-vetri-con-telecomando 301
+
+# --- Generici/categoria/locali → hub Tecnologie (IT) ---
+/vetri-che-si-oscurano-con-tecnologia-crystal-clear/ /tecnologie/ 301
+/vetri-che-si-oscurano-elettricamente/ /tecnologie/ 301
+/switchable-glass/ /tecnologie/ 301
+/prodotti/ /tecnologie/ 301
+/pareti-in-vetro-per-ufficio-switchable-glass/ /tecnologie/ 301
+/pareti-in-vetro-lcd/ /tecnologie/ 301
+/smartglass-pnlc-vs-pdlc-un-confronto-illuminante/ /tecnologie/ 301
+/finestre-per-casa-come-oscurare-i-vetri-con-eleganza-e-tecnologia/ /tecnologie/ 301
+/pellicole-oscuranti-smart-e-pellicole-design/ /tecnologie/ 301
+/pareti-divisorie-smart-glass-per-hotel-resort-spa/ /tecnologie/ 301
+/switch-glass-la-tecnologia-innovativa-che-rivoluziona-gli-ambienti-sanitari/ /tecnologie/ 301
+/smart-film-per-privacy-personalizzata-e-controllo-della-luce-solare/ /tecnologie/smart-film-pdlc 301
+/oscuramento-vetri-a-brescia-privacy-comfort-e-design-per-i-tuoi-ambienti/ /tecnologie/ 301
+/smart-glass-milano/ /tecnologie/ 301
+/smart-glass-brescia/ /tecnologie/ 301
+
+# --- Generici → hub Technologies (EN) ---
+/en/smart-glass-switchable-glass-italy/ /en/technologies/ 301
+/en/switchable-glass-intelligent-glass-extra-clear/ /en/technologies/ 301
+/en/switchable-glass-europe/ /en/technologies/ 301
+/en/electrochromic-glass-vs-pdlc-guide/ /en/technologies/ 301
+
+# --- Aziendali / funnel → home e contatto ---
+/contatti/ /#contact-eyebrow 301
+/preventivo-smart-film/ /#contact-eyebrow 301
+/i-nostri-servizi/ / 301
+/chi-siamo/ / 301
+/domande-frequenti/ / 301
+/diventa-nostro-partner-e-rivoluziona-il-mercato-con-lo-switchable-film/ / 301
+/en/contacts/ /en/#contact-eyebrow 301
+/en/our-services-and-solutions/ /en/ 301
+/en/about-us/ /en/ 301
