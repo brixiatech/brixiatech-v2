@@ -188,6 +188,47 @@ export const ui = {
     'insights.teche.cta.button': 'Richiedi un preventivo',
     'insights.teche.cta.explore': 'Esplora le tecnologie',
 
+    // Insights · articolo telecomando
+    'insights.telecomando.card.title': 'Oscurare i vetri con il telecomando',
+    'insights.telecomando.card.summary':
+      'Il telecomando è uno dei modi per comandare un vetro switchable. Quale tecnologia si oscura a comando, e come scalare dal telecomando al controllo centralizzato.',
+    'insights.telecomando.card.cta': 'Leggi l’articolo',
+
+    'insights.telecomando.meta.title': 'Vetri che si oscurano con telecomando — come funziona il comando | BrixiaTech',
+    'insights.telecomando.meta.description':
+      'Come si comanda un vetro switchable: dal telecomando all’interruttore, dall’app al controllo centralizzato. Quale tecnologia si oscura a comando, e come gestirla.',
+
+    'insights.telecomando.eyebrow': 'INSIGHTS · TELECOMANDO E CONTROLLO',
+    'insights.telecomando.h1': 'Vetri che si oscurano con un comando: dal telecomando al controllo centralizzato',
+    'insights.telecomando.lead':
+      'Oscurare un vetro con il telecomando è una delle domande più frequenti su questa tecnologia. Il telecomando è uno dei modi per inviare il comando di opacizzazione: qui vediamo come funziona il controllo del vetro switchable e quale tecnologia si comanda così.',
+
+    'insights.telecomando.comando.title': 'Il telecomando è solo uno dei modi',
+    'insights.telecomando.comando.body':
+      'Un vetro switchable cambia stato — da trasparente a opaco — quando riceve un input elettrico. Il telecomando è solo uno dei modi per inviare quell’input: si preme un pulsante e il vetro risponde. Detto così, la domanda giusta non è «c’è il telecomando?», ma «come voglio comandare il vetro?» — ed è lì che si decide davvero.',
+
+    'insights.telecomando.modi.title': 'Dal pulsante a parete all’automazione',
+    'insights.telecomando.modi.body':
+      'L’input può partire da un interruttore a parete, da un telecomando senza fili, da un’app sullo smartphone o da un sensore che reagisce alla luce o alla presenza. Sono tutte strade verso lo stesso vetro: si scelgono in base a chi usa la superficie e a quante superfici ci sono da gestire. Un telecomando basta per una stanza; più ambienti chiedono un comando più strutturato.',
+
+    'insights.telecomando.quale.title': 'Quale tecnologia si oscura a comando',
+    'insights.telecomando.quale.body':
+      'Per rendere privata una superficie a comando — trasparente quando serve, opaca quando si preme — la pellicola PDLC è la scelta naturale. Dove invece il vetro deve restare trasparente senza alimentazione e diventare opaco solo quando comandato, la logica inversa della PNLC è più adatta. Se l’obiettivo non è la privacy ma schermare il sole e l’abbagliamento, il Blackout Hyper Glass oscura a comando la radiazione solare. Sono tecnologie diverse: la scelta parte dall’obiettivo.',
+    'insights.telecomando.quale.pdlc': 'Smart Film PDLC',
+    'insights.telecomando.quale.pnlc': 'Smart Film PNLC',
+    'insights.telecomando.quale.blackout': 'Blackout Hyper Glass',
+
+    'insights.telecomando.centralizza.title': 'Quando il telecomando non basta più',
+    'insights.telecomando.centralizza.body':
+      'Su una singola superficie il controllo può essere gestito in modalità manuale — interruttore o telecomando. Quando le superfici si moltiplicano, o si vogliono programmare gli stati per fascia oraria, lo stesso controllo può essere centralizzato con il nostro sistema B-LOGIC: scenari, comando coordinato o gestione da un unico punto.',
+    'insights.telecomando.centralizza.blogic': 'Scopri B-LOGIC',
+
+    'insights.telecomando.cta.title': 'Parliamo del tuo progetto',
+    'insights.telecomando.cta.body':
+      'Ogni superficie è un caso a sé: il modo di comando giusto dipende da ambiente, uso e numero di vetri. Raccontaci cosa vuoi comandare e troviamo la configurazione adatta.',
+    'insights.telecomando.cta.button': 'Richiedi un preventivo',
+    'insights.telecomando.cta.explore': 'Esplora le tecnologie',
+
     // --- Apps ---
     'apps.eyebrow': 'APPLICAZIONI',
     'apps.title':
@@ -568,6 +609,47 @@ export const ui = {
       'Every installation has its own constraints: case dimensions, exposure, conservation needs. Tell us about the project and we’ll define the right switchable-glass solution together.',
     'insights.teche.cta.button': 'Request a quote',
     'insights.teche.cta.explore': 'Explore the technologies',
+
+    // Insights · telecomando article
+    'insights.telecomando.card.title': 'Switching glass with a remote',
+    'insights.telecomando.card.summary':
+      'A remote is one of several ways to control switchable glass. Which technology turns opaque on command, and how to scale from a remote to centralised control.',
+    'insights.telecomando.card.cta': 'Read the article',
+
+    'insights.telecomando.meta.title': 'Switchable glass with remote control — how the command works | BrixiaTech',
+    'insights.telecomando.meta.description':
+      'How to control switchable glass: from a remote or wall switch to an app or centralised control. Which technology turns opaque on command, and how to manage it.',
+
+    'insights.telecomando.eyebrow': 'INSIGHTS · REMOTE & CONTROL',
+    'insights.telecomando.h1': 'Glass that turns opaque on command: from remote control to centralised control',
+    'insights.telecomando.lead':
+      'Controlling switchable glass with a remote is one of the most common questions about this technology. The remote is one of several ways to send the switching command — here we look at how the control works and which technology responds to it.',
+
+    'insights.telecomando.comando.title': 'The remote is only one of the options',
+    'insights.telecomando.comando.body':
+      'Switchable glass changes state — from clear to opaque — when it receives an electrical input. A remote is only one way to send that input: press a button, and the glass responds. Framed this way, the real question is not whether a remote is available, but how you want to control the glass — and that is where the decision is actually made.',
+
+    'insights.telecomando.modi.title': 'From a wall switch to automation',
+    'insights.telecomando.modi.body':
+      'The input can come from a wall switch, a wireless remote, a smartphone app, or a sensor that reacts to light or presence. Each is a route to the same glass, chosen according to who uses the surface and how many surfaces there are to manage. A remote is enough for a single room; multiple spaces call for more structured control.',
+
+    'insights.telecomando.quale.title': 'Which technology switches on command',
+    'insights.telecomando.quale.body':
+      'To make a surface private on command — clear when needed, opaque at the press of a button — PDLC film is the natural choice. Where the glass must stay clear without power and turn opaque only when commanded, the reverse logic of PNLC fits better. Where the goal is not privacy but shading sunlight and glare, Blackout Hyper Glass darkens solar radiation on command. These are different technologies: the choice starts from the objective.',
+    'insights.telecomando.quale.pdlc': 'Smart Film PDLC',
+    'insights.telecomando.quale.pnlc': 'Smart Film PNLC',
+    'insights.telecomando.quale.blackout': 'Blackout Hyper Glass',
+
+    'insights.telecomando.centralizza.title': 'When a remote is no longer enough',
+    'insights.telecomando.centralizza.body':
+      'On a single surface, control can be handled manually — a switch or a remote. As surfaces multiply, or states need to be scheduled by time of day, that same control can be centralised with our B-LOGIC system: scenes, coordinated switching, or management from a single point.',
+    'insights.telecomando.centralizza.blogic': 'Discover B-LOGIC',
+
+    'insights.telecomando.cta.title': 'Let’s talk about your project',
+    'insights.telecomando.cta.body':
+      'Every surface is its own case: the right control method depends on the space, the use, and the number of panes. Tell us what you want to control and we’ll find the right configuration.',
+    'insights.telecomando.cta.button': 'Request a quote',
+    'insights.telecomando.cta.explore': 'Explore the technologies',
 
     // --- Apps ---
     'apps.eyebrow': 'APPLICATIONS',

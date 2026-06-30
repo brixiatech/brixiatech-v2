@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import InsightTelecomando from "../../../components/InsightTelecomando.astro";
+import Footer from "../../../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<BaseLayout title={t("insights.telecomando.meta.title")} description={t("insights.telecomando.meta.description")} hrefIt="/insights/oscurare-vetri-con-telecomando" hrefEn="/en/insights/switchable-glass-remote-control">
+  <InsightTelecomando />
+  <Footer />
+</BaseLayout>
