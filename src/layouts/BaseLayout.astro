@@ -32,6 +32,14 @@ const {
   hrefIt = "/",
   hrefEn = "/en/",
 } = Astro.props;
+
+// Canonical = href della lingua corrente (coerente con link interni e con
+// public/_redirects: senza slash finale). NON usare Astro.url.pathname, che
+// in build directory restituirebbe il path CON slash -> canonical divergente.
+const canonicalPath = lang === "en" ? hrefEn : hrefIt;
+const canonicalUrl = new URL(canonicalPath, Astro.site).href;
+const hrefItAbs = new URL(hrefIt, Astro.site).href;
+const hrefEnAbs = new URL(hrefEn, Astro.site).href;
 ---
 
 <!doctype html>
@@ -45,13 +53,13 @@ const {
     <meta name="description" content={description} />
     <meta name="theme-color" content="#050B1A" />
 
-    <!-- Canonical + hreflang (path relativi).
-         TODO STEP 8 — con `site` definito, passare canonical e hreflang a
-         URL assoluti via new URL(path, Astro.site).href -->
-    <link rel="canonical" href={Astro.url.pathname} />
-    <link rel="alternate" hreflang="it" href={hrefIt} />
-    <link rel="alternate" hreflang="en" href={hrefEn} />
-    <link rel="alternate" hreflang="x-default" href={hrefIt} />
+    <!-- Canonical + hreflang ad URL assoluti (site = https://brixiatech.com).
+         canonicalUrl/hrefItAbs/hrefEnAbs derivati nel frontmatter da
+         new URL(path, Astro.site).href; il path e' quello della lingua. -->
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="it" href={hrefItAbs} />
+    <link rel="alternate" hreflang="en" href={hrefEnAbs} />
+    <link rel="alternate" hreflang="x-default" href={hrefItAbs} />
 
     <!-- Preload font LCP-critical: headline hero in Space Grotesk 500 -->
     <link rel="preload" href={sg500} as="font" type="font/woff2" crossorigin />
