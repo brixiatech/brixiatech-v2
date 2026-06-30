@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import InsightPrivacy from "../../../components/InsightPrivacy.astro";
+import Footer from "../../../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<BaseLayout title={t("insights.privacy.meta.title")} description={t("insights.privacy.meta.description")} hrefIt="/insights/vetri-privacy-su-comando" hrefEn="/en/insights/switchable-privacy-glass">
+  <InsightPrivacy />
+  <Footer />
+</BaseLayout>

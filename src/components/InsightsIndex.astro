@@ -21,6 +21,16 @@ const techeHref =
     ? "/en/insights/covering-protecting-display-cases"
     : "/insights/coprire-vetri-teche-espositori-vetrine";
 
+const telecomandoHref =
+  lang === "en"
+    ? "/en/insights/switchable-glass-remote-control"
+    : "/insights/oscurare-vetri-con-telecomando";
+
+const privacyHref =
+  lang === "en"
+    ? "/en/insights/switchable-privacy-glass"
+    : "/insights/vetri-privacy-su-comando";
+
 type Article = {
   titleKey: string;
   summaryKey: string;
@@ -36,6 +46,18 @@ const articles: Article[] = [
     summaryKey: "insights.teche.card.summary",
     href: techeHref,
     ctaKey: "insights.teche.card.cta",
+  },
+  {
+    titleKey: "insights.telecomando.card.title",
+    summaryKey: "insights.telecomando.card.summary",
+    href: telecomandoHref,
+    ctaKey: "insights.telecomando.card.cta",
+  },
+  {
+    titleKey: "insights.privacy.card.title",
+    summaryKey: "insights.privacy.card.summary",
+    href: privacyHref,
+    ctaKey: "insights.privacy.card.cta",
   },
 ];
 
@@ -142,7 +164,8 @@ const published = articles.filter((a) => a.href && a.ctaKey);
   /* CTA inline: unico elemento interattivo della card → unico punto di cyan.
      Allineata in basso. */
   .insindex__cta {
-    margin-top: 20px;
+    margin-top: auto;
+    padding-top: 20px;
     align-self: flex-start;
     display: inline-flex;
     align-items: center;
