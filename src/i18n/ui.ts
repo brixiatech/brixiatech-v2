@@ -456,7 +456,7 @@ export const ui = {
     // --- Meta / SEO ---
     'meta.title': 'BrixiaTech — Glass that thinks. Buildings that adapt.',
     'meta.description':
-      'Adaptive architecture: PDLC switchable glass, embedded hardware and a predictive cloud platform. One stack, from film to dashboard. Since 2019 — focused on Milan, Brescia, Bergamo.',
+      'Milan, Brescia, Bergamo: switchable and electrochromic glass, clear to opaque on command. Smart film for privacy and solar control.',
     'meta.ogLocale': 'en_US',
 
     // --- Nav ---
