@@ -10,7 +10,7 @@ export const ui = {
     // --- Meta / SEO ---
     'meta.title': 'BrixiaTech — Vetri che pensano. Edifici che si adattano.',
     'meta.description':
-      'Adaptive architecture: vetri PDLC switchable, hardware embedded e piattaforma cloud predittiva. Un solo stack, dalla pellicola al dashboard. Dal 2019 — focus Milano, Brescia, Bergamo.',
+      'Milano, Brescia, Bergamo: vetri intelligenti che passano da trasparenti a opachi a comando. Smart glass e pellicole switchable: privacy e controllo solare.',
     'meta.ogLocale': 'it_IT',
 
     // --- Nav ---
