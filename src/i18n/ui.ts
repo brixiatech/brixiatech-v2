@@ -52,7 +52,7 @@ export const ui = {
     'problem.eyebrow': 'PRIVACY E LUCE',
     'problem.title': 'Vetri che diventano opachi a comando. E tornano trasparenti quando vuoi.',
     'problem.lead':
-      "Una parete vetrata che non protegge dagli sguardi. Il sole che acceca e surriscalda un ufficio per mezza giornata. Tende che ingialliscono, raccolgono polvere e non bastano mai. Problemi diversi, una radice comune: il vetro è fisso, l'ambiente cambia. La risposta non è coprire il vetro, è renderlo regolabile. Esistono superfici vetrate che passano da trasparenti a opache, o si oscurano per schermare luce e calore, con un comando elettrico — a interruttore, da telecomando, da app o in automatico.",
+      "Una parete vetrata che non protegge dagli sguardi. Il sole che acceca e surriscalda un ufficio per mezza giornata. Tende che ingialliscono, raccolgono polvere e non bastano mai. Problemi diversi, una radice comune: il vetro è fisso, l'ambiente cambia. La risposta non è coprire il vetro, è renderlo regolabile. Esistono superfici vetrate che passano da trasparenti a opache, o si oscurano per schermare luce e calore, con un comando elettrico — da interruttore, telecomando, app o in automatico.",
     'problem.privacy.title': 'Privacy a comando',
     'problem.privacy.body':
       "Un open space senza separazioni, un ambulatorio, un'abitazione a piano strada: spazi che a volte servono aperti alla vista, a volte protetti. Un vetro che diventa opaco in un istante copre entrambi i momenti, senza rinunciare alla luce naturale quando non serve schermarsi.",
@@ -61,7 +61,7 @@ export const ui = {
       "Vetrate esposte a sud, lucernari, verande: dove il sole entra troppo, oggi si rimedia con tende o pellicole fisse che tolgono luce tutto l'anno. Un vetro che si scherma solo quando il sole lo richiede mantiene la vista e modula abbagliamento e calore.",
     'problem.static.title': "L'alternativa a tende e vetri smerigliati",
     'problem.static.body':
-      "Tende, veneziane, pellicole adesive permanenti, vetri sabbiati: soluzioni statiche per un'esigenza che statica non è. Una superficie vetrata switchable fa entrambe le cose — trasparente o opaca — e si comanda elettricamente.",
+      "Tende, veneziane, pellicole adesive permanenti, vetri sabbiati: soluzioni statiche per qualcosa che statico non è. Una superficie vetrata switchable fa entrambe le cose — trasparente o opaca — e si comanda elettricamente.",
     'problem.bridge': 'Come fa un vetro a cambiare stato, e quali tecnologie esistono, lo vediamo qui sotto.',
 
     // --- How ---
