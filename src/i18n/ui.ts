@@ -112,7 +112,7 @@ export const ui = {
       'Tutte queste tecnologie sono disponibili anche come sola pellicola da stratificare, fornite a vetrai e serramentisti che le integrano nei propri manufatti.',
     // --- Tecnologie (pagina indice) ---
     'techindex.eyebrow': 'TECNOLOGIE',
-    'techindex.title': 'Cinque tecnologie. Ognuna risolve un problema diverso.',
+    'techindex.title': 'Cinque tecnologie, cinque risposte diverse.',
     'techindex.lead':
       "Vetro intelligente non è una sola cosa. Privacy a comando, controllo dell’abbagliamento, schermatura solare passiva: esigenze diverse, principi fisici diversi. Questa pagina mette in fila le cinque tecnologie che forniamo e a cosa serve ciascuna — per arrivare alla scelta giusta, non alla più pubblicizzata.",
     'techindex.family1.label': 'Privacy a comando',
@@ -135,7 +135,7 @@ export const ui = {
     'techindex.clc.body':
       "Riflette l’energia solare invece di assorbirla. Bistabile: mantiene lo stato senza alimentazione continua, consuma solo allo switch. Uno scudo termico dinamico per il contenimento del calore.",
     'techindex.channel':
-      'Ogni tecnologia è disponibile come vetro finito o come sola pellicola da stratificare, fornita a vetrai e serramentisti. La scelta tra le sei dipende dal progetto: ne parliamo prima di proporre una soluzione.',
+      'Ogni tecnologia è disponibile come vetro finito o come sola pellicola da stratificare, fornita a vetrai e serramentisti. La scelta tra le cinque dipende dal progetto: ne parliamo prima di proporre una soluzione.',
     'techindex.cta': 'Parliamo del tuo progetto',
 
     // --- Insights ---
@@ -558,7 +558,7 @@ export const ui = {
       "All of these are also available as film for lamination, supplied to glaziers and window fabricators who build them into their own units.",
     // --- Technologies (index page) ---
     'techindex.eyebrow': 'TECHNOLOGIES',
-    'techindex.title': 'Five technologies. Each solves a different problem.',
+    'techindex.title': 'Five technologies, five different answers.',
     'techindex.lead':
       "Smart glass isn’t one thing. Privacy on demand, glare control, passive solar shielding: different needs, different physics. This page lays out the five technologies we supply and what each is for — so the choice is the right one, not the most marketed.",
     'techindex.family1.label': 'Privacy on demand',
@@ -581,7 +581,7 @@ export const ui = {
     'techindex.clc.body':
       "Reflects solar energy rather than absorbing it. Bistable: holds its state without continuous power, drawing energy only when switching. A dynamic thermal shield for heat containment.",
     'techindex.channel':
-      "Every technology is available as finished glass or as film for lamination, supplied to glaziers and fabricators. Which of the six fits depends on the project: we discuss it before proposing anything.",
+      "Every technology is available as finished glass or as film for lamination, supplied to glaziers and fabricators. Which of the five fits depends on the project: we discuss it before proposing anything.",
     'techindex.cta': "Let’s talk about your project",
 
     // --- Insights ---
