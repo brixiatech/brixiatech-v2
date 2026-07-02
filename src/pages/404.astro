@@ -1,0 +1,129 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Pagina non trovata | BrixiaTech"
+  description="La pagina richiesta non esiste o è stata spostata. Torna alla home o esplora le tecnologie smart glass di BrixiaTech."
+  hrefIt="/"
+  hrefEn="/en/"
+>
+  <main class="nf">
+    <section class="nf__panel" aria-labelledby="nf-it-title">
+      <p class="nf__code">404</p>
+
+      <div class="nf__block" lang="it">
+        <h1 id="nf-it-title" class="nf__title">Pagina non trovata</h1>
+        <p class="nf__lead">La pagina che cercavi non esiste o è stata spostata.</p>
+        <nav class="nf__links" aria-label="Navigazione di recupero">
+          <a class="nf__link nf__link--primary" href="/">Torna alla home</a>
+          <a class="nf__link" href="/tecnologie/">Le tecnologie</a>
+        </nav>
+      </div>
+
+      <hr class="nf__rule" />
+
+      <div class="nf__block" lang="en">
+        <h2 class="nf__title nf__title--en">Page not found</h2>
+        <p class="nf__lead">The page you were looking for doesn’t exist or has moved.</p>
+        <nav class="nf__links" aria-label="Recovery navigation">
+          <a class="nf__link nf__link--primary" href="/en/">Back to home</a>
+          <a class="nf__link" href="/en/technologies/">Technologies</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .nf {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(3rem, 8vw, 6rem) 1.5rem;
+  }
+
+  .nf__panel {
+    width: 100%;
+    max-width: 34rem;
+    background: var(--c-onyx);
+    border-left: 2px solid var(--c-copper);
+    padding: clamp(2rem, 5vw, 3rem);
+  }
+
+  .nf__code {
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-size: clamp(3.5rem, 12vw, 6rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--c-copper);
+    margin: 0 0 1.5rem;
+  }
+
+  .nf__title {
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 600;
+    line-height: 1.15;
+    color: #ffffff;
+    margin: 0 0 0.5rem;
+  }
+
+  .nf__title--en {
+    font-size: clamp(1.15rem, 3vw, 1.4rem);
+    color: var(--c-mist-bright);
+  }
+
+  .nf__lead {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--c-mist-bright);
+    margin: 0 0 1.25rem;
+  }
+
+  .nf__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    align-items: center;
+  }
+
+  .nf__link {
+    font-size: 0.95rem;
+    color: var(--c-mist-bright);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .nf__link:hover,
+  .nf__link:focus-visible {
+    color: #ffffff;
+    border-bottom-color: var(--c-copper);
+  }
+
+  .nf__link--primary {
+    color: var(--c-copper);
+    font-weight: 600;
+  }
+
+  .nf__link--primary:hover,
+  .nf__link--primary:focus-visible {
+    color: var(--c-copper);
+    border-bottom-color: var(--c-copper);
+  }
+
+  .nf__rule {
+    border: 0;
+    border-top: 1px solid rgba(166, 176, 200, 0.18);
+    margin: 2rem 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nf__link {
+      transition: none;
+    }
+  }
+</style>
