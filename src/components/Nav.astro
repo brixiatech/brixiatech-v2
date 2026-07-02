@@ -24,12 +24,21 @@ const base = lang === 'en' ? '/en/' : '/';
 
 <nav class="nav">
   <a class="nav__logo" href={base} aria-label={t('nav.home')}>BRIXIATECH</a>
-  <ul class="nav__menu">
-    <li><a href={`${base}#tech-eyebrow`}>{t('nav.tech')}</a></li>
-    <li><a href={`${base}#blogic-eyebrow`}>B-LOGIC</a></li>
-    {/* <li><a href={`${base}#realizzazioni-eyebrow`}>{t('nav.work')}</a></li> */}
-    <li><a href={`${base}insights`}>{t('nav.insights')}</a></li>
-  </ul>
+  <details class="nav__group">
+    <summary class="nav__burger" aria-label="Menu">
+      <span class="nav__burger-box">
+        <span class="nav__burger-line"></span>
+        <span class="nav__burger-line"></span>
+        <span class="nav__burger-line"></span>
+      </span>
+    </summary>
+    <ul class="nav__menu">
+      <li><a href={`${base}#tech-eyebrow`}>{t('nav.tech')}</a></li>
+      <li><a href={`${base}#blogic-eyebrow`}>B-LOGIC</a></li>
+      {/* <li><a href={`${base}#realizzazioni-eyebrow`}>{t('nav.work')}</a></li> */}
+      <li><a href={`${base}insights`}>{t('nav.insights')}</a></li>
+    </ul>
+  </details>
   <div class="nav__actions">
     <a href={`${base}#contact-eyebrow`} class="nav__cta">{t('nav.quote')}</a>
 
@@ -84,6 +93,54 @@ const base = lang === 'en' ? '/en/' : '/';
     list-style: none;
     margin: 0;
     padding: 0;
+  }
+
+  .nav__group {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Burger: nascosto su desktop, compare sotto 900px. */
+  .nav__burger {
+    display: none;
+    list-style: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .nav__burger::-webkit-details-marker {
+    display: none;
+  }
+
+  .nav__burger:focus-visible {
+    outline: 2px solid var(--c-cyan);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .nav__burger-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 22px;
+  }
+
+  .nav__burger-line {
+    height: 2px;
+    width: 100%;
+    background: var(--c-pearl);
+    border-radius: 2px;
+    transition: transform 200ms var(--ease), opacity 200ms var(--ease);
+  }
+
+  .nav__group[open] .nav__burger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav__group[open] .nav__burger-line:nth-child(2) {
+    opacity: 0;
+  }
+  .nav__group[open] .nav__burger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
   }
 
   .nav__menu a {
@@ -161,8 +218,44 @@ const base = lang === 'en' ? '/en/' : '/';
     .nav {
       padding: 20px 24px;
     }
+
+    /* Burger a destra; CTA+lang subito prima; logo resta a sinistra. */
+    .nav__group { order: 3; }
+    .nav__actions { order: 2; gap: 16px; }
+
+    .nav__burger { display: flex; }
+
+    /* Menu voci -> pannello a tendina sotto la barra, largo pieno. */
     .nav__menu {
       display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      padding: 4px 24px 16px;
+      background: rgba(5, 5, 7, 0.97);
+      border-top: 1px solid rgba(245, 245, 247, 0.08);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    }
+
+    .nav__group[open] .nav__menu {
+      display: flex;
+    }
+
+    .nav__menu li {
+      border-top: 1px solid rgba(245, 245, 247, 0.06);
+    }
+    .nav__menu li:first-child {
+      border-top: none;
+    }
+
+    .nav__menu a {
+      display: block;
+      padding: 14px 0;
+      font-size: 15px;
+      opacity: 0.85;
     }
   }
 </style>
