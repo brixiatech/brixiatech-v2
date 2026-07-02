@@ -1,8 +1,12 @@
 ---
 // Nav statico, zero JS. Portato da brixiatech-hero-v1.html.
-// FIX #4: rimosso `mix-blend-mode: difference` (illeggibile/flicker su skyline).
-// Colore fisso pearl + scrim gradiente sottile come backdrop difensivo:
-// resta leggibile anche quando scorrono sotto sezioni più chiare (post-hero).
+// Menu mobile: checkbox-hack (input nascosto + label burger + :checked).
+// Scelta rispetto a <details>: con details il browser nasconde nativamente il
+// contenuto chiuso su un asse che display non governa -> menu invisibile anche
+// su desktop. Con la checkbox ogni show/hide e' regola CSS d'autore, nessuno
+// user-agent stylesheet di mezzo. Verificato a runtime.
+// FIX #4: niente mix-blend-mode (illeggibile/flicker su skyline). Colore fisso
+// pearl + scrim gradiente sottile come backdrop difensivo.
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
@@ -24,21 +28,26 @@ const base = lang === 'en' ? '/en/' : '/';
 
 <nav class="nav">
   <a class="nav__logo" href={base} aria-label={t('nav.home')}>BRIXIATECH</a>
-  <details class="nav__group">
-    <summary class="nav__burger" aria-label="Menu">
-      <span class="nav__burger-box">
-        <span class="nav__burger-line"></span>
-        <span class="nav__burger-line"></span>
-        <span class="nav__burger-line"></span>
-      </span>
-    </summary>
-    <ul class="nav__menu">
-      <li><a href={`${base}#tech-eyebrow`}>{t('nav.tech')}</a></li>
-      <li><a href={`${base}#blogic-eyebrow`}>B-LOGIC</a></li>
-      {/* <li><a href={`${base}#realizzazioni-eyebrow`}>{t('nav.work')}</a></li> */}
-      <li><a href={`${base}insights`}>{t('nav.insights')}</a></li>
-    </ul>
-  </details>
+
+  {/* Checkbox-hack: input governa lo stato aperto/chiuso del menu mobile.
+      Nascosto visivamente ma raggiungibile via label (burger). */}
+  <input type="checkbox" id="nav-toggle" class="nav__toggle" aria-hidden="true" />
+
+  <label for="nav-toggle" class="nav__burger" aria-label="Menu">
+    <span class="nav__burger-box">
+      <span class="nav__burger-line"></span>
+      <span class="nav__burger-line"></span>
+      <span class="nav__burger-line"></span>
+    </span>
+  </label>
+
+  <ul class="nav__menu">
+    <li><a href={`${base}#tech-eyebrow`}>{t('nav.tech')}</a></li>
+    <li><a href={`${base}#blogic-eyebrow`}>B-LOGIC</a></li>
+    {/* <li><a href={`${base}#realizzazioni-eyebrow`}>{t('nav.work')}</a></li> */}
+    <li><a href={`${base}insights`}>{t('nav.insights')}</a></li>
+  </ul>
+
   <div class="nav__actions">
     <a href={`${base}#contact-eyebrow`} class="nav__cta">{t('nav.quote')}</a>
 
@@ -61,7 +70,7 @@ const base = lang === 'en' ? '/en/' : '/';
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    /* FIX #4: niente mix-blend-mode. Scrim difensivo per leggibilità. */
+    /* FIX #4: niente mix-blend-mode. Scrim difensivo per leggibilita'. */
     background: linear-gradient(
       180deg,
       rgba(5, 5, 7, 0.55) 0%,
@@ -87,35 +96,25 @@ const base = lang === 'en' ? '/en/' : '/';
     outline-offset: 3px;
   }
 
-  .nav__menu {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  /* Input di controllo del menu mobile: fuori dal flusso visivo, ma non
+     display:none (deve restare targettabile dalla label e reattivo a :checked). */
+  .nav__toggle {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    pointer-events: none;
   }
 
-  .nav__group {
-    display: flex;
-    align-items: center;
-  }
-
-  /* Burger: nascosto su desktop, compare sotto 900px. */
+  /* Burger: nascosto su desktop, compare sotto 900px via media query. */
   .nav__burger {
     display: none;
-    list-style: none;
     cursor: pointer;
     padding: 4px;
-  }
-
-  .nav__burger::-webkit-details-marker {
-    display: none;
-  }
-
-  .nav__burger:focus-visible {
-    outline: 2px solid var(--c-cyan);
-    outline-offset: 3px;
-    border-radius: 4px;
+    align-items: center;
   }
 
   .nav__burger-box {
@@ -133,14 +132,30 @@ const base = lang === 'en' ? '/en/' : '/';
     transition: transform 200ms var(--ease), opacity 200ms var(--ease);
   }
 
-  .nav__group[open] .nav__burger-line:nth-child(1) {
+  /* Focus visibile sul burger quando l'input riceve focus da tastiera. */
+  .nav__toggle:focus-visible + .nav__burger {
+    outline: 2px solid var(--c-cyan);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Stato aperto: le tre linee diventano una X. */
+  .nav__toggle:checked + .nav__burger .nav__burger-line:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
-  .nav__group[open] .nav__burger-line:nth-child(2) {
+  .nav__toggle:checked + .nav__burger .nav__burger-line:nth-child(2) {
     opacity: 0;
   }
-  .nav__group[open] .nav__burger-line:nth-child(3) {
+  .nav__toggle:checked + .nav__burger .nav__burger-line:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .nav__menu {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
   .nav__menu a {
@@ -170,7 +185,7 @@ const base = lang === 'en' ? '/en/' : '/';
     background: rgba(245, 245, 247, 0.06);
   }
 
-  /* Language switcher — fuori da .nav__menu così resta visibile sotto 900px */
+  /* Language switcher: fuori da .nav__menu cosi' resta visibile sotto 900px. */
   .nav__lang {
     display: flex;
     gap: 8px;
@@ -194,8 +209,7 @@ const base = lang === 'en' ? '/en/' : '/';
     font-weight: 500;
   }
 
-  /* Focus coerente: la nav non ha stile :focus-visible esistente → outline cyan
-     come GlassDemo (unico precedente interattivo nel progetto). */
+  /* Focus coerente: outline cyan come GlassDemo (unico precedente interattivo). */
   .nav__lang-link:focus-visible {
     outline: 2px solid var(--c-cyan);
     outline-offset: 3px;
@@ -206,8 +220,7 @@ const base = lang === 'en' ? '/en/' : '/';
     opacity: 0.3;
   }
 
-  /* Raggruppa CTA + switcher a destra: .nav torna a 3 figli (logo, menu, actions),
-     così lo space-between non isola più la CTA al centro. */
+  /* Raggruppa CTA + switcher a destra. */
   .nav__actions {
     display: flex;
     align-items: center;
@@ -219,13 +232,11 @@ const base = lang === 'en' ? '/en/' : '/';
       padding: 20px 24px;
     }
 
-    /* Burger a destra; CTA+lang subito prima; logo resta a sinistra. */
-    .nav__group { order: 3; }
+    /* Ordine su mobile: logo (1, default) | actions (2) | burger (3, estrema destra). */
     .nav__actions { order: 2; gap: 16px; }
+    .nav__burger { order: 3; display: flex; }
 
-    .nav__burger { display: flex; }
-
-    /* Menu voci -> pannello a tendina sotto la barra, largo pieno. */
+    /* Menu voci -> pannello a tendina sotto la barra, chiuso di default. */
     .nav__menu {
       display: none;
       position: absolute;
@@ -240,7 +251,9 @@ const base = lang === 'en' ? '/en/' : '/';
       box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
     }
 
-    .nav__group[open] .nav__menu {
+    /* Aperto: la checkbox spunta -> il pannello scende.
+       .nav__menu e' sibling successivo dell'input nel DOM. */
+    .nav__toggle:checked ~ .nav__menu {
       display: flex;
     }
 
