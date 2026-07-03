@@ -79,6 +79,7 @@ const schema = {
 
     <div class="footer__legal">
       <p class="footer__legal-text">© {year} {NAP.legalName} · {t("footer.vatLabel")} {NAP.vat} · {t("footer.rights")}</p>
+      <a class="footer__legal-link" href={lang === "en" ? "/en/privacy" : "/privacy"}>{t("footer.privacy")}</a>
     </div>
   </div>
 
@@ -157,7 +158,22 @@ const schema = {
     margin-top: 56px;
     padding-top: 24px;
     border-top: 1px solid var(--border-hairline);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
   }
+  .footer__legal-link {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    color: var(--c-mist-bright);
+    text-decoration: none;
+    transition: color 200ms var(--ease);
+  }
+  .footer__legal-link:hover { color: var(--c-pearl); }
+  .footer__legal-link:focus-visible { outline: 1px solid var(--c-cyan); outline-offset: 3px; }
   .footer__legal-text {
     margin: 0;
     font-family: var(--font-mono);

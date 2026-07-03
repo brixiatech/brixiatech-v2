@@ -339,6 +339,7 @@ export const ui = {
     'footer.areas': 'Milano · Brescia · Bergamo e nord Italia. Progetti in tutta Italia, Svizzera ed Europa.',
     'footer.vatLabel': 'P.IVA',
     'footer.rights': 'Tutti i diritti riservati',
+    'footer.privacy': 'Informativa privacy',
 
     // --- GlassDemo ---
     'glass.ariaLabel': 'Attiva/disattiva il vetro PDLC',
@@ -786,6 +787,7 @@ export const ui = {
     'footer.areas': 'Milan · Brescia · Bergamo and northern Italy. Projects across Italy, Switzerland and Europe.',
     'footer.vatLabel': 'VAT',
     'footer.rights': 'All rights reserved',
+    'footer.privacy': 'Privacy Policy',
 
     // --- GlassDemo ---
     'glass.ariaLabel': 'Toggle PDLC glass',
