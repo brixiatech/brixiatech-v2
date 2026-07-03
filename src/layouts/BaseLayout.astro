@@ -33,13 +33,15 @@ const {
   hrefEn = "/en/",
 } = Astro.props;
 
-// Canonical = href della lingua corrente (coerente con link interni e con
-// public/_redirects: senza slash finale). NON usare Astro.url.pathname, che
-// in build directory restituirebbe il path CON slash -> canonical divergente.
+// Canonical = href della lingua corrente, NORMALIZZATO con trailing slash.
+// Cloudflare Pages (output 'directory') serve la forma CON slash come 200 e
+// 308-redirige quella senza. Sitemap e pagina 200 usano lo slash: canonical,
+// hreflang e og:url devono combaciare, altrimenti puntano a un redirect.
+const withSlash = (p: string): string => (p.endsWith("/") ? p : p + "/");
 const canonicalPath = lang === "en" ? hrefEn : hrefIt;
-const canonicalUrl = new URL(canonicalPath, Astro.site).href;
-const hrefItAbs = new URL(hrefIt, Astro.site).href;
-const hrefEnAbs = new URL(hrefEn, Astro.site).href;
+const canonicalUrl = new URL(withSlash(canonicalPath), Astro.site).href;
+const hrefItAbs = new URL(withSlash(hrefIt), Astro.site).href;
+const hrefEnAbs = new URL(withSlash(hrefEn), Astro.site).href;
 ---
 
 <!doctype html>
