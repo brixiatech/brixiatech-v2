@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://brixiatech.com/sitemap-index.xml
