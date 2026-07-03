@@ -6,7 +6,7 @@ import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
-<BaseLayout title={t("prod.ec.meta.title")} description={t("prod.ec.meta.description")} hrefIt="/tecnologie/ec-smart-glass" hrefEn="/en/technologies/ec-smart-glass">
+<BaseLayout title={t("prod.ec.meta.title")} description={t("prod.ec.meta.description")} hrefIt="/tecnologie/ec-smart-glass/" hrefEn="/en/technologies/ec-smart-glass/">
   <SmartGlassEc />
   <Footer />
 </BaseLayout>
