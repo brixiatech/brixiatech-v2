@@ -32,6 +32,17 @@ const features = [
     </div>
 
     <p class="blogic__bridge">{t("blogic.bridge")}</p>
+
+    <div class="blogic__cta-wrap">
+      <a
+        class="blogic__cta"
+        href="https://blogicautomation.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {t("blogic.cta")} <span class="blogic__cta-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -106,6 +117,36 @@ const features = [
     text-align: center;
     color: var(--c-mist);
     line-height: 1.6;
+  }
+  .blogic__cta-wrap {
+    margin: 32px 0 0;
+    text-align: center;
+  }
+  .blogic__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--c-copper);
+    text-decoration: none;
+    transition: gap 200ms var(--ease), opacity 200ms var(--ease);
+  }
+  .blogic__cta:hover {
+    opacity: 0.8;
+    gap: 12px;
+  }
+  .blogic__cta:focus-visible {
+    outline: 2px solid var(--c-cyan);
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+  .blogic__cta-arrow {
+    transition: transform 200ms var(--ease);
+  }
+  .blogic__cta:hover .blogic__cta-arrow {
+    transform: translateX(2px);
   }
 
   /* nessuna animazione in questa sezione → no-op (coerenza con le altre sezioni) */

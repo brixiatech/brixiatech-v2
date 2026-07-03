@@ -285,6 +285,7 @@ export const ui = {
     'blogic.i4.title': 'Nato per scalare',
     'blogic.i4.body': 'Un solo livello di controllo governa molti vetri, su più edifici, con aggiornamenti distribuiti da remoto. Piattaforma italiana, sviluppata internamente.',
     'blogic.bridge': 'È il livello che porta i vetri switchable dentro la logica dell’edificio. Per vederlo in funzione, parliamone.',
+    'blogic.cta': 'Scopri B-LOGIC',
 
     // --- Affidabilità (#9) ---
     'trust.eyebrow': 'PERCHÉ BRIXIATECH',
@@ -731,6 +732,7 @@ export const ui = {
     'blogic.i4.title': 'Built to scale',
     'blogic.i4.body': 'A single control layer governs many panes, across multiple buildings, with updates pushed remotely. An Italian platform, developed in-house.',
     'blogic.bridge': 'It is the layer that brings switchable glazing into the logic of the building. To see it running, let’s talk.',
+    'blogic.cta': 'Explore B-LOGIC',
 
     // --- Trust (#9) ---
     'trust.eyebrow': 'WHY BRIXIATECH',
