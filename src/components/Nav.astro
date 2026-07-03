@@ -43,7 +43,7 @@ const base = lang === 'en' ? '/en/' : '/';
 
   <ul class="nav__menu">
     <li><a href={`${base}#tech-eyebrow`}>{t('nav.tech')}</a></li>
-    <li><a href={`${base}#blogic-eyebrow`}>B-LOGIC</a></li>
+    <li><a href={`${base}#blogic-eyebrow`}>B-logic</a></li>
     {/* <li><a href={`${base}#realizzazioni-eyebrow`}>{t('nav.work')}</a></li> */}
     <li><a href={`${base}insights`}>{t('nav.insights')}</a></li>
     <li><a href="https://blogic.brixiatech.com/api/login.php" target="_blank" rel="noopener noreferrer">Dashboard</a></li>
@@ -71,12 +71,10 @@ const base = lang === 'en' ? '/en/' : '/';
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    /* FIX #4: niente mix-blend-mode. Scrim difensivo per leggibilita'. */
-    background: linear-gradient(
-      180deg,
-      rgba(5, 5, 7, 0.55) 0%,
-      rgba(5, 5, 7, 0) 100%
-    );
+    /* Barra completamente trasparente: nessuno scrim, nessun blur.
+       Scelta estetica -> hero cristallina. Trade-off accettato: allo
+       scroll le voci possono confondersi coi testi delle sezioni sotto. */
+    background: transparent;
   }
 
   .nav__logo {
