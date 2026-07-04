@@ -1,0 +1,48 @@
+# BrixiaTech — Smart glass e pellicole switchable
+
+> BrixiaTech (marchio di SAL-FER Srl) progetta, fornisce e installa smart glass e pellicole switchable per spazi commerciali e residenziali. Copre la Lombardia (Milano, Brescia, Bergamo) e l'Europa. Cinque tecnologie disponibili: PDLC, PNLC, SPD, elettrocromico (EC) e Blackout Hyper Glass. La piattaforma di controllo proprietaria B-LOGIC è un'opzione, mai un prerequisito.
+
+BrixiaTech (a brand of SAL-FER Srl) designs, supplies and installs smart glass and switchable film for commercial and residential spaces across Italy and Europe. The site is published in Italian (root) and English (/en/).
+
+## Sito in italiano
+
+### Pagine principali
+- [Home](https://brixiatech.com/): smart glass e pellicole switchable per privacy e controllo della luce, con installazione professionale.
+- [Tecnologie](https://brixiatech.com/tecnologie/): panoramica delle cinque tecnologie switchable per scegliere la soluzione adatta al progetto.
+- [Privacy](https://brixiatech.com/privacy/): informativa privacy (GDPR) di SAL-FER Srl.
+
+### Tecnologie
+- [Smart film PDLC](https://brixiatech.com/tecnologie/smart-film-pdlc/): pellicola switchable a cristalli liquidi, da opaca a trasparente a comando, ideale per il retrofit di vetrate esistenti.
+- [Smart film PNLC](https://brixiatech.com/tecnologie/smart-film-pnlc/): pellicola switchable a cristalli liquidi PNLC con commutazione a bassa tensione.
+- [SPD smart glass](https://brixiatech.com/tecnologie/spd-smart-glass/): vetro a particelle sospese (SPD) con oscuramento variabile e controllo continuo della luce solare.
+- [EC smart glass](https://brixiatech.com/tecnologie/ec-smart-glass/): vetro elettrocromico con tinting dinamico regolabile a bassa tensione.
+- [Blackout Hyper Glass](https://brixiatech.com/tecnologie/blackout-hyper-glass/): film switchable nero (DLC) per il passaggio tra stato oscurante e trasparente, blackout a comando.
+
+### Insights
+- [Insights](https://brixiatech.com/insights/): articoli e guide su smart glass, pellicole switchable e casi applicativi.
+- [Coprire vetri di teche, espositori e vetrine](https://brixiatech.com/insights/coprire-vetri-teche-espositori-vetrine/): soluzioni switchable per coprire e proteggere teche, espositori e vetrine.
+- [Oscurare i vetri con telecomando](https://brixiatech.com/insights/oscurare-vetri-con-telecomando/): come funziona il controllo on demand dell'opacità del vetro.
+- [Vetri privacy su comando](https://brixiatech.com/insights/vetri-privacy-su-comando/): passare da trasparente a opaco quando serve, per la privacy on demand.
+
+## English site
+
+### Main pages
+- [Home](https://brixiatech.com/en/): smart glass and switchable film for privacy and light control, with professional installation.
+- [Technologies](https://brixiatech.com/en/technologies/): overview of the five switchable technologies to choose the right one for a project.
+- [Privacy](https://brixiatech.com/en/privacy/): privacy policy (GDPR) of SAL-FER Srl.
+
+### Technologies
+- [PDLC switchable film](https://brixiatech.com/en/technologies/smart-film-pdlc/): liquid-crystal switchable film, opaque to clear on demand, ideal for retrofitting existing glazing.
+- [PNLC switchable film](https://brixiatech.com/en/technologies/smart-film-pnlc/): PNLC liquid-crystal switchable film with low-voltage switching.
+- [SPD smart glass](https://brixiatech.com/en/technologies/spd-smart-glass/): suspended-particle-device glass with variable shading and continuous solar-light control.
+- [EC smart glass](https://brixiatech.com/en/technologies/ec-smart-glass/): electrochromic glass with dynamic, low-voltage tinting.
+- [Blackout Hyper Glass](https://brixiatech.com/en/technologies/blackout-hyper-glass/): black-state switchable film (DLC) for blackout on demand.
+
+### Insights
+- [Insights](https://brixiatech.com/en/insights/): articles and guides on smart glass, switchable film and applications.
+- [Covering and protecting display cases](https://brixiatech.com/en/insights/covering-protecting-display-cases/): switchable solutions to cover and protect display cases and retail windows.
+- [Switchable glass with remote control](https://brixiatech.com/en/insights/switchable-glass-remote-control/): how on-demand remote control of the glass works.
+- [Switchable privacy glass](https://brixiatech.com/en/insights/switchable-privacy-glass/): clear-to-opaque glass on demand for privacy.
+
+## About
+BrixiaTech is the smart-glass brand of SAL-FER Srl, an Italian company that entered the smart glass sector in 2019. Full company details (registered office, VAT number) are published in the site footer and on the privacy pages.
