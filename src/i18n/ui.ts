@@ -203,9 +203,9 @@ export const ui = {
     'insights.telecomando.modi.body':
       'L’input può partire da un interruttore a parete, da un telecomando senza fili, da un’app sullo smartphone o da un sensore che reagisce alla luce o alla presenza. Sono tutte strade verso lo stesso vetro: si scelgono in base a chi usa la superficie e a quante superfici ci sono da gestire. Un telecomando basta per una stanza; più ambienti chiedono un comando più strutturato.',
 
-    'insights.telecomando.quale.title': 'Quale tecnologia si oscura a comando',
+    'insights.telecomando.quale.title': 'Quale tecnologia per la privacy a comando',
     'insights.telecomando.quale.body':
-      'Per rendere privata una superficie a comando — trasparente quando serve, opaca quando si preme — la pellicola PDLC è la scelta naturale. Dove invece il vetro deve restare trasparente senza alimentazione e diventare opaco solo quando comandato, la logica inversa della PNLC è più adatta. Se l’obiettivo non è la privacy ma schermare il sole e l’abbagliamento, il Blackout Hyper Glass oscura a comando la radiazione solare. Sono tecnologie diverse: la scelta parte dall’obiettivo.',
+      'La privacy è la funzione primaria della PDLC, indipendentemente dal colore e dal grado di schermatura solare: a riposo la pellicola è opaca e cela ciò che le sta dietro, mentre sotto comando torna trasparente. Nella versione standard è l’unica a offrire, da trasparente, una resa neutra e vicina al vetro; da spenta si presenta come un bianco traslucido. La PNLC garantisce la stessa privacy diffusa con logica invertita — trasparente in assenza di alimentazione, opaca solo quando comandata — ed è la scelta d’elezione dove il vetro deve restare limpido anche in mancanza di corrente. Le varianti colorate assicurano la medesima privacy, ma aggiungono una schermatura solare più efficace del bianco oppure una precisa valenza estetica: è il caso del grigio, o del nero del Blackout Hyper Glass (DLC), la versione che sotto comando schiarisce fino a un trasparente fumé. La scelta muove sempre dall’obiettivo: la privacy è lo standard, colore e controllo solare sono ciò che distingue una pellicola dall’altra.',
     'insights.telecomando.quale.pdlc': 'Smart Film PDLC',
     'insights.telecomando.quale.pnlc': 'Smart Film PNLC',
     'insights.telecomando.quale.blackout': 'Blackout Hyper Glass',
@@ -643,9 +643,9 @@ export const ui = {
     'insights.telecomando.modi.body':
       'The input can come from a wall switch, a wireless remote, a smartphone app, or a sensor that reacts to light or presence. Each is a route to the same glass, chosen according to who uses the surface and how many surfaces there are to manage. A remote is enough for a single room; multiple spaces call for more structured control.',
 
-    'insights.telecomando.quale.title': 'Which technology switches on command',
+    'insights.telecomando.quale.title': 'Which technology for privacy on command',
     'insights.telecomando.quale.body':
-      'To make a surface private on command — clear when needed, opaque at the press of a button — PDLC film is the natural choice. Where the glass must stay clear without power and turn opaque only when commanded, the reverse logic of PNLC fits better. Where the goal is not privacy but shading sunlight and glare, Blackout Hyper Glass darkens solar radiation on command. These are different technologies: the choice starts from the objective.',
+      'Privacy is the primary function of PDLC, regardless of colour or degree of solar screening: at rest the film is opaque and conceals whatever lies behind it, while under command it returns to clear. In its standard version it is the only one to offer, when clear, a neutral appearance close to plain glass; switched off, it reads as a translucent white. PNLC delivers the same diffuse privacy with reversed logic — clear without power, opaque only when commanded — making it the preferred choice wherever the glass must stay clear even in the absence of power. Coloured variants provide the same privacy, but add solar screening more effective than white, or a defined aesthetic purpose: such as grey, or the black of Blackout Hyper Glass (DLC), the version that under command clears to a smoked transparent. The choice always starts from the objective: privacy is the standard, while colour and solar control are what set one film apart from another.',
     'insights.telecomando.quale.pdlc': 'Smart Film PDLC',
     'insights.telecomando.quale.pnlc': 'Smart Film PNLC',
     'insights.telecomando.quale.blackout': 'Blackout Hyper Glass',
