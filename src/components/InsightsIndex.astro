@@ -3,9 +3,9 @@
 // approfondimenti pratici per caso d'uso, ciascuno che instrada giù nel funnel.
 // Gemello di TecnologieIndex.astro: hero CENTRATO compatto → griglia card → CTA.
 // Meccanismo href-opzionale: una voce con `href` è pubblicata (card cliccabile +
-// CTA "Leggi l'articolo"); senza `href` non viene renderizzata. Al lancio una sola
-// voce ha href (il pilota teche); i 3 futuri si aggiungono mettendo la voce quando
-// l'articolo è pronto. ZERO JS. Token --c-*. Riusa il pattern di TecnologieIndex
+// CTA "Leggi l'articolo"); senza `href` non viene renderizzata. Le voci si
+// aggiungono all'array `articles[]` quando l'articolo corrispondente è pronto.
+// ZERO JS. Token --c-*. Riusa il pattern di TecnologieIndex
 // (.tecindex → .insindex).
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
@@ -30,6 +30,11 @@ const privacyHref =
   lang === "en"
     ? "/en/insights/switchable-privacy-glass/"
     : "/insights/vetri-privacy-su-comando/";
+
+const ufficiHref =
+  lang === "en"
+    ? "/en/insights/glass-partitions-for-offices/"
+    : "/insights/pareti-in-vetro-per-ufficio/";
 
 type Article = {
   titleKey: string;
@@ -58,6 +63,12 @@ const articles: Article[] = [
     summaryKey: "insights.privacy.card.summary",
     href: privacyHref,
     ctaKey: "insights.privacy.card.cta",
+  },
+  {
+    titleKey: "insights.uffici.card.title",
+    summaryKey: "insights.uffici.card.summary",
+    href: ufficiHref,
+    ctaKey: "insights.uffici.card.cta",
   },
 ];
 
