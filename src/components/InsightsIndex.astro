@@ -41,6 +41,11 @@ const negozioHref =
     ? "/en/insights/switchable-glass-for-shop-windows/"
     : "/insights/oscurare-vetrine-negozio/";
 
+const sanitariHref =
+  lang === "en"
+    ? "/en/insights/switchable-glass-for-healthcare/"
+    : "/insights/smart-glass-ambienti-sanitari/";
+
 type Article = {
   titleKey: string;
   summaryKey: string;
@@ -80,6 +85,12 @@ const articles: Article[] = [
     summaryKey: "insights.negozio.card.summary",
     href: negozioHref,
     ctaKey: "insights.negozio.card.cta",
+  },
+  {
+    titleKey: "insights.sanitari.card.title",
+    summaryKey: "insights.sanitari.card.summary",
+    href: sanitariHref,
+    ctaKey: "insights.sanitari.card.cta",
   },
 ];
 
