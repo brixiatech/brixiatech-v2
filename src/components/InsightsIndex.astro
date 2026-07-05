@@ -36,6 +36,11 @@ const ufficiHref =
     ? "/en/insights/glass-partitions-for-offices/"
     : "/insights/pareti-in-vetro-per-ufficio/";
 
+const negozioHref =
+  lang === "en"
+    ? "/en/insights/switchable-glass-for-shop-windows/"
+    : "/insights/oscurare-vetrine-negozio/";
+
 type Article = {
   titleKey: string;
   summaryKey: string;
@@ -69,6 +74,12 @@ const articles: Article[] = [
     summaryKey: "insights.uffici.card.summary",
     href: ufficiHref,
     ctaKey: "insights.uffici.card.cta",
+  },
+  {
+    titleKey: "insights.negozio.card.title",
+    summaryKey: "insights.negozio.card.summary",
+    href: negozioHref,
+    ctaKey: "insights.negozio.card.cta",
   },
 ];
 
