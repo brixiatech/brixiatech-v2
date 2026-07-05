@@ -27,7 +27,13 @@
 /switchable-glass/ /tecnologie/ 301
 /prodotti/ /tecnologie/ 301
 /pareti-in-vetro-per-ufficio-switchable-glass/ /insights/pareti-in-vetro-per-ufficio/ 301
-/pareti-in-vetro-lcd/ /tecnologie/ 301
+
+# --- Consolidamento cluster UFFICI → articolo uffici dedicato ---
+/pareti-in-vetro-lcd/ /insights/pareti-in-vetro-per-ufficio/ 301
+/pareti-in-vetro-per-ufficio-oscuranti/ /insights/pareti-in-vetro-per-ufficio/ 301
+/pareti-divisorie-per-ufficio/ /insights/pareti-in-vetro-per-ufficio/ 301
+/uffici-del-futuro/ /insights/pareti-in-vetro-per-ufficio/ 301
+/pellicole-satinate-per-sale-riunioni/ /insights/pareti-in-vetro-per-ufficio/ 301
 /smartglass-pnlc-vs-pdlc-un-confronto-illuminante/ /tecnologie/ 301
 /finestre-per-casa-come-oscurare-i-vetri-con-eleganza-e-tecnologia/ /tecnologie/ 301
 /pellicole-oscuranti-smart-e-pellicole-design/ /tecnologie/ 301
