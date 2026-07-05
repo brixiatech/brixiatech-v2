@@ -1,0 +1,306 @@
+---
+// InsightUffici.astro — Articolo Insights: pareti in vetro per ufficio, dalla
+// luce naturale alla privacy a comando delle sale riunioni. Famiglia Insight<Tema>,
+// gemello di InsightPrivacy: hero (asimmetrico, sinistra) → blocchi corpo
+// a due colonne (titolo sx / testo dx) → CTA finale a doppia azione.
+// 4 blocchi: "luce" e "privacy" narrativi (nessun link); "quale" smista verso
+// due prodotti (PDLC / PNLC); "centralizza" verso B-LOGIC.
+// I blocchi a un solo link passano un array di uno; i narrativi un array vuoto.
+// lang/t ricavati internamente (mai props). Token: --c-* / --space-* / --font-* da global.css.
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+// Base URL lang-aware per i link cross-page verso la home (prefixDefaultLocale: false).
+const base = lang === "en" ? "/en/" : "/";
+const linkBlogic = `${base}#blogic-eyebrow`;
+// Link a pagina-prodotto: i segmenti di path sono tradotti → const dedicati lang-aware.
+const pdlcHref = lang === "en"
+  ? "/en/technologies/smart-film-pdlc/"
+  : "/tecnologie/smart-film-pdlc/";
+const pnlcHref = lang === "en"
+  ? "/en/technologies/smart-film-pnlc/"
+  : "/tecnologie/smart-film-pnlc/";
+// CTA finale: link secondario all'hub tecnologie (segmento path tradotto).
+const techHref = lang === "en" ? "/en/technologies/" : "/tecnologie/";
+// Blocchi corpo a due colonne. Ogni link = { href, labelKey }.
+// "quale" smista verso due prodotti; "centralizza" verso B-LOGIC; "luce" e
+// "privacy" sono narrativi (nessun link).
+type BlockLink = { href: string; labelKey: string };
+type Block = { key: string; links: BlockLink[] };
+const blocks: Block[] = [
+  { key: "luce", links: [] },
+  { key: "privacy", links: [] },
+  {
+    key: "quale",
+    links: [
+      { href: pdlcHref, labelKey: "insights.uffici.quale.pdlc" },
+      { href: pnlcHref, labelKey: "insights.uffici.quale.pnlc" },
+    ],
+  },
+  {
+    key: "centralizza",
+    links: [{ href: linkBlogic, labelKey: "insights.uffici.centralizza.blogic" }],
+  },
+];
+---
+<article class="insight">
+  <!-- HERO ARTICOLO — asimmetrico, allineato a sinistra -->
+  <header class="insight-hero" aria-labelledby="insight-h1">
+    <div class="insight-hero__inner">
+      <p class="insight-hero__eyebrow">{t("insights.uffici.eyebrow")}</p>
+      <h1 class="insight-hero__title" id="insight-h1">{t("insights.uffici.h1")}</h1>
+      <p class="insight-hero__lead">{t("insights.uffici.lead")}</p>
+    </div>
+  </header>
+  <!-- BLOCCHI CORPO — due colonne (titolo sx / testo dx) -->
+  <div class="insight-body">
+    {blocks.map((b) => (
+      <section class="insight-block">
+        <div class="insight-block__inner">
+          <div class="insight-block__head">
+            <h2 class="insight-block__title">{t(`insights.uffici.${b.key}.title`)}</h2>
+          </div>
+          <div class="insight-block__content">
+            <p class="insight-block__body">{t(`insights.uffici.${b.key}.body`)}</p>
+            {b.links.length > 0 && (
+              <div class="insight-block__links">
+                {b.links.map((l) => (
+                  <a class="insight-block__link" href={l.href}>
+                    {t(l.labelKey)}<span class="insight-block__arrow" aria-hidden="true">&#8594;</span>
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+    ))}
+  </div>
+  <!-- CTA FINALE -->
+  <section class="insight-cta" aria-labelledby="insight-cta-title">
+    <div class="insight-cta__inner">
+      <h2 class="insight-cta__title" id="insight-cta-title">{t("insights.uffici.cta.title")}</h2>
+      <p class="insight-cta__body">{t("insights.uffici.cta.body")}</p>
+      <div class="insight-cta__actions">
+        <a class="insight-cta__button" href={`${base}#contact-eyebrow`}>{t("insights.uffici.cta.button")}</a>
+        <a class="insight-cta__explore" href={techHref}>
+          {t("insights.uffici.cta.explore")}<span class="insight-block__arrow" aria-hidden="true">&#8594;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</article>
+
+<style>
+  .insight {
+    display: block;
+  }
+
+  /* ---------- HERO ARTICOLO ---------- */
+  .insight-hero {
+    padding: calc(var(--space-section-y-lg) + 40px) var(--space-section-x) 32px;
+  }
+  .insight-hero__inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+  }
+  .insight-hero__eyebrow {
+    display: inline-block;
+    margin: 0;
+    padding: 7px 14px;
+    border: 1px solid var(--c-accent-glow);
+    border-radius: var(--radius-pill);
+    background: rgba(10, 18, 38, 0.6);
+    backdrop-filter: blur(8px);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--c-mist-bright);
+  }
+  .insight-hero__title {
+    margin: 28px 0 0;
+    max-width: 22ch;
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    line-height: 1.08;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--c-pearl);
+  }
+  .insight-hero__lead {
+    margin: 24px 0 0;
+    max-width: 62ch;
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    line-height: 1.6;
+    color: var(--c-mist);
+  }
+
+  /* ---------- BLOCCHI CORPO (due colonne) ---------- */
+  .insight-block {
+    padding: var(--space-section-y) var(--space-section-x);
+  }
+  .insight-block__inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    column-gap: 64px;
+    align-items: start;
+  }
+  .insight-block__title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+    line-height: 1.22;
+    font-weight: 500;
+    color: var(--c-pearl);
+  }
+  .insight-block__body {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--c-mist);
+  }
+  /* Più link nello stesso blocco: in colonna, allineati a sinistra. */
+  .insight-block__links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .insight-block__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--c-cyan);
+    text-decoration: none;
+    transition: color 0.2s var(--ease);
+  }
+  .insight-block__arrow {
+    transition: transform 0.2s var(--ease);
+  }
+  .insight-block__link:hover {
+    color: var(--c-accent-bright);
+  }
+  .insight-block__link:hover .insight-block__arrow {
+    transform: translateX(4px);
+  }
+  .insight-block__link:focus-visible {
+    outline: 2px solid var(--c-cyan);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+
+  /* ---------- CTA FINALE ---------- */
+  .insight-cta {
+    padding: var(--space-section-y) var(--space-section-x) var(--space-section-y-lg);
+  }
+  .insight-cta__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .insight-cta__title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.2;
+    font-weight: 500;
+    color: var(--c-pearl);
+  }
+  .insight-cta__body {
+    margin: 16px auto 0;
+    max-width: 52ch;
+    color: var(--c-mist);
+    line-height: 1.6;
+  }
+  .insight-cta__actions {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px 28px;
+  }
+  .insight-cta__button {
+    display: inline-block;
+    padding: 14px 32px;
+    border: 1px solid var(--c-cyan);
+    border-radius: var(--radius-card);
+    background: transparent;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--c-cyan);
+    text-decoration: none;
+    transition: background 0.2s var(--ease), color 0.2s var(--ease);
+  }
+  .insight-cta__button:hover {
+    background: var(--c-cyan);
+    color: var(--c-void);
+  }
+  .insight-cta__button:focus-visible {
+    outline: 2px solid var(--c-cyan);
+    outline-offset: 4px;
+  }
+  .insight-cta__explore {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--c-cyan);
+    text-decoration: none;
+    transition: color 0.2s var(--ease);
+  }
+  .insight-cta__explore:hover {
+    color: var(--c-accent-bright);
+  }
+  .insight-cta__explore:hover .insight-block__arrow {
+    transform: translateX(4px);
+  }
+  .insight-cta__explore:focus-visible {
+    outline: 2px solid var(--c-cyan);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px) {
+    .insight-hero {
+      padding: calc(var(--space-section-y) + 24px) 24px var(--space-section-y);
+    }
+    .insight-block {
+      padding: var(--space-section-y) 24px;
+    }
+    .insight-block__inner {
+      grid-template-columns: 1fr;
+      row-gap: 20px;
+    }
+  }
+  @media (max-width: 560px) {
+    .insight-hero {
+      padding: 72px 24px 56px;
+    }
+    .insight-block {
+      padding: 56px 24px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .insight-block__link,
+    .insight-block__arrow,
+    .insight-cta__button,
+    .insight-cta__explore {
+      transition: none;
+    }
+  }
+</style>

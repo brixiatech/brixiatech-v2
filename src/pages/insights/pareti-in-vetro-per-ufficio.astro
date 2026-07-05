@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import InsightUffici from "../../components/InsightUffici.astro";
+import Footer from "../../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<BaseLayout title={t("insights.uffici.meta.title")} description={t("insights.uffici.meta.description")} hrefIt="/insights/pareti-in-vetro-per-ufficio/" hrefEn="/en/insights/glass-partitions-for-offices/">
+  <InsightUffici />
+  <Footer />
+</BaseLayout>
