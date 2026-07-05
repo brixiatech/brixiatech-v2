@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import InsightSanitari from "../../components/InsightSanitari.astro";
+import Footer from "../../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<BaseLayout title={t("insights.sanitari.meta.title")} description={t("insights.sanitari.meta.description")} hrefIt="/insights/smart-glass-ambienti-sanitari/" hrefEn="/en/insights/switchable-glass-for-healthcare/">
+  <InsightSanitari />
+  <Footer />
+</BaseLayout>
