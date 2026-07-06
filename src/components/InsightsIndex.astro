@@ -46,6 +46,11 @@ const sanitariHref =
     ? "/en/insights/switchable-glass-for-healthcare/"
     : "/insights/smart-glass-ambienti-sanitari/";
 
+const switchableHref =
+  lang === "en"
+    ? "/en/electrochromic-glass/"
+    : "/vetro-switchable/";
+
 type Article = {
   titleKey: string;
   summaryKey: string;
@@ -91,6 +96,12 @@ const articles: Article[] = [
     summaryKey: "insights.sanitari.card.summary",
     href: sanitariHref,
     ctaKey: "insights.sanitari.card.cta",
+  },
+  {
+    titleKey: "pillar.switchable.card.title",
+    summaryKey: "pillar.switchable.card.summary",
+    href: switchableHref,
+    ctaKey: "pillar.switchable.card.cta",
   },
 ];
 

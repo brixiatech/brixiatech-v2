@@ -559,6 +559,9 @@ export const ui = {
     'pillar.switchable.cta.body': 'Raccontaci il progetto — il vetro, l’esposizione, il comportamento che cerchi — e definiamo insieme la tecnologia switchable adatta e la sua configurazione.',
     'pillar.switchable.cta.button': 'Richiedi un preventivo',
     'pillar.switchable.cta.explore': 'Esplora le tecnologie',
+    'pillar.switchable.card.title': 'Vetro switchable: la famiglia e come scegliere',
+    'pillar.switchable.card.summary': 'PDLC, PNLC, SPD, elettrocromico: cosa fa ogni tecnologia del vetro che cambia stato a comando, e come scegliere quella giusta per il progetto.',
+    'pillar.switchable.card.cta': 'Leggi la guida',
   },
   en: {
     // --- Meta / SEO ---
@@ -1113,5 +1116,8 @@ export const ui = {
     'pillar.switchable.cta.body': 'Tell us about the project — the glazing, the elevation, the behaviour you’re after — and we’ll help you choose the right switchable technology and scope it properly.',
     'pillar.switchable.cta.button': 'Request a quote',
     'pillar.switchable.cta.explore': 'Explore the technologies',
+    'pillar.switchable.card.title': 'Electrochromic & switchable glass: how to choose',
+    'pillar.switchable.card.summary': 'PDLC, PNLC, SPD, electrochromic: what each switchable technology does — and how to choose the right one for your project.',
+    'pillar.switchable.card.cta': 'Read the guide',
   },
 } as const;
