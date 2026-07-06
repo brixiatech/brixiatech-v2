@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SwitchablePillar from "../components/SwitchablePillar.astro";
+import Footer from "../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<BaseLayout
+  title={t("pillar.switchable.meta.title")}
+  description={t("pillar.switchable.meta.description")}
+  hrefIt="/vetro-switchable/"
+  hrefEn="/en/electrochromic-glass/"
+>
+  <SwitchablePillar />
+  <Footer />
+</BaseLayout>
