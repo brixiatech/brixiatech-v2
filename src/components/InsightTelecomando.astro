@@ -45,6 +45,14 @@ const blocks: Block[] = [
     key: "centralizza",
     links: [{ href: linkBlogic, labelKey: "insights.telecomando.centralizza.blogic" }],
   },
+  // Blocchi prezzo: solo IT (range = riferimento di mercato italiano; il funnel
+  // EN Svizzera/Europa ha prezzi diversi). Reso condizionale su lang.
+  ...(lang !== "en"
+    ? [
+        { key: "prezzo", links: [] },
+        { key: "progetto", links: [] },
+      ]
+    : []),
 ];
 ---
 <article class="insight">

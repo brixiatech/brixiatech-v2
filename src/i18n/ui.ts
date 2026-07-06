@@ -215,6 +215,13 @@ export const ui = {
       'Su una singola superficie il controllo può essere gestito in modalità manuale — interruttore o telecomando. Quando le superfici si moltiplicano, o si vogliono programmare gli stati per fascia oraria, lo stesso controllo può essere centralizzato con il nostro sistema B-LOGIC: scenari, comando coordinato o gestione da un unico punto.',
     'insights.telecomando.centralizza.blogic': 'Scopri B-LOGIC',
 
+    'insights.telecomando.prezzo.title': 'Quanto costa un vetro che si oscura a comando',
+    'insights.telecomando.prezzo.body':
+      'Alla domanda sul funzionamento segue, inevitabilmente, quella sul costo. Conviene inquadrarla a partire dal mercato, più che da un listino: per la sola pellicola switchable il prezzo di mercato si colloca indicativamente tra i 200 e i 600 euro al metro quadro, IVA esclusa. L’ampiezza dell’intervallo dipende dalla tecnologia adottata — PDLC, PNLC o le varianti colorate già descritte — oltre che dalla garanzia e dal marchio della pellicola.',
+    'insights.telecomando.progetto.title': 'Ciò che il prezzo al metro non comprende',
+    'insights.telecomando.progetto.body':
+      'I valori sopra esposti riguardano esclusivamente la pellicola. Non comprendono la posa, l’eventuale vetro nuovo su cui applicarla, né l’elettronica di comando — dall’alimentatore che ne consente la commutazione fino alla gestione centralizzata con B-LOGIC, quando le superfici da coordinare sono più d’una. Il prezzo al metro quadro offre dunque un primo ordine di grandezza, mentre il costo effettivo si definisce sul progetto.',
+
     'insights.telecomando.cta.title': 'Parliamo del tuo progetto',
     'insights.telecomando.cta.body':
       'Ogni superficie è un caso a sé: il modo di comando giusto dipende da ambiente, uso e numero di vetri. Raccontaci cosa vuoi comandare e troviamo la configurazione adatta.',
