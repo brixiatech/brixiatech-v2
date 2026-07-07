@@ -42,6 +42,57 @@ const canonicalPath = lang === "en" ? hrefEn : hrefIt;
 const canonicalUrl = new URL(withSlash(canonicalPath), Astro.site).href;
 const hrefItAbs = new URL(withSlash(hrefIt), Astro.site).href;
 const hrefEnAbs = new URL(withSlash(hrefEn), Astro.site).href;
+
+// JSON-LD site-wide: Organization + WebSite (@graph, cross-ref via @id).
+// Base assoluta da Astro.site; identico su ogni pagina IT/EN.
+const siteBase = Astro.site?.href.replace(/\/$/, "") ?? "https://brixiatech.com";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": siteBase + "/#organization",
+      "name": "BrixiaTech",
+      "legalName": "SAL-FER Srl",
+      "url": siteBase,
+      "logo": {
+        "@type": "ImageObject",
+        "url": siteBase + "/brixiatech-logo.png",
+        "width": 739,
+        "height": 135,
+      },
+      "vatID": "IT03726890985",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Fratelli Calvi 19, Loc. San Pancrazio",
+        "postalCode": "25036",
+        "addressLocality": "Palazzolo sull'Oglio",
+        "addressRegion": "BS",
+        "addressCountry": "IT",
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "telephone": "+390307002496",
+        "email": "info@brixiatech.com",
+        "availableLanguage": ["it", "en"],
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/69237643",
+        "https://www.instagram.com/brixiatech/",
+        "https://www.google.com/maps?cid=6366984300678652237",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": siteBase + "/#website",
+      "url": siteBase,
+      "name": "BrixiaTech",
+      "inLanguage": ["it", "en"],
+      "publisher": { "@id": siteBase + "/#organization" },
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -73,6 +124,9 @@ const hrefEnAbs = new URL(withSlash(hrefEn), Astro.site).href;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
+
+    <!-- JSON-LD: Organization + WebSite (site-wide) -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
   <body>
     <div class="grain" aria-hidden="true"></div>
