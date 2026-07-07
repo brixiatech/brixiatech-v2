@@ -11,6 +11,11 @@ const t = useTranslations(lang);
   description={t("pillar.switchable.meta.description")}
   hrefIt="/vetro-switchable/"
   hrefEn="/en/electrochromic-glass/"
+  breadcrumb={[
+    { name: t("breadcrumb.home"), path: "/en/" },
+    { name: t("breadcrumb.tecnologie"), path: "/en/technologies/" },
+    { name: t("breadcrumb.switchable"), path: "/en/electrochromic-glass/" },
+  ]}
 >
   <SwitchablePillar />
   <Footer />

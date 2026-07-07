@@ -24,6 +24,7 @@ interface Props {
   description?: string;
   hrefIt?: string;
   hrefEn?: string;
+  breadcrumb?: { name: string; path: string }[];
 }
 
 const {
@@ -31,6 +32,7 @@ const {
   description = t("meta.description"),
   hrefIt = "/",
   hrefEn = "/en/",
+  breadcrumb,
 } = Astro.props;
 
 // Canonical = href della lingua corrente, NORMALIZZATO con trailing slash.
@@ -56,6 +58,22 @@ const structuredData = {
   "inLanguage": ["it", "en"],
   "publisher": { "@id": siteBase + "/#localbusiness" },
 };
+
+// BreadcrumbList per-pagina: compilato da una traccia leggera {name, path}.
+// URL assoluti via withSlash + Astro.site (stessa logica del canonical). Null se assente.
+const breadcrumbLd =
+  breadcrumb && breadcrumb.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: breadcrumb.map((step, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: step.name,
+          item: new URL(withSlash(step.path), Astro.site).href,
+        })),
+      }
+    : null;
 ---
 
 <!doctype html>
@@ -90,6 +108,7 @@ const structuredData = {
 
     <!-- JSON-LD: WebSite site-wide; entita' azienda nel Footer (#localbusiness) -->
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    {breadcrumbLd && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />}
   </head>
   <body>
     <div class="grain" aria-hidden="true"></div>

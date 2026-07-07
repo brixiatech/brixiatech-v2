@@ -569,6 +569,9 @@ export const ui = {
     'pillar.switchable.card.title': 'Vetro switchable: la famiglia e come scegliere',
     'pillar.switchable.card.summary': 'PDLC, PNLC, SPD, elettrocromico: cosa fa ogni tecnologia del vetro che cambia stato a comando, e come scegliere quella giusta per il progetto.',
     'pillar.switchable.card.cta': 'Leggi la guida',
+    'breadcrumb.home': 'Home',
+    'breadcrumb.tecnologie': 'Tecnologie',
+    'breadcrumb.switchable': 'Vetro switchable',
   },
   en: {
     // --- Meta / SEO ---
@@ -1126,5 +1129,8 @@ export const ui = {
     'pillar.switchable.card.title': 'Electrochromic & switchable glass: how to choose',
     'pillar.switchable.card.summary': 'PDLC, PNLC, SPD, electrochromic: what each switchable technology does — and how to choose the right one for your project.',
     'pillar.switchable.card.cta': 'Read the guide',
+    'breadcrumb.home': 'Home',
+    'breadcrumb.tecnologie': 'Technologies',
+    'breadcrumb.switchable': 'Switchable glass',
   },
 } as const;
