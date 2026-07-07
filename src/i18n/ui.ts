@@ -188,7 +188,7 @@ export const ui = {
 
     'insights.telecomando.meta.title': 'Vetri che si oscurano con telecomando — come funziona il comando | BrixiaTech',
     'insights.telecomando.meta.description':
-      'Come si comanda un vetro switchable: dal telecomando all’interruttore, dall’app al controllo centralizzato. Quale tecnologia si oscura a comando, e come gestirla.',
+      'Vetri che si oscurano a comando: prezzo di mercato €200–600/mq per la sola pellicola. Come si comanda, dal telecomando a B-LOGIC.',
 
     'insights.telecomando.eyebrow': 'INSIGHTS · TELECOMANDO E CONTROLLO',
     'insights.telecomando.h1': 'Vetri che si oscurano con un comando: dal telecomando al controllo centralizzato',
