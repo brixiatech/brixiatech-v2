@@ -447,7 +447,7 @@ export const ui = {
     'prod.pdlc.meta.description': 'Smart film PDLC, la tecnologia switchable più diffusa: il vetro passa da trasparente a opaco a comando. Privacy e controllo della luce, in pellicola adesiva o vetro laminato.',
     'prod.pdlc.eyebrow': 'SMART FILM PDLC · PRIVACY A COMANDO',
     'prod.pdlc.name': 'Smart film PDLC: trasparente o opaco, a comando',
-    'prod.pdlc.tagline': 'La tecnologia switchable più diffusa. Un impulso elettrico e il vetro passa da limpido a privato — niente tende, nessuna parte in movimento.',
+    'prod.pdlc.tagline': 'La tecnologia switchable più diffusa. Un impulso elettrico e il vetro passa da limpido a opaco — niente tende, nessuna parte in movimento.',
     'prod.pdlc.what.title': 'Privacy quando serve, luce sempre.',
     'prod.pdlc.what.body': 'Lo smart film PDLC è una pellicola a cristalli liquidi che si applica a un vetro esistente o si integra in un vetro laminato. Alimentato, il vetro è limpido e trasparente; a riposo diventa opaco e scherma la vista. È privacy a comando: una sola superficie fa il lavoro del vetro e della tenda, lascia entrare la luce e protegge la riservatezza. È la forma di vetro switchable che la maggior parte delle persone immagina quando pensa a un vetro che si oscura.',
     'prod.pdlc.what.link': 'Per schermare il sole e il calore esiste una variante scura della stessa famiglia: Blackout Hyper Glass',
