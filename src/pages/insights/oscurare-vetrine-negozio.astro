@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import InsightNegozio from "../../components/InsightNegozio.astro";
 import Footer from "../../components/Footer.astro";
+import Contact from "../../components/Contact.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -18,5 +19,6 @@ const t = useTranslations(lang);
   ]}
 >
   <InsightNegozio />
+  <Contact />
   <Footer />
 </BaseLayout>
