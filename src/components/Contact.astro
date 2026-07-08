@@ -6,12 +6,17 @@
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const mailSubject = encodeURIComponent(t("contact.mail.subject"));
+const mailBody = encodeURIComponent(t("contact.mail.body"));
+const infoHref = `mailto:info@brixiatech.com?subject=${mailSubject}&body=${mailBody}`;
+const waText = encodeURIComponent(t("contact.wa.text"));
+const waHref = `https://wa.me/393505305358?text=${waText}`;
 const channels = [
   {
     titleKey: "contact.c1.title",
     bodyKey: "contact.c1.body",
     links: [
-      { label: "info@brixiatech.com", href: "mailto:info@brixiatech.com" },
+      { label: "info@brixiatech.com", href: infoHref },
       { label: "+39 030 700 2496", href: "tel:+390307002496" },
     ],
   },
@@ -26,7 +31,7 @@ const channels = [
     titleKey: "contact.c3.title",
     bodyKey: "contact.c3.body",
     links: [
-      { label: "+39 350 530 5358", href: "https://wa.me/393505305358" },
+      { label: "+39 350 530 5358", href: waHref },
     ],
   },
 ] as const;

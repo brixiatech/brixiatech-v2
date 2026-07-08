@@ -403,6 +403,9 @@ export const ui = {
     'contact.c2.body': 'Sei un serramentista, un vetraio o un posatore? Forniamo pellicole e vetro switchable, con supporto tecnico per integrare le PDLC nel tuo catalogo.',
     'contact.c3.title': 'WhatsApp diretto',
     'contact.c3.body': 'Per un primo contatto rapido, scrivici su WhatsApp.',
+    'contact.mail.subject': 'Richiesta di preventivo — progetto vetro a comando',
+    'contact.mail.body': 'Buongiorno,\nvorrei un preventivo per un progetto con vetro o pellicola a comando.\n\nTecnologia di interesse (se nota):\nSuperficie da trattare (mq):\nAmbiente (ufficio / hospitality / residenziale / retail / altro):\nCittà:\nNote:\n\nGrazie.',
+    'contact.wa.text': 'Buongiorno, vorrei un preventivo per un progetto con vetro a comando.',
 
     // --- Footer (#12) ---
     'footer.blurb': 'Vetri che pensano. Edifici che si adattano.',
@@ -970,6 +973,9 @@ export const ui = {
     'contact.c2.body': 'Glazier, window specialist or installer? We supply switchable film and glass, with technical support to add PDLC to your catalogue.',
     'contact.c3.title': 'Direct WhatsApp',
     'contact.c3.body': 'For a quick first contact, message us on WhatsApp.',
+    'contact.mail.subject': 'Quote request — switchable glass project',
+    'contact.mail.body': "Hello,\nI'd like a quote for a project with switchable glass or film.\n\nTechnology of interest (if known):\nSurface to treat (sqm):\nSetting (office / hospitality / residential / retail / other):\nCity / Country:\nNotes:\n\nThank you.",
+    'contact.wa.text': "Hello, I'd like a quote for a switchable glass project.",
 
     // --- Footer (#12) ---
     'footer.blurb': 'Glass that thinks. Buildings that adapt.',
