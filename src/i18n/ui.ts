@@ -572,6 +572,13 @@ export const ui = {
     'breadcrumb.home': 'Home',
     'breadcrumb.tecnologie': 'Tecnologie',
     'breadcrumb.switchable': 'Vetro switchable',
+    'breadcrumb.insights': 'Insights',
+    'breadcrumb.teche': 'Teche ed espositori',
+    'breadcrumb.telecomando': 'Vetri a telecomando',
+    'breadcrumb.privacy': 'Privacy a comando',
+    'breadcrumb.uffici': 'Pareti per ufficio',
+    'breadcrumb.negozio': 'Vetrine negozio',
+    'breadcrumb.sanitari': 'Ambienti sanitari',
   },
   en: {
     // --- Meta / SEO ---
@@ -1132,5 +1139,12 @@ export const ui = {
     'breadcrumb.home': 'Home',
     'breadcrumb.tecnologie': 'Technologies',
     'breadcrumb.switchable': 'Switchable glass',
+    'breadcrumb.insights': 'Insights',
+    'breadcrumb.teche': 'Display cases',
+    'breadcrumb.telecomando': 'Remote control',
+    'breadcrumb.privacy': 'Privacy glass',
+    'breadcrumb.uffici': 'Office partitions',
+    'breadcrumb.negozio': 'Shop windows',
+    'breadcrumb.sanitari': 'Healthcare',
   },
 } as const;

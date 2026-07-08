@@ -6,7 +6,17 @@ import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
-<BaseLayout title={t("insights.uffici.meta.title")} description={t("insights.uffici.meta.description")} hrefIt="/insights/pareti-in-vetro-per-ufficio/" hrefEn="/en/insights/glass-partitions-for-offices/">
+<BaseLayout
+  title={t("insights.uffici.meta.title")}
+  description={t("insights.uffici.meta.description")}
+  hrefIt="/insights/pareti-in-vetro-per-ufficio/"
+  hrefEn="/en/insights/glass-partitions-for-offices/"
+  breadcrumb={[
+    { name: t("breadcrumb.home"), path: "/" },
+    { name: t("breadcrumb.insights"), path: "/insights/" },
+    { name: t("breadcrumb.uffici"), path: "/insights/pareti-in-vetro-per-ufficio/" },
+  ]}
+>
   <InsightUffici />
   <Footer />
 </BaseLayout>

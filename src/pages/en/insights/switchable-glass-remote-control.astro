@@ -6,7 +6,17 @@ import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
-<BaseLayout title={t("insights.telecomando.meta.title")} description={t("insights.telecomando.meta.description")} hrefIt="/insights/oscurare-vetri-con-telecomando/" hrefEn="/en/insights/switchable-glass-remote-control/">
+<BaseLayout
+  title={t("insights.telecomando.meta.title")}
+  description={t("insights.telecomando.meta.description")}
+  hrefIt="/insights/oscurare-vetri-con-telecomando/"
+  hrefEn="/en/insights/switchable-glass-remote-control/"
+  breadcrumb={[
+    { name: t("breadcrumb.home"), path: "/en/" },
+    { name: t("breadcrumb.insights"), path: "/en/insights/" },
+    { name: t("breadcrumb.telecomando"), path: "/en/insights/switchable-glass-remote-control/" },
+  ]}
+>
   <InsightTelecomando />
   <Footer />
 </BaseLayout>
