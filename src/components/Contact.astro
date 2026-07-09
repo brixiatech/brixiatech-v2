@@ -7,9 +7,10 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const mailSubject = encodeURIComponent(t("contact.mail.subject"));
-const mailBody = encodeURIComponent(t("contact.mail.body"));
+const pageRef = `${t("contact.ref.label")}: ${Astro.url.pathname}`;
+const mailBody = encodeURIComponent(t("contact.mail.body") + "\n\n" + pageRef);
 const infoHref = `mailto:info@brixiatech.com?subject=${mailSubject}&body=${mailBody}`;
-const waText = encodeURIComponent(t("contact.wa.text"));
+const waText = encodeURIComponent(t("contact.wa.text") + "\n" + pageRef);
 const waHref = `https://wa.me/393505305358?text=${waText}`;
 const channels = [
   {

@@ -406,6 +406,7 @@ export const ui = {
     'contact.mail.subject': 'Richiesta di preventivo — progetto vetro a comando',
     'contact.mail.body': 'Buongiorno,\nvorrei un preventivo per un progetto con vetro o pellicola a comando.\n\nTecnologia di interesse (se nota):\nSuperficie da trattare (mq):\nAmbiente (ufficio / hospitality / residenziale / retail / altro):\nCittà:\nNote:\n\nGrazie.',
     'contact.wa.text': 'Buongiorno, vorrei un preventivo per un progetto con vetro a comando.',
+    'contact.ref.label': 'Rif',
 
     // --- Footer (#12) ---
     'footer.blurb': 'Vetri che pensano. Edifici che si adattano.',
@@ -976,6 +977,7 @@ export const ui = {
     'contact.mail.subject': 'Quote request — switchable glass project',
     'contact.mail.body': "Hello,\nI'd like a quote for a project with switchable glass or film.\n\nTechnology of interest (if known):\nSurface to treat (sqm):\nSetting (office / hospitality / residential / retail / other):\nCity / Country:\nNotes:\n\nThank you.",
     'contact.wa.text': "Hello, I'd like a quote for a switchable glass project.",
+    'contact.ref.label': 'Ref',
 
     // --- Footer (#12) ---
     'footer.blurb': 'Glass that thinks. Buildings that adapt.',
