@@ -109,6 +109,9 @@ const breadcrumbLd =
     <!-- JSON-LD: WebSite site-wide; entita' azienda nel Footer (#localbusiness) -->
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     {breadcrumbLd && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />}
+
+    <!-- Umami analytics (self-hosted, data.brixiatech.com) -->
+    <script is:inline defer src="https://data.brixiatech.com/script.js" data-website-id="e9c87f78-fbec-410a-bd9c-7603054a3a71" data-domains="brixiatech.com,www.brixiatech.com"></script>
   </head>
   <body>
     <div class="grain" aria-hidden="true"></div>

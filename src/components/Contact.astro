@@ -16,22 +16,22 @@ const channels = [
     titleKey: "contact.c1.title",
     bodyKey: "contact.c1.body",
     links: [
-      { label: "info@brixiatech.com", href: infoHref },
-      { label: "+39 030 700 2496", href: "tel:+390307002496" },
+      { label: "info@brixiatech.com", href: infoHref, event: "contact-mail" },
+      { label: "+39 030 700 2496", href: "tel:+390307002496", event: "contact-tel" },
     ],
   },
   {
     titleKey: "contact.c2.title",
     bodyKey: "contact.c2.body",
     links: [
-      { label: "partner@brixiatech.com", href: "mailto:partner@brixiatech.com" },
+      { label: "partner@brixiatech.com", href: "mailto:partner@brixiatech.com", event: "contact-partner" },
     ],
   },
   {
     titleKey: "contact.c3.title",
     bodyKey: "contact.c3.body",
     links: [
-      { label: "+39 350 530 5358", href: waHref },
+      { label: "+39 350 530 5358", href: waHref, event: "contact-whatsapp" },
     ],
   },
 ] as const;
@@ -54,6 +54,7 @@ const channels = [
                 <a
                   class="contact__link"
                   href={link.href}
+                  data-umami-event={link.event}
                   target={external ? "_blank" : undefined}
                   rel={external ? "noopener" : undefined}
                 >{link.label}</a>
