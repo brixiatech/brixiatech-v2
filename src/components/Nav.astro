@@ -1,19 +1,22 @@
 ---
-// Nav con collasso a burger oltre soglia di scroll (~120px).
+// Nav con collasso a burger oltre soglia di scroll (~120px) - revisione 2.
 // - Espansa (top di pagina, desktop): logo | voci | CTA + IT/EN. Trasparente.
-// - Collassata (scroll > 120px): restano logo a sinistra e burger a destra,
-//   icona senza sfondo. Voci, CTA e switcher lingua passano nel pannello a
-//   tendina (lo stesso pannello del mobile, esteso con le voci extra).
-// - Mobile (<900px): burger sempre in barra come prima; oltre soglia le
-//   actions sfumano e CTA + lingua compaiono nel pannello (nav__panel-extra).
+// - Collassata (scroll > 120px): le voci SCIVOLANO verso destra (slide 64px +
+//   dissolvenza, 300ms) in direzione della pillola Preventivo; il burger
+//   emerge con un ritardo di 120ms accanto alla CTA, arrivando dalla stessa
+//   direzione del movimento. La CTA "Preventivo" RESTA SEMPRE in barra
+//   (mai nel pannello); lo switcher lingua sfuma e passa nel pannello.
+// - Pannello: su desktop e' un dropdown COMPATTO ancorato a destra
+//   (240px, angoli arrotondati); su mobile resta full-width come prima.
+// - Mobile (<900px): burger sempre in barra (ultimo, dentro le actions);
+//   oltre soglia sfuma solo lo switcher lingua, la CTA resta.
 // Meccanica apertura menu: checkbox-hack (input nascosto + label burger +
-// :checked), invariata rispetto alla versione precedente. Motivazione storica
-// vs <details> confermata: ogni show/hide resta regola CSS d'autore.
-// JS minimo: driver scroll rAF-throttled che alterna .nav--collapsed sulla
-// barra e richiude il pannello quando si rientra sopra la soglia. Senza JS
-// la nav resta espansa come prima (progressive enhancement).
-// Transizioni: fade 200ms var(--ease) (linguaggio gia' in uso su hover);
-// guardia prefers-reduced-motion -> switch istantaneo.
+// :checked). La label vive dentro .nav__actions -> i selettori usano
+// `~ .nav__actions .nav__burger` (sibling generale + discendente).
+// JS minimo invariato: driver scroll rAF-throttled che alterna
+// .nav--collapsed e richiude il pannello quando si rientra sopra soglia.
+// Senza JS la nav resta espansa (progressive enhancement).
+// Guardia prefers-reduced-motion -> switch istantaneo, nessuno slide.
 // FIX #4 invariato: niente mix-blend-mode; colore fisso pearl.
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
@@ -43,8 +46,8 @@ const base = lang === 'en' ? '/en/' : '/';
       Nascosto visivamente ma raggiungibile via label (burger). */}
   <input type="checkbox" id="nav-toggle" class="nav__toggle" aria-hidden="true" />
 
-  {/* Riga voci: solo desktop espanso. Su mobile e da collassato le voci
-      vivono nel pannello (.nav__panel). */}
+  {/* Riga voci: solo desktop espanso. Da collassato scivola verso destra
+      e sfuma; le voci vivono poi nel pannello (.nav__panel). */}
   <ul class="nav__menu">
     <li><a href={`${base}#tech-eyebrow`}>{t('nav.tech')}</a></li>
     <li><a href={`${base}#blogic-eyebrow`}>B-logic</a></li>
@@ -53,6 +56,8 @@ const base = lang === 'en' ? '/en/' : '/';
     <li><a href="https://blogic.brixiatech.com/api/login.php" target="_blank" rel="noopener noreferrer">Dashboard</a></li>
   </ul>
 
+  {/* Actions: CTA sempre visibile; lingua sfuma da collassato; il burger
+      (label) e' assoluto a sinistra della CTA e appare solo da collassato. */}
   <div class="nav__actions">
     <a href={`${base}#contact-eyebrow`} class="nav__cta">{t('nav.quote')}</a>
 
@@ -61,25 +66,24 @@ const base = lang === 'en' ? '/en/' : '/';
       <span class="nav__lang-sep" aria-hidden="true">|</span>
       <a href={hrefEn} class="nav__lang-link" aria-current={lang === 'en' ? 'true' : undefined}>EN</a>
     </div>
+
+    <label for="nav-toggle" class="nav__burger" aria-label="Menu">
+      <span class="nav__burger-box">
+        <span class="nav__burger-line"></span>
+        <span class="nav__burger-line"></span>
+        <span class="nav__burger-line"></span>
+      </span>
+    </label>
   </div>
 
-  <label for="nav-toggle" class="nav__burger" aria-label="Menu">
-    <span class="nav__burger-box">
-      <span class="nav__burger-line"></span>
-      <span class="nav__burger-line"></span>
-      <span class="nav__burger-line"></span>
-    </span>
-  </label>
-
-  {/* Pannello a tendina: voci sempre; CTA + lingua solo da collassato
-      (.nav__panel-extra), per non duplicare le actions visibili in barra. */}
+  {/* Pannello: voci sempre; switcher lingua solo da collassato
+      (.nav__panel-extra). La CTA NON entra mai nel pannello: resta in barra. */}
   <ul class="nav__panel">
     <li><a href={`${base}#tech-eyebrow`}>{t('nav.tech')}</a></li>
     <li><a href={`${base}#blogic-eyebrow`}>B-logic</a></li>
     {/* <li><a href={`${base}#realizzazioni-eyebrow`}>{t('nav.work')}</a></li> */}
     <li><a href={`${base}insights/`}>{t('nav.insights')}</a></li>
     <li><a href="https://blogic.brixiatech.com/api/login.php" target="_blank" rel="noopener noreferrer">Dashboard</a></li>
-    <li class="nav__panel-extra"><a href={`${base}#contact-eyebrow`} class="nav__panel-cta">{t('nav.quote')}</a></li>
     <li class="nav__panel-extra">
       <div class="nav__panel-lang" aria-label={t('lang.switch')}>
         <a href={hrefIt} class="nav__lang-link" aria-current={lang === 'it' ? 'true' : undefined}>IT</a>
@@ -138,82 +142,25 @@ const base = lang === 'en' ? '/en/' : '/';
     pointer-events: none;
   }
 
-  /* Burger: icona nuda, nessuno sfondo. Su desktop e' assoluto a destra
-     (stessa colonna delle actions) e compare in cross-fade solo da
-     collassato; su mobile torna statico e sempre visibile (media query). */
-  .nav__burger {
-    position: absolute;
-    right: 48px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 4px;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 200ms var(--ease), visibility 0s 200ms;
-  }
-
-  .nav--collapsed .nav__burger {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transition: opacity 200ms var(--ease), visibility 0s 0s;
-  }
-
-  .nav__burger-box {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    width: 22px;
-  }
-
-  .nav__burger-line {
-    height: 2px;
-    width: 100%;
-    background: var(--c-pearl);
-    border-radius: 2px;
-    transition: transform 200ms var(--ease), opacity 200ms var(--ease);
-  }
-
-  /* Focus visibile sul burger quando l'input riceve focus da tastiera.
-     Da + a ~: la label non e' piu' sibling adiacente dell'input. */
-  .nav__toggle:focus-visible ~ .nav__burger {
-    outline: 2px solid var(--c-cyan);
-    outline-offset: 3px;
-    border-radius: 4px;
-  }
-
-  /* Stato aperto: le tre linee diventano una X. */
-  .nav__toggle:checked ~ .nav__burger .nav__burger-line:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-  }
-  .nav__toggle:checked ~ .nav__burger .nav__burger-line:nth-child(2) {
-    opacity: 0;
-  }
-  .nav__toggle:checked ~ .nav__burger .nav__burger-line:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-  }
-
-  /* Riga voci desktop. Da collassato: fade-out 200ms, poi fuori
-     dall'accessibility tree (visibility) e dal puntatore. Occupa comunque
-     spazio (niente display:none) cosi' il layout non salta. */
+  /* Riga voci desktop. Da collassato: slide verso destra (in direzione
+     della CTA) + dissolvenza, 300ms; poi fuori dall'accessibility tree
+     (visibility) e dal puntatore. Occupa comunque spazio (niente
+     display:none) cosi' il layout non salta. */
   .nav__menu {
     display: flex;
     gap: 32px;
     list-style: none;
     margin: 0;
     padding: 0;
-    transition: opacity 200ms var(--ease), visibility 0s 0s;
+    transition: opacity 300ms var(--ease), transform 300ms var(--ease), visibility 0s 0s;
   }
 
   .nav--collapsed .nav__menu {
     opacity: 0;
+    transform: translateX(64px);
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 200ms var(--ease), visibility 0s 200ms;
+    transition: opacity 300ms var(--ease), transform 300ms var(--ease), visibility 0s 300ms;
   }
 
   .nav__menu a {
@@ -243,11 +190,20 @@ const base = lang === 'en' ? '/en/' : '/';
     background: rgba(245, 245, 247, 0.06);
   }
 
-  /* Language switcher in barra. */
+  /* Language switcher in barra: sfuma da collassato (la versione nel
+     pannello prende il suo posto). Tiene lo spazio: la CTA non si muove. */
   .nav__lang {
     display: flex;
     gap: 8px;
     align-items: center;
+    transition: opacity 200ms var(--ease), visibility 0s 0s;
+  }
+
+  .nav--collapsed .nav__lang {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 200ms var(--ease), visibility 0s 200ms;
   }
 
   .nav__lang-link {
@@ -278,37 +234,94 @@ const base = lang === 'en' ? '/en/' : '/';
     opacity: 0.3;
   }
 
-  /* Raggruppa CTA + switcher a destra. Stesso pattern fade della riga voci. */
+  /* Raggruppa CTA + switcher a destra. position:relative ancora il burger. */
   .nav__actions {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 24px;
-    transition: opacity 200ms var(--ease), visibility 0s 0s;
   }
 
-  .nav--collapsed .nav__actions {
+  /* Burger: icona nuda, nessuno sfondo. Su desktop e' assoluto a sinistra
+     della CTA (right:100% del box actions) ed emerge con delay 120ms
+     arrivando dalla direzione dello slide delle voci; su mobile torna
+     statico e sempre visibile (media query). */
+  .nav__burger {
+    position: absolute;
+    right: calc(100% + 20px);
+    top: 50%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 4px;
     opacity: 0;
+    transform: translateY(-50%) translateX(-12px);
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 200ms var(--ease), visibility 0s 200ms;
+    transition: opacity 200ms var(--ease), transform 200ms var(--ease), visibility 0s 200ms;
   }
 
-  /* Pannello a tendina: chiuso di default. Su desktop si apre solo da
-     collassato (sopra soglia il pannello non ha ragione di esistere e il
-     gate .nav--collapsed lo richiude se si torna in cima con menu aperto). */
+  .nav--collapsed .nav__burger {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 200ms var(--ease) 120ms, transform 200ms var(--ease) 120ms, visibility 0s 120ms;
+  }
+
+  .nav__burger-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 22px;
+  }
+
+  .nav__burger-line {
+    height: 2px;
+    width: 100%;
+    background: var(--c-pearl);
+    border-radius: 2px;
+    transition: transform 200ms var(--ease), opacity 200ms var(--ease);
+  }
+
+  /* Focus visibile sul burger quando l'input riceve focus da tastiera.
+     La label vive dentro .nav__actions -> sibling generale + discendente. */
+  .nav__toggle:focus-visible ~ .nav__actions .nav__burger {
+    outline: 2px solid var(--c-cyan);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Stato aperto: le tre linee diventano una X. */
+  .nav__toggle:checked ~ .nav__actions .nav__burger .nav__burger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav__toggle:checked ~ .nav__actions .nav__burger .nav__burger-line:nth-child(2) {
+    opacity: 0;
+  }
+  .nav__toggle:checked ~ .nav__actions .nav__burger .nav__burger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Pannello: chiuso di default. Su DESKTOP e' un dropdown compatto
+     ancorato a destra sotto il burger, NON full-width (revisione 2 su
+     feedback estetico). Su desktop si apre solo da collassato: il gate
+     .nav--collapsed lo richiude se si torna in cima con menu aperto. */
   .nav__panel {
     display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
+    top: calc(100% - 10px);
+    right: 48px;
+    left: auto;
+    width: 240px;
     flex-direction: column;
     gap: 0;
     list-style: none;
     margin: 0;
-    padding: 4px 24px 16px;
+    padding: 6px 20px 10px;
     background: rgba(5, 5, 7, 0.97);
-    border-top: 1px solid rgba(245, 245, 247, 0.08);
+    border: 1px solid rgba(245, 245, 247, 0.08);
+    border-radius: 14px;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
   }
 
@@ -337,29 +350,14 @@ const base = lang === 'en' ? '/en/' : '/';
     opacity: 1;
   }
 
-  /* Voci extra (CTA + lingua): esistono solo nello stato collassato.
-     Sopra soglia su mobile le actions sono ancora in barra -> niente doppioni. */
+  /* Voce extra (switcher lingua): esiste solo nello stato collassato.
+     Sopra soglia lo switcher e' ancora in barra -> niente doppioni. */
   .nav__panel-extra {
     display: none;
   }
 
   .nav--collapsed .nav__panel-extra {
     display: block;
-  }
-
-  /* CTA nel pannello: mantiene il look a pillola della barra. */
-  .nav__panel a.nav__panel-cta {
-    display: inline-block;
-    padding: 8px 16px;
-    margin: 14px 0;
-    border: 1px solid rgba(245, 245, 247, 0.3);
-    border-radius: var(--radius-pill);
-    opacity: 1;
-  }
-
-  .nav__panel a.nav__panel-cta:hover {
-    border-color: var(--c-pearl);
-    background: rgba(245, 245, 247, 0.06);
   }
 
   /* Switcher lingua nel pannello: link inline, niente padding a blocco. */
@@ -386,8 +384,8 @@ const base = lang === 'en' ? '/en/' : '/';
       display: none;
     }
 
-    /* Burger: torna in flusso, sempre visibile, all'estrema destra
-       (ordine DOM: logo | actions | burger, con la riga voci rimossa). */
+    /* Burger: torna in flusso dentro le actions (ultimo, estrema destra),
+       sempre visibile, nessuno slide. */
     .nav__burger {
       position: static;
       transform: none;
@@ -401,6 +399,18 @@ const base = lang === 'en' ? '/en/' : '/';
       gap: 16px;
     }
 
+    /* Pannello: su mobile torna full-width sotto la barra (approvato). */
+    .nav__panel {
+      top: 100%;
+      left: 0;
+      right: 0;
+      width: auto;
+      border: none;
+      border-top: 1px solid rgba(245, 245, 247, 0.08);
+      border-radius: 0;
+      padding: 4px 24px 16px;
+    }
+
     /* Su mobile il pannello si apre anche sopra soglia (voci base). */
     .nav__toggle:checked ~ .nav__panel {
       display: flex;
@@ -409,7 +419,7 @@ const base = lang === 'en' ? '/en/' : '/';
 
   @media (prefers-reduced-motion: reduce) {
     .nav__menu,
-    .nav__actions,
+    .nav__lang,
     .nav__burger,
     .nav__burger-line,
     .nav__panel a {
