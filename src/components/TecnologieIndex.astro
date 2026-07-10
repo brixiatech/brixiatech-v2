@@ -13,7 +13,6 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 // Link cross-page lang-aware (stesso pattern di Nav e pagine-prodotto).
-const base = lang === "en" ? "/en/" : "/";
 const bhgHref =
   lang === "en"
     ? "/en/technologies/blackout-hyper-glass/"
@@ -106,7 +105,7 @@ const family2: Tech[] = [
   <p class="tecindex__channel">{t("techindex.channel")}</p>
 
   <div class="tecindex__foot">
-    <a class="tecindex__foot-cta" href={`${base}#contact-eyebrow`}>
+    <a class="tecindex__foot-cta" href="#contact-eyebrow">
       {t("techindex.cta")}
     </a>
   </div>

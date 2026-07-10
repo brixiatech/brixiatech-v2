@@ -13,7 +13,6 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 // Link cross-page lang-aware (stesso pattern di Nav e pagine-prodotto).
-const base = lang === "en" ? "/en/" : "/";
 
 // Slug-articolo tradotti (il segmento "insights" è uguale IT/EN, lo slug no).
 const techeHref =
@@ -126,7 +125,7 @@ const published = articles.filter((a) => a.href && a.ctaKey);
   </div>
 
   <div class="insindex__foot">
-    <a class="insindex__foot-cta" href={`${base}#contact-eyebrow`}>
+    <a class="insindex__foot-cta" href="#contact-eyebrow">
       {t("insights.cta")}
     </a>
   </div>

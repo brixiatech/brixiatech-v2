@@ -9,7 +9,6 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 // Base URL lang-aware per i link verso la home (prefixDefaultLocale: false).
-const base = lang === "en" ? "/en/" : "/";
 
 // Link a pagina-prodotto: i segmenti di path sono tradotti -> const dedicati lang-aware.
 const pdlcHref = lang === "en" ? "/en/technologies/smart-film-pdlc/" : "/tecnologie/smart-film-pdlc/";
@@ -104,7 +103,7 @@ const faqs = [
       <h2 class="insight-cta__title" id="pillar-cta-title">{t("pillar.switchable.cta.title")}</h2>
       <p class="insight-cta__body">{t("pillar.switchable.cta.body")}</p>
       <div class="insight-cta__actions">
-        <a class="insight-cta__button" href={`${base}#contact-eyebrow`}>{t("pillar.switchable.cta.button")}</a>
+        <a class="insight-cta__button" href="#contact-eyebrow">{t("pillar.switchable.cta.button")}</a>
         <a class="insight-cta__explore" href={techHref}>
           {t("pillar.switchable.cta.explore")}<span class="insight-block__arrow" aria-hidden="true">&#8594;</span>
         </a>
