@@ -1,5 +1,8 @@
 ---
-// Nav con collasso a burger oltre soglia di scroll (~120px) - revisione 2.
+// Nav con collasso a burger oltre soglia di scroll (~120px) - rev 2.1.
+// (2.1: da collassato lo switcher lingua collassa anche in larghezza ->
+//  il gruppo CTA+burger chiude a filo del padding destro, 48px, simmetrico
+//  al logo. Prima lo switcher invisibile teneva lo spazio e disallineava.)
 // - Espansa (top di pagina, desktop): logo | voci | CTA + IT/EN. Trasparente.
 // - Collassata (scroll > 120px): le voci SCIVOLANO verso destra (slide 64px +
 //   dissolvenza, 300ms) in direzione della pillola Preventivo; il burger
@@ -190,20 +193,28 @@ const base = lang === 'en' ? '/en/' : '/';
     background: rgba(245, 245, 247, 0.06);
   }
 
-  /* Language switcher in barra: sfuma da collassato (la versione nel
-     pannello prende il suo posto). Tiene lo spazio: la CTA non si muove. */
+  /* Language switcher in barra: da collassato sfuma E collassa in
+     larghezza (max-width + margin-left -> 0), cosi' la CTA scivola a filo
+     del padding destro (48px), simmetrica al logo. La versione nel
+     pannello prende il suo posto. */
   .nav__lang {
     display: flex;
     gap: 8px;
     align-items: center;
-    transition: opacity 200ms var(--ease), visibility 0s 0s;
+    margin-left: 24px;
+    max-width: 120px;
+    white-space: nowrap;
+    transition: opacity 200ms var(--ease), max-width 300ms var(--ease), margin-left 300ms var(--ease), visibility 0s 0s;
   }
 
   .nav--collapsed .nav__lang {
     opacity: 0;
+    max-width: 0;
+    margin-left: 0;
+    overflow: hidden;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 200ms var(--ease), visibility 0s 200ms;
+    transition: opacity 200ms var(--ease), max-width 300ms var(--ease), margin-left 300ms var(--ease), visibility 0s 300ms;
   }
 
   .nav__lang-link {
@@ -234,12 +245,13 @@ const base = lang === 'en' ? '/en/' : '/';
     opacity: 0.3;
   }
 
-  /* Raggruppa CTA + switcher a destra. position:relative ancora il burger. */
+  /* Raggruppa CTA + switcher a destra. position:relative ancora il burger.
+     Niente flex gap: la spaziatura vive nel margin-left dello switcher,
+     cosi' collassa insieme alla sua larghezza. */
   .nav__actions {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 24px;
   }
 
   /* Burger: icona nuda, nessuno sfondo. Su desktop e' assoluto a sinistra
@@ -395,8 +407,13 @@ const base = lang === 'en' ? '/en/' : '/';
       transition: none;
     }
 
-    .nav__actions {
-      gap: 16px;
+    .nav__lang {
+      margin-left: 16px;
+      max-width: 120px;
+    }
+
+    .nav__burger {
+      margin-left: 16px;
     }
 
     /* Pannello: su mobile torna full-width sotto la barra (approvato). */
