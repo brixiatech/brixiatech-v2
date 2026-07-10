@@ -2,11 +2,13 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import SmartFilmPnlc from "../../../components/SmartFilmPnlc.astro";
 import Footer from "../../../components/Footer.astro";
+import Contact from "../../../components/Contact.astro";
 import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 <BaseLayout title={t("prod.pnlc.meta.title")} description={t("prod.pnlc.meta.description")} hrefIt="/tecnologie/smart-film-pnlc/" hrefEn="/en/technologies/smart-film-pnlc/">
   <SmartFilmPnlc />
+  <Contact />
   <Footer />
 </BaseLayout>
