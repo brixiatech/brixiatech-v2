@@ -325,6 +325,44 @@ export const ui = {
     'insights.uffici.cta.body': 'Stai progettando o rinnovando uno spazio di lavoro con pareti vetrate? Ti affianchiamo dalla scelta della tecnologia alla fornitura, con il supporto tecnico per integrarla in pareti divisorie e vetrate.',
     'insights.uffici.cta.button': 'Richiedi un preventivo',
     'insights.uffici.cta.explore': 'Esplora le tecnologie',
+    'insights.veneziane.card.title': 'Veneziane elettriche o vetro switchable?',
+    'insights.veneziane.card.summary': 'Lamelle motorizzate o superficie che cambia stato: due strade per governare luce e riservatezza dalle vetrate. Cosa le distingue e quando ha senso l’una o l’altra.',
+    'insights.veneziane.card.cta': 'Leggi l’articolo',
+
+    'insights.veneziane.meta.title': 'Veneziane elettriche o vetro switchable? | BrixiaTech',
+    'insights.veneziane.meta.description': 'Veneziane elettriche e motorizzate a confronto con vetri e pellicole switchable: privacy, controllo della luce e gestione del calore, senza parti in movimento.',
+
+    'insights.veneziane.eyebrow': 'INSIGHTS · VENEZIANE ELETTRICHE E ALTERNATIVE',
+    'insights.veneziane.h1': 'Veneziane elettriche o vetro switchable: due modi di governare luce e riservatezza',
+    'insights.veneziane.lead': 'Chi cerca una veneziana elettrica vuole comandare la luce e gli sguardi senza alzarsi: un motore al posto della cordicella. È una risposta collaudata — ma oggi non è l’unica. Il vetro switchable arriva allo stesso risultato per una strada diversa: non schermare la superficie, ma cambiare lo stato della superficie stessa.',
+
+    'insights.veneziane.veneziana.title': 'Cosa fa una veneziana elettrica — e dove si ferma',
+    'insights.veneziane.veneziana.body': 'La veneziana motorizzata orienta le lamelle e si solleva a comando, anche su vetrate difficili da raggiungere. Il rovescio sta nella meccanica: motori, cavi e lamelle sono parti in movimento, che accumulano polvere e con gli anni chiedono manutenzione. Le versioni integrate nel vetrocamera risolvono la polvere sigillando la veneziana tra i vetri, ma legano il meccanismo alla vita dell’infisso: se il motore si ferma, l’intervento riguarda l’intera vetrata.',
+
+    'insights.veneziane.stato.title': 'Il vetro che cambia stato, senza parti in movimento',
+    'insights.veneziane.stato.body': 'La strada del vetro switchable è diversa: nessuna lamella davanti al vetro, è la superficie stessa che passa da trasparente a opaca a comando. Una pellicola applicata sul vetro esistente — o un vetro già attivo, per il nuovo — commuta in un istante, in silenzio, senza meccanica che si usura. Vetrata pulita alla vista, nessun ingombro, e il retrofit non richiede di sostituire l’infisso.',
+
+    'insights.veneziane.riservatezza.title': 'Riservatezza: lamelle chiuse o superficie opaca',
+    'insights.veneziane.riservatezza.body': 'La veneziana protegge chiudendo le lamelle: blocca gli sguardi, ma insieme toglie gran parte della luce. Il vetro switchable separa le due cose: nello stato opaco la superficie diffonde la luce — la luminosità continua a entrare, l’immagine di ciò che sta dietro no. Per una sala riunioni, uno studio professionale o un bagno vetrato è la differenza tra oscurare la stanza e renderla riservata mantenendola luminosa.',
+    'insights.veneziane.riservatezza.pdlc': 'Smart Film PDLC',
+    'insights.veneziane.riservatezza.pnlc': 'Smart Film PNLC',
+
+    'insights.veneziane.luce.title': 'Controllo della luce e del calore',
+    'insights.veneziane.luce.body': 'L’orientamento delle lamelle regola la luce per gradi: è il punto forte della veneziana — ma non è un’esclusiva. Con l’elettronica di controllo adeguata, tutte le nostre pellicole funzionano anche da dimmer, come le luci di casa: si sceglie il livello, non solo acceso o spento. Cambia ciò che si dosa: l’SPD agisce sul colore, dalla massima trasparenza a una tinta profonda, ed è pensato per seguire il sole lungo la giornata; il PDLC e la PNLC dosano il blocco della luce attraverso il grado di opacità. Dove serve abbattere irraggiamento e calore sulle grandi vetrate dell’edificio, il Blackout Hyper Glass unisce una tinta scura profonda a riposo al passaggio a trasparente fumé a comando: un controllo solare che d’estate alleggerisce il lavoro del condizionamento.',
+    'insights.veneziane.luce.spd': 'Smart Glass SPD',
+    'insights.veneziane.luce.blackout': 'Blackout Hyper Glass',
+
+    'insights.veneziane.quando.title': 'Quando la veneziana resta la scelta giusta',
+    'insights.veneziane.quando.body': 'Se l’obiettivo è il buio — una camera da letto, una sala proiezione — la lamella chiusa o l’oscurante dedicato restano la risposta più diretta: il vetro switchable governa luce e privacy, non è un sistema oscurante totale. Se invece l’obiettivo è la riservatezza, il controllo del sole e una vetrata che resta pulita e senza meccanica, il confronto si sposta a favore della superficie attiva.',
+
+    'insights.veneziane.centralizza.title': 'Una vetrata o tutto l’edificio',
+    'insights.veneziane.centralizza.body': 'Una singola superficie si comanda con un interruttore o un telecomando, come una veneziana. Quando le superfici diventano molte — una facciata di uffici, più sale, più sedi — il nostro sistema B-LOGIC le coordina da un unico punto: scenari, gruppi, comando centralizzato. È opzionale: ogni vetro funziona già da solo.',
+    'insights.veneziane.centralizza.blogic': 'Scopri B-LOGIC',
+
+    'insights.veneziane.cta.title': 'Parliamo del tuo progetto',
+    'insights.veneziane.cta.body': 'Stai valutando come gestire luce e riservatezza dalle tue vetrate? Descrivici lo spazio: ti indichiamo la strada più adatta, con un preventivo dedicato.',
+    'insights.veneziane.cta.button': 'Richiedi un preventivo',
+    'insights.veneziane.cta.explore': 'Esplora le tecnologie',
 
     // --- Apps ---
     'apps.eyebrow': 'APPLICAZIONI',
@@ -583,6 +621,7 @@ export const ui = {
     'breadcrumb.uffici': 'Pareti per ufficio',
     'breadcrumb.negozio': 'Vetrine negozio',
     'breadcrumb.sanitari': 'Ambienti sanitari',
+    'breadcrumb.veneziane': 'Veneziane elettriche',
   },
   en: {
     // --- Meta / SEO ---
@@ -896,6 +935,44 @@ export const ui = {
     'insights.uffici.cta.body': 'Designing or refurbishing a workspace with glazed partitions? We work alongside you from choosing the technology to supply, with the technical support to build it into partitions and glazing.',
     'insights.uffici.cta.button': 'Request a quote',
     'insights.uffici.cta.explore': 'Explore the technologies',
+    'insights.veneziane.card.title': 'Electric blinds or switchable glass?',
+    'insights.veneziane.card.summary': 'Motorised slats or a surface that changes state: two ways to govern light and privacy through glazing. What sets them apart, and when each one makes sense.',
+    'insights.veneziane.card.cta': 'Read the article',
+
+    'insights.veneziane.meta.title': 'Electric blinds or switchable glass? | BrixiaTech',
+    'insights.veneziane.meta.description': 'Electric and motorised blinds compared with switchable glass and film: privacy on command, light and heat control, with no moving parts on the glazing.',
+
+    'insights.veneziane.eyebrow': 'INSIGHTS · ELECTRIC BLINDS & ALTERNATIVES',
+    'insights.veneziane.h1': 'Electric blinds or switchable glass: two ways to govern light and privacy',
+    'insights.veneziane.lead': 'Anyone shopping for electric blinds wants to command light and sightlines without leaving the desk: a motor instead of a cord. It’s a proven answer — but no longer the only one. Switchable glass reaches the same goal by a different route: instead of screening the surface, it changes the state of the surface itself.',
+
+    'insights.veneziane.veneziana.title': 'What an electric blind does — and where it stops',
+    'insights.veneziane.veneziana.body': 'A motorised blind tilts its slats and lifts on command, even on glazing that’s hard to reach. The trade-off is mechanical: motors, cables and slats are moving parts that gather dust and, over the years, call for maintenance. Integral blinds sealed inside the double glazing solve the dust, but tie the mechanism to the life of the unit: if the motor stops, the intervention involves the whole glazed panel.',
+
+    'insights.veneziane.stato.title': 'Glass that changes state, with no moving parts',
+    'insights.veneziane.stato.body': 'Switchable glass takes a different route: no slats in front of the pane — the surface itself turns from clear to opaque on command. A film applied to existing glass — or an active glass unit, for new builds — switches in an instant, silently, with no mechanics to wear out. The glazing stays clean to the eye, nothing protrudes, and a retrofit doesn’t require replacing the frame.',
+
+    'insights.veneziane.riservatezza.title': 'Privacy: closed slats or an opaque surface',
+    'insights.veneziane.riservatezza.body': 'A blind protects by closing its slats: it blocks the view, but takes most of the daylight with it. Switchable glass separates the two: in its opaque state the surface diffuses light — brightness keeps coming through, the image of what’s behind does not. For a meeting room, a practice or a glazed bathroom, that’s the difference between darkening the room and making it private while keeping it bright.',
+    'insights.veneziane.riservatezza.pdlc': 'Smart Film PDLC',
+    'insights.veneziane.riservatezza.pnlc': 'Smart Film PNLC',
+
+    'insights.veneziane.luce.title': 'Controlling light and heat',
+    'insights.veneziane.luce.body': 'Tilting the slats grades the light: it’s the blind’s strong suit — but not an exclusive one. With the right control electronics, all our films also work as dimmers, like the lights at home: you pick a level, not just on or off. What gets dosed differs: SPD acts on colour, from full clarity to a deep tint, and is built to follow the sun through the day; PDLC and PNLC dose how much light the surface blocks through its degree of opacity. Where solar load and heat need cutting on large glazed façades, Blackout Hyper Glass pairs a deep dark tint at rest with a switch to smoked clarity on command: solar control that eases the load on cooling in summer.',
+    'insights.veneziane.luce.spd': 'Smart Glass SPD',
+    'insights.veneziane.luce.blackout': 'Blackout Hyper Glass',
+
+    'insights.veneziane.quando.title': 'When the blind is still the right choice',
+    'insights.veneziane.quando.body': 'If the goal is darkness — a bedroom, a screening room — the closed slat or a dedicated blackout system remains the most direct answer: switchable glass governs light and privacy, it is not a total blackout system. If the goal is privacy, solar control and glazing that stays clean with no mechanics, the comparison shifts in favour of the active surface.',
+
+    'insights.veneziane.centralizza.title': 'One pane or the whole building',
+    'insights.veneziane.centralizza.body': 'A single surface takes a switch or a remote, just like a blind. When surfaces multiply — an office façade, several rooms, several sites — our B-LOGIC system coordinates them from a single point: scenes, groups, centralised command. It’s optional: every pane already works on its own.',
+    'insights.veneziane.centralizza.blogic': 'Discover B-LOGIC',
+
+    'insights.veneziane.cta.title': 'Let’s talk about your project',
+    'insights.veneziane.cta.body': 'Weighing up how to manage light and privacy through your glazing? Describe the space and we’ll point you to the right route, with a dedicated quote.',
+    'insights.veneziane.cta.button': 'Request a quote',
+    'insights.veneziane.cta.explore': 'Explore the technologies',
 
     // --- Apps ---
     'apps.eyebrow': 'APPLICATIONS',
@@ -1154,5 +1231,6 @@ export const ui = {
     'breadcrumb.uffici': 'Office partitions',
     'breadcrumb.negozio': 'Shop windows',
     'breadcrumb.sanitari': 'Healthcare',
+    'breadcrumb.veneziane': 'Electric blinds',
   },
 } as const;

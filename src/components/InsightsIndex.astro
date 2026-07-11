@@ -45,6 +45,11 @@ const sanitariHref =
     ? "/en/insights/switchable-glass-for-healthcare/"
     : "/insights/smart-glass-ambienti-sanitari/";
 
+const venezianeHref =
+  lang === "en"
+    ? "/en/insights/electric-blinds-vs-switchable-glass/"
+    : "/insights/veneziane-elettriche-o-vetro-switchable/";
+
 const switchableHref =
   lang === "en"
     ? "/en/electrochromic-glass/"
@@ -95,6 +100,12 @@ const articles: Article[] = [
     summaryKey: "insights.sanitari.card.summary",
     href: sanitariHref,
     ctaKey: "insights.sanitari.card.cta",
+  },
+  {
+    titleKey: "insights.veneziane.card.title",
+    summaryKey: "insights.veneziane.card.summary",
+    href: venezianeHref,
+    ctaKey: "insights.veneziane.card.cta",
   },
   {
     titleKey: "pillar.switchable.card.title",

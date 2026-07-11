@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import InsightVeneziane from "../../../components/InsightVeneziane.astro";
+import Footer from "../../../components/Footer.astro";
+import Contact from "../../../components/Contact.astro";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<BaseLayout
+  title={t("insights.veneziane.meta.title")}
+  description={t("insights.veneziane.meta.description")}
+  hrefIt="/insights/veneziane-elettriche-o-vetro-switchable/"
+  hrefEn="/en/insights/electric-blinds-vs-switchable-glass/"
+  breadcrumb={[
+    { name: t("breadcrumb.home"), path: "/en/" },
+    { name: t("breadcrumb.insights"), path: "/en/insights/" },
+    { name: t("breadcrumb.veneziane"), path: "/en/insights/electric-blinds-vs-switchable-glass/" },
+  ]}
+>
+  <InsightVeneziane />
+  <Contact />
+  <Footer />
+</BaseLayout>
