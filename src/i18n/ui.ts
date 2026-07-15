@@ -15,6 +15,7 @@ export const ui = {
 
     // --- Nav ---
     'nav.tech': 'Tecnologie',
+    'nav.pillar': 'Vetro switchable',
     'nav.work': 'Realizzazioni',
     'nav.insights': 'Insights',
     'nav.quote': 'Preventivo',
@@ -655,6 +656,7 @@ export const ui = {
 
     // --- Nav ---
     'nav.tech': 'Technologies',
+    'nav.pillar': 'Electrochromic glass',
     'nav.work': 'Projects',
     'nav.insights': 'Insights',
     'nav.quote': 'Get a quote',

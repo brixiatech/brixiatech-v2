@@ -40,6 +40,7 @@ const { hrefIt = "/", hrefEn = "/en/" } = Astro.props;
 // NB: la CTA della nav resta cross-page verso la home (decisione v42:
 // su privacy/404 un bare fragment sarebbe un'ancora morta).
 const base = lang === 'en' ? '/en/' : '/';
+const pillarHref = lang === 'en' ? '/en/electrochromic-glass/' : '/vetro-switchable/';
 ---
 
 <nav class="nav">
@@ -53,6 +54,7 @@ const base = lang === 'en' ? '/en/' : '/';
       e sfuma; le voci vivono poi nel pannello (.nav__panel). */}
   <ul class="nav__menu">
     <li><a href={`${base}#tech-eyebrow`}>{t('nav.tech')}</a></li>
+    <li><a href={pillarHref}>{t('nav.pillar')}</a></li>
     <li><a href={`${base}#blogic-eyebrow`}>B-logic</a></li>
     <li><a href={`${base}#realizzazioni-eyebrow`}>{t('nav.work')}</a></li>
     <li><a href={`${base}insights/`}>{t('nav.insights')}</a></li>
@@ -83,6 +85,7 @@ const base = lang === 'en' ? '/en/' : '/';
       (.nav__panel-extra). La CTA NON entra mai nel pannello: resta in barra. */}
   <ul class="nav__panel">
     <li><a href={`${base}#tech-eyebrow`}>{t('nav.tech')}</a></li>
+    <li><a href={pillarHref}>{t('nav.pillar')}</a></li>
     <li><a href={`${base}#blogic-eyebrow`}>B-logic</a></li>
     <li><a href={`${base}#realizzazioni-eyebrow`}>{t('nav.work')}</a></li>
     <li><a href={`${base}insights/`}>{t('nav.insights')}</a></li>
