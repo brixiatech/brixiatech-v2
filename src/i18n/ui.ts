@@ -1100,8 +1100,8 @@ export const ui = {
     'contact.c3.title': 'Direct WhatsApp',
     'contact.c3.body': 'For a quick first contact, message us on WhatsApp.',
     'contact.mail.subject': 'Quote request — switchable glass project',
-    'contact.mail.body': "Hello,\nI'd like a quote for a project with switchable glass or film.\n\nTechnology of interest (if known):\nSurface to treat (sqm):\nSetting (office / hospitality / residential / retail / other):\nCity / Country:\nNotes:\n\nThank you.",
-    'contact.wa.text': "Hello, I'd like a quote for a switchable glass project.",
+    'contact.mail.body': "Hello,\nI’d like a quote for a project with switchable glass or film.\n\nTechnology of interest (if known):\nSurface to treat (sqm):\nSetting (office / hospitality / residential / retail / other):\nCity / Country:\nNotes:\n\nThank you.",
+    'contact.wa.text': "Hello, I’d like a quote for a switchable glass project.",
     'contact.ref.label': 'Ref',
 
     // --- Footer (#12) ---
