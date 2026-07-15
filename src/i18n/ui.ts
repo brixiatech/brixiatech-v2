@@ -1045,7 +1045,7 @@ export const ui = {
     'realizzazioni.p2.tech': 'Blackout Hyper Glass',
     'realizzazioni.p3.name': 'W Executive',
     'realizzazioni.p3.place': 'Milan',
-    'realizzazioni.p3.tech': 'Horizontal-band PDLC',
+    'realizzazioni.p3.tech': 'Venetian effect on PDLC',
     'realizzazioni.p4.name': 'Display case for Leva Engineering',
     'realizzazioni.p4.place': 'Qatar',
     'realizzazioni.p4.tech': 'PDLC Premium',
