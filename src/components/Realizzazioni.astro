@@ -1,0 +1,193 @@
+---
+// Realizzazioni.astro — Sezione Realizzazioni (prova reale: clip dei collaudi)
+// Struttura: eyebrow → title → lead → griglia di 6 card video verticali 9:16
+// Video self-hosted su media.brixiatech.com (VPS, no proxy CF, no cookie);
+// poster webp locali in public/realizzazioni/. preload="none" + IntersectionObserver:
+// la clip parte in loop muto solo quando entra nel viewport, si ferma quando esce.
+// Copy localizzato via chiavi i18n realizzazioni.* (IT/EN simmetriche).
+// Schema: VideoObject per clip (self-hosting = eleggibilita' nei risultati video).
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const MEDIA_BASE = "https://media.brixiatech.com/realizzazioni/";
+
+const projects = [
+  { slug: "eni-san-donato", nameKey: "realizzazioni.p1.name", placeKey: "realizzazioni.p1.place", techKey: "realizzazioni.p1.tech" },
+  { slug: "panerai-watches-and-wonders", nameKey: "realizzazioni.p2.name", placeKey: "realizzazioni.p2.place", techKey: "realizzazioni.p2.tech" },
+  { slug: "w-executive-milano", nameKey: "realizzazioni.p3.name", placeKey: "realizzazioni.p3.place", techKey: "realizzazioni.p3.tech" },
+  { slug: "leva-engineering-qatar", nameKey: "realizzazioni.p4.name", placeKey: "realizzazioni.p4.place", techKey: "realizzazioni.p4.tech" },
+  { slug: "effegieffe-showroom", nameKey: "realizzazioni.p5.name", placeKey: "realizzazioni.p5.place", techKey: "realizzazioni.p5.tech" },
+  { slug: "studio-medico", nameKey: "realizzazioni.p6.name", placeKey: "realizzazioni.p6.place", techKey: "realizzazioni.p6.tech" },
+] as const;
+
+const videoSchema = {
+  "@context": "https://schema.org",
+  "@graph": projects.map((p) => {
+    const label = t(p.placeKey) ? `${t(p.nameKey)} — ${t(p.placeKey)}` : t(p.nameKey);
+    return {
+      "@type": "VideoObject",
+      name: label,
+      description: `${label} · ${t(p.techKey)}`,
+      contentUrl: `${MEDIA_BASE}${p.slug}.mp4`,
+      thumbnailUrl: new URL(`/realizzazioni/${p.slug}.webp`, Astro.site).href,
+      uploadDate: "2026-07-15",
+    };
+  }),
+};
+---
+
+<section class="realizzazioni" aria-labelledby="realizzazioni-eyebrow">
+  <div class="realizzazioni__inner">
+    <p class="realizzazioni__eyebrow" id="realizzazioni-eyebrow">{t("realizzazioni.eyebrow")}</p>
+    <h2 class="realizzazioni__title">{t("realizzazioni.title")}</h2>
+    <p class="realizzazioni__lead">{t("realizzazioni.lead")}</p>
+
+    <div class="realizzazioni__grid">
+      {projects.map((p) => (
+        <figure class="realizzazioni__card">
+          <video
+            class="realizzazioni__video"
+            src={`${MEDIA_BASE}${p.slug}.mp4`}
+            poster={`/realizzazioni/${p.slug}.webp`}
+            width="720"
+            height="1280"
+            muted
+            loop
+            playsinline
+            preload="none"
+            aria-label={`${t("realizzazioni.video.aria")} ${t(p.nameKey)}`}
+          ></video>
+          <figcaption class="realizzazioni__caption">
+            <span class="realizzazioni__name">{t(p.nameKey)}</span>
+            {t(p.placeKey) && <span class="realizzazioni__place">{t(p.placeKey)}</span>}
+            <span class="realizzazioni__tech">{t(p.techKey)}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(videoSchema)} />
+
+<style>
+  .realizzazioni {
+    padding: var(--space-section-y) var(--space-section-x);
+  }
+  .realizzazioni__inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+  }
+  .realizzazioni__eyebrow {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--c-mist-bright);
+    text-align: center;
+  }
+  .realizzazioni__title {
+    margin: 16px 0 0;
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.12;
+    text-align: center;
+  }
+  .realizzazioni__lead {
+    margin: 20px auto 0;
+    max-width: 680px;
+    text-align: center;
+    color: var(--c-mist);
+    line-height: 1.6;
+  }
+  .realizzazioni__grid {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .realizzazioni__card {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .realizzazioni__video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    border-radius: 12px;
+    background: #0a0a0e;
+  }
+  .realizzazioni__caption {
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .realizzazioni__name {
+    font-weight: 600;
+  }
+  .realizzazioni__place {
+    color: var(--c-mist);
+    font-size: 14px;
+  }
+  .realizzazioni__tech {
+    margin-top: 6px;
+    align-self: flex-start;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--c-mist-bright);
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    padding: 4px 10px;
+  }
+
+  @media (max-width: 900px) {
+    .realizzazioni__grid {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 16px;
+      margin-left: calc(-1 * var(--space-section-x));
+      margin-right: calc(-1 * var(--space-section-x));
+      padding: 0 var(--space-section-x);
+      scrollbar-width: none;
+    }
+    .realizzazioni__grid::-webkit-scrollbar {
+      display: none;
+    }
+    .realizzazioni__card {
+      flex: 0 0 72vw;
+      max-width: 320px;
+      scroll-snap-align: center;
+    }
+  }
+</style>
+
+<script>
+  // Play/pause governato dalla visibilita': con preload="none" il browser non
+  // scarica nulla finche' play() non viene chiamato. Niente autoplay fuori campo.
+  const clips = document.querySelectorAll<HTMLVideoElement>(".realizzazioni__video");
+  if (clips.length > 0 && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const vid = entry.target as HTMLVideoElement;
+          if (entry.isIntersecting) {
+            vid.play().catch(() => {});
+          } else {
+            vid.pause();
+          }
+        }
+      },
+      { threshold: 0.25 }
+    );
+    clips.forEach((vid) => io.observe(vid));
+  }
+</script>
