@@ -397,8 +397,12 @@ const base = lang === 'en' ? '/en/' : '/';
     }
 
     /* Burger: torna in flusso dentro le actions (ultimo, estrema destra),
-       sempre visibile, nessuno slide. */
-    .nav__burger {
+       sempre visibile, nessuno slide. Il selettore include lo stato
+       collassato: la regola desktop .nav--collapsed .nav__burger (0-2-0)
+       vincerebbe altrimenti sul semplice .nav__burger (0-1-0) e il suo
+       translateY(-50%) sposterebbe in alto il burger ormai static. */
+    .nav__burger,
+    .nav--collapsed .nav__burger {
       position: static;
       transform: none;
       opacity: 1;
@@ -480,4 +484,14 @@ const base = lang === 'en' ? '/en/' : '/';
   );
 
   update();
+
+  // Chiusura pannello al click su una voce: le ancore same-page
+  // (#tech-eyebrow, #blogic-eyebrow) scrollano senza ricaricare la pagina,
+  // quindi il checkbox resterebbe :checked e il pannello aperto. Vale per
+  // ogni voce (ancore, pagine, esterni): comportamento uniforme.
+  document.querySelectorAll(".nav__panel a").forEach((a) => {
+    a.addEventListener("click", () => {
+      if (toggle) toggle.checked = false;
+    });
+  });
 </script>
