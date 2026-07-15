@@ -418,7 +418,7 @@ export const ui = {
     'realizzazioni.p5.place': 'Provincia di Bergamo',
     'realizzazioni.p5.tech': 'PDLC Premium',
     'realizzazioni.p6.name': 'Studio medico',
-    'realizzazioni.p6.place': '',
+    'realizzazioni.p6.place': 'Lovere (Bergamo)',
     'realizzazioni.p6.tech': 'PDLC Essential',
 
     // --- Affidabilità (#9) ---
@@ -1051,7 +1051,7 @@ export const ui = {
     'realizzazioni.p5.place': 'Bergamo, Italy',
     'realizzazioni.p5.tech': 'PDLC Premium',
     'realizzazioni.p6.name': 'Medical practice',
-    'realizzazioni.p6.place': '',
+    'realizzazioni.p6.place': 'Lovere, Bergamo, Italy',
     'realizzazioni.p6.tech': 'PDLC Essential',
 
     // --- Trust (#9) ---
