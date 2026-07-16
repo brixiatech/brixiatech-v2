@@ -135,8 +135,6 @@ export const ui = {
     'techindex.dlc.body':
       'Assorbe la luce invece di diffonderla: vira a una tinta fumé anziché farsi lattiginoso. Controllo solare ad alte prestazioni, con rese estetiche in più colorazioni. È la tecnologia di Blackout Hyper Glass.',
     'techindex.dlc.cta': 'Scopri Blackout Hyper Glass',
-    'techindex.clc.body':
-      "Riflette l’energia solare invece di assorbirla. Bistabile: mantiene lo stato senza alimentazione continua, consuma solo allo switch. Uno scudo termico dinamico per il contenimento del calore.",
     'techindex.channel':
       'Ogni tecnologia è disponibile come vetro finito o come sola pellicola da stratificare, fornita a vetrai e serramentisti. La scelta tra le cinque dipende dal progetto: ne parliamo prima di proporre una soluzione.',
     'techindex.cta': 'Parliamo del tuo progetto',
@@ -779,8 +777,6 @@ export const ui = {
     'techindex.dlc.body':
       'Absorbs light rather than scattering it: tints to a smoked finish instead of turning milky. High-performance solar control, with finishes in several tones. The technology behind Blackout Hyper Glass.',
     'techindex.dlc.cta': 'Explore Blackout Hyper Glass',
-    'techindex.clc.body':
-      "Reflects solar energy rather than absorbing it. Bistable: holds its state without continuous power, drawing energy only when switching. A dynamic thermal shield for heat containment.",
     'techindex.channel':
       "Every technology is available as finished glass or as film for lamination, supplied to glaziers and fabricators. Which of the five fits depends on the project: we discuss it before proposing anything.",
     'techindex.cta': "Let’s talk about your project",
