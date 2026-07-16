@@ -22,3 +22,8 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# artefatti di lavoro locali (mai nel repo: il repo e' pubblico)
+_incoming/
+brief/
+_diag_*
