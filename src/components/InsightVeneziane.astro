@@ -3,7 +3,8 @@
 // confronto con il vetro switchable. Famiglia Insight<Tema>, gemello di
 // InsightTelecomando: hero (asimmetrico, sinistra) -> blocchi corpo a due
 // colonne (titolo sx / testo dx) -> CTA finale a doppia azione.
-// 6 blocchi: "veneziana", "stato" e "quando" narrativi (nessun link);
+// 6 blocchi: "veneziana" e "quando" narrativi (nessun link);
+// "stato" rimanda alla veneziana elettronica (sezione Realizzazioni in home);
 // "riservatezza" smista verso PDLC/PNLC; "luce" verso SPD/Blackout;
 // "centralizza" verso B-LOGIC.
 // lang/t ricavati internamente (mai props). Token: --c-* / --space-* / --font-* da global.css.
@@ -13,6 +14,9 @@ const t = useTranslations(lang);
 // Base URL lang-aware per i link cross-page verso la home (prefixDefaultLocale: false).
 const base = lang === "en" ? "/en/" : "/";
 const linkBlogic = `${base}#blogic-eyebrow`;
+// Rimando veneziana elettronica: anchor sezione Realizzazioni in home
+// (nessuna route dedicata al 16/7; quando esisterà /realizzazioni/ si ri-punta lì).
+const linkRealizzazioni = `${base}#realizzazioni-eyebrow`;
 // Link a pagina-prodotto: i segmenti di path sono tradotti -> const dedicati lang-aware.
 const pdlcHref = lang === "en"
   ? "/en/technologies/smart-film-pdlc/"
@@ -35,7 +39,10 @@ type BlockLink = { href: string; labelKey: string };
 type Block = { key: string; links: BlockLink[] };
 const blocks: Block[] = [
   { key: "veneziana", links: [] },
-  { key: "stato", links: [] },
+  {
+    key: "stato",
+    links: [{ href: linkRealizzazioni, labelKey: "insights.veneziane.stato.veneziana" }],
+  },
   {
     key: "riservatezza",
     links: [
