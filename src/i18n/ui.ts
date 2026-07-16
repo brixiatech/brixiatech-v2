@@ -37,6 +37,8 @@ export const ui = {
     'hero.hudState3': 'OPACITÀ',
     'hero.hudTickStart': 'VISTA',
     'hero.hudTickEnd': 'PRIVACY',
+    'hero.hudBtnOnAria': 'Porta il vetro a trasparente',
+    'hero.hudBtnOffAria': 'Porta il vetro a opaco',
     'hero.imgAltTransparent': 'Lounge con parete vetrata trasparente, skyline visibile',
     'hero.imgAltOpaque': 'Stessa parete vetrata commutata in vetro opaco, privacy totale',
 
@@ -678,6 +680,8 @@ export const ui = {
     'hero.hudState3': 'OPAQUE',
     'hero.hudTickStart': 'VIEW',
     'hero.hudTickEnd': 'PRIVACY',
+    'hero.hudBtnOnAria': 'Switch the glass to transparent',
+    'hero.hudBtnOffAria': 'Switch the glass to opaque',
     'hero.imgAltTransparent': 'Lounge with transparent glass wall, skyline visible',
     'hero.imgAltOpaque': 'Same glass wall switched to opaque, full privacy',
 

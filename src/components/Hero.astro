@@ -11,14 +11,25 @@ const t = useTranslations(lang);
 // stato (trasparente -> appannamento -> semi-opaco -> opaco) sono sovrapposte;
 // lo scroll pilota le loro opacità => il vetro commuta per gradi.
 //
+// HUD TELECOMANDO (desktop >900px): colonna verticale in basso a destra —
+// tasto ON, dimmer verticale con tick VISTA/PRIVACY, tasto OFF, readout
+// modalità. ON/OFF sono cliccabili: pilotano window.scrollTo verso
+// inizio/fine della track, così lo scroll resta l'unica fonte di verità
+// del progress (nessuno stato parallelo).
+//
+// BILANCIERE (mobile <=900px): l'HUD sparisce; al suo posto un bilanciere
+// a due chevron (su = trasparente, giù = opaco) tappabile, stessa logica
+// scrollTo. Il chevron giù pulsa come invito allo scroll.
+//
 // REVEAL: il testo editoriale (eyebrow + headline) mantiene il reveal d'ingresso
 // dell'Hero precedente (lineUp/fadeInUp), che finisce PRIMA che parta lo scroll.
 //
-// SLOT: il Ticker resta figlio dello stage (in fondo). L'HUD è alzato sopra
-// l'altezza del Ticker per non sovrapporsi (vedi .hud bottom).
+// SLOT: il Ticker resta figlio dello stage (in fondo). HUD e bilanciere sono
+// alzati sopra l'altezza del Ticker per non sovrapporsi (vedi bottom).
 //
 // JS: driver scroll rAF-throttled. Guardia prefers-reduced-motion: mostra
-// lo stato finale (opaco) senza animazione.
+// lo stato finale (opaco) senza animazione; ON/OFF e bilanciere nascosti
+// (senza animazione non avrebbero effetto).
 ---
 
 <section class="hero">
@@ -61,17 +72,30 @@ const t = useTranslations(lang);
         </h1>
       </div>
 
-      <!-- HUD stato vetro (pilotato dallo scroll) -->
+      <!-- HUD telecomando (desktop): ON / dimmer verticale / OFF / readout -->
       <div class="hud" data-hero-hud>
-        <div class="hud__row">
+        <button class="hud__btn" type="button" data-hud-on aria-label={t('hero.hudBtnOnAria')}>ON</button>
+        <div class="hud__meter">
+          <span class="hud__tick" data-hud-tick="start">{t('hero.hudTickStart')}</span>
+          <div class="hud__bar"><div class="hud__fill" data-hud-fill></div></div>
+          <span class="hud__tick" data-hud-tick="end">{t('hero.hudTickEnd')}</span>
+        </div>
+        <button class="hud__btn" type="button" data-hud-off aria-label={t('hero.hudBtnOffAria')}>OFF</button>
+        <div class="hud__readout">
           <span class="hud__label">{t('hero.hudLabel')}</span>
           <span class="hud__state" data-hud-state>{t('hero.hudState0')}</span>
         </div>
-        <div class="hud__bar"><div class="hud__fill" data-hud-fill></div></div>
-        <div class="hud__ticks">
-          <span data-hud-tick="start">{t('hero.hudTickStart')}</span>
-          <span data-hud-tick="end">{t('hero.hudTickEnd')}</span>
-        </div>
+      </div>
+
+      <!-- Bilanciere dimmer (mobile): su = trasparente, giu' = opaco -->
+      <div class="rocker" data-hero-rocker>
+        <button class="rocker__btn" type="button" data-hud-on aria-label={t('hero.hudBtnOnAria')}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>
+        </button>
+        <div class="rocker__divider" aria-hidden="true"></div>
+        <button class="rocker__btn rocker__btn--down" type="button" data-hud-off aria-label={t('hero.hudBtnOffAria')}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
       </div>
 
       <!-- Isole interattive (Ticker) iniettate da index.astro -->
@@ -194,72 +218,148 @@ const t = useTranslations(lang);
   @keyframes lineUp { to { opacity: 1; transform: translateY(0); } }
   @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-  /* ===== HUD stato vetro =====
+  /* ===== HUD telecomando (desktop) =====
      bottom alto abbastanza da stare SOPRA il Ticker (che è bottom:0, ~62px
-     desktop). Lascio margine generoso. */
+     desktop). Colonna verticale in basso a destra. */
   .hud {
     position: absolute;
-    left: clamp(24px, 5vw, 64px);
+    right: clamp(24px, 5vw, 64px);
     bottom: 104px;
     z-index: 15;
-    width: min(360px, 80vw);
+    width: 104px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
     border: 1px solid rgba(245, 245, 247, 0.10);
     background: rgba(5, 5, 7, 0.55);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-radius: 12px;
-    padding: 16px 18px;
+    border-radius: 16px;
+    padding: 14px 12px;
     opacity: 0;
     animation: fadeInUp 800ms var(--ease-out) 1100ms forwards;
   }
-  .hud__row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+  .hud__btn {
+    width: 64px;
+    padding: 7px 0;
     font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--c-mist);
-  }
-  .hud__state {
-    color: var(--c-pearl);
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 0.18em;
-    transition: color 250ms var(--ease);
+    color: var(--c-pearl);
+    background: rgba(245, 245, 247, 0.06);
+    border: 1px solid rgba(245, 245, 247, 0.18);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: color 250ms var(--ease), border-color 250ms var(--ease), background 250ms var(--ease);
+  }
+  .hud__btn:hover { background: rgba(245, 245, 247, 0.12); }
+  .hud__btn.is-active[data-hud-on] { color: var(--c-cyan); border-color: currentColor; }
+  .hud__btn.is-active[data-hud-off] { color: var(--c-copper); border-color: currentColor; }
+  .hud__meter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .hud__tick {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
+    color: var(--c-mist);
+    transition: color 200ms var(--ease);
   }
   .hud__bar {
-    margin-top: 12px;
-    height: 4px;
+    width: 4px;
+    height: 110px;
     border-radius: 4px;
     background: rgba(245, 245, 247, 0.08);
     overflow: hidden;
   }
   .hud__fill {
-    height: 100%;
-    width: 0%;
+    width: 100%;
+    height: 0%;
     border-radius: 4px;
-    background: linear-gradient(90deg, var(--c-cyan), var(--c-copper));
+    background: linear-gradient(180deg, var(--c-cyan), var(--c-copper));
   }
-  .hud__ticks {
-    margin-top: 10px;
+  .hud__readout {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .hud__label {
     font-family: var(--font-mono);
     font-size: 9.5px;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
     color: var(--c-mist);
   }
-  .hud__ticks span { transition: color 200ms var(--ease); }
+  .hud__state {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--c-pearl);
+    transition: color 250ms var(--ease);
+  }
+
+  /* ===== Bilanciere dimmer (mobile) =====
+     Nascosto su desktop; sostituisce l'HUD sotto i 900px. bottom sopra
+     l'ingombro del Ticker mobile (stessa quota del vecchio HUD mobile). */
+  .rocker {
+    position: absolute;
+    right: 16px;
+    bottom: 165px;
+    z-index: 15;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 6px;
+    border: 1px solid rgba(245, 245, 247, 0.10);
+    background: rgba(5, 5, 7, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 999px;
+    opacity: 0;
+    animation: fadeInUp 800ms var(--ease-out) 1100ms forwards;
+  }
+  .rocker__btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: transparent;
+    border: none;
+    color: var(--c-pearl);
+    cursor: pointer;
+  }
+  .rocker__btn svg { width: 20px; height: 20px; }
+  .rocker__btn--down svg { animation: hudNudge 1.6s ease-in-out infinite; }
+  .rocker__divider {
+    width: 16px;
+    height: 1px;
+    background: rgba(245, 245, 247, 0.18);
+  }
+
+  @keyframes hudNudge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
+  }
 
   /* ===== Responsive ===== */
   @media (max-width: 900px) {
     .content { max-width: 100%; padding: 0 24px; margin-bottom: 300px; }
-    .hud { left: 24px; right: 24px; width: auto; bottom: 165px; }
+    .hud { display: none; }
+    .rocker { display: flex; }
   }
 
   /* ===== prefers-reduced-motion =====
-     Niente reveal, niente scroll-anim: track collassa, mostra stato opaco. */
+     Niente reveal, niente scroll-anim: track collassa, mostra stato opaco.
+     ON/OFF e bilanciere nascosti: senza animazione non avrebbero effetto. */
   @media (prefers-reduced-motion: reduce) {
     .scene-track { height: 100vh; }
     .frame[data-layer="3"] { opacity: 1; }
@@ -268,7 +368,8 @@ const t = useTranslations(lang);
       opacity: 1;
       transform: none;
     }
-    .hud__fill { width: 100%; }
+    .hud__btn, .rocker { display: none; }
+    .hud__fill { height: 100%; }
   }
 </style>
 
@@ -286,6 +387,8 @@ const t = useTranslations(lang);
     const stateEl = track.querySelector<HTMLElement>("[data-hud-state]");
     const tickStart = track.querySelector<HTMLElement>('[data-hud-tick="start"]');
     const tickEnd = track.querySelector<HTMLElement>('[data-hud-tick="end"]');
+    const btnsOn = Array.from(track.querySelectorAll<HTMLElement>("[data-hud-on]"));
+    const btnsOff = Array.from(track.querySelectorAll<HTMLElement>("[data-hud-off]"));
 
     // Etichette stato dal data-states JSON (i18n, serializzato nel frontmatter).
     let LABELS: string[] = [];
@@ -310,7 +413,7 @@ const t = useTranslations(lang);
       if (layers[1]) layers[1].style.opacity = String(clamp01(seg - 1));
       if (layers[2]) layers[2].style.opacity = String(smoothstep(clamp01(seg - 2)));
 
-      if (fill) fill.style.width = (p * 100).toFixed(1) + "%";
+      if (fill) fill.style.height = (p * 100).toFixed(1) + "%";
 
       let idx = 0;
       if (p >= 0.85) idx = 3;
@@ -321,6 +424,8 @@ const t = useTranslations(lang);
       if (stateEl) stateEl.style.color = idx === 3 ? "var(--c-copper)" : "var(--c-pearl)";
       if (tickStart) tickStart.style.color = idx === 0 ? "var(--c-cyan)" : "var(--c-mist)";
       if (tickEnd) tickEnd.style.color = idx === 3 ? "var(--c-copper)" : "var(--c-mist)";
+      btnsOn.forEach((b) => b.classList.toggle("is-active", idx === 0));
+      btnsOff.forEach((b) => b.classList.toggle("is-active", idx === 3));
 
       ticking = false;
     };
@@ -331,6 +436,19 @@ const t = useTranslations(lang);
         requestAnimationFrame(update);
       }
     };
+
+    // ON/OFF (HUD desktop e bilanciere mobile): scroll programmatico verso
+    // inizio/fine della track. Lo scroll resta l'unica fonte di verita' del
+    // progress: il driver sopra fa il resto.
+    const scrollToProgress = (target: number) => {
+      const rect = track.getBoundingClientRect();
+      const total = rect.height - window.innerHeight;
+      if (total <= 0) return;
+      const top = window.scrollY + rect.top + total * target;
+      window.scrollTo({ top, behavior: "smooth" });
+    };
+    btnsOn.forEach((b) => b.addEventListener("click", () => scrollToProgress(0)));
+    btnsOff.forEach((b) => b.addEventListener("click", () => scrollToProgress(1)));
 
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
