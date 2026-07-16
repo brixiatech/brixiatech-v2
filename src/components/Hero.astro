@@ -441,11 +441,18 @@ const t = useTranslations(lang);
     // ON/OFF (HUD desktop e bilanciere mobile): scroll programmatico verso
     // inizio/fine della track. Lo scroll resta l'unica fonte di verita' del
     // progress: il driver sopra fa il resto.
+    // Verso opaco (target=1): il target e' il minimo tra p=1 e l'ultima
+    // posizione con lo stage ancora agganciato (sticky). Su mobile con barra
+    // URL visibile innerHeight < 100vh: p=1 cadrebbe OLTRE lo sgancio dello
+    // sticky e lo stage risalirebbe mostrando la fascia del Ticker.
+    const stage = track.querySelector<HTMLElement>(".scene-stage");
     const scrollToProgress = (target: number) => {
       const rect = track.getBoundingClientRect();
       const total = rect.height - window.innerHeight;
       if (total <= 0) return;
-      const top = window.scrollY + rect.top + total * target;
+      const stageH = stage ? stage.offsetHeight : window.innerHeight;
+      const run = target === 1 ? Math.min(total, rect.height - stageH) : total * target;
+      const top = window.scrollY + rect.top + run;
       window.scrollTo({ top, behavior: "smooth" });
     };
     btnsOn.forEach((b) => b.addEventListener("click", () => scrollToProgress(0)));
