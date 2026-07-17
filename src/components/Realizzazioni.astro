@@ -31,7 +31,7 @@ const videoSchema = {
       description: `${label} · ${t(p.techKey)}`,
       contentUrl: `${MEDIA_BASE}${p.slug}.mp4`,
       thumbnailUrl: new URL(`/realizzazioni/${p.slug}.webp`, Astro.site).href,
-      uploadDate: "2026-07-15",
+      uploadDate: "2026-07-15T09:00:00+02:00",
     };
   }),
 };
