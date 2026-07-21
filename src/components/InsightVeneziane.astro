@@ -14,9 +14,9 @@ const t = useTranslations(lang);
 // Base URL lang-aware per i link cross-page verso la home (prefixDefaultLocale: false).
 const base = lang === "en" ? "/en/" : "/";
 const linkBlogic = `${base}#blogic-eyebrow`;
-// Rimando veneziana elettronica: anchor sezione Realizzazioni in home
-// (nessuna route dedicata al 16/7; quando esisterà /realizzazioni/ si ri-punta lì).
-const linkRealizzazioni = `${base}#realizzazioni-eyebrow`;
+// Rimando veneziana elettronica: route dedicata Realizzazioni
+// (ri-puntato dal 21/7; prima anchor #realizzazioni-eyebrow in home).
+const linkRealizzazioni = lang === "en" ? "/en/projects/" : "/realizzazioni/";
 // Link a pagina-prodotto: i segmenti di path sono tradotti -> const dedicati lang-aware.
 const pdlcHref = lang === "en"
   ? "/en/technologies/smart-film-pdlc/"

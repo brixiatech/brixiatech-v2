@@ -1,0 +1,192 @@
+---
+// RealizzazioniIndice.astro — Contenuto della route dedicata /realizzazioni/
+// (IT) e /en/projects/ (EN). Evoluzione della sezione home Realizzazioni:
+// stessa griglia di card video 9:16 self-hosted (media.brixiatech.com,
+// preload="none" + IntersectionObserver), ma con testata di pagina (H1 + lead)
+// e un paragrafo descrittivo per progetto (chiavi realindex.p*.body).
+// Schema: VideoObject per clip (come in home) + ItemList dei progetti;
+// BreadcrumbList arriva da BaseLayout via prop breadcrumb.
+// lang/t ricavati internamente (mai props). Token: --c-* / --space-* / --font-* da global.css.
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const MEDIA_BASE = "https://media.brixiatech.com/realizzazioni/";
+
+const projects = [
+  { slug: "eni-san-donato", nameKey: "realizzazioni.p1.name", placeKey: "realizzazioni.p1.place", techKey: "realizzazioni.p1.tech", bodyKey: "realindex.p1.body" },
+  { slug: "panerai-watches-and-wonders", nameKey: "realizzazioni.p2.name", placeKey: "realizzazioni.p2.place", techKey: "realizzazioni.p2.tech", bodyKey: "realindex.p2.body" },
+  { slug: "w-executive-milano", nameKey: "realizzazioni.p3.name", placeKey: "realizzazioni.p3.place", techKey: "realizzazioni.p3.tech", bodyKey: "realindex.p3.body" },
+  { slug: "leva-engineering-qatar", nameKey: "realizzazioni.p4.name", placeKey: "realizzazioni.p4.place", techKey: "realizzazioni.p4.tech", bodyKey: "realindex.p4.body" },
+  { slug: "effegieffe-showroom", nameKey: "realizzazioni.p5.name", placeKey: "realizzazioni.p5.place", techKey: "realizzazioni.p5.tech", bodyKey: "realindex.p5.body" },
+  { slug: "studio-medico", nameKey: "realizzazioni.p6.name", placeKey: "realizzazioni.p6.place", techKey: "realizzazioni.p6.tech", bodyKey: "realindex.p6.body" },
+] as const;
+
+const labelOf = (p: (typeof projects)[number]) =>
+  t(p.placeKey) ? `${t(p.nameKey)} — ${t(p.placeKey)}` : t(p.nameKey);
+
+const videoSchema = {
+  "@context": "https://schema.org",
+  "@graph": projects.map((p) => ({
+    "@type": "VideoObject",
+    name: labelOf(p),
+    description: `${labelOf(p)} · ${t(p.techKey)}`,
+    contentUrl: `${MEDIA_BASE}${p.slug}.mp4`,
+    thumbnailUrl: new URL(`/realizzazioni/${p.slug}.webp`, Astro.site).href,
+    uploadDate: "2026-07-15T09:00:00+02:00",
+  })),
+};
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: projects.map((p, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: labelOf(p),
+  })),
+};
+---
+
+<section class="realindex" aria-labelledby="realindex-title">
+  <div class="realindex__inner">
+    <h1 class="realindex__title" id="realindex-title">{t("realindex.h1")}</h1>
+    <p class="realindex__lead">{t("realindex.lead")}</p>
+
+    <div class="realindex__grid">
+      {projects.map((p) => (
+        <figure class="realindex__card">
+          <video
+            class="realindex__video"
+            src={`${MEDIA_BASE}${p.slug}.mp4`}
+            poster={`/realizzazioni/${p.slug}.webp`}
+            width="720"
+            height="1280"
+            muted
+            loop
+            playsinline
+            preload="none"
+            aria-label={`${t("realizzazioni.video.aria")} ${t(p.nameKey)}`}
+          ></video>
+          <figcaption class="realindex__caption">
+            <span class="realindex__name">{t(p.nameKey)}</span>
+            {t(p.placeKey) && <span class="realindex__place">{t(p.placeKey)}</span>}
+            <span class="realindex__tech">{t(p.techKey)}</span>
+            <p class="realindex__body">{t(p.bodyKey)}</p>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(videoSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
+
+<style>
+  .realindex {
+    padding: var(--space-section-y) var(--space-section-x);
+  }
+  .realindex__inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+  }
+  .realindex__title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(34px, 5vw, 56px);
+    line-height: 1.08;
+    text-align: center;
+  }
+  .realindex__lead {
+    margin: 20px auto 0;
+    max-width: 680px;
+    text-align: center;
+    color: var(--c-mist);
+    line-height: 1.6;
+  }
+  .realindex__grid {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .realindex__card {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .realindex__video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    border-radius: 12px;
+    background: #0a0a0e;
+  }
+  .realindex__caption {
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .realindex__name {
+    font-weight: 600;
+  }
+  .realindex__place {
+    color: var(--c-mist);
+    font-size: 14px;
+  }
+  .realindex__tech {
+    margin-top: 6px;
+    align-self: flex-start;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--c-mist-bright);
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    padding: 4px 10px;
+  }
+  .realindex__body {
+    margin: 10px 0 0;
+    color: var(--c-mist);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 900px) {
+    .realindex__grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .realindex__card {
+      max-width: 420px;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  // Play/pause governato dalla visibilita': con preload="none" il browser non
+  // scarica nulla finche' play() non viene chiamato. Niente autoplay fuori campo.
+  const clips = document.querySelectorAll<HTMLVideoElement>(".realindex__video");
+  if (clips.length > 0 && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const vid = entry.target as HTMLVideoElement;
+          if (entry.isIntersecting) {
+            vid.play().catch(() => {});
+          } else {
+            vid.pause();
+          }
+        }
+      },
+      { threshold: 0.25 }
+    );
+    clips.forEach((vid) => io.observe(vid));
+  }
+</script>

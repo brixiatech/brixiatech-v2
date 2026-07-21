@@ -40,6 +40,8 @@ const { hrefIt = "/", hrefEn = "/en/" } = Astro.props;
 // NB: la CTA della nav resta cross-page verso la home (decisione v42:
 // su privacy/404 un bare fragment sarebbe un'ancora morta).
 const base = lang === 'en' ? '/en/' : '/';
+// Voce Realizzazioni: route dedicata (dal 21/7; prima anchor #realizzazioni-eyebrow in home).
+const workHref = lang === 'en' ? '/en/projects/' : '/realizzazioni/';
 const pillarHref = lang === 'en' ? '/en/electrochromic-glass/' : '/vetro-switchable/';
 ---
 
@@ -56,7 +58,7 @@ const pillarHref = lang === 'en' ? '/en/electrochromic-glass/' : '/vetro-switcha
     <li><a href={`${base}#tech-eyebrow`}>{t('nav.tech')}</a></li>
     <li><a href={pillarHref}>{t('nav.pillar')}</a></li>
     <li><a href={`${base}#blogic-eyebrow`}>B-logic</a></li>
-    <li><a href={`${base}#realizzazioni-eyebrow`}>{t('nav.work')}</a></li>
+    <li><a href={workHref}>{t('nav.work')}</a></li>
     <li><a href={`${base}insights/`}>{t('nav.insights')}</a></li>
     <li><a href="https://blogic.brixiatech.com/api/login.php" target="_blank" rel="noopener noreferrer">Dashboard</a></li>
   </ul>
@@ -87,7 +89,7 @@ const pillarHref = lang === 'en' ? '/en/electrochromic-glass/' : '/vetro-switcha
     <li><a href={`${base}#tech-eyebrow`}>{t('nav.tech')}</a></li>
     <li><a href={pillarHref}>{t('nav.pillar')}</a></li>
     <li><a href={`${base}#blogic-eyebrow`}>B-logic</a></li>
-    <li><a href={`${base}#realizzazioni-eyebrow`}>{t('nav.work')}</a></li>
+    <li><a href={workHref}>{t('nav.work')}</a></li>
     <li><a href={`${base}insights/`}>{t('nav.insights')}</a></li>
     <li><a href="https://blogic.brixiatech.com/api/login.php" target="_blank" rel="noopener noreferrer">Dashboard</a></li>
     <li class="nav__panel-extra">

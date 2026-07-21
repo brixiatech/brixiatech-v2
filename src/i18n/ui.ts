@@ -401,8 +401,8 @@ export const ui = {
     'blogic.cta': 'Scopri B-LOGIC',
 
     'realizzazioni.eyebrow': 'REALIZZAZIONI',
-    'realizzazioni.title': 'Installazioni reali, riprese sul campo.',
-    'realizzazioni.lead': 'Ogni clip mostra la commutazione dal vero, ripresa dove il vetro lavora: uffici direzionali, ambienti sanitari, teche espositive, eventi internazionali, showroom dei partner.',
+    'realizzazioni.title': 'Progetti realizzati, documentati al collaudo.',
+    'realizzazioni.lead': 'Ogni clip mostra la commutazione ripresa in fase di collaudo, dove il vetro è installato: uffici direzionali, ambienti sanitari, allestimenti espositivi, eventi internazionali, showroom dei partner.',
     'realizzazioni.video.aria': 'Video dell’installazione:',
     'realizzazioni.p1.name': 'ENI',
     'realizzazioni.p1.place': 'San Donato Milanese',
@@ -422,6 +422,18 @@ export const ui = {
     'realizzazioni.p6.name': 'Studio medico',
     'realizzazioni.p6.place': 'Lovere (Bergamo)',
     'realizzazioni.p6.tech': 'PDLC Essential',
+
+    // --- Pagina Realizzazioni (/realizzazioni/) ---
+    'realindex.meta.title': 'Realizzazioni smart glass in Italia e all’estero | BrixiaTech',
+    'realindex.meta.description': 'Le installazioni smart glass firmate BrixiaTech: uffici direzionali, allestimenti espositivi, showroom e ambienti sanitari. Progetti realizzati in Italia e all’estero, documentati in fase di collaudo.',
+    'realindex.h1': 'Realizzazioni',
+    'realindex.lead': 'Ogni progetto di questa pagina è documentato in fase di collaudo, direttamente sull’installazione consegnata. Nessun rendering: vetrate al lavoro, negli ambienti per cui sono state progettate.',
+    'realindex.p1.body': 'Vetrate direzionali con PDLC Premium: le sale passano da trasparenti a opache al comando, senza tende né schermature aggiuntive. Prestazioni al vertice della gamma e finiture premium, all’altezza degli ambienti di rappresentanza.',
+    'realindex.p2.body': 'A Watches and Wonders Ginevra, il Blackout Hyper Glass equipaggia l’involucro vetrato del Jupiterium, l’orologio planetario Panerai ispirato alle osservazioni di Galileo. Controllo di luce e irraggiamento sul meccanismo, con oscuramento profondo al comando.',
+    'realindex.p3.body': 'Negli uffici direzionali di W Executive a Milano, la veneziana elettronica su PDLC commuta il vetro a bande orizzontali, senza lamelle né motori. Ogni zona si apre e si chiude in modo indipendente: la parete vetrata diventa uno strumento di regia della luce.',
+    'realindex.p4.body': 'Teca progettata per Leva Engineering in occasione dell’inaugurazione di un nuovo impianto produttivo in Qatar. Il PDLC Premium commuta la teca da trasparente a opaca, governando la visibilità del contenuto e l’effetto scenico della presentazione.',
+    'realindex.p5.body': 'Nello showroom EFFEGIEFFE il PDLC Premium è installato dove i clienti lo vedono lavorare: una dimostrazione permanente della commutazione su vetrate reali, sul territorio bergamasco.',
+    'realindex.p6.body': 'In uno studio medico a Lovere, il PDLC Essential separa gli ambienti al comando: trasparente per l’accoglienza, opaco durante le visite. Privacy immediata senza tende, su superfici semplici da sanificare.',
 
     // --- Affidabilità (#9) ---
     'trust.eyebrow': 'PERCHÉ BRIXIATECH',
@@ -647,6 +659,7 @@ export const ui = {
     'breadcrumb.negozio': 'Vetrine negozio',
     'breadcrumb.sanitari': 'Ambienti sanitari',
     'breadcrumb.veneziane': 'Veneziane elettriche',
+    'breadcrumb.realizzazioni': 'Realizzazioni',
   },
   en: {
     // --- Meta / SEO ---
@@ -1036,8 +1049,8 @@ export const ui = {
     'blogic.cta': 'Explore B-LOGIC',
 
     'realizzazioni.eyebrow': 'PROJECTS',
-    'realizzazioni.title': 'Real installations, filmed in the field.',
-    'realizzazioni.lead': 'Each clip shows the switching as it really happens, filmed where the glass works: executive offices, healthcare practices, display cases, international events, partner showrooms.',
+    'realizzazioni.title': 'Delivered projects, documented at commissioning.',
+    'realizzazioni.lead': 'Each clip shows the switching filmed during commissioning, where the glass is installed: executive offices, healthcare practices, exhibition displays, international events, partner showrooms.',
     'realizzazioni.video.aria': 'Installation video:',
     'realizzazioni.p1.name': 'ENI',
     'realizzazioni.p1.place': 'San Donato Milanese, Italy',
@@ -1057,6 +1070,18 @@ export const ui = {
     'realizzazioni.p6.name': 'Medical practice',
     'realizzazioni.p6.place': 'Lovere, Bergamo, Italy',
     'realizzazioni.p6.tech': 'PDLC Essential',
+
+    // --- Projects page (/en/projects/) ---
+    'realindex.meta.title': 'Switchable smart glass projects — Italy and abroad | BrixiaTech',
+    'realindex.meta.description': 'BrixiaTech smart glass installations: executive offices, exhibition displays, showrooms and healthcare practices. Projects delivered in Italy and abroad, documented during commissioning.',
+    'realindex.h1': 'Projects',
+    'realindex.lead': 'Every project on this page is documented during commissioning, on the delivered installation. No renderings: glass at work, in the spaces it was designed for.',
+    'realindex.p1.body': 'Executive glass partitions with PDLC Premium: meeting rooms switch from transparent to opaque on command, with no curtains or added screens. Top-of-range performance and premium finishes, made for representative spaces.',
+    'realindex.p2.body': 'At Watches and Wonders Geneva, Blackout Hyper Glass equips the glass enclosure of the Jupiterium, Panerai’s planetarium clock inspired by Galileo’s observations. Light and solar radiation control over the mechanism, with deep darkening on command.',
+    'realindex.p3.body': 'In W Executive’s offices in Milan, the Venetian effect on PDLC switches the glass in horizontal bands, with no slats or motors. Each zone opens and closes independently: the glass wall becomes an instrument for directing light.',
+    'realindex.p4.body': 'Display case designed for Leva Engineering for the inauguration of a new production plant in Qatar. PDLC Premium switches the case from transparent to opaque, governing the visibility of the contents and the staging of the presentation.',
+    'realindex.p5.body': 'At the EFFEGIEFFE showroom, PDLC Premium is installed where customers can watch it work: a permanent demonstration of switching on real glazing, in the Bergamo area.',
+    'realindex.p6.body': 'In a medical practice in Lovere, PDLC Essential separates rooms on command: transparent for reception, opaque during examinations. Immediate privacy without curtains, on surfaces that are easy to sanitise.',
 
     // --- Trust (#9) ---
     'trust.eyebrow': 'WHY BRIXIATECH',
@@ -1282,5 +1307,6 @@ export const ui = {
     'breadcrumb.negozio': 'Shop windows',
     'breadcrumb.sanitari': 'Healthcare',
     'breadcrumb.veneziane': 'Electric blinds',
+    'breadcrumb.realizzazioni': 'Projects',
   },
 } as const;
