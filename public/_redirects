@@ -67,3 +67,7 @@
 # --- Consolidamento VENEZIANE + quick-win vetro oscurante elettrico ---
 /tende-elettriche-veneziane-elettriche/ /insights/veneziane-elettriche-o-vetro-switchable/ 301
 /vetro-oscurante-elettrico-funzionamento-vantaggi/ /vetro-switchable/ 301
+
+# --- Buchi rilevati dal mapping query->pagina GSC (2026-07-28) ---
+/smart-film-italia-brixiatech/ / 301
+/mondadori-duomo/ /realizzazioni/ 301
