@@ -8,9 +8,9 @@ export const defaultLang = 'it';
 export const ui = {
   it: {
     // --- Meta / SEO ---
-    'meta.title': 'Smart glass e pellicole switchable | BrixiaTech',
+    'meta.title': 'Smart film e smart glass switchable | BrixiaTech',
     'meta.description':
-      'Milano, Brescia, Bergamo: vetri intelligenti che passano da trasparenti a opachi a comando. Smart glass e pellicole switchable: privacy e controllo solare.',
+      'Milano, Brescia, Bergamo: smart film e smart glass che passano da trasparenti a opachi a comando. Pellicole switchable, privacy e controllo solare.',
     'meta.ogLocale': 'it_IT',
 
     // --- Nav ---
