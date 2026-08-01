@@ -26,7 +26,7 @@ export const ui = {
     'hero.headline1': 'Vetri che pensano.',
     'hero.headline2': 'Edifici che si adattano.',
     'hero.subtitle':
-      "Building intelligence applicata al primo strato dell’architettura — il vetro. PDLC switchable, hardware embedded, piattaforma cloud predittiva.",
+      "Building intelligence applicata al primo strato dell’architettura — il vetro. PDLC switchable, hardware embedded, automazione adattiva in cloud.",
     'hero.subtitleEmphasis': 'Un solo stack, dalla pellicola al dashboard.',
     'hero.ctaPrimary': 'Configura un progetto',
     'hero.ctaSecondary': 'Scopri B-LOGIC',
@@ -681,7 +681,7 @@ export const ui = {
     'hero.headline1': 'Glass that thinks.',
     'hero.headline2': 'Buildings that adapt.',
     'hero.subtitle':
-      "Building intelligence applied to the first layer of architecture — glass. PDLC switchable, embedded hardware, predictive cloud platform.",
+      "Building intelligence applied to the first layer of architecture — glass. PDLC switchable, embedded hardware, adaptive cloud automation.",
     'hero.subtitleEmphasis': 'One stack, from film to dashboard.',
     'hero.ctaPrimary': 'Configure a project',
     'hero.ctaSecondary': 'Discover B-LOGIC',
