@@ -65,6 +65,20 @@ const family2: Tech[] = [
     ctaKey: "techindex.dlc.cta",
   },
 ];
+
+// Tabella comparativa qualitativa (livello 1). Chiavi row-major:
+// techindex.compare.<riga>.<tecnologia>. Le intestazioni di colonna hanno
+// chiavi proprie (compare.col.*), non riusano tech.*.title. La cella EC
+// "supply" è l'unica eccezione della riga → classe di enfasi via CSS,
+// nessun HTML dentro ui.ts.
+const compareCols = ["pdlc", "pnlc", "spd", "ec", "dlc"] as const;
+const compareRows = ["rest", "modulates", "light", "privacy", "hold", "primary", "supply"] as const;
+type CompareRow = (typeof compareRows)[number];
+type CompareCol = (typeof compareCols)[number];
+const compareCellKey = (row: CompareRow, col: CompareCol) =>
+  `techindex.compare.${row}.${col}` as const;
+const compareRowKey = (row: CompareRow) => `techindex.compare.row.${row}` as const;
+const compareColKey = (col: CompareCol) => `techindex.compare.col.${col}` as const;
 ---
 
 <section class="tecindex" aria-labelledby="tecindex-eyebrow">
@@ -72,7 +86,33 @@ const family2: Tech[] = [
   <h1 class="tecindex__title">{t("techindex.title")}</h1>
   <p class="tecindex__lead">{t("techindex.lead")}</p>
 
-  <h2 class="tecindex__family">{t("techindex.family1.label")}</h2>
+  <h2 class="tecindex__family" id="tecindex-compare-title">{t("techindex.compare.title")}</h2>
+  <div class="tecindex__compare" role="region" aria-labelledby="tecindex-compare-title" tabindex="0">
+    <table class="tecindex__table">
+      <thead>
+        <tr>
+          <td class="tecindex__corner"></td>
+          {compareCols.map((col) => (
+            <th scope="col">{t(compareColKey(col))}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {compareRows.map((row) => (
+          <tr>
+            <th scope="row">{t(compareRowKey(row))}</th>
+            {compareCols.map((col) => (
+              <td class:list={[{ "tecindex__cell--note": row === "supply" && col === "ec" }]}>
+                {t(compareCellKey(row, col))}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="tecindex__family tecindex__family--1">{t("techindex.family1.label")}</h2>
   <div class="tecindex__grid tecindex__grid--2">
     {family1.map((item) => (
       <article class="tecindex__item">
@@ -159,8 +199,83 @@ const family2: Tech[] = [
     margin: 0 auto 32px;
   }
 
+  .tecindex__family--1,
   .tecindex__family--2 {
     margin-top: 72px;
+  }
+
+  /* Tabella comparativa: scroll orizzontale quando il contenitore scende sotto
+     la min-width della tabella (~880px desktop, 860px mobile), con prima colonna
+     sticky. role="region" + tabindex="0" rendono lo scroll raggiungibile
+     da tastiera. Semantica <table>/<th scope> intatta su tutti i viewport. */
+  .tecindex__compare {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-top: 1px solid var(--border-hairline);
+    border-bottom: 1px solid var(--border-hairline);
+  }
+
+  .tecindex__compare:focus-visible {
+    outline: 2px solid var(--c-cyan);
+    outline-offset: 3px;
+  }
+
+  .tecindex__table {
+    width: 100%;
+    min-width: 880px;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .tecindex__table th,
+  .tecindex__table td {
+    padding: 14px 16px;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border-hairline);
+  }
+
+  .tecindex__table tbody tr:last-child th,
+  .tecindex__table tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .tecindex__table thead th {
+    font-family: var(--font-display);
+    color: var(--c-pearl);
+    font-size: 0.95rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .tecindex__table tbody th {
+    font-family: var(--font-mono);
+    color: var(--c-mist-bright);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    font-weight: 400;
+    width: 22%;
+    min-width: 200px;
+  }
+
+  .tecindex__table td {
+    color: var(--c-mist);
+  }
+
+  .tecindex__cell--note {
+    color: var(--c-pearl);
+  }
+
+  /* Prima colonna sticky: sfondo pieno per coprire il testo che scorre sotto. */
+  .tecindex__corner,
+  .tecindex__table tbody th {
+    position: sticky;
+    left: 0;
+    background: var(--c-void);
+    z-index: 1;
   }
 
   .tecindex__grid {
@@ -178,7 +293,7 @@ const family2: Tech[] = [
     grid-template-columns: repeat(4, 1fr);
   }
 
-  /* 3 colonne: family2 senza CLC (rimossa fino a nuovo ordine). --4 tenuta per il ritorno. */
+  /* 3 colonne: family2 senza CLC (rimossa definitivamente dal catalogo). --4 resta solo come utility. */
   .tecindex__grid--3 {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -299,8 +414,20 @@ const family2: Tech[] = [
     .tecindex__grid--3 {
       grid-template-columns: repeat(2, 1fr);
     }
+    .tecindex__family--1,
     .tecindex__family--2 {
       margin-top: 56px;
+    }
+    .tecindex__table {
+      min-width: 860px;
+    }
+    .tecindex__table th,
+    .tecindex__table td {
+      padding: 12px 12px;
+    }
+    .tecindex__table tbody th {
+      width: auto;
+      min-width: 132px;
     }
   }
 
