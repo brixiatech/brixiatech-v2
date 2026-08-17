@@ -40,6 +40,8 @@ const { hrefIt = "/", hrefEn = "/en/" } = Astro.props;
 // NB: la CTA della nav resta cross-page verso la home (decisione v42:
 // su privacy/404 un bare fragment sarebbe un'ancora morta).
 const base = lang === 'en' ? '/en/' : '/';
+// Voce Tecnologie: route dedicata /tecnologie/ (dal 17/8; prima anchor #tech-eyebrow in home).
+const techHref = lang === 'en' ? '/en/technologies/' : '/tecnologie/';
 // Voce Realizzazioni: route dedicata (dal 21/7; prima anchor #realizzazioni-eyebrow in home).
 const workHref = lang === 'en' ? '/en/projects/' : '/realizzazioni/';
 const pillarHref = lang === 'en' ? '/en/electrochromic-glass/' : '/vetro-switchable/';
@@ -55,7 +57,7 @@ const pillarHref = lang === 'en' ? '/en/electrochromic-glass/' : '/vetro-switcha
   {/* Riga voci: solo desktop espanso. Da collassato scivola verso destra
       e sfuma; le voci vivono poi nel pannello (.nav__panel). */}
   <ul class="nav__menu">
-    <li><a href={`${base}#tech-eyebrow`}>{t('nav.tech')}</a></li>
+    <li><a href={techHref}>{t('nav.tech')}</a></li>
     <li><a href={pillarHref}>{t('nav.pillar')}</a></li>
     <li><a href={`${base}#blogic-eyebrow`}>B-logic</a></li>
     <li><a href={workHref}>{t('nav.work')}</a></li>
@@ -86,7 +88,7 @@ const pillarHref = lang === 'en' ? '/en/electrochromic-glass/' : '/vetro-switcha
   {/* Pannello: voci sempre; switcher lingua solo da collassato
       (.nav__panel-extra). La CTA NON entra mai nel pannello: resta in barra. */}
   <ul class="nav__panel">
-    <li><a href={`${base}#tech-eyebrow`}>{t('nav.tech')}</a></li>
+    <li><a href={techHref}>{t('nav.tech')}</a></li>
     <li><a href={pillarHref}>{t('nav.pillar')}</a></li>
     <li><a href={`${base}#blogic-eyebrow`}>B-logic</a></li>
     <li><a href={workHref}>{t('nav.work')}</a></li>
@@ -491,7 +493,7 @@ const pillarHref = lang === 'en' ? '/en/electrochromic-glass/' : '/vetro-switcha
   update();
 
   // Chiusura pannello al click su una voce: le ancore same-page
-  // (#tech-eyebrow, #blogic-eyebrow) scrollano senza ricaricare la pagina,
+  // (oggi solo #blogic-eyebrow) scrollano senza ricaricare la pagina,
   // quindi il checkbox resterebbe :checked e il pannello aperto. Vale per
   // ogni voce (ancore, pagine, esterni): comportamento uniforme.
   document.querySelectorAll(".nav__panel a").forEach((a) => {
