@@ -25,6 +25,7 @@ interface Props {
   hrefIt?: string;
   hrefEn?: string;
   breadcrumb?: { name: string; path: string }[];
+  noIndex?: boolean;
 }
 
 const {
@@ -33,6 +34,7 @@ const {
   hrefIt = "/",
   hrefEn = "/en/",
   breadcrumb,
+  noIndex = false,
 } = Astro.props;
 
 // Canonical = href della lingua corrente, NORMALIZZATO con trailing slash.
@@ -59,6 +61,11 @@ const structuredData = {
   "publisher": { "@id": siteBase + "/#localbusiness" },
 };
 
+// Canonical + hreflang ad URL assoluti (site = https://brixiatech.com):
+// canonicalUrl/hrefItAbs/hrefEnAbs sono derivati sopra da new URL(path, Astro.site).href;
+// il path e' quello della lingua corrente. Sulla 404 (noIndex) il blocco non viene emesso
+// e al suo posto va <meta name="robots" content="noindex, follow">.
+//
 // BreadcrumbList per-pagina: compilato da una traccia leggera {name, path}.
 // URL assoluti via withSlash + Astro.site (stessa logica del canonical). Null se assente.
 const breadcrumbLd =
@@ -87,13 +94,16 @@ const breadcrumbLd =
     <meta name="description" content={description} />
     <meta name="theme-color" content="#050B1A" />
 
-    <!-- Canonical + hreflang ad URL assoluti (site = https://brixiatech.com).
-         canonicalUrl/hrefItAbs/hrefEnAbs derivati nel frontmatter da
-         new URL(path, Astro.site).href; il path e' quello della lingua. -->
-    <link rel="canonical" href={canonicalUrl} />
-    <link rel="alternate" hreflang="it" href={hrefItAbs} />
-    <link rel="alternate" hreflang="en" href={hrefEnAbs} />
-    <link rel="alternate" hreflang="x-default" href={hrefItAbs} />
+    {noIndex ? (
+      <meta name="robots" content="noindex, follow" />
+    ) : (
+      <>
+        <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" hreflang="it" href={hrefItAbs} />
+        <link rel="alternate" hreflang="en" href={hrefEnAbs} />
+        <link rel="alternate" hreflang="x-default" href={hrefItAbs} />
+      </>
+    )}
 
     <!-- Preload font LCP-critical: headline hero in Space Grotesk 500 -->
     <link rel="preload" href={sg500} as="font" type="font/woff2" crossorigin />
