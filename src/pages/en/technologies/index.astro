@@ -8,8 +8,8 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 <BaseLayout
-  title={t("techindex.title")}
-  description={t("techindex.lead")}
+  title={t("techindex.meta.title")}
+  description={t("techindex.meta.description")}
   hrefIt="/tecnologie/"
   hrefEn="/en/technologies/"
   breadcrumb={[

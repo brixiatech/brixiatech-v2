@@ -114,6 +114,9 @@ export const ui = {
     'tech.channel':
       'Tutte queste tecnologie sono disponibili anche come sola pellicola da stratificare, fornite a vetrai e serramentisti che le integrano nei propri manufatti.',
     // --- Tecnologie (pagina indice) ---
+    'techindex.meta.title': 'Smart glass: le cinque tecnologie a confronto | BrixiaTech',
+    'techindex.meta.description':
+      'PDLC, PNLC, SPD, EC e DLC a confronto: cosa dosa ciascuna, quale fa privacy, quale governa luce e calore, in quali forme si fornisce.',
     'techindex.eyebrow': 'TECNOLOGIE',
     'techindex.title': 'Cinque tecnologie, cinque risposte diverse.',
     'techindex.lead':
@@ -140,6 +143,9 @@ export const ui = {
     'techindex.cta': 'Parliamo del tuo progetto',
 
     // --- Insights ---
+    'insights.meta.title': 'Come scegliere e usare il vetro switchable | BrixiaTech',
+    'insights.meta.description':
+      'Guide pratiche caso per caso: coprire una teca, oscurare una vetrina, rendere privato un ambiente. Dalla situazione concreta alla tecnologia giusta.',
     'insights.eyebrow': 'INSIGHTS',
     'insights.title': 'Come scegliere e usare il vetro switchable',
     'insights.lead':
@@ -769,6 +775,9 @@ export const ui = {
     'tech.channel':
       "All of these are also available as film for lamination, supplied to glaziers and window fabricators who build them into their own units.",
     // --- Technologies (index page) ---
+    'techindex.meta.title': 'Five smart glass technologies compared | BrixiaTech',
+    'techindex.meta.description':
+      'PDLC, PNLC, SPD, EC and DLC compared: what each one modulates, which give privacy, which handle light and heat, and how each is supplied.',
     'techindex.eyebrow': 'TECHNOLOGIES',
     'techindex.title': 'Five technologies, five different answers.',
     'techindex.lead':
@@ -795,6 +804,9 @@ export const ui = {
     'techindex.cta': "Let’s talk about your project",
 
     // --- Insights ---
+    'insights.meta.title': 'Choosing and using switchable glass | BrixiaTech',
+    'insights.meta.description':
+      'Practical guides by use case: covering a display case, blacking out a shopfront, making a room private. From the real situation to the right technology.',
     'insights.eyebrow': 'INSIGHTS',
     'insights.title': 'Choosing and using switchable glass',
     'insights.lead':
