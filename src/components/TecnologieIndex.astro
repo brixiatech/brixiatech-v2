@@ -79,6 +79,13 @@ const compareCellKey = (row: CompareRow, col: CompareCol) =>
   `techindex.compare.${row}.${col}` as const;
 const compareRowKey = (row: CompareRow) => `techindex.compare.row.${row}` as const;
 const compareColKey = (col: CompareCol) => `techindex.compare.col.${col}` as const;
+const compareColHref: Record<CompareCol, string> = {
+  pdlc: pdlcHref,
+  pnlc: pnlcHref,
+  spd: spdHref,
+  ec: ecHref,
+  dlc: bhgHref,
+};
 ---
 
 <section class="tecindex" aria-labelledby="tecindex-eyebrow">
@@ -87,13 +94,16 @@ const compareColKey = (col: CompareCol) => `techindex.compare.col.${col}` as con
   <p class="tecindex__lead">{t("techindex.lead")}</p>
 
   <h2 class="tecindex__family" id="tecindex-compare-title">{t("techindex.compare.title")}</h2>
+  <div class="tecindex__compare-wrap">
   <div class="tecindex__compare" role="region" aria-labelledby="tecindex-compare-title" tabindex="0">
     <table class="tecindex__table">
       <thead>
         <tr>
           <td class="tecindex__corner"></td>
           {compareCols.map((col) => (
-            <th scope="col">{t(compareColKey(col))}</th>
+            <th scope="col">
+              <a class="tecindex__col-link" href={compareColHref[col]}>{t(compareColKey(col))}</a>
+            </th>
           ))}
         </tr>
       </thead>
@@ -110,6 +120,7 @@ const compareColKey = (col: CompareCol) => `techindex.compare.col.${col}` as con
         ))}
       </tbody>
     </table>
+  </div>
   </div>
 
   <h2 class="tecindex__family tecindex__family--1">{t("techindex.family1.label")}</h2>
@@ -208,13 +219,32 @@ const compareColKey = (col: CompareCol) => `techindex.compare.col.${col}` as con
      la min-width della tabella (~880px desktop, 860px mobile), con prima colonna
      sticky. role="region" + tabindex="0" rendono lo scroll raggiungibile
      da tastiera. Semantica <table>/<th scope> intatta su tutti i viewport. */
-  .tecindex__compare {
+  .tecindex__compare-wrap {
+    position: relative;
     max-width: var(--container-max);
     margin: 0 auto;
+  }
+
+  .tecindex__compare {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     border-top: 1px solid var(--border-hairline);
     border-bottom: 1px solid var(--border-hairline);
+  }
+
+  /* Segnale di overflow: sfumatura sul bordo destro, visibile solo quando la
+     tabella scorre (sotto la sua min-width). Nessun testo, nessun JS. */
+  .tecindex__compare-wrap::after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    right: 0;
+    bottom: 1px;
+    width: 48px;
+    pointer-events: none;
+    background: linear-gradient(to right, rgba(5, 11, 26, 0), rgba(5, 11, 26, 0.9));
+    opacity: 0;
+    transition: opacity 200ms var(--ease);
   }
 
   .tecindex__compare:focus-visible {
@@ -225,6 +255,7 @@ const compareColKey = (col: CompareCol) => `techindex.compare.col.${col}` as con
   .tecindex__table {
     width: 100%;
     min-width: 880px;
+    table-layout: fixed;
     border-collapse: collapse;
     font-size: 0.92rem;
     line-height: 1.5;
@@ -245,10 +276,26 @@ const compareColKey = (col: CompareCol) => `techindex.compare.col.${col}` as con
 
   .tecindex__table thead th {
     font-family: var(--font-display);
-    color: var(--c-pearl);
     font-size: 0.95rem;
     font-weight: 500;
-    white-space: nowrap;
+  }
+
+  /* Intestazioni di colonna = link alle pagine prodotto (stessi bersagli delle card). */
+  .tecindex__col-link {
+    color: var(--c-pearl);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 200ms var(--ease), color 200ms var(--ease);
+  }
+
+  .tecindex__col-link:hover {
+    color: var(--c-cyan);
+    border-bottom-color: var(--c-cyan);
+  }
+
+  .tecindex__col-link:focus-visible {
+    outline: 2px solid var(--c-cyan);
+    outline-offset: 3px;
   }
 
   .tecindex__table tbody th {
@@ -257,8 +304,12 @@ const compareColKey = (col: CompareCol) => `techindex.compare.col.${col}` as con
     font-size: 0.78rem;
     letter-spacing: 0.04em;
     font-weight: 400;
-    width: 22%;
-    min-width: 200px;
+  }
+
+  /* Larghezze fisse (table-layout: fixed legge la prima riga): 20% etichette,
+     16% per ciascuna delle cinque tecnologie. */
+  .tecindex__corner {
+    width: 20%;
   }
 
   .tecindex__table td {
@@ -269,12 +320,12 @@ const compareColKey = (col: CompareCol) => `techindex.compare.col.${col}` as con
     color: var(--c-pearl);
   }
 
-  /* Prima colonna sticky: sfondo pieno per coprire il testo che scorre sotto. */
+  /* Prima colonna sticky. Lo sfondo pieno serve solo quando la tabella scorre
+     (mobile): su desktop la pagina è un gradiente e una banda piatta staccherebbe. */
   .tecindex__corner,
   .tecindex__table tbody th {
     position: sticky;
     left: 0;
-    background: var(--c-void);
     z-index: 1;
   }
 
@@ -395,7 +446,9 @@ const compareColKey = (col: CompareCol) => `techindex.compare.col.${col}` as con
 
   @media (prefers-reduced-motion: reduce) {
     .tecindex__cta,
-    .tecindex__arrow {
+    .tecindex__arrow,
+    .tecindex__col-link,
+    .tecindex__compare-wrap::after {
       transition: none;
     }
   }
@@ -425,9 +478,15 @@ const compareColKey = (col: CompareCol) => `techindex.compare.col.${col}` as con
     .tecindex__table td {
       padding: 12px 12px;
     }
+    .tecindex__corner {
+      width: 132px;
+    }
+    .tecindex__corner,
     .tecindex__table tbody th {
-      width: auto;
-      min-width: 132px;
+      background: var(--c-void);
+    }
+    .tecindex__compare-wrap::after {
+      opacity: 1;
     }
   }
 
