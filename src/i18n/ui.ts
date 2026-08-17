@@ -108,9 +108,6 @@ export const ui = {
     'tech.dlc.title': 'DLC',
     'tech.dlc.body':
       'Cristalli liquidi dicroici che assorbono la luce invece di diffonderla: il vetro vira a una tinta fumé anziché diventare lattiginoso. Riduce abbagliamento e calore solare, con rese estetiche in più colorazioni.',
-    'tech.clc.title': 'CLC',
-    'tech.clc.body':
-      "Cristalli liquidi colesterici a riflessione selettiva, bistabili: mantengono lo stato senza alimentazione continua, consumando solo allo switch. Agiscono come scudo termico dinamico, riflettendo l’energia solare invece di assorbirla.",
     'tech.channel':
       'Tutte queste tecnologie sono disponibili anche come sola pellicola da stratificare, fornite a vetrai e serramentisti che le integrano nei propri manufatti.',
     // --- Tecnologie (pagina indice) ---
@@ -775,9 +772,6 @@ export const ui = {
     'tech.dlc.title': 'DLC',
     'tech.dlc.body':
       'Dichroic liquid crystals that absorb light rather than scatter it: the glass tints to a smoked finish instead of turning milky. Cuts glare and solar heat, with finishes in several tones.',
-    'tech.clc.title': 'CLC',
-    'tech.clc.body':
-      'Cholesteric liquid crystals with selective reflection, bistable: they hold their state without continuous power, drawing energy only when switching. A dynamic thermal shield that reflects solar energy rather than absorbing it.',
     'tech.channel':
       "All of these are also available as film for lamination, supplied to glaziers and window fabricators who build them into their own units.",
     // --- Technologies (index page) ---
