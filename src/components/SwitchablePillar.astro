@@ -17,6 +17,9 @@ const spdHref = lang === "en" ? "/en/technologies/spd-smart-glass/" : "/tecnolog
 const ecHref = lang === "en" ? "/en/technologies/ec-smart-glass/" : "/tecnologie/ec-smart-glass/";
 const blackoutHref = lang === "en" ? "/en/technologies/blackout-hyper-glass/" : "/tecnologie/blackout-hyper-glass/";
 const techHref = lang === "en" ? "/en/technologies/" : "/tecnologie/";
+const telecomandoHref = lang === "en"
+  ? "/en/insights/switchable-glass-remote-control/"
+  : "/insights/oscurare-vetri-con-telecomando/";
 
 // Blocchi corpo a due colonne. Ogni link = { href, labelKey }. Blocchi narrativi = links vuoto.
 type BlockLink = { href: string; labelKey: string };
@@ -35,7 +38,7 @@ const blocks: Block[] = [
   { key: "ec", links: [{ href: ecHref, labelKey: "pillar.switchable.ec.link" }] },
   { key: "facciate", links: [] },
   { key: "film", links: [{ href: pdlcHref, labelKey: "pillar.switchable.film.link" }] },
-  { key: "scegliere", links: [] },
+  { key: "scegliere", links: [{ href: telecomandoHref, labelKey: "pillar.switchable.scegliere.telecomando" }] },
 ];
 
 // FAQ: 5 coppie Q/A (blocco pronto per schema FAQPage in un giro successivo).

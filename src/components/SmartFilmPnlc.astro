@@ -17,6 +17,9 @@ const linkHow = `${base}#how-eyebrow`;
 const linkBlogic = `${base}#blogic-eyebrow`;
 
 // Link a pagina-prodotto: i segmenti di path sono tradotti → const dedicato lang-aware.
+const sanitariHref = lang === "en"
+  ? "/en/insights/switchable-glass-for-healthcare/"
+  : "/insights/smart-glass-ambienti-sanitari/";
 const pdlcHref = lang === "en"
   ? "/en/technologies/smart-film-pdlc/"
   : "/tecnologie/smart-film-pdlc/";
@@ -24,7 +27,7 @@ const pdlcHref = lang === "en"
 // Blocchi corpo a due colonne. "edge" è il blocco distintivo (variante visiva).
 const blocks = [
   { key: "what", variant: "plain", link: pdlcHref, linkKey: "prod.pnlc.what.link" },
-  { key: "edge", variant: "feature", link: null },
+  { key: "edge", variant: "feature", link: sanitariHref, linkKey: "prod.pnlc.edge.link" },
   { key: "how", variant: "plain", link: linkHow, linkKey: "prod.pnlc.how.link" },
   { key: "scale", variant: "plain", link: linkBlogic, linkKey: "prod.pnlc.scale.link" },
 ] as const;

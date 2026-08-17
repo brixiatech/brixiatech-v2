@@ -203,6 +203,7 @@ export const ui = {
       'Oscurare un vetro con il telecomando è una delle domande più frequenti su questa tecnologia. Il telecomando è uno dei modi per inviare il comando di opacizzazione: qui vediamo come funziona il controllo del vetro switchable e quale tecnologia si comanda così.',
 
     'insights.telecomando.comando.title': 'Il telecomando è solo uno dei modi',
+    'insights.telecomando.comando.privacy': 'Vetri privacy a comando',
     'insights.telecomando.comando.body':
       'Un vetro switchable cambia stato — da trasparente a opaco — quando riceve un input elettrico. Il telecomando è solo uno dei modi per inviare quell’input: si preme un pulsante e il vetro risponde. Detto così, la domanda giusta non è «c’è il telecomando?», ma «come voglio comandare il vetro?» — ed è lì che si decide davvero.',
 
@@ -562,6 +563,8 @@ export const ui = {
     'prod.pnlc.what.body': 'Lo Smart Film PNLC è una pellicola a cristalli liquidi con la logica ribaltata rispetto al PDLC comune. A riposo, senza alimentazione, il vetro è limpido e trasparente; sotto tensione diventa opaco e scherma la vista. È pensato per le superfici che restano trasparenti la maggior parte del tempo e si oscurano solo quando serve: alimenti il vetro per la privacy, non per la trasparenza.',
     'prod.pnlc.what.link': 'Se invece la privacy è lo stato che ti serve più spesso, esiste la logica diretta: Smart Film PDLC',
     'prod.pnlc.edge.title': 'Manca l’alimentazione, il vetro resta trasparente. È qui che conta.',
+    'prod.pnlc.edge.link':
+      'Dove questa logica incontra un ambiente normato: smart glass per ambienti sanitari',
     'prod.pnlc.edge.body': 'C’è un contesto in cui la logica inversa non è una preferenza ma un requisito: la sicurezza. Un vetro che senza tensione resta trasparente non blocca mai una via di fuga, non oscura un ambiente durante un blackout, non isola chi sta dentro un mezzo di soccorso. Dove un’interruzione di alimentazione deve lasciare la superficie visibile — uscite di emergenza, veicoli, ambienti normati — la PNLC è la scelta naturale, perché il suo stato di riposo coincide con lo stato sicuro. L’altra faccia di questa logica è che l’oscuramento richiede alimentazione costante. Per superfici che devono restare opache a lungo è meno efficiente di un PDLC tradizionale; la PNLC dà il meglio dove la trasparenza è lo stato abituale e l’oscuramento è occasionale.',
     'prod.pnlc.how.title': 'Stessa logica switchable. Nessuna parte in movimento.',
     'prod.pnlc.how.body': 'Sotto resta un vetro switchable: un sottile film di cristalli liquidi tra due strati conduttivi. La differenza è nella formulazione, che inverte la risposta alla tensione — senza alimentazione i cristalli lasciano passare la vista, sotto tensione diffondono la luce e il vetro si fa opaco. Si comanda da interruttore, telecomando, app o in automatico — come ogni nostra superficie switchable.',
@@ -604,6 +607,8 @@ export const ui = {
     'prod.ec.edge.title': 'Lo stato resta, l’energia no.',
     'prod.ec.edge.body': 'La caratteristica che distingue l’elettrocromico da ogni altro vetro della gamma è la bistabilità: l’alimentazione serve a cambiare tinta, non a mantenerla. Raggiunta la gradazione voluta, il vetro la conserva da solo, senza consumo continuo. Su una facciata di centinaia di metri quadri significa governare l’irraggiamento per l’intera giornata con un dispendio di energia trascurabile — il motivo per cui l’elettrocromico è la scelta degli edifici progettati attorno all’efficienza.',
     'prod.ec.how.title': 'Come vira il vetro.',
+    'prod.ec.how.link':
+      'Nel linguaggio corrente «elettrocromico» indica spesso altro: vetro switchable',
     'prod.ec.how.body': 'Una tensione bassissima innesca una reazione elettrochimica negli strati del vetro: gli ioni migrano e la lastra si colora in modo graduale e uniforme; invertendo la polarità si schiarisce. La transizione è progressiva e avviene nell’arco di alcuni minuti, non è istantanea. È un cambiamento di stato pensato per seguire l’andamento del sole nella giornata, non per commutare a ripetizione.',
     'prod.ec.scale.title': 'Una superficie, o un intero edificio.',
     'prod.ec.scale.body': 'Lo Smart Glass EC è una fornitura su misura, in due forme: vetro laminato di sicurezza, con lo strato elettrocromico integrato tra le lastre, oppure vetrocamera isolante per l’involucro dell’edificio. Garanzia di 2 anni. Su grandi superfici — intere facciate che devono rispondere insieme all’andamento del sole — si può integrare B-LOGIC, la piattaforma di controllo che coordina più superfici attraverso una logica unificata.',
@@ -635,6 +640,7 @@ export const ui = {
     'pillar.switchable.film.body': 'È una domanda frequente, e la risposta conta. L’elettrocromico non è una pellicola: nasce dentro il vetro e arriva come lastra finita o vetrocamera. La pellicola switchable, invece, esiste — PDLC e PNLC sono fatte proprio come pellicola, applicabile su vetro già posato o laminata in lastre nuove. Quindi, se serve una pellicola switchable per un vetro che hai già, la risposta non è l’elettrocromico: è la pellicola switchable.',
     'pillar.switchable.film.link': 'Smart Film PDLC',
     'pillar.switchable.scegliere.title': 'Come scegliere.',
+    'pillar.switchable.scegliere.telecomando': 'Vetri che si oscurano con telecomando',
     'pillar.switchable.scegliere.body': 'Parti dal comportamento che vuoi, non dall’etichetta. Se serve privacy istantanea — dal trasparente all’opaco a comando — la risposta è la pellicola o il vetro switchable, PDLC o PNLC. Se serve una superficie commutabile nera e occultante, il Blackout Hyper Glass. Se serve un controllo graduale e continuo di luce e abbagliamento, l’SPD. Se serve controllo solare passivo su una facciata — la vista che resta, lo stato che si mantiene senza energia — l’elettrocromico. Chiarire queste distinzioni è il modo in cui aiutiamo a specificare una volta sola, correttamente.',
     'pillar.switchable.faq.title': 'Domande frequenti',
     'pillar.switchable.faq.q1': 'Che cos’è il vetro switchable?',
@@ -864,6 +870,7 @@ export const ui = {
       'Controlling switchable glass with a remote is one of the most common questions about this technology. The remote is one of several ways to send the switching command — here we look at how the control works and which technology responds to it.',
 
     'insights.telecomando.comando.title': 'The remote is only one of the options',
+    'insights.telecomando.comando.privacy': 'Switchable privacy glass',
     'insights.telecomando.comando.body':
       'Switchable glass changes state — from clear to opaque — when it receives an electrical input. A remote is only one way to send that input: press a button, and the glass responds. Framed this way, the real question is not whether a remote is available, but how you want to control the glass — and that is where the decision is actually made.',
 
@@ -1216,6 +1223,8 @@ export const ui = {
     'prod.pnlc.what.body': 'Smart Film PNLC is a liquid-crystal film with the logic of standard PDLC reversed. At rest, with no power, the glass is clear and transparent; under voltage it turns opaque and blocks the view. It’s built for surfaces that stay clear most of the time and darken only when needed: you power the glass for privacy, not for transparency.',
     'prod.pnlc.what.link': 'If privacy is the state you need more often, there’s the direct logic: Smart Film PDLC',
     'prod.pnlc.edge.title': 'Lose power and the glass stays clear. That’s where it counts.',
+    'prod.pnlc.edge.link':
+      'Where this logic meets a regulated environment: switchable glass for healthcare',
     'prod.pnlc.edge.body': 'There’s one setting where reverse logic isn’t a preference but a requirement: safety. Glass that stays clear without voltage never blocks an escape route, never darkens a room during a blackout, never isolates the people inside an emergency vehicle. Wherever a power loss has to leave the surface visible — emergency exits, vehicles, regulated environments — PNLC is the natural choice, because its resting state is the safe state. The flip side of this logic is that staying opaque draws power continuously. For surfaces that need to stay dark for long stretches it’s less efficient than standard PDLC; PNLC is at its best where clear is the usual state and opacity is occasional.',
     'prod.pnlc.how.title': 'The same switchable logic. No moving parts.',
     'prod.pnlc.how.body': 'Underneath it’s still switchable glass: a thin liquid-crystal film between two conductive layers. The difference is in the formulation, which inverts the response to voltage — with no power the crystals let the view through, under voltage they scatter light and the glass turns opaque. It’s controlled by switch, remote, app or automatically — like every switchable surface we make.',
@@ -1258,6 +1267,8 @@ export const ui = {
     'prod.ec.edge.title': 'The state stays, the power doesn’t.',
     'prod.ec.edge.body': 'What sets electrochromic apart from every other glass in the range is bistability: power changes the tint, it doesn’t hold it. Once the chosen gradation is reached, the glass keeps it on its own, with no continuous draw. On a façade of hundreds of square metres that means governing solar gain all day for a negligible amount of energy — the reason electrochromic is the choice for buildings designed around efficiency.',
     'prod.ec.how.title': 'How the glass tints.',
+    'prod.ec.how.link':
+      'In everyday use, “electrochromic” often means something else: electrochromic and switchable glass',
     'prod.ec.how.body': 'A very low voltage drives an electrochemical reaction through the layers of the glass: ions migrate and the pane colours gradually and evenly; reverse the polarity and it clears again. The transition is progressive, running over a few minutes rather than switching instantly. It is a change of state meant to track the sun across the day, not to toggle on and off.',
     'prod.ec.scale.title': 'One surface, or a whole building.',
     'prod.ec.scale.body': 'Smart Glass EC is a made-to-measure supply in two forms: laminated safety glass, with the electrochromic layer set between the panes, or an insulating glass unit for the building envelope. Two-year warranty. Across large spans — whole façades that need to respond to the sun together — B-LOGIC can be integrated, the control platform that coordinates multiple surfaces through unified logic.',
@@ -1289,6 +1300,7 @@ export const ui = {
     'pillar.switchable.film.body': 'It depends which sense you mean — and this is where the umbrella term matters most. Electrochromic glass, in the strict sense, is not a film: it’s manufactured inside the glazing and arrives as finished glass or an IGU. But switchable film absolutely exists — PDLC and PNLC are made precisely as a film that can be applied to installed glass or laminated into new units. So if what you need is a switchable film for glazing you already have, the answer isn’t strict electrochromic; it’s switchable film.',
     'pillar.switchable.film.link': 'Smart Film PDLC',
     'pillar.switchable.scegliere.title': 'How to choose.',
+    'pillar.switchable.scegliere.telecomando': 'Switchable glass and remote control',
     'pillar.switchable.scegliere.body': 'Start from the behaviour you want, not the label. If it’s instant privacy — clear to opaque on command — switchable film or glass (PDLC, PNLC) is the answer, and it’s what most "electrochromic" enquiries resolve to. If it’s a black, concealing switched surface, Blackout Hyper Glass. If it’s graduated dimming of light and glare, SPD. If it’s passive solar control on a façade — the view kept, the state held without power — electrochromic glass. Being clear about these distinctions is how we help you specify once, correctly.',
     'pillar.switchable.faq.title': 'Frequently asked questions',
     'pillar.switchable.faq.q1': 'What is electrochromic glass?',

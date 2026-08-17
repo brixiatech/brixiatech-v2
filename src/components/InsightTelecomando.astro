@@ -25,13 +25,16 @@ const blackoutHref = lang === "en"
   : "/tecnologie/blackout-hyper-glass/";
 // CTA finale: link secondario all'hub tecnologie (segmento path tradotto).
 const techHref = lang === "en" ? "/en/technologies/" : "/tecnologie/";
+const privacyHref = lang === "en"
+  ? "/en/insights/switchable-privacy-glass/"
+  : "/insights/vetri-privacy-su-comando/";
 // Blocchi corpo a due colonne. Ogni link = { href, labelKey }.
 // "quale" smista verso tre prodotti; "centralizza" verso B-LOGIC; gli altri due
 // sono narrativi (nessun link).
 type BlockLink = { href: string; labelKey: string };
 type Block = { key: string; links: BlockLink[] };
 const blocks: Block[] = [
-  { key: "comando", links: [] },
+  { key: "comando", links: [{ href: privacyHref, labelKey: "insights.telecomando.comando.privacy" }] },
   { key: "modi", links: [] },
   {
     key: "quale",
