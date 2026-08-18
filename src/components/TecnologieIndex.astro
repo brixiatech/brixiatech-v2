@@ -86,6 +86,20 @@ const compareColHref: Record<CompareCol, string> = {
   ec: ecHref,
   dlc: bhgHref,
 };
+
+// Tabella prestazioni (livello 2): solo la famiglia «controllo di luce e calore»
+// (SPD, EC, Blackout Hyper Glass), tre colonne. Stesso schema row-major:
+// techindex.solar.<riga>.<tecnologia>. La prima riga «Condizione di misura»
+// dichiara che SPD/Blackout sono misurati su film ed EC su vetrocamera: valori
+// non omogenei per costruzione, la riga li rende confrontabili senza asterischi.
+const solarCols = ["spd", "ec", "dlc"] as const;
+const solarRows = ["cond", "trans", "g", "ir", "uv", "volt", "power", "time", "size"] as const;
+type SolarRow = (typeof solarRows)[number];
+type SolarCol = (typeof solarCols)[number];
+const solarCellKey = (row: SolarRow, col: SolarCol) => `techindex.solar.${row}.${col}` as const;
+const solarRowKey = (row: SolarRow) => `techindex.solar.row.${row}` as const;
+const solarColKey = (col: SolarCol) => `techindex.solar.col.${col}` as const;
+const solarColHref: Record<SolarCol, string> = { spd: spdHref, ec: ecHref, dlc: bhgHref };
 ---
 
 <section class="tecindex" aria-labelledby="tecindex-eyebrow">
@@ -122,6 +136,35 @@ const compareColHref: Record<CompareCol, string> = {
     </table>
   </div>
   </div>
+
+  <h2 class="tecindex__family tecindex__family--solar" id="tecindex-solar-title">{t("techindex.solar.title")}</h2>
+  <div class="tecindex__compare-wrap">
+  <div class="tecindex__compare" role="region" aria-labelledby="tecindex-solar-title" tabindex="0">
+    <table class="tecindex__table tecindex__table--solar">
+      <thead>
+        <tr>
+          <td class="tecindex__corner tecindex__corner--solar"></td>
+          {solarCols.map((col) => (
+            <th scope="col">
+              <a class="tecindex__col-link" href={solarColHref[col]}>{t(solarColKey(col))}</a>
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {solarRows.map((row) => (
+          <tr>
+            <th scope="row">{t(solarRowKey(row))}</th>
+            {solarCols.map((col) => (
+              <td class:list={[{ "tecindex__cell--note": row === "cond" }]}>{t(solarCellKey(row, col))}</td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  </div>
+  <p class="tecindex__table-note">{t("techindex.solar.note")}</p>
 
   <h2 class="tecindex__family tecindex__family--1">{t("techindex.family1.label")}</h2>
   <div class="tecindex__grid tecindex__grid--2">
@@ -320,6 +363,25 @@ const compareColHref: Record<CompareCol, string> = {
     color: var(--c-pearl);
   }
 
+  /* Tabella prestazioni (livello 2): tre colonne, quindi min-width ridotta e
+     larghezze 25% + 25%×3. Il resto eredita da .tecindex__table. */
+  .tecindex__family--solar {
+    margin-top: 56px;
+  }
+  .tecindex__table--solar {
+    min-width: 720px;
+  }
+  .tecindex__corner--solar {
+    width: 25%;
+  }
+  .tecindex__table-note {
+    max-width: var(--container-max);
+    margin: 16px auto 0;
+    color: var(--c-mist);
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+
   /* Prima colonna sticky. Lo sfondo pieno serve solo quando la tabella scorre
      (mobile): su desktop la pagina è un gradiente e una banda piatta staccherebbe. */
   .tecindex__corner,
@@ -473,6 +535,9 @@ const compareColHref: Record<CompareCol, string> = {
     }
     .tecindex__table {
       min-width: 860px;
+    }
+    .tecindex__table--solar {
+      min-width: 700px;
     }
     .tecindex__table th,
     .tecindex__table td {
