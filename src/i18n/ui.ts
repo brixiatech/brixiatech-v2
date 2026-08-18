@@ -243,7 +243,7 @@ export const ui = {
     'insights.teche.card.cta': 'Leggi l’articolo',
 
     'insights.teche.meta.title': 'Coprire teche, espositori e vetrine espositive — vetro switchable | BrixiaTech',
-    'insights.teche.meta.description': 'Vetro switchable per teche, espositori e vetrine: trasparente quando il pezzo va visto, opaco a comando, con protezione UV. Per allestimenti di musei, gioiellerie e retail.',
+    'insights.teche.meta.description': 'Vetro switchable per teche, espositori e vetrine: trasparente quando il pezzo va visto, opaco a comando, con protezione UV. Musei, gioiellerie, retail.',
 
     'insights.teche.eyebrow': 'INSIGHTS · TECHE ED ESPOSITORI',
     'insights.teche.h1': 'Teche, espositori e vetrine: il vetro che mostra, protegge e nasconde a comando',
@@ -349,7 +349,7 @@ export const ui = {
     'insights.sanitari.card.summary': 'Porte e pareti vetrate che diventano opache a comando per la riservatezza del paziente, con una superficie liscia e lavabile che sostituisce tende e tessuti dove l’igiene è prioritaria.',
     'insights.sanitari.card.cta': 'Leggi l’articolo',
     'insights.sanitari.meta.title': 'Smart glass per ambienti sanitari: privacy e igiene | BrixiaTech',
-    'insights.sanitari.meta.description': 'Vetro switchable per studi medici, cliniche e ambulatori: riservatezza del paziente a comando e superfici lisce e igieniche, senza tende. Da trasparente a opaco quando serve.',
+    'insights.sanitari.meta.description': 'Vetro switchable per studi medici, cliniche e ambulatori: riservatezza del paziente a comando, superfici lisce e igieniche, senza tende. Opaco se serve.',
     'insights.sanitari.eyebrow': 'INSIGHTS · AMBIENTI SANITARI',
     'insights.sanitari.h1': 'Smart glass per ambienti sanitari: privacy immediata e superfici igieniche',
     'insights.sanitari.lead': 'Negli ambienti sanitari la riservatezza del paziente e l’igiene delle superfici vanno garantite insieme, e le tende su porte e vetrate risolvono la prima a scapito della seconda. Il vetro switchable le concilia: resta trasparente quando l’ambiente deve essere aperto e sotto controllo, diventa opaco a comando quando il paziente richiede riservatezza, e offre una superficie liscia e lavabile in luogo del tessuto. È una soluzione che progettisti e studi di architettura possono inserire in capitolato fin dalle prime fasi.',
@@ -400,7 +400,7 @@ export const ui = {
     'insights.uffici.card.summary': 'Pareti divisorie e vetrate che passano da trasparenti a opache all’occorrenza: riservatezza per le sale riunioni, luce naturale nell’open space, senza tende.',
     'insights.uffici.card.cta': 'Leggi l’articolo',
     'insights.uffici.meta.title': 'Pareti in vetro per ufficio: privacy a comando | BrixiaTech',
-    'insights.uffici.meta.description': 'Pareti divisorie in vetro switchable per uffici: da trasparenti a opache a comando. Riservatezza per le sale riunioni, luce naturale nell’open space, nessuna tenda. Come scegliere tra PDLC e PNLC.',
+    'insights.uffici.meta.description': 'Pareti in vetro switchable per ufficio: da trasparenti a opache a comando. Riservatezza in sala riunioni, luce nell’open space, senza tende. PDLC o PNLC?',
     'insights.uffici.eyebrow': 'INSIGHTS · UFFICI E PARETI DIVISORIE',
     'insights.uffici.h1': 'Pareti in vetro per ufficio: privacy a comando senza rinunciare alla luce',
     'insights.uffici.lead': 'Un ufficio con pareti vetrate lascia entrare la luce naturale e rende gli ambienti più ariosi, ma espone alla vista ogni spazio. La parete divisoria switchable scioglie il compromesso: resta trasparente quando la luce e la visione d’insieme vanno condivise, e diventa opaca a comando quando una riunione richiede riservatezza. Un’unica superficie fa da vetrata e da elemento divisorio, senza tende, pannelli o murature tradizionali.',
@@ -424,7 +424,7 @@ export const ui = {
     'insights.veneziane.card.cta': 'Leggi l’articolo',
 
     'insights.veneziane.meta.title': 'Veneziane elettriche o vetro switchable? | BrixiaTech',
-    'insights.veneziane.meta.description': 'Veneziane elettriche e motorizzate a confronto con vetri e pellicole switchable: privacy, controllo della luce e gestione del calore, senza parti in movimento.',
+    'insights.veneziane.meta.description': 'Veneziane elettriche e motorizzate a confronto con vetri e pellicole switchable: privacy, luce e calore sotto controllo, senza parti in movimento.',
 
     'insights.veneziane.eyebrow': 'INSIGHTS · VENEZIANE ELETTRICHE E ALTERNATIVE',
     'insights.veneziane.h1': 'Veneziane elettriche o vetro switchable: due modi di governare luce e riservatezza',
@@ -518,7 +518,7 @@ export const ui = {
 
     // --- Pagina Realizzazioni (/realizzazioni/) ---
     'realindex.meta.title': 'Realizzazioni smart glass in Italia e all’estero | BrixiaTech',
-    'realindex.meta.description': 'Le installazioni smart glass firmate BrixiaTech: uffici direzionali, allestimenti espositivi, showroom e ambienti sanitari. Progetti realizzati in Italia e all’estero, documentati in fase di collaudo.',
+    'realindex.meta.description': 'Installazioni smart glass BrixiaTech: uffici direzionali, allestimenti, showroom, ambienti sanitari. In Italia e all’estero, documentate al collaudo.',
     'realindex.h1': 'Realizzazioni',
     'realindex.lead': 'Ogni progetto di questa pagina è documentato in fase di collaudo, direttamente sull’installazione consegnata. Nessun rendering: vetrate al lavoro, negli ambienti per cui sono state progettate.',
     'realindex.p1.body': 'Vetrate direzionali con PDLC Premium: le sale passano da trasparenti a opache al comando, senza tende né schermature aggiuntive. Prestazioni al vertice della gamma e finiture premium, all’altezza degli ambienti di rappresentanza.',
@@ -596,7 +596,7 @@ export const ui = {
 
     // --- Prodotto: Blackout Hyper Glass ---
     'prod.bhg.meta.title': 'Blackout Hyper Glass — controllo solare e privacy',
-    'prod.bhg.meta.description': 'Blackout Hyper Glass: il vetro switchable più scuro della gamma BrixiaTech. La tecnologia DLC a cristalli liquidi tinti assorbe luce, calore e raggi infrarossi, e la stessa tinta profonda assicura riservatezza — controllo solare dinamico in un’unica superficie. In pellicola adesiva o vetro laminato.',
+    'prod.bhg.meta.description': 'Blackout Hyper Glass, il vetro switchable più scuro della gamma: la tecnologia DLC assorbe luce e calore, la tinta dà riservatezza. Pellicola o laminato.',
     'prod.bhg.eyebrow': 'DLC · CONTROLLO SOLARE E RISERVATEZZA',
     'prod.bhg.name': 'Blackout Hyper Glass',
     'prod.bhg.tagline': 'Il vetro switchable più scuro della nostra gamma. Nato per schermare il sole e i raggi infrarossi, unisce controllo solare e riservatezza in un’unica superficie.',
@@ -616,7 +616,7 @@ export const ui = {
 
     // --- Prodotto: Smart Film PDLC ---
     'prod.pdlc.meta.title': 'Smart film PDLC: il vetro che si oscura a comando | BrixiaTech',
-    'prod.pdlc.meta.description': 'Smart film PDLC, la tecnologia switchable più diffusa: il vetro passa da trasparente a opaco a comando. Privacy e controllo della luce, in pellicola adesiva o vetro laminato.',
+    'prod.pdlc.meta.description': 'Smart film PDLC, la tecnologia switchable più diffusa: il vetro si oscura a comando, da trasparente a opaco. Privacy e controllo della luce, in pellicola.',
     'prod.pdlc.eyebrow': 'SMART FILM PDLC · PRIVACY A COMANDO',
     'prod.pdlc.name': 'Smart film PDLC: trasparente o opaco, a comando',
     'prod.pdlc.tagline': 'La tecnologia switchable più diffusa. Un impulso elettrico e il vetro passa da limpido a opaco — niente tende, nessuna parte in movimento.',
@@ -641,7 +641,7 @@ export const ui = {
 
     // --- Prodotto: Smart Film PNLC ---
     'prod.pnlc.meta.title': 'Smart Film PNLC — vetro switchable reverse, trasparente da spento | BrixiaTech',
-    'prod.pnlc.meta.description': 'Smart Film PNLC: il vetro switchable a logica inversa. Trasparente senza alimentazione, opaco a comando — ideale dove la trasparenza è lo stato abituale e nei contesti fail-safe. In pellicola adesiva o vetro laminato.',
+    'prod.pnlc.meta.description': 'Smart Film PNLC: vetro switchable a logica inversa, trasparente senza alimentazione e opaco a comando. Per superfici di norma trasparenti e usi fail-safe.',
     'prod.pnlc.eyebrow': 'SMART FILM PNLC · LOGICA INVERSA',
     'prod.pnlc.name': 'Smart Film PNLC: trasparente da spento, opaco a comando',
     'prod.pnlc.tagline': 'La logica inversa del vetro switchable. Senza alimentazione resta limpido; un impulso elettrico e diventa opaco — il contrario del PDLC tradizionale.',
@@ -664,7 +664,7 @@ export const ui = {
 
     // --- Prodotto: Smart Glass SPD ---
     'prod.spd.meta.title': 'Smart Glass SPD — vetro a oscuramento variabile e continuo | BrixiaTech',
-    'prod.spd.meta.description': 'Smart Glass SPD: il vetro a oscuramento variabile e continuo, regolabile come un dimmer dalla tinta scura alla trasparenza in pochi secondi. Controlla l’abbagliamento mantenendo la vista verso l’esterno.',
+    'prod.spd.meta.description': 'Smart Glass SPD: vetro a oscuramento variabile e continuo, dalla tinta scura alla trasparenza in pochi secondi. Meno abbagliamento, vista conservata.',
     'prod.spd.eyebrow': 'SMART GLASS SPD · DIMMING CONTINUO',
     'prod.spd.name': 'Smart Glass SPD: oscuramento variabile, dalla tinta scura alla trasparenza',
     'prod.spd.tagline': 'Il vetro che si regola in continuo, come un dimmer: sposti la tinta dal chiaro allo scuro in pochi secondi e scegli qualsiasi gradazione intermedia — senza mai chiudere la vista verso l’esterno.',
@@ -683,7 +683,7 @@ export const ui = {
     'prod.spd.cta.button': 'Richiedi un preventivo',
     // --- Prodotto: Smart Glass EC ---
     'prod.ec.meta.title': 'Smart Glass EC — vetro elettrocromico a controllo solare passivo | BrixiaTech',
-    'prod.ec.meta.description': 'Smart Glass EC: il vetro elettrocromico che vira la tinta a comando e mantiene lo stato senza consumare energia. Controllo solare e termico passivo per facciate ed edifici ad alta efficienza.',
+    'prod.ec.meta.description': 'Smart Glass EC: vetro elettrocromico che vira la tinta a comando e mantiene lo stato senza alimentazione. Controllo solare passivo per facciate.',
     'prod.ec.eyebrow': 'SMART GLASS EC · CONTROLLO SOLARE PASSIVO',
     'prod.ec.name': 'Smart Glass EC: vira a comando e mantiene lo stato senza energia',
     'prod.ec.tagline': 'Vira la propria tinta a comando, dal chiaro al colorato, e mantiene lo stato senza consumare energia. Il controllo solare e termico per le facciate e gli edifici ad alta efficienza.',
@@ -996,7 +996,7 @@ export const ui = {
     'insights.teche.card.cta': 'Read the article',
 
     'insights.teche.meta.title': 'Covering and protecting display cases and showcases — switchable glass | BrixiaTech',
-    'insights.teche.meta.description': 'Switchable glass for display cases, showcases and vitrines: transparent when the piece should be seen, opaque on command, with UV protection. For museum, jewellery and retail fit-out.',
+    'insights.teche.meta.description': 'Switchable glass for display cases and showcases: clear when the piece is on show, opaque on command, with UV protection. For museums, jewellers, retail.',
 
     'insights.teche.eyebrow': 'INSIGHTS · DISPLAY CASES & SHOWCASES',
     'insights.teche.h1': 'Display cases and vitrines: glass that shows, protects and conceals on command',
@@ -1034,7 +1034,7 @@ export const ui = {
 
     'insights.telecomando.meta.title': 'Switchable glass with remote control — how the command works | BrixiaTech',
     'insights.telecomando.meta.description':
-      'How to control switchable glass: from a remote or wall switch to an app or centralised control. Which technology turns opaque on command, and how to manage it.',
+      'How to control switchable glass: from remote or wall switch to app and centralised control. Which technology turns opaque on command, and how to run it.',
 
     'insights.telecomando.eyebrow': 'INSIGHTS · REMOTE & CONTROL',
     'insights.telecomando.h1': 'Glass that turns opaque on command: from remote control to centralised control',
@@ -1095,7 +1095,7 @@ export const ui = {
     'insights.sanitari.card.summary': 'Glass doors and walls that turn opaque on command for patient privacy, with a smooth, washable surface that replaces blinds and fabric where hygiene is a priority.',
     'insights.sanitari.card.cta': 'Read the article',
     'insights.sanitari.meta.title': 'Switchable glass for healthcare: privacy and hygiene | BrixiaTech',
-    'insights.sanitari.meta.description': 'Switchable glass for clinics, surgeries and exam rooms: patient privacy on command and smooth, hygienic surfaces, with no blinds. Clear to opaque when needed.',
+    'insights.sanitari.meta.description': 'Switchable glass for clinics, surgeries and exam rooms: patient privacy on command and smooth, hygienic surfaces, no blinds. Clear to opaque when needed.',
     'insights.sanitari.eyebrow': 'INSIGHTS · HEALTHCARE',
     'insights.sanitari.h1': 'Switchable glass for healthcare: instant privacy and hygienic surfaces',
     'insights.sanitari.lead': 'In healthcare settings, patient privacy and surface hygiene have to be ensured together — and blinds on doors and glazing solve the first at the expense of the second. Switchable glass reconciles them: it stays clear when the space should be open and observable, turns opaque on command when a patient needs privacy, and offers a smooth, washable surface in place of fabric. It is a solution that designers and architecture practices can write into the specification from the earliest stages.',
@@ -1146,7 +1146,7 @@ export const ui = {
     'insights.uffici.card.summary': 'Partitions and glazing that switch from clear to opaque when needed: privacy for meeting rooms, natural light across the open plan, with no blinds.',
     'insights.uffici.card.cta': 'Read the article',
     'insights.uffici.meta.title': 'Glass walls for the office: privacy on command | BrixiaTech',
-    'insights.uffici.meta.description': 'Switchable glass partitions for offices: clear to opaque on command. Privacy for meeting rooms, natural light in the open plan, no blinds. How to choose between PDLC and PNLC.',
+    'insights.uffici.meta.description': 'Switchable glass office partitions: clear to opaque on command. Privacy for meeting rooms, light in the open plan, no blinds. PDLC or PNLC: how to choose.',
     'insights.uffici.eyebrow': 'INSIGHTS · OFFICES & PARTITIONS',
     'insights.uffici.h1': 'Glass walls for the office: privacy on command without giving up the light',
     'insights.uffici.lead': 'An office with glazed partition walls lets in natural light and makes the rooms feel more spacious, yet it leaves every area on view. A switchable partition resolves the trade-off: it stays clear when light and sightlines should be shared, and turns opaque on command when a meeting calls for privacy. A single surface serves as both glazing and divider, with no blinds, panels or solid walls.',
@@ -1264,7 +1264,7 @@ export const ui = {
 
     // --- Projects page (/en/projects/) ---
     'realindex.meta.title': 'Switchable smart glass projects — Italy and abroad | BrixiaTech',
-    'realindex.meta.description': 'BrixiaTech smart glass installations: executive offices, exhibition displays, showrooms and healthcare practices. Projects delivered in Italy and abroad, documented during commissioning.',
+    'realindex.meta.description': 'BrixiaTech smart glass installations: executive offices, exhibition displays, showrooms and healthcare. In Italy and abroad, documented at commissioning.',
     'realindex.h1': 'Projects',
     'realindex.lead': 'Every project on this page is documented during commissioning, on the delivered installation. No renderings: glass at work, in the spaces it was designed for.',
     'realindex.p1.body': 'Executive glass partitions with PDLC Premium: meeting rooms switch from transparent to opaque on command, with no curtains or added screens. Top-of-range performance and premium finishes, made for representative spaces.',
@@ -1342,7 +1342,7 @@ export const ui = {
 
     // --- Product: Blackout Hyper Glass ---
     'prod.bhg.meta.title': 'Blackout Hyper Glass — solar control and privacy',
-    'prod.bhg.meta.description': 'Blackout Hyper Glass: the darkest switchable glass in the BrixiaTech range. DLC dyed-liquid-crystal technology absorbs light, heat and infrared, and that same deep tint delivers privacy — dynamic solar control in a single surface. As adhesive film or laminated glass.',
+    'prod.bhg.meta.description': 'Blackout Hyper Glass, the darkest switchable glass in the range: DLC technology absorbs light and heat, its deep tint gives privacy. Film or laminated.',
     'prod.bhg.eyebrow': 'DLC · SOLAR CONTROL AND PRIVACY',
     'prod.bhg.name': 'Blackout Hyper Glass',
     'prod.bhg.tagline': 'The darkest switchable glass in our range. Built to screen the sun and infrared, it unites solar control and privacy in a single surface.',
@@ -1362,7 +1362,7 @@ export const ui = {
 
     // --- Product: Smart Film PDLC ---
     'prod.pdlc.meta.title': 'PDLC smart film: glass that switches from clear to private | BrixiaTech',
-    'prod.pdlc.meta.description': 'PDLC smart film, the most widely used switchable technology: glass turns from clear to opaque on demand. Privacy and light control, as adhesive film or laminated glass.',
+    'prod.pdlc.meta.description': 'PDLC smart film, the most widely used switchable technology: glass turns from clear to opaque on demand. Privacy and light control, film or laminated.',
     'prod.pdlc.eyebrow': 'PDLC SMART FILM · PRIVACY ON DEMAND',
     'prod.pdlc.name': 'PDLC smart film: clear or opaque, on demand',
     'prod.pdlc.tagline': 'The most widely used switchable technology. One electrical signal and the glass turns from clear to private — no blinds, no moving parts.',
@@ -1387,7 +1387,7 @@ export const ui = {
 
     // --- Product: Smart Film PNLC ---
     'prod.pnlc.meta.title': 'Smart Film PNLC — reverse switchable glass, clear when off | BrixiaTech',
-    'prod.pnlc.meta.description': 'Smart Film PNLC: switchable glass with inverted logic. Clear without power, opaque on command — built for surfaces that stay clear most of the time and for fail-safe contexts. As adhesive film or laminated glass.',
+    'prod.pnlc.meta.description': 'Smart Film PNLC: reverse-logic switchable glass, clear without power and opaque on command. For surfaces that stay clear by default and fail-safe use.',
     'prod.pnlc.eyebrow': 'SMART FILM PNLC · REVERSE LOGIC',
     'prod.pnlc.name': 'Smart Film PNLC: clear when off, opaque on command',
     'prod.pnlc.tagline': 'Switchable glass with the logic reversed. With no power it stays clear; one electrical pulse and it turns opaque — the opposite of standard PDLC.',
@@ -1429,7 +1429,7 @@ export const ui = {
     'prod.spd.cta.button': 'Request a quote',
     // --- Product: Smart Glass EC ---
     'prod.ec.meta.title': 'Smart Glass EC — electrochromic glass for passive solar control | BrixiaTech',
-    'prod.ec.meta.description': 'Smart Glass EC: electrochromic glass that shifts its tint on command and holds the state with virtually no power. Passive solar and thermal control for façades and high-efficiency buildings.',
+    'prod.ec.meta.description': 'Smart Glass EC: electrochromic glass that shifts tint on command and holds the state without power. Passive solar control for high-efficiency façades.',
     'prod.ec.eyebrow': 'SMART GLASS EC · PASSIVE SOLAR CONTROL',
     'prod.ec.name': 'Smart Glass EC: shifts on command and holds the state without power',
     'prod.ec.tagline': 'Shifts its tint on command, from clear to coloured, and holds that state with virtually no power. Solar and thermal control for façades and high-efficiency buildings.',
@@ -1449,7 +1449,7 @@ export const ui = {
     'prod.ec.cta.body': 'Every façade has its own constraints: orientation, scale, glass build-up. Tell us about the project and we’ll define the right electrochromic configuration together.',
     'prod.ec.cta.button': 'Request a quote',
     'pillar.switchable.meta.title': 'Electrochromic & Switchable Glass: Smart Film and Glass | BrixiaTech',
-    'pillar.switchable.meta.description': '"Electrochromic" is how many specify switchable glass and film. Here’s the full family — PDLC, PNLC, SPD and electrochromic — and how to choose the right one.',
+    'pillar.switchable.meta.description': '“Electrochromic” is how many specify switchable glass and film. The full family — PDLC, PNLC, SPD and electrochromic — and how to choose the right one.',
     'pillar.switchable.eyebrow': 'ELECTROCHROMIC & SWITCHABLE GLASS · HOW TO CHOOSE',
     'pillar.switchable.h1': 'Electrochromic & Switchable Glass',
     'pillar.switchable.lead': 'In practice, "electrochromic glass" is how a lot of architects and specifiers describe any glass or film that changes state at the flick of a switch — clear one moment, private or shaded the next. Strictly, electrochromic is one specific technology; used the way most people use it, it points to a whole family of switchable glass and switchable film. This page takes the term the way the industry actually uses it, covering the switchable technologies most projects reach for alongside the dimming and electrochromic options that round out the family. At BrixiaTech we work across all of them.',
