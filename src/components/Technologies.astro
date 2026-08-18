@@ -147,11 +147,7 @@ const family2: Tech[] = [
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .tech__grid--4 {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  /* 3 colonne: family2 senza CLC (rimossa fino a nuovo ordine). --4 tenuta per il ritorno. */
+  /* 3 colonne: family2 = SPD, EC, DLC (Blackout Hyper Glass). CLC rimossa definitivamente dal catalogo. */
   .tech__grid--3 {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -241,7 +237,6 @@ const family2: Tech[] = [
     .tech__grid {
       gap: 40px;
     }
-    .tech__grid--4,
     .tech__grid--3 {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -252,8 +247,7 @@ const family2: Tech[] = [
 
   @media (max-width: 560px) {
     .tech__grid--2,
-    .tech__grid--3,
-    .tech__grid--4 {
+    .tech__grid--3 {
       grid-template-columns: 1fr;
       gap: 32px;
     }

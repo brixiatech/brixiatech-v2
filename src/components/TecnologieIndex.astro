@@ -402,11 +402,7 @@ const solarColHref: Record<SolarCol, string> = { spd: spdHref, ec: ecHref, dlc: 
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .tecindex__grid--4 {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  /* 3 colonne: family2 senza CLC (rimossa definitivamente dal catalogo). --4 resta solo come utility. */
+  /* 3 colonne: family2 = SPD, EC, DLC (Blackout Hyper Glass). CLC rimossa definitivamente dal catalogo. */
   .tecindex__grid--3 {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -525,7 +521,6 @@ const solarColHref: Record<SolarCol, string> = { spd: spdHref, ec: ecHref, dlc: 
     .tecindex__grid {
       gap: 40px;
     }
-    .tecindex__grid--4,
     .tecindex__grid--3 {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -557,8 +552,7 @@ const solarColHref: Record<SolarCol, string> = { spd: spdHref, ec: ecHref, dlc: 
 
   @media (max-width: 560px) {
     .tecindex__grid--2,
-    .tecindex__grid--3,
-    .tecindex__grid--4 {
+    .tecindex__grid--3 {
       grid-template-columns: 1fr;
       gap: 32px;
     }
